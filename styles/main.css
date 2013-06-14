@@ -1,220 +1,67 @@
-@charset "utf-8";
-/* main.css */
-/****************************************
-	Style Reset
-****************************************/
-html { overflow-y:scroll; }
-body, button, dd, div, dl, dt, fieldset, form, input, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, textarea, ul { margin:0; padding:0; }
-body, h1, h2, h3, h4, h5, h6 { color:#333333; font:400 13px/1.5 "Helvetica Neue", Arial, sans-serif; }
-button, input { color:#333333; font:400 13px "Helvetica Neue", Arial, sans-serif; }
-table { border-collapse:collapse; border-spacing:0; font:inherit; }
-fieldset, img { border:none; }
-address, caption, cite, code, em, th, h1, h2, h3, h4, h5, h6 { font-style:normal; font-weight:400; }
-caption, th { text-align:left; }
-ol, ul, li { list-style:none; text-indent:0; }
-button, input[type="button"], input[type="submit"] { overflow:visible; }
-button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner { border:none; margin:0; outline:none; padding:0; }
-button:focus, button:active, input:focus, input:active { outline:none; }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; margin:0; padding:0; }
-/****************************************
-	Links
-****************************************/
-a { text-decoration:none; }
-p a, p .link, a:hover, a:active, a:focus, a.underline, button.underline { text-decoration:underline; }
-a:link,
-a:visited { color:#445708; }
-a:focus, .link:focus { color:#789200; outline:1px dotted #445708; outline-offset:2px; }
-a:hover, .link:hover { color:#789200; }
-.link { -webkit-appearance:none; background:none; border:0; -webkit-box-shadow:none; box-shadow:none; color:#445708; cursor:pointer; padding:0; text-decoration:none; text-align:left; }
-.link:active,
-.link:hover,
-.link:focus { color:#789200; text-decoration:underline; }
-/****************************************
-	Global Styles
-****************************************/
-body { background:#e2decd url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGuCAIAAADeSvtRAAAAfUlEQVQ4y9WTzQ7AIAiD+fr+rzzYSeOWGP+z7MABwVJstYiQmf02zvP3yrk2442Gqvijb9LT34tJ7vVP5u/zTBzDP113n/eYCv3ec1IOLGjn1bu9+K0zQEad/4r/iMj8dvLfVqetfcsf5X6z/y7ieuVk/SU19wMesxMXQMANapSO6rYFQnIAAAAASUVORK5CYII=) repeat-x 0 0; }
-.bodyBkgAlt { background:#fff; }
-/****************************************
-	Type Defaults
-****************************************/
-/* Headings & paragraphs */
-h1, h2, h3, h4, h5, h6,
-h1.textdefault,
-h2.textdefault,
-h2.textdefaultsize,
-h3.textdefault,
-h3.textdefaultsize,
-h4.textdefault,
-h4.textdefaultsize,
-h5.textdefault,
-h5.textdefaultsize,
-h6.textdefault,
-h6.textdefaultsize { font-size:16px; line-height:1.3; }
-h1,
-h1.textdefault,
-h1.textdefaultsize { font-size:18px; }
-h1, h2, h3, h4, h5, h6 { margin-top:20px; }
-p { margin-top:8px; }
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child,
-p:first-child { margin-top:0; }
-/* Lists */
-.bulleted,
-.numbered { margin:8px 0 0 20px; }
-.bulleted ul,
-.bulleted ol,
-.numbered ol,
-.numbered ul,
-.bulleted:first-child,
-.numbered:first-child { margin-top:0; }
-.bulleted li,
-.numbered .bulleted li { list-style-type:disc; }
-.bulleted .bulleted li { list-style-type:circle; }
-.bulleted .bulleted .bulleted li { list-style-type:square; }
-.numbered li,
-.bulleted .numbered li { list-style-type:decimal; }
-.bulleted li,
-.numbered li { margin-top:4px; }
-dl { margin:8px 0; }
-dt { font-weight:bold; margin-top:8px; }
-dt:first-child,
-dt + dt { margin-top:0; }
-/* Legal text */
-small { display:inline-block; line-height:1.3; font-size:11px; }
-/* Horizontal rule */
-hr { border:0; border-bottom:1px solid #dbd9d3; height:0; margin:20px 0; }
-/* Other type elements */
-strong,
-b { font-weight:bold; }
-cite,
-em,
-i { font-style:italic; }
-sup,
-sub { font-size:.8em; position:relative; top:-.6em; vertical-align:baseline; }
-sub { top:.4em; }
-blockquote { font-style:italic; line-height:1.8; margin:12px 24px 0; }
-mark { background-color:#ffff96; }
-.bold { font-weight:700; }
-.italic { font-style:italic; }
-.normal,
-.textdefault { font-style:normal; font-weight:400; }
-/*	.topSpacing exists for when a div/form/table/or any other
-	element is a sibling to another typography element. */
-.topSpacing { margin-top:12px; }
-.topSpacing:first-child { margin-top:0; }
-/****************************************
-	Alternate Type Helpers
-	(MARKETING PAGES ONLY - DO NOT USE OTHERWISE)
-****************************************/
-/* Font families */
-.textalt { font-family:Georgia, "Times New Roman", Times, serif; }
-.textnormal,
-.textdefault { font-family:"Helvetica Neue", Arial, sans-serif; }
-/* Font sizes */
-.text6xlrg { font-size:32px; }
-.text5xlrg { font-size:28px; }
-.text4xlrg { font-size:24px; }
-.text3xlrg { font-size:21px; }
-.text2xlrg { font-size:18px; }
-.textxlrg { font-size:16px; }
-.textlrg { font-size:14px; }
-.textmed,
-.textdefault,
-.textdefaultsize { font-size:13px; }
-.textsml { font-size:12px; }
-.textxsml { font-size:11px; }
-/****************************************
-	Colors
-****************************************/
-.coloralt,
-a.coloralt { color:#695e49; }
-.coloralt2,
-a.coloralt2 { color:#83381f; }
-.coloralt3,
-a.coloralt3 { color:#754200; }
-.coloralt4,
-a.coloralt4 { color:#fff; }
-.colornormal,
-a.colornormal,
-.textdefault,
-a.textdefault { color:#333333; }
-/****************************************
-	Helper Classes
-****************************************/
-.clear { clear:both; }
-.clearfix:after { clear:both; content:"."; display:block; height:0; visibility:hidden; }
-* html .clearfix, *:first-child+html .clearfix { display:block; zoom:1; }
-.photo { background-color:#e8e6e3; border:2px solid #fff; display:inline-block; line-height:0; margin:1px; outline:1px solid #bbb0a3; overflow:hidden; text-align:center; }
-.photo:hover,
-.photo:focus { outline-color:#695e49; -moz-transition:all .3s; -ms-transition:all .3s; -o-transition:all .3s; -webkit-transition:all .3s; transition:all .3s; }
-.photo > img { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; max-height:100%; max-width:100%; vertical-align:middle; }
-.photoSize1 { height:600px; line-height:596px; width:600px; }
-.photoSize2 { height:256px; line-height:252px; width:256px; }
-.photoSize3 { height:160px; line-height:156px; width:160px; }
-.photoSize4 { height:96px; line-height:92px; width:96px; }
-.photoSize5 { height:32px; line-height:28px; width:32px; }
-.photoProfileMale { background-color:#c9d6dc; outline:1px solid #a6bcc6; }
-.photoProfileFemale { background-color:#d9c3bc; outline:1px solid #c19b8f; }
-.noDisplay { display:none !important; }
-@media print {
-	.notPrintable { display:none !important; }
+
+/* -----------------------  General CSS ---------------------------- */
+
+/* ----------------- Fonts ----------------------- */
+@font-face {
+	font-family: telex;
+	src: url('../fonts/raleway_thin-webfont.eot');
+	src: url('../fonts/raleway_thin-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/raleway_thin-webfont.woff') format('woff'),
+		 url('../fonts/raleway_thin-webfont.ttf') format('truetype'),
+		 url('../fonts/raleway_thin-webfont.svg') format('svg');
 }
-/****************************************
-	Miscellaneous (or to be moved)
-****************************************/
-.screenReaderText { height:1px; line-height:2em; opacity:0; overflow:hidden; pointer-events:none; position:absolute; width:1px; }
-caption.screenReaderText { caption-side:bottom; position:static; }
-.itemCount { background-color:red; border-radius:3px; box-shadow:0 1px rgba(0, 0, 0, .77); color:#fff; font-size:12px; font-weight:700; left:-4px; line-height:14px; padding:0 2px 1px; position:absolute; text-decoration:none; top:-7px; z-index:2; }
-/****************************************
-	Responsive
-****************************************/
-/* .r must be on html */
-.r { height:100%; }
-.r body { min-height:100%; }
-.r,
-.r body { max-width:100%; min-width:320px; }
-/* IE 7 */
-.r .show768,
-.r .show480,
-.r .show320 { *display:none !important; }
-/* IE 8 */
-@media \0screen {
-	.r .show768,
-	.r .show480,
-	.r .show320 { display:none\0/ !important; }
+.telex { font-family: 'telex', sans-serif; }
+a.lightBlue { color:#689ae1; }
+.flipper { color:#e93a30; }
+.flipper span { display:block; position:relative; padding:0 2px;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	transition: all 400ms ease;
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d; }
+.flipper:hover span { background:#6581a9;
+	-webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+	-moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+	-ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+	transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg ); }
+.flipper span::after { content:attr(data-title); display:block; position:absolute; left:0; top:0; padding:0 2px; color:#fff; background:#6581a9;
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	-moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	-ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg ); }
+
+/* ----------------- Main content ----------------------- */
+.background { -webkit-filter:grayscale(69%) contrast(100%); min-height:100%; min-width:1024px; /* Set up proportionate scaling */ width:100%; height:auto; /* Set up positioning */ position:fixed; top:0; left:0; 
+  	-webkit-background-size:cover;
+  	-moz-background-size:cover;
+  	-o-background-size:cover;
+  	background-size:cover; }
+.wrapper { min-height:100%; height:auto !important; opacity:.7; height:100%; margin:0 auto -142px; /* the bottom margin is the negative value of the footer's height */ }
+nav { background:#fff; border-bottom:1px solid #efefef; }
+nav .logo { float:left; margin:15px 0 0 25px;  }
+nav ul { float:right; margin:15px; }
+nav ul li { float:left; padding:3px; }
+section.thorax { height:500px; }
+footer { height:200px; }
+
+
+/* ----------------- MEDIA QUERIES ----------------------- */
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.background {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }
-/* Large Screen */
-@media only screen and (min-width:1006px) {
-	.r .show768,
-	.r .show480:not(.hide768),
-	.r .show320:not(.hide768):not(.hide480),
-	.r .show768.hide480.show320 { display:none !important; }
-}
-/* Not Large Screen */
-@media only screen and (max-width:1005px) {
-	.r body #GlobalWrpr { min-width:320px; padding:0; width:auto; }
-}
-/* iPad Portait */
-@media only screen and (min-width:768px) and (max-width:1005px) {
-	.r .hide768,
-	.r .show480:not(.show768),
-	.r .show320:not(.show768) { display:none !important; }
-}
-/* iPhone Landscape */
-@media only screen and (min-width:480px) and (max-width:767px) {
-	.r body { -webkit-text-size-adjust:none; }
-	.r .hide768:not(.show480),
-	.r .hide480,
-	.r .show320:not(.show480) { display:none !important; }
-}
-/* iPhone Portrait */
-@media only screen and (max-width:479px) {
-	.r body { -webkit-text-size-adjust:none; }
-	.r .hide768:not(.show480):not(.show320),
-	.r .hide480:not(.show320),
-	.r .hide320 { display:none !important; }
-}
+
+
