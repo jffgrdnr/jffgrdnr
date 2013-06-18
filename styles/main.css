@@ -11,9 +11,29 @@
 		 url('../fonts/raleway_thin-webfont.svg') format('svg');
 }
 .telex { font-family: 'telex', sans-serif; }
-a.lightBlue { color:#689ae1; }
-.flipper { color:#e93a30; }
-.flipper span { display:block; position:relative; padding:0 2px;
+a.lightBlue { color:#547fbd; }
+a.white { color:#fff; }
+
+/* ----------------- Main content ----------------------- */
+.background { min-height:100%; min-width:1024px; /* Set up proportionate scaling */ width:100%; /* Set up positioning */ position:fixed; bottom:0; left:0; background-attachment:fixed; 
+	-webkit-filter: blur(.07em) contrast(135%);  
+  	-webkit-background-size:cover;
+  	-moz-background-size:cover;
+  	-o-background-size:cover;
+  	background-size:cover; 
+  	opacity:2; 
+  }
+.wrapper { min-height:100%; height:auto !important; margin: 0 auto -125px; opacity:.7; }
+.wrapper .push { content: ""; display: block; height:125px; }
+
+/* ----------------- NAV ----------------------- */
+nav { background:#fff; border-bottom:1px solid #ddd; position:relative; opacity:.5; }
+nav .logo { float:left; margin:15px 0 0 15px; width:200px; position:relative; }
+nav .logo:hover { text-shadow:1px 1px 1px #44679e; }
+nav ul { float:right; margin:15px; }
+nav ul li { float:left; padding:3px; }
+.flipper { color:#44679e; }
+.flipper span { display:block; position:relative; padding:5px 2px; text-shadow:1px 1px .5px #44679e;
 	-webkit-transition: all 400ms ease;
 	-moz-transition: all 400ms ease;
 	-ms-transition: all 400ms ease;
@@ -25,13 +45,15 @@ a.lightBlue { color:#689ae1; }
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
-	transform-style: preserve-3d; }
-.flipper:hover span { background:#6581a9;
+	transform-style: preserve-3d; 
+}
+.flipper:hover span { background:#44679e;
 	-webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
 	-moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
 	-ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-	transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg ); }
-.flipper span::after { content:attr(data-title); display:block; position:absolute; left:0; top:0; padding:0 2px; color:#fff; background:#6581a9;
+	transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg ); 
+}
+.flipper span::after { content:attr(data-title); display:block; position:absolute; left:0; top:0; padding:0 2px; color:#fff; background:#44679e;
 	-webkit-transform-origin: 50% 0%;
 	-moz-transform-origin: 50% 0%;
 	-ms-transform-origin: 50% 0%;
@@ -39,26 +61,28 @@ a.lightBlue { color:#689ae1; }
 	-webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
 	-moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
 	-ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-	transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg ); }
+	transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg ); 
+}
 
-/* ----------------- Main content ----------------------- */
-.background { -webkit-filter: blur(1px) contrast(125%) grayscale(69%); min-height:100%; min-width:1024px; /* Set up proportionate scaling */ width:100%; height:auto; /* Set up positioning */ position:fixed; top:0; left:0; 
-  	-webkit-background-size:cover;
-  	-moz-background-size:cover;
-  	-o-background-size:cover;
-  	background-size:cover; 
-  	opacity:.8; 
-  }
-.wrapper { min-height:100%; height:auto !important; opacity:.7; height:100%; margin:0 auto -142px; /* the bottom margin is the negative value of the footer's height */ }
-nav { background:#fff; border-bottom:1px solid #efefef; }
-nav .logo { float:left; margin:15px 0 0 25px;  }
-nav ul { float:right; margin:15px; }
-nav ul li { float:left; padding:3px; }
+/* ----------------- Center content ----------------------- */
 section.thorax { height:500px; }
-footer { height:200px; }
+
+/* ----------------- Footer content ----------------------- */
+footer { background:#fff; border-top:1px solid #ddd; height:125px; width:100%; position:relative; opacity:.5; }
+footer ul { float:right; width:300px; margin-top:10px; }
+footer ul li { float:left; padding:5px 2px; }
 
 
 /* ----------------- MEDIA QUERIES ----------------------- */
+@media screen and (max-width:768px) { 
+	nav .logo { width:90%; float:none; margin:0 auto; }
+	nav ul { float:none; margin:0 auto; width:92%; }
+	nav ul li { float:right; padding:3px; }
+
+	footer { position:static; }
+	footer ul { float:none; width:68%; margin:0 auto; }
+ 	footer ul li { float:left; padding:3px; }
+}
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.background {
     left: 50%;
