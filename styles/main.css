@@ -46,7 +46,10 @@ a.lightBlue { color:#689ae1; }
   	-webkit-background-size:cover;
   	-moz-background-size:cover;
   	-o-background-size:cover;
-  	background-size:cover; }
+  	background-size:cover; 
+  	-webkit-filter: blur(1px);
+  	opacity:.8; 
+  }
 .wrapper { min-height:100%; height:auto !important; opacity:.7; height:100%; margin:0 auto -142px; /* the bottom margin is the negative value of the footer's height */ }
 nav { background:#fff; border-bottom:1px solid #efefef; }
 nav .logo { float:left; margin:15px 0 0 25px;  }
