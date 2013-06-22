@@ -10,26 +10,35 @@
 		 url('../fonts/raleway_thin-webfont.svg') format('svg');
 }
 .telex { font-family: 'telex', sans-serif; }
-a.lightBlue { color:#547fbd; }
+a.lightBlue { color:#363F48; }
 a.white { color:#fff; }
 
 /* ----------------- Main content ----------------------- */
-.background { min-height:100%; min-width:1024px; /* Set up proportionate scaling */ width:100%; /* Set up positioning */ position:fixed; bottom:0; left:0; background-attachment:fixed; 
-	-webkit-filter: blur(.07em) contrast(135%) grayscale(30%);  
+.background { min-height:100%; min-width:1024px; /* Set up proportionate scaling */ width:100%; /* Set up positioning */ position:fixed; bottom:0; left:0; background-attachment:fixed;  
   	-webkit-background-size:cover;
   	-moz-background-size:cover;
   	-o-background-size:cover;
   	background-size:cover; 
-  	opacity:2; 
   }
-.wrapper { min-height:100%; height:auto !important; margin: 0 auto -125px; opacity:.7; }
+.wrapper { min-height:100%; height:auto !important; margin: 0 auto -125px; opacity:.9; }
 .wrapper .push { content: ""; display: block; height:125px; }
 
 /* ----------------- NAV ----------------------- */
-nav { background:#fff; border-bottom:1px solid #ddd; position:relative; opacity:.5; }
-nav .logo { float:left; margin:15px 0 0 15px; width:200px; position:relative; }
+nav { background:#fff; border-bottom:3px solid #ddd; position:relative;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#e0efff');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#e0efff')";
+	background-image: -moz-linear-gradient(top, #ffffff, #e0efff);
+	background-image: -ms-linear-gradient(top, #ffffff, #e0efff);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#e0efff));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e0efff);
+	background-image: linear-gradient(top, #ffffff, #e0efff);
+	opacity: 0.72;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 72);
+	filter: alpha(opacity = 72);
+}
+nav .logo { float:left; margin:15px 0 0 15px; width:335px; position:relative; color:#fff; text-shadow:1px 1px 1px #333; }
 nav .logo:hover { text-shadow:1px 1px 1px #44679e; }
-nav ul { float:right; margin:15px; }
+nav ul { float:right; margin:15px; width:250px; }
 nav ul li { float:left; padding:3px; }
 .flipper { color:#44679e; }
 .flipper span { display:block; position:relative; padding:5px 2px; text-shadow:1px 1px .5px #44679e;
@@ -67,19 +76,30 @@ nav ul li { float:left; padding:3px; }
 section.thorax { height:500px; }
 
 /* ----------------- Footer content ----------------------- */
-footer { background:#fff; border-top:1px solid #ddd; height:125px; width:100%; position:relative; opacity:.5; }
-footer ul { float:right; width:300px; margin-top:10px; }
+footer { background:#fff; border-top:3px solid #ddd; height:125px; width:100%; position:relative; 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#e0efff');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#e0efff')";
+	background-image: -moz-linear-gradient(top, #ffffff, #e0efff);
+	background-image: -ms-linear-gradient(top, #ffffff, #e0efff);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#e0efff));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e0efff);
+	background-image: linear-gradient(top, #ffffff, #e0efff);
+	opacity: 0.72;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 72);
+	filter: alpha(opacity = 72);
+ }
+footer ul { float:right; width:215px; margin-top:10px; }
 footer ul li { float:left; padding:5px 2px; }
 
 
 /* ----------------- MEDIA QUERIES ----------------------- */
 @media screen and (max-width:768px) { 
-	nav .logo { width:90%; float:none; margin:0 auto; }
-	nav ul { float:none; margin:0 auto; width:92%; }
+	nav .logo { width:48%; float:none; margin:0 auto; }
+	nav ul { float:none; margin:0 auto; width:68%; }
 	nav ul li { float:right; padding:3px; }
 
 	footer { position:static; }
-	footer ul { float:none; width:68%; margin:0 auto; }
+	footer ul { float:none; width:52%; margin:0 auto; }
  	footer ul li { float:left; padding:3px; }
 }
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
