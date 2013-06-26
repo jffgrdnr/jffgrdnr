@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-ng-app="peerApp" data-ng-controller="appCtrl" class="sponsive">
+<head>
+     <title>
+          Peer60
+     </title>
+     <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <![endif]-->
+          <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+          <script src="http://code.angularjs.org/0.10.0/angular-0.10.0.js"></script>
+          <script src="js/main.js"></script>
+          <link href="styles/main.css" rel="stylesheet" type="text/css" />
+     </head>
+     <body>
+          <article>
+               <section class="clearfix">
+                    <div class="score">
+                         <h1 class="text4xlrg">Score</h1>
+                         <div class="content text13xlrg"></div>
+                    </div>
+                    <div class="scoreBreakdown">
+                         <h1 class="text4xlrg">Score Breakdown</h1>
+                         <ul>
+                              <li class="breakdown promoter">
+                                   <span class="group">Promoter</span> 
+                                   <span class="full">
+                                        <span class="bar" data-promoters=''>&nbsp;</span>
+                                   </span> 
+                                   <span id="promoterPercent"></span>
+                              </li>
+                              <li class="breakdown passive">
+                                   <span class="group">Passive</span>
+                                   <span class="full">
+                                        <span class="bar" data-passive=''>&nbsp;</span>
+                                   </span>
+                                   <span id="passivePercent"></span>
+                              </li>
+                              <li class="breakdown detractor" >
+                                   <span class="group">Detractor</span> 
+                                   <span class="full">
+                                        <span class="bar" data-detractor=''>&nbsp;</span>
+                                   </span> 
+                                   <span id="detractorPercent"></span>
+                              </li>
+                         </ul>
+                    </div>
+               </section>
+               <section class="clearfix">
+                    <div class="commentDetails">
+                        <h1 class="text4xlrg scoreHeader">Score Comments</h1>
+                        <div id="commentList">
+                        </div>
+                   </div>
+              </section>
+         </article>
+    </body>
+    </html>
