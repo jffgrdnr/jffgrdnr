@@ -1,0 +1,74 @@
+@charset "utf-8";
+/*------------------ Reset CSS ------------------- */
+html { overflow-y:scroll; height:100%; }
+body { height:100%; }
+body, button, dd, div, dl, dt, fieldset, form, input, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, textarea, ul { margin:0; padding:0; }
+body, h1, h2, h3, h4, h5, h6 { font:400 13px/1.5 Arial, sans-serif; }
+button, input { color:#555555; font:400 13px Arial, sans-serif; }
+table { border-collapse:collapse; border-spacing:0; font:inherit; }
+fieldset, img { border:none; }
+address, caption, cite, code, em, th, h1, h2, h3, h4, h5, h6 { font-style:normal; font-weight:400; }
+caption, th { text-align:left; }
+ol, ul, li { list-style:none; text-indent:0; }
+button, input[type="button"], input[type="submit"] { overflow:visible; cursor:pointer; }
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner { border:none; margin:0; outline:none; padding:0; }
+button:focus, button:active, input:focus, input:active { outline:none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; margin:0; padding:0; }
+/*--------------- Links -------------------- */
+a { text-decoration:none; }
+p a, p .link, a:hover, a:active, a:focus, a.underline, button.underline { text-decoration:underline; }
+.link { -webkit-appearance:none; background:none; border:0; -webkit-box-shadow:none; box-shadow:none; color:#445708; cursor:pointer; padding:0; text-decoration:none; text-align:left; }
+.link:active,
+.link:hover,
+.link:focus { text-decoration:underline; }
+/*------------------------------------------- */
+/*--------------- Type defaults -------------------- */
+/* Other type elements */
+strong,
+b { font-weight:bold; }
+cite,
+em,
+i { font-style:italic; }
+.bold { font-weight:700; }
+.italic { font-style:italic; }
+.textdefault { font-style:normal; font-weight:400; }
+/********************************************************************************/
+/* Font families */
+.textalt { font-family:Georgia, "Times New Roman", Times, serif; }
+.textalt2 { font-family:Verdana, Verdana, Geneva, sans-serif; }
+.textalt3 { font-family:Lucida Sans Unicode, Lucida Grande, sans-serif; }
+.textalt4 { font-family:Tahoma, Geneva, sans-serif; }
+.textdefault { font-family:"Helvetica Neue", Arial, sans-serif; }
+/* Font sizes */
+.text13xlrg { font-size:66px; }
+.text12xlrg { font-size:60px; }
+.text11xlrg { font-size:54px; }
+.text10xlrg { font-size:50px; }
+.text9xlrg { font-size:46px; }
+.text8xlrg { font-size:42px; }
+.text7xlrg { font-size:38px; }
+.text6xlrg { font-size:32px; }
+.text5xlrg { font-size:28px; }
+.text4xlrg { font-size:24px; }
+.text3xlrg { font-size:21px; }
+.text2xlrg { font-size:18px; }
+.textxlrg { font-size:16px; }
+.textlrg { font-size:14px; }
+.textmed { font-size:13px; }
+.textsml { font-size:12px; }
+.textxsml { font-size:11px; }
+.text2xsml { font-size:9px; }
+/****************************************
+	Colors
+****************************************/
+
+/****************************************
+	Helper Classes
+****************************************/
+.clear { clear:both; }
+.clearfix:after { clear:both; content:"."; display:block; height:0; visibility:hidden; }
+* html .clearfix, *:first-child+html .clearfix { display:block; zoom:1; }
+img { max-width:100%; }
+
+
+

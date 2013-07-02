@@ -1,0 +1,134 @@
+/****************************************
+	General CSS
+****************************************/
+html { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+button { box-shadow:0 1px rgba(255,255,255,.2),inset 0 1px rgba(255,255,255,.5); }
+button.lightGray { background-color:#eee; color:#444; padding:6px 10px; font-weight:bold; border:1px solid #bbb; box-shadow:inset 1px 1px 1px #fff; border-radius:1px; text-transform:uppercase; }
+button.lightGray:hover { background-color:#fafafa; }
+button.darkGray { background-color:#444; color:#eeeeee; border-radius:20px; padding:12px 25px; text-transform:uppercase; border:none; }
+button.darkGray:hover { background-color:#555; }
+button.orange { background-color:#fa982b; color:#fff; padding:12px 15px; border-radius:3px; border:1px solid #c10d01; }
+button.orange:hover { background-color:#f4a722; }
+.white { color:#fff; }
+.gray { color:#555; }
+.green { color:#8dc63f; }
+.upper { text-transform:uppercase; }
+a:-webkit-any-link { color:#555; }
+
+/****************************************
+	Main Content CSS
+****************************************/
+p { color:#696969; }
+article { margin:0 auto; }
+nav { width:985px; padding:25px 0 ; margin:0 auto; color:#585858; }
+nav .brand { float:left; cursor:pointer; }
+nav .logo { display:inline-block; background-image:url(../img/logo.jpg); width:41px; height:44px; position:relative; top:10px; }
+nav menu { float:left; padding:20px 15px; margin:0 0 0 50px; position:relative; top:5px; }
+nav li { float:left; margin:0 15px 0 0; cursor:pointer; }
+nav li:hover { text-decoration:underline; }
+nav .login { float:left; position:relative; top:22px; }
+
+.wrapper { width:985px; margin:0 auto; padding:95px 0; }
+
+.intro { background-image:url(../img/greenBack.png); background-size:cover; height:295px; text-align:center; width:100%; padding:75px 0 25px 0; }
+.intro header { width:575px; margin:15px auto; text-shadow:1px 1px 1px #777; }
+.intro .getStarted { width:800px; margin:45px auto; }
+.intro .getStarted p { margin:8px 0 0 0; }
+
+.resourcePins { background:#f5f5f5; }
+.resourcePins header { width:550px; margin:0 auto 75px; text-align:center; }
+.resourcePins header h2 { margin:0 0 15px 0; }
+.resourcePins .examples { width:100%; }
+.resourcePins .examples .page { float:left; background-image:url(../img/page.jpg); width:605px; height:495px; max-width:100%; }
+.resourcePins .examples .resource { float:left; width:285px; margin:0 0 0 75px; text-align:left; }
+.resourcePins .examples .resource header { width:100%; margin:60px 0 20px 0; text-align:left; }
+.resourcePins .examples .resource header h3 { margin:0 0 15px 0; }
+.resourcePins footer .pin label { display:inline-block; margin:0 0 0 15px; width:90px; position:relative; top:8px; }
+.resourcePins footer .bookmarklet { background-image:url(../img/resource.jpg); width:300px; height:115px; margin:25px 0 0 0; }
+
+.apps header { margin:0 0 55px 0; text-align:center; }
+.apps .appleDevices { background-image:url(../img/appleDevices.jpg); width:815px; height:485px; margin:0 auto 85px; }
+.apps .downloads .app { float:left; width:275px; padding:0 25px; text-align:center; }
+.apps .downloads .app header { margin:0 0 15px 0; }
+.apps .downloads .icon { margin:0 0 25px 0; }
+.apps .downloads .core .icon { display:inline-block; background-image:url(../img/core.jpg); width:77px; height:77px; }
+.apps .downloads .scan .icon { display:inline-block; background-image:url(../img/scan.jpg); width:77px; height:77px; }
+.apps .downloads .assess .icon { display:inline-block; background-image:url(../img/assess.jpg); width:77px; height:77px; }
+.apps .downloads .app p { min-height:85px; }
+.apps footer { margin:15px 0 0 0; }
+.apps footer button { border-radius:40px; }
+
+.widget { background:#f5f5f5; }
+.widget header { width:520px; text-align:center; margin:0 auto 45px; }
+.widget header h4 { margin:0 0 15px 0; }
+.widget .focus { display:inline-block; background-image:url(../img/focus.jpg); width:920px; height:495px; }
+.widget .code { margin:65px 0 15px 0; }
+.widget .code h5 { margin:0 0 15px 0; }
+.widget .code p { margin:0 0 15px 0; }
+.widget .code .embedSnippet { float:left; width:460px; text-align:right; }
+.widget .code .widgetSnippet { float:right; width:460px; text-align:left; }
+.widget textarea { width:445px; height:80px; background:#fff; max-height:80px; max-width:445px; text-align:left; border:1px solid #beb48e; border-radius:3px; -webkit-box-shadow:0 1px rgba(255, 255, 255, .1), inset 0 1px 2px rgba(0, 0, 0, .1); box-shadow:0 1px rgba(255, 255, 255, .1), inset 0 1px 2px rgba(0, 0, 0, .1); color:#333; font:inherit; outline:none; padding:5px 4px 5px 6px; text-align:left; vertical-align:middle; }
+.widget .exampleVideo { width:215px; margin:45px auto; }
+.widget .exampleVideo button { border-radius:40px; padding:8px 15px; }
+
+footer { color:#ccc; }
+footer .upper { background-image:url(../img/footer.jpg); border-top:5px solid #000; background-size:contain; }
+footer .footerNav { float:left; }
+footer .footerNav menu { float:left; padding:55px 0; margin:0 25px 0 55px; width:225px; }
+footer .cta { float:right; width:500px; padding:55px 0; text-align:center; }
+footer .cta button { border-radius:40px; margin:0 0 15px 0; padding:8px 15px; }
+footer .legal { background:#282828; padding:25px 55px; }
+
+/*-----------------  Fancy link flipping on menu -----------------*/
+.flipper span { display:block; position:relative; padding:0 5px;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	transition: all 400ms ease;
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d; 
+}
+.flipper:hover span { background:#8dc63f;
+	-webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+	-moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+	-ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+	transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg ); 
+}
+.flipper span::after { content:attr(data-title); display:block; padding:1px 5px 10px 5px;  position:absolute; left:0; top:0; color:#fff; background:#8dc63f;
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	-moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	-ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg ); 
+}
+
+/****************************************
+	Responsive
+****************************************/
+
+/* Not Large Screen */
+@media only screen and (max-width:1005px) {
+	
+}
+/* iPad Portait */
+@media only screen and (min-width:768px) and (max-width:1005px) {
+	
+}
+/* iPhone Landscape */
+@media only screen and (min-width:480px) and (max-width:767px) {
+	
+}
+/* iPhone Portrait */
+@media only screen and (max-width:479px) {
+	
+	
+}
