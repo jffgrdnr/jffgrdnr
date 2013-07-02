@@ -30,7 +30,7 @@ nav .login { float:left; position:relative; top:22px; }
 
 .wrapper { width:985px; margin:0 auto; padding:95px 0; }
 
-.intro { background-image:url(../img/greenBack.png); background-size:cover; height:295px; text-align:center; width:100%; padding:75px 0 25px 0; }
+.intro { background-image:url(../img/greenBack.png); background-size:cover; height:295px; text-align:center; width:100%; padding:55px 0 25px 0; }
 .intro header { width:575px; margin:15px auto; text-shadow:1px 1px 1px #777; }
 .intro .getStarted { width:800px; margin:45px auto; }
 .intro .getStarted p { margin:8px 0 0 0; }
