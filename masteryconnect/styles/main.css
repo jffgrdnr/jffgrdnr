@@ -208,7 +208,11 @@ footer .legal { width:985px; margin:0 auto; }
 	nav li { float:none; width:100%; margin:8px 0 0 0; border:1px solid #ddd; border-radius:3px; padding:5px; }
 	flipper span { padding:5px; width:33%; }
 	flipper span::after { padding:5px; }
+	.resourcePins .examples { width:95%; margin:0 auto; }
+	.resourcePins .examples footer { width:95%; margin:0 auto; float:none; }
+	.resourcePins .examples .pin { width:73%; margin:0 auto; }
 	.resourcePins .examples .page { background:none; float:none; width:50%; height:50%; margin:0 auto 25px; }
+	.resourcePins .examples footer .bookmarklet { width:90%; margin:15px auto; }
 	.apps .appleDevices { width:92%; background:none; height:auto; margin:0 auto 15px; }
 	.widget header { width:76%; }
 	.widget .focus { width:92%; background:none; height:auto; }
