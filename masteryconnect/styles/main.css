@@ -199,6 +199,7 @@ footer .legal { width:985px; margin:0 auto; }
 	footer .footerWrap .footerNav menu li { float:left; margin:0 25px 0 0; }
 	footer .cta { float:none; width:75%; }
 	footer .legal { width:100%; }
+	.flipper span::after { width:100%; padding:0; }
 	
 }
 /* iPhone Portrait */
@@ -219,6 +220,7 @@ footer .legal { width:985px; margin:0 auto; }
 	footer .footerWrap .footerNav menu li { padding:10px 0; }
 	footer .cta { float:none; width:75%; }
 	footer .legal { width:100%; }
+	.flipper span::after { width:100%; padding:0; }
 }
 
 
