@@ -34,7 +34,7 @@ nav .login { float:left; position:relative; top:22px; }
 
 .intro { background:url(../img/sprite.jpg) 0 0; max-height:278px; text-align:center; width:100%; padding:55px 0 25px 0; }
 .intro header { width:575px; margin:15px auto; text-shadow:1px 1px 1px #777; }
-.intro .getStarted { width:150px; margin:45px auto; }
+.intro .getStarted { width:165px; margin:45px auto; }
 .intro .getStarted p { margin:8px 0 0 0; }
 
 .resourcePins { background:#f5f5f5; }
