@@ -184,7 +184,7 @@ footer .legal { width:985px; margin:0 auto; }
 	.resourcePins .examples .page { background:none; float:none; width:50%; height:50%; margin:0 auto 25px; }
 	.resourcePins .examples .resource { margin:0 auto; float:none; width:75%; }
 	.resourcePins .examples .resource header { text-align:center; }
-	.resourcePins footer .pin { width:78%; margin:0 auto;  }
+	.resourcePins footer .pin { width:80%; margin:0 auto;  }
 	.resourcePins footer .pin label { width:auto; top:0; }
 	.resourcePins footer .bookmarklet { margin:15px auto; }
 	.resourcePins .examples .resource header { margin:0 0 20px 0;  }
