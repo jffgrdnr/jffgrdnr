@@ -1,19 +1,21 @@
 /****************************************
 	General CSS
 ****************************************/
-html { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
-button { box-shadow:0 1px rgba(255,255,255,.2),inset 0 1px rgba(255,255,255,.5); }
-button.lightGray { background-color:#eee; color:#444; padding:6px 10px; font-weight:bold; border:1px solid #bbb; box-shadow:inset 1px 1px 1px #fff; border-radius:1px; text-transform:uppercase; }
+html { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; background-size:cover;}
+button { -moz-box-shadow:0 1px rgba(255,255,255,.2),inset 0 1px rgba(255,255,255,.5); -webkit-box-shadow:0 1px rgba(255,255,255,.2),inset 0 1px rgba(255,255,255,.5); box-shadow:0 1px rgba(255,255,255,.2),inset 0 1px rgba(255,255,255,.5); }
+button.lightGray { background-color:#eee; color:#444; padding:6px 12px; font-weight:bold; border:1px solid #bbb; -webkit-box-shadow:inset 1px 1px 1px #fff; -moz-box-shadow:inset 1px 1px 1px #fff; box-shadow:inset 1px 1px 1px #fff; border-radius:1px; text-transform:uppercase; }
 button.lightGray:hover { background-color:#fafafa; }
 button.darkGray { background-color:#444; color:#eeeeee; border-radius:20px; padding:12px 25px; text-transform:uppercase; border:none; }
 button.darkGray:hover { background-color:#555; }
-button.orange { background-color:#fa982b; color:#fff; padding:12px 15px; border-radius:3px; border:1px solid #c10d01; }
+button.orange { background-color:#fa982b; color:#fff; padding:10px 16px; border-radius:3px; border:1px solid #c10d01; }
 button.orange:hover { background-color:#f4a722; }
 .white { color:#fff; }
+.lightGray { color:#ccc; }
 .gray { color:#555; }
 .green { color:#8dc63f; }
 .upper { text-transform:uppercase; }
-a:-webkit-any-link { color:#555; }
+nav a:-webkit-any-link { color:#555; }
+footer a:-webkit-any-link { color:#fff; }
 
 /****************************************
 	Main Content CSS
@@ -22,7 +24,7 @@ p { color:#696969; }
 article { margin:0 auto; }
 nav { width:985px; padding:25px 0 ; margin:0 auto; color:#585858; }
 nav .brand { float:left; cursor:pointer; }
-nav .logo { display:inline-block; background-image:url(../img/logo.jpg); width:41px; height:44px; position:relative; top:10px; }
+nav .logo { display:inline-block; background:url(../img/sprite.jpg) -604px -994px; width:41px; height:44px; position:relative; top:10px; max-width:100%; }
 nav menu { float:left; padding:20px 15px; margin:0 0 0 50px; position:relative; top:5px; }
 nav li { float:left; margin:0 15px 0 0; cursor:pointer; }
 nav li:hover { text-decoration:underline; }
@@ -30,54 +32,76 @@ nav .login { float:left; position:relative; top:22px; }
 
 .wrapper { width:985px; margin:0 auto; padding:95px 0; }
 
-.intro { background-image:url(../img/greenBack.png); background-size:cover; height:295px; text-align:center; width:100%; padding:75px 0 25px 0; }
+.intro { background:url(../img/sprite.jpg) 0 0; max-height:278px; text-align:center; width:100%; padding:55px 0 25px 0; }
 .intro header { width:575px; margin:15px auto; text-shadow:1px 1px 1px #777; }
-.intro .getStarted { width:800px; margin:45px auto; }
+.intro .getStarted { width:150px; margin:45px auto; }
 .intro .getStarted p { margin:8px 0 0 0; }
 
 .resourcePins { background:#f5f5f5; }
 .resourcePins header { width:550px; margin:0 auto 75px; text-align:center; }
 .resourcePins header h2 { margin:0 0 15px 0; }
 .resourcePins .examples { width:100%; }
-.resourcePins .examples .page { float:left; background-image:url(../img/page.jpg); width:605px; height:495px; max-width:100%; }
+.resourcePins .examples .page { float:left; background:url(../img/sprite.jpg) 0 -846px; width:605px; height:495px; max-width:100%; }
 .resourcePins .examples .resource { float:left; width:285px; margin:0 0 0 75px; text-align:left; }
 .resourcePins .examples .resource header { width:100%; margin:60px 0 20px 0; text-align:left; }
 .resourcePins .examples .resource header h3 { margin:0 0 15px 0; }
-.resourcePins footer .pin label { display:inline-block; margin:0 0 0 15px; width:90px; position:relative; top:8px; }
-.resourcePins footer .bookmarklet { background-image:url(../img/resource.jpg); width:300px; height:115px; margin:25px 0 0 0; }
+.resourcePins footer .pin label { display:inline-block; margin:0 0 0 15px; width:100px; position:relative; top:8px; }
+.resourcePins footer .bookmarklet { background:url(../img/sprite.jpg) -605px -850px; width:306px; height:112px; margin:25px 0 0 0; max-width:100%; }
 
 .apps header { margin:0 0 55px 0; text-align:center; }
-.apps .appleDevices { background-image:url(../img/appleDevices.jpg); width:815px; height:485px; margin:0 auto 85px; }
+.apps .appleDevices { background:url(../img/sprite.jpg) 0 -358px; width:815px; height:485px; margin:0 auto 85px; }
+.apps .downloads { width:100%; }
 .apps .downloads .app { float:left; width:275px; padding:0 25px; text-align:center; }
 .apps .downloads .app header { margin:0 0 15px 0; }
 .apps .downloads .icon { margin:0 0 25px 0; }
-.apps .downloads .core .icon { display:inline-block; background-image:url(../img/core.jpg); width:77px; height:77px; }
-.apps .downloads .scan .icon { display:inline-block; background-image:url(../img/scan.jpg); width:77px; height:77px; }
-.apps .downloads .assess .icon { display:inline-block; background-image:url(../img/assess.jpg); width:77px; height:77px; }
-.apps .downloads .app p { min-height:85px; }
+.apps .downloads .core .icon { display:inline-block; background:url(../img/sprite.jpg) -604px -1037px; width:77px; height:77px; }
+.apps .downloads .scan .icon { display:inline-block; background:url(../img/sprite.jpg) -604px -1112px; width:77px; height:77px; }
+.apps .downloads .assess .icon { display:inline-block; background:url(../img/sprite.jpg) -604px -1187px; width:77px; height:77px; }
+.apps .downloads .app p { min-height:105px; line-height:2em; }
 .apps footer { margin:15px 0 0 0; }
 .apps footer button { border-radius:40px; }
 
-.widget { background:#f5f5f5; }
+.widget { background:#f5f5f5; position:relative; }
+.widget .widgetTrigger { cursor:pointer; display:inline-block; padding:10px 35px; position:absolute; right:-68px; bottom:28%; border-radius:5px 5px 0 0; height:44px; background:#d2d2d2; 
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
+  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  /* Should be unset in IE9+ I think. */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+.widget .widgetTrigger .logo { display:inline-block; position:relative; top:9px; right:5px; width:29px; height:27px; background:url(data:image/png;base64,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); }
 .widget header { width:520px; text-align:center; margin:0 auto 45px; }
 .widget header h4 { margin:0 0 15px 0; }
-.widget .focus { display:inline-block; background-image:url(../img/focus.jpg); width:920px; height:495px; }
+.widget .focus { display:inline-block; background:url(../img/sprite.jpg) 0 -1340px; width:922px; height:494px; }
 .widget .code { margin:65px 0 15px 0; }
 .widget .code h5 { margin:0 0 15px 0; }
 .widget .code p { margin:0 0 15px 0; }
 .widget .code .embedSnippet { float:left; width:460px; text-align:right; }
 .widget .code .widgetSnippet { float:right; width:460px; text-align:left; }
-.widget textarea { width:445px; height:80px; background:#fff; max-height:80px; max-width:445px; text-align:left; border:1px solid #beb48e; border-radius:3px; -webkit-box-shadow:0 1px rgba(255, 255, 255, .1), inset 0 1px 2px rgba(0, 0, 0, .1); box-shadow:0 1px rgba(255, 255, 255, .1), inset 0 1px 2px rgba(0, 0, 0, .1); color:#333; font:inherit; outline:none; padding:5px 4px 5px 6px; text-align:left; vertical-align:middle; }
+.widget .code textarea { width:95%; height:80px; background:#fff; max-height:80px; max-width:445px; border:1px solid #beb48e; border-radius:3px; -webkit-box-shadow:0 1px rgba(255, 255, 255, .1), inset 0 1px 2px rgba(0, 0, 0, .1); box-shadow:0 1px rgba(255, 255, 255, .1), inset 0 1px 2px rgba(0, 0, 0, .1); color:#333; font:inherit; outline:none; padding:5px 4px 5px 6px; text-align:left; vertical-align:middle; }
 .widget .exampleVideo { width:215px; margin:45px auto; }
 .widget .exampleVideo button { border-radius:40px; padding:8px 15px; }
 
-footer { color:#ccc; }
-footer .upper { background-image:url(../img/footer.jpg); border-top:5px solid #000; background-size:contain; }
-footer .footerNav { float:left; }
-footer .footerNav menu { float:left; padding:55px 0; margin:0 25px 0 55px; width:225px; }
-footer .cta { float:right; width:500px; padding:55px 0; text-align:center; }
+footer.bottom { color:#ccc; background-image:url(../img/footer.jpg); border-top:5px solid #000; background-size:contain; width:100%; }
+footer menu h6 { margin:0 0 10px 0; }
+footer .footerWrap { width:985px; margin:0 auto; }
+footer .footerNav { float:left; width:750px; }
+footer .footerNav menu { float:left; padding:45px 0; margin:0 0 0 75px; }
+footer .cta { float:right; width:200px; padding:55px 0; text-align:center; }
 footer .cta button { border-radius:40px; margin:0 0 15px 0; padding:8px 15px; }
-footer .legal { background:#282828; padding:25px 55px; }
+footer .legalWrap { background:#282828; padding:25px 55px; }
+footer .legal { width:985px; margin:0 auto; }
 
 /*-----------------  Fancy link flipping on menu -----------------*/
 .flipper span { display:block; position:relative; padding:0 5px;
@@ -117,18 +141,84 @@ footer .legal { background:#282828; padding:25px 55px; }
 
 /* Not Large Screen */
 @media only screen and (max-width:1005px) {
-	
+	nav { width:100%; }
+	.wrapper { width:100%; }
+	nav .brand, nav menu, nav .login { float:none; margin:0 auto; }
+	nav .brand { width:295px; }
+	nav menu { width:475px; }
+	nav .login { margin:15px auto; width:125px; }
+
+	.intro { padding:5px 0;}
+	.intro header { width:75%; }
+	.intro .getStarted { margin:5px auto; }
+	.resourcePins header { width:75%; }
+
+	.apps .downloads .app { width:63%; float:none; margin:25px auto 35px; text-align:center; border-bottom:1px solid #ddd; padding:0 0 15px 0; }
+	.apps .downloads .app p { min-height:0; }
+	.apps .downloads .app footer button { border-radius:3px; width:50%; }
+
+	.widget .code { width:75%; margin:25px auto; }
+	.widget .code .embedSnippet { width:45%; }
+	.widget .code .widgetSnippet { width:45%; }
+
+	footer .footerWrap { width:100%; }
+	footer .footerWrap .footerNav { width:92%; margin:0 auto; }
+	footer .footerWrap .cta { width:92%; margin:0 auto; float:none; }
+	footer .footerWrap .cta button { width:50%; border-radius:3px; }
 }
 /* iPad Portait */
 @media only screen and (min-width:768px) and (max-width:1005px) {
-	
+	.resourcePins .examples .page { background:none; width:50%; height:50%; margin:0 0 0 35px; }
+	.resourcePins .examples .resource { margin:0 0 0 35px; }
+	.resourcePins .examples .resource header { margin:0 0 20px 0; }
+	.apps .appleDevices { width:92%; background:none; height:auto; }
+	.widget header { width:76%; }
+	footer .footerWrap { width:100%; }
+	footer .footerWrap .footerNav { float:none; width:65%; }
+	footer .footerWrap .footerNav menu { margin:0 0 0 23px; width:auto; }
+	footer .footerWrap .cta { float:none; }
 }
 /* iPhone Landscape */
 @media only screen and (min-width:480px) and (max-width:767px) {
+	.resourcePins header { margin:0 auto 25px; }
+	.resourcePins .examples .page { background:none; float:none; width:50%; height:50%; margin:0 auto 25px; }
+	.resourcePins .examples .resource { margin:0 auto; float:none; width:75%; }
+	.resourcePins .examples .resource header { text-align:center; }
+	.resourcePins footer .pin { width:78%; margin:0 auto;  }
+	.resourcePins footer .pin label { width:auto; top:0; }
+	.resourcePins footer .bookmarklet { margin:15px auto; }
+	.resourcePins .examples .resource header { margin:0 0 20px 0;  }
+	.apps .appleDevices { width:92%; background:none; height:auto; margin:0 auto 15px; }
+	.widget header { width:76%; }
+	.widget .focus { width:92%; background:none; height:auto; }
+	.widget .code .embedSnippet { width:66%; float:none; margin:0 auto 45px; text-align:left; }
+	.widget .code .widgetSnippet { width:66%; float:none; margin:0 auto 15px; text-align:left; }
+	footer .footerWrap { width:100%; }
+	footer .footerWrap .footerNav { float:none; width:85%; }
+	footer .footerWrap .footerNav menu { margin:0 auto; width:95%; padding:15px 0;  }
+	footer .footerWrap .footerNav menu li { float:left; margin:0 25px 0 0; }
+	footer .cta { float:none; width:75%; }
+	footer .legal { width:100%; }
 	
 }
 /* iPhone Portrait */
 @media only screen and (max-width:479px) {
-	
-	
+	nav menu { width:50%; text-align:center; }
+	nav li { float:none; width:100%; margin:8px 0 0 0; border:1px solid #ddd; border-radius:3px; padding:5px; }
+	flipper span { padding:5px; width:33%; }
+	flipper span::after { padding:5px; }
+	.resourcePins .examples .page { background:none; float:none; width:50%; height:50%; margin:0 auto 25px; }
+	.apps .appleDevices { width:92%; background:none; height:auto; margin:0 auto 15px; }
+	.widget header { width:76%; }
+	.widget .focus { width:92%; background:none; height:auto; }
+	.widget .code .embedSnippet { width:65%; float:none; margin:0 auto 45px; text-align:left; }
+	.widget .code .widgetSnippet { width:65%; float:none; margin:0 auto 15px; text-align:left; }
+	footer .footerWrap { width:100%; }
+	footer .footerWrap .footerNav { float:none; width:75%; }
+	footer .footerWrap .footerNav menu { margin:0 auto; float:none; padding:25px 0; width:65%; text-align:center; }
+	footer .footerWrap .footerNav menu li { padding:10px 0; }
+	footer .cta { float:none; width:75%; }
+	footer .legal { width:100%; }
 }
+
+

@@ -3,8 +3,8 @@
 html { overflow-y:scroll; height:100%; }
 body { height:100%; }
 body, button, dd, div, dl, dt, fieldset, form, input, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, textarea, ul { margin:0; padding:0; }
-body, h1, h2, h3, h4, h5, h6 { font:400 13px/1.5 Arial, sans-serif; }
-button, input { color:#555555; font:400 13px Arial, sans-serif; }
+body, h1, h2, h3, h4, h5, h6 { font:300 13px/1.5 'Open Sans', sans-serif; }
+button, input { color:#555555; font:300 13px 'Open Sans', sans-serif; }
 table { border-collapse:collapse; border-spacing:0; font:inherit; }
 fieldset, img { border:none; }
 address, caption, cite, code, em, th, h1, h2, h3, h4, h5, h6 { font-style:normal; font-weight:400; }
@@ -29,16 +29,14 @@ b { font-weight:bold; }
 cite,
 em,
 i { font-style:italic; }
+.thin { font-weight:300; }
+.light-bold { font-weight:500; }
+.semi-bold { font-weight:600; }
 .bold { font-weight:700; }
 .italic { font-style:italic; }
-.textdefault { font-style:normal; font-weight:400; }
+.slightSpace { letter-spacing:.05em; }
+.spaced { letter-spacing:.2em; }
 /********************************************************************************/
-/* Font families */
-.textalt { font-family:Georgia, "Times New Roman", Times, serif; }
-.textalt2 { font-family:Verdana, Verdana, Geneva, sans-serif; }
-.textalt3 { font-family:Lucida Sans Unicode, Lucida Grande, sans-serif; }
-.textalt4 { font-family:Tahoma, Geneva, sans-serif; }
-.textdefault { font-family:"Helvetica Neue", Arial, sans-serif; }
 /* Font sizes */
 .text13xlrg { font-size:66px; }
 .text12xlrg { font-size:60px; }
@@ -59,8 +57,46 @@ i { font-style:italic; }
 .textxsml { font-size:11px; }
 .text2xsml { font-size:9px; }
 /****************************************
-	Colors
+	Responsive Show/Hide classes
 ****************************************/
+
+/* IE 8 */
+@media \0screen {
+	.r .show768,
+	.r .show480,
+	.r .show320 { display:none\0/ !important; }
+}
+/* Large Screen */
+@media only screen and (min-width:1006px) {
+	.r .show768,
+	.r .show480:not(.hide768),
+	.r .show320:not(.hide768):not(.hide480),
+	.r .show768.hide480.show320 { display:none !important; }
+}
+/* Not Large Screen */
+@media only screen and (max-width:1005px) {
+	.r body #GlobalWrpr { min-width:320px; padding:0; width:auto; }
+}
+/* iPad Portait */
+@media only screen and (min-width:768px) and (max-width:1005px) {
+	.r .hide768,
+	.r .show480:not(.show768),
+	.r .show320:not(.show768) { display:none !important; }
+}
+/* iPhone Landscape */
+@media only screen and (min-width:480px) and (max-width:767px) {
+	.r body { -webkit-text-size-adjust:none; }
+	.r .hide768:not(.show480),
+	.r .hide480,
+	.r .show320:not(.show480) { display:none !important; }
+}
+/* iPhone Portrait */
+@media only screen and (max-width:479px) {
+	.r body { -webkit-text-size-adjust:none; }
+	.r .hide768:not(.show480):not(.show320),
+	.r .hide480:not(.show320),
+	.r .hide320 { display:none !important; }
+}
 
 /****************************************
 	Helper Classes
