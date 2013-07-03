@@ -46,7 +46,7 @@ nav .login { float:left; position:relative; top:22px; }
 .resourcePins .examples .resource header { width:100%; margin:60px 0 20px 0; text-align:left; }
 .resourcePins .examples .resource header h3 { margin:0 0 15px 0; }
 .resourcePins footer .pin label { display:inline-block; margin:0 0 0 15px; width:100px; position:relative; top:8px; }
-.resourcePins footer .bookmarklet { background:url(../img/sprite.jpg) -605px -850px; width:306px; height:112px; margin:25px 0 0 0; max-width:100%; }
+.resourcePins footer .bookmarklet { background:url(../img/sprite.jpg) -624px -850px; width:306px; height:108px; margin:25px 0 0 0; max-width:100%; }
 
 .apps header { margin:0 0 55px 0; text-align:center; }
 .apps .appleDevices { background:url(../img/sprite.jpg) 0 -358px; width:815px; height:485px; margin:0 auto 85px; }
