@@ -25,7 +25,7 @@ article { margin:0 auto; }
 nav { width:985px; padding:25px 0 ; margin:0 auto; color:#585858; }
 nav .brand { float:left; cursor:pointer; }
 nav .logo { display:inline-block; background:url(../img/sprite.jpg) -604px -994px; width:41px; height:44px; position:relative; top:10px; max-width:100%; }
-nav menu { float:left; padding:20px 15px; margin:0 0 0 50px; position:relative; top:5px; }
+nav menu { float:left; padding:20px 15px; margin:0 0 0 30px; position:relative; top:5px; }
 nav li { float:left; margin:0 15px 0 0; cursor:pointer; }
 nav li:hover { text-decoration:underline; }
 nav .login { float:left; position:relative; top:22px; }
@@ -34,7 +34,7 @@ nav .login { float:left; position:relative; top:22px; }
 
 .intro { background:url(../img/sprite.jpg) 0 0; max-height:278px; text-align:center; width:100%; padding:55px 0 25px 0; }
 .intro header { width:575px; margin:15px auto; text-shadow:1px 1px 1px #777; }
-.intro .getStarted { width:150px; margin:45px auto; }
+.intro .getStarted { width:165px; margin:45px auto; }
 .intro .getStarted p { margin:8px 0 0 0; }
 
 .resourcePins { background:#f5f5f5; }
@@ -184,7 +184,7 @@ footer .legal { width:985px; margin:0 auto; }
 	.resourcePins .examples .page { background:none; float:none; width:50%; height:50%; margin:0 auto 25px; }
 	.resourcePins .examples .resource { margin:0 auto; float:none; width:75%; }
 	.resourcePins .examples .resource header { text-align:center; }
-	.resourcePins footer .pin { width:78%; margin:0 auto;  }
+	.resourcePins footer .pin { width:80%; margin:0 auto;  }
 	.resourcePins footer .pin label { width:auto; top:0; }
 	.resourcePins footer .bookmarklet { margin:15px auto; }
 	.resourcePins .examples .resource header { margin:0 0 20px 0;  }
@@ -199,6 +199,7 @@ footer .legal { width:985px; margin:0 auto; }
 	footer .footerWrap .footerNav menu li { float:left; margin:0 25px 0 0; }
 	footer .cta { float:none; width:75%; }
 	footer .legal { width:100%; }
+	.flipper span::after { width:100%; padding:0; }
 	
 }
 /* iPhone Portrait */
@@ -207,7 +208,13 @@ footer .legal { width:985px; margin:0 auto; }
 	nav li { float:none; width:100%; margin:8px 0 0 0; border:1px solid #ddd; border-radius:3px; padding:5px; }
 	flipper span { padding:5px; width:33%; }
 	flipper span::after { padding:5px; }
+	.resourcePins .examples { width:95%; margin:0 auto; }
+	.resourcePins .examples .resource { float:none; width:95%; margin:15px auto; }
+	.resourcePins .examples .resource header { text-align:center; }
+	.resourcePins .examples footer { width:95%; margin:0 auto; float:none; }
+	.resourcePins .examples .pin { width:77%; margin:0 auto; }
 	.resourcePins .examples .page { background:none; float:none; width:50%; height:50%; margin:0 auto 25px; }
+	.resourcePins .examples footer .bookmarklet { width:90%; margin:15px auto; }
 	.apps .appleDevices { width:92%; background:none; height:auto; margin:0 auto 15px; }
 	.widget header { width:76%; }
 	.widget .focus { width:92%; background:none; height:auto; }
@@ -219,6 +226,7 @@ footer .legal { width:985px; margin:0 auto; }
 	footer .footerWrap .footerNav menu li { padding:10px 0; }
 	footer .cta { float:none; width:75%; }
 	footer .legal { width:100%; }
+	.flipper span::after { width:100%; padding:0; }
 }
 
 

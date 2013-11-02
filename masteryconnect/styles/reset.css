@@ -59,7 +59,10 @@ i { font-style:italic; }
 /****************************************
 	Responsive Show/Hide classes
 ****************************************/
-
+/* IE 7 */
+.r .show768,
+.r .show480,
+.r .show320 { *display:none !important; }
 /* IE 8 */
 @media \0screen {
 	.r .show768,
