@@ -1,0 +1,4 @@
+[submodule "origin/LightWrite"]
+	path = origin/LightWrite
+	url = git@github.com:jffgrdnr/jffgrdnr.git
+	branch = master
