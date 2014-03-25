@@ -16,42 +16,36 @@ define([
       '*actions': 'defaultAction'
     }
   });
-
-  initialize: 
-
-  function parseURL(url) {
-    var a =  document.createElement('a');
-    a.href = url;
-    return {
-        source: url,
-        protocol: a.protocol.replace(':',''),
-        host: a.hostname,
-        port: a.port,
-        query: a.search,
-        params: (function(){
-            var ret = {},
-                seg = a.search.replace(/^\?/,'').split('&'),
-                len = seg.length, i = 0, s;
-            for (;i<len;i++) {
-                if (!seg[i]) { continue; }
-                s = seg[i].split('=');
-                ret[s[0]] = s[1];
-            }
-            return ret;
-        })(),
-        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [,''])[1],
-        hash: a.hash.replace('#',''),
-        path: a.pathname.replace(/^([^\/])/,'/$1'),
-        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [,''])[1],
-        segments: a.pathname.replace(/^\//,'').split('/')
-    };
-  } 
  
   var initialize = function(options){
     
-
     var appView = options.appView;
     var router = new AppRouter(options);
+
+    $.getJSON( "../../../shows.json", function( data ) {
+      //Get URL and split it on 'program='
+      var a = document.URL
+      var res = a.split("program=");
+      var show = res[1];
+      program = data[show]
+      switch (show) {
+        case "Supernatural" :
+          var program = data.Supernatural
+          break;
+        case "Castle" :
+          var program = data.Castle
+          break;
+        case "The_Office" :
+          var program = data.The_Office
+          break;
+      }
+      require(['views/moments/page'], function (MomentsPage) {
+        var momentsPage = Vm.create(appView, 'MomentsPage', MomentsPage);
+        momentsPage.render(program);
+      });
+    });
+
+    
     router.on('route:defaultAction', function (section) {
       require(['views/home/page'], function (HomePage) {
         var homePage = Vm.create(appView, 'HomePage', HomePage);

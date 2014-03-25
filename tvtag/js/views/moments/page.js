@@ -10,22 +10,26 @@ define([
     initialize: function(){
     },
 
-    render: function () {
-
-      $.getJSON( "http://test.i.tv:4989/v2/tvtag/programs/se-4d1a5f207f6dfb6e36b3bda23062b82c/moments",  function( data ) {
-        var items = [];
-        $.each( data, function( key, val ) {
-          items.push( "<li id='" + key + "'>" + val + "</li>" );
-        });
-       
-        $( "<ul/>", {
-          "class": "programs",
-          html: items.join( "" )
-        }).appendTo( ".moments_list" );
+    render: function (program) {
+      console.log(program);
+      $.getJSON( "http://test.i.tv:4989/v2/tvtag/programs/'" + program + "'/moments",  function( data ) {
+        //var set = data.moments.sequence[0];
         console.log(data);
-      });
+        $.each(data.moments, function(index0, v) {
+          var items = [];
+          $.each(v, function (key, val) {
+            items.push( "<li id='" + key + "'>" + val + "</li>" );
+          });
+          $( "<ul/>", {
+            "class": "programs",
+            html: items.join( "" )
+          }).appendTo( ".moments" );
+          console.log(items);
+        });
 
-      this.$el.html(momentsPageTemplate);
+      });
+      
+      $(this.el).html(momentsPageTemplate);
     }
 
   });

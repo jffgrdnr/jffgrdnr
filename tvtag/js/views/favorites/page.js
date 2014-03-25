@@ -7,7 +7,7 @@ define([
   var FavoritesPage = Backbone.View.extend({
     el: '.page',
     render: function () {
-      this.$el.html(favoritesPageTemplate);
+      $(this.el).html(favoritesPageTemplate);
     }
   });
   return FavoritesPage;

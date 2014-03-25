@@ -15,10 +15,10 @@ define([
       $.getJSON( "../../../shows.json", function( data ) {
         var items = [];
         $.each( data, function( key, val ) {
-          items.push( "<li id='" + key + "' style='background:url(../../../img/" + key + ".jpg)no-repeat;'><span class='title'>" + key + "</span><a href='#/moments/?program=" + key + "'></a></li>" );
-          if (items.length == 10) {
-            items.shift();
-          }
+          items.push( "<li id='" + key + "' style='background:url(../../../img/" + key +
+           ".jpg)no-repeat;'><span class='title'>" + key +
+            "</span><a href='#/moments?:program=" + key +
+             "' highlightMenuItem(ev);></a></li>" );
         });
        
         $( "<ul/>", {
