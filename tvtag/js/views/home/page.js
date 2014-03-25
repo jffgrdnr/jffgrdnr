@@ -12,7 +12,7 @@ define([
         $.each( data, function( key, val ) {
           items.push( "<li id='" + key + "' style='background:url(../../../img/" + key +
            ".jpg)no-repeat;' data-program='"+ val +"'><span class='title'>" + key +
-            "</span><a href='#' onclick='momentsPage.render("+ val + ");''></a></li>" );
+            "</span><a href='#/moments/?program=" + val + "'></a></li>" );
         });
        
         $( "<ul/>", {
