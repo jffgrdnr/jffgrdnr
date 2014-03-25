@@ -3,65 +3,46 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'vm',
-  'views/moments/page'
+  'vm'
 ], function ($, _, Backbone, Vm) {
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Pages
-      'favorites': 'favorites',
       'moments': 'moments',
+      'favorites': 'favorites',
       
       // Default - catch all
       '*actions': 'defaultAction'
     }
   });
- 
+
   var initialize = function(options){
-    
     var appView = options.appView;
     var router = new AppRouter(options);
 
-    $.getJSON( "../../../shows.json", function( data ) {
-      //Get URL and split it on 'program='
-      var a = document.URL
-      var res = a.split("program=");
-      var show = res[1];
-      program = data[show]
-      switch (show) {
-        case "Supernatural" :
-          var program = data.Supernatural
-          break;
-        case "Castle" :
-          var program = data.Castle
-          break;
-        case "The_Office" :
-          var program = data.The_Office
-          break;
-      }
+    var program = 'se-4440ee8506a31b5f6bf71d4e22a2fd95';
+    router.on('route:moments', function () {
       require(['views/moments/page'], function (MomentsPage) {
         var momentsPage = Vm.create(appView, 'MomentsPage', MomentsPage);
         momentsPage.render(program);
       });
     });
-
-    
-    router.on('route:defaultAction', function (section) {
+    router.on('route:defaultAction', function (actions) {
       require(['views/home/page'], function (HomePage) {
         var homePage = Vm.create(appView, 'HomePage', HomePage);
         homePage.render();
       });
     });
     router.on('route:moments', function () {
-      require(['views/moments/page'], function (MomentsPage) {
+     require(['views/moments/page'], function (MomentsPage) {
         var momentsPage = Vm.create(appView, 'MomentsPage', MomentsPage);
         momentsPage.render();
       });
     });
-    router.on('route:favorites', function () {
-     require(['views/favorites/page'], function (FavoritePage) {
-        var favoritePage = Vm.create(appView, 'FavoritePage', FavoritePage);
-        favoritePage.render();
+    router.on('route:favorites', function (section) {
+      require(['views/favorites/page'], function (FavoritesPage) {
+        var favoritesPage = Vm.create(appView, 'FavoritesPage', FavoritesPage);
+        favoritesPage.render();
       });
     });
     Backbone.history.start();

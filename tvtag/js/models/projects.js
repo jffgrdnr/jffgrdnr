@@ -1,22 +1,13 @@
 define([
   'lodash',
-  'backbone',
-  'underscore',
-  'views/home/page'
+  'backbone'
 ], function(_, Backbone) {
   var projectsModel = Backbone.Model.extend({
-    view : home/page
-
-    initialize: function(){
-      
+    defaults: {
+      score: 10
     },
-
-    render: function(){
-
-
+    initialize: function(){
     }
-
-  }
 
   });
   return projectsModel;

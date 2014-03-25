@@ -227,14 +227,59 @@ a:hover {
 .navbar-fixed-bottom .container {
   width: 940px;
 }
-.container .page { margin-top:225px; max-width:750px; background:#fff;}
+.container h2 { font-size:22px; }
+.container .page { margin-top:225px; max-width:750px; }
+.container .program_list { margin:55px 0 0 0; }
 .container .program_list .programs { margin:18px 0 0 0; float:left; }
-.container .program_list .programs li {float:left; position:relative; width:200px; margin:0 25px 0 0; height:270px; list-style-type:none; border:1px solid #999; }
+.container .program_list .programs li {float:left; position:relative; width:200px; margin:0 25px 0 0; height:270px; list-style-type:none; border:1px solid #999;border-radius:15px; }
 .container .program_list .programs li .title { position:relative; top:-25px; margin:0 auto; font-size:14px; color:#8a8a8a;}
 .container .program_list .programs li a { display:block; height:270px; width:200px;}
+.container .moment_list .programs { margin:75px auto 45px;}
+.container .moment_list .programs li { margin:18px 0; list-style-type:none; font-size:16px; font-family:verdana; clear:both;}
+.container .moment_list .programs li img { border-radius:15px;}
+.container .moment_list .programs button, .container .favorites_list .programs button {
+  color: #fef4e9;
+  border: solid 1px #da7c0c;
+  background: #f78d1d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+  background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+  width:175px; 
+  border-radius:10px; 
+  height:45px; 
+  margin:0 0 50px 0;
+  clear:both;
+  outline:none;
+}
+
+.container .moment_list .programs button:hover {
+  background: #f47c20;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+  background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.container .moment_list .programs button:active {
+  color: #fcd3a5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+  background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+.container .moment_list .programs hr { color:#ccc; height:2px; }
+
+.container .favorites_list .programs { margin:75px auto 45px;}
+.container .favorites_list .programs li {margin:18px 0; list-style-type:none; font-size:16px; font-family:verdana; clear:both; }
+.container .favorites_list .programs li img { border-radius:15px; }
+.container .favorites_list .programs li.screenshotUrl { position:relative; }
+.container .favorites_list .programs li.screenshotUrl span.flag { position:relative; border-radius:0 4px 4px 0; color:#fff; top:75px; left:-6px; display:inline-block; width:150px; padding:8px 20px;
+  background: #68a2cb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#68a2cb), to(#4a83aa));
+  background: -moz-linear-gradient(top,  #68a2cb,  #4a83aa);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#68a2cb', endColorstr='#4a83aa');
+}
+.container .favorites_list .programs li.screenshotUrl span.flag .triangle {position:absolute; width:0; height:0; top:-4px; left:0; z-index:-1; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom: 5px solid #68a2cb; }
 
 
-.container .page_right { position:absolute; right:-85px; top:120px; z-index:100; width:220px; background:#fff; height:100%;}
+.container .page_right { position:absolute; right:-95px; top:120px; z-index:100; width:220px; background:#fff; height:100%;}
 .container .page_right .profile { top:-8px; position:relative; z-index:101; }
 .container .page_right .profile img#perf {border-radius:10px;box-shadow:-3px -2px 12px #333;  }
 .container .page_right .profile img#followers { margin-top:25px;   }
@@ -2177,7 +2222,7 @@ table th[class*="span"],
 .navbar-inverse .nav > .active > a > [class^="icon-"],
 .navbar-inverse .nav > .active > a > [class*=" icon-"],
 .navbar-inverse .navbar-under { height:144px; background:url(../img/jeans.jpg);}
-.navbar-inverse .navbar-under .under-top { width:938px; margin:0 auto; font-size:30px; color:#fff; text-shadow:1px 1px 1px #666; }
+.navbar-inverse .navbar-under .under-top { width:938px; margin:0 auto; font-size:30px; color:#fff; text-shadow:1px 1px 1px #666; position:relative; }
 .navbar-inverse .navbar-under .under-top h1 { padding:25px 0 15px 0; margin:0; font-weight:500;}
 .navbar-inverse .navbar-under .under-top h4 { font-size:15px; margin:0; color:#fafafa; font-weight:300; }
 .dropdown-menu > li > a:hover > [class^="icon-"],

@@ -2,21 +2,14 @@ define([
   'jquery',
   'lodash',
   'backbone',
-  'models/projects',
-  'views/home/page'
+  'models/projects'
 ], function($, _, Backbone, projectsModel){
   var projectsCollection = Backbone.Collection.extend({
     model: projectsModel,
-
-   
-    initialize: function () {
-
-    },
-
-    render: function () {
+    initialize: function(){
 
     }
-    
+
   });
 
   return projectsCollection;
