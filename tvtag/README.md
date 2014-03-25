@@ -1,9 +1,5 @@
-# Backbone boilerplate
-[http://backboneboilerplate.com](http://backboneboilerplate.com) is a community driven effort to help developers learn and rapidly deploy single page web applications.
-
-## Philosophy
-Coming soon
-
+# tvtag app
+This is a mock-up app for tvtag, using a mock/test rest call, Backbone, Node, Bootstrap, and a Backbone Boilerplate
 
 ## Other resources
 
@@ -13,18 +9,11 @@ Coming soon
 
 **Contact:**
 
-*   [@neutralthoughts](http://twitter.com/neutralthoughts) on twitter
-*   Github - https://github.com/thomasdavis
-*   thomasalwyndavis@gmail.com
+*   [@jffgrdnr](http://twitter.com/jffgrdnr) on twitter
+*   Github - https://github.com/jffgrdnr
+*   jeffreywgardner@gmail.com
 
 **Projects:**
 
-*   Javascript Library CDN - http://cdnjs.com
-*   Backbone.js Tutorials - http://backbonetutorials.com
-*   Proposal Generation Start up - http://protosal.com
-*   Technical Blog - http://thomasdavis.github.com
-*   Quora - http://www.quora.com/Thomas-Davis
-*   StackOverflow - http://stackoverflow.com/users/580675/thomas-davis
+*   StackOverflow - http://stackoverflow.com/users/610295/jffgrdnr
 
-Love you mum!
-<img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66606907ns.gif" />
