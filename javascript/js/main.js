@@ -5,6 +5,7 @@
 	myArr.push('bin');
 	console.log(myArr);
 
-	var a = 5;
+	a = 5;
+
 
 })();
