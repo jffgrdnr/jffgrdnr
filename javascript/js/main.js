@@ -5,7 +5,8 @@
 	myArr.push('bin');
 	console.log(myArr);
 
-	a = 5;
+	cheese = prompt("Do you like cheese?");
 
+	defaults = 1e1;
 
 })();
