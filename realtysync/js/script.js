@@ -32,7 +32,8 @@ $(document).ready(function(){
 
 
 	//Handle showing of modal
-	$(".show_modal").click(function(){
+	$(".show_modal").click(function(e){
+		e.preventDefault();
 		var modal = $("aside.modal"),
 			shadow = $("aside.modal_shadow");
 		shadow.fadeIn();
@@ -46,6 +47,26 @@ $(document).ready(function(){
 
 		shadow.fadeOut();
 	    modal.transition({y:"-1200px"}).fadeOut(200);
+	});
+
+	$("#tab_triggers li a").on("click",function(e){
+		e.preventDefault();
+		var me = $(this),
+			parent = me.parent(),
+			triggers = $("#tab_triggers li"),
+			tabContents = $(".tab_content"),
+			myId = me.data("tab"),
+			myContent = $('.tab_content[data-tab=' + myId + ']');
+
+		//console.log(myContent);
+		tabContents.removeClass("active");
+	    myContent.addClass("active");
+
+		triggers.removeClass("active");
+		parent.addClass("active");
+
+
+
 	});
 
 }); //End of Document Ready
