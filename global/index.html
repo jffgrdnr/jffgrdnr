@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v2/paging.css&x/css/v1/photo.css&x/css/v2/progress.css&x/css/v2/tab.css&x/css/v1/table.css&x/css/v1/template.css&x/css/v1/user-card.css&x/css/standards/standards.css&x/css/standards/prism.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<header class="mainHeader"></header>
+<article class="page">
+	<div class="ancGrid full480 ancGridPadded">
+		<div class="ancCol w100 bottomSpacing">
+			<header class="pageHeader">
+				<div class="pageHeaderCenter">
+					<div class="userCard userCardSize1 userCardStacked480 userCardInline">
+						<div class="userCardImg userCardPortrait">
+							<img alt="John F. Kennedy" src="images/portrait.jpg">
+						</div>
+						<div class="userCardContent">
+							<h6 class="userCardTitle">Page Header Example</h6>
+							<p class="userCardSubTitle noDisplay">1890-1967</p>
+							<div class="userCardEvents">
+								<p><span class="userCardEvent">Birth:</span> <span class="userCardEventDetail">22 April 1890, American Fork, Utah County, Utah, USA</span></p>
+								<p><span class="userCardEvent">Death:</span> <span class="userCardEventDetail">7 June 1967, Salt Lake City, Salt Lake County, Utah, USA</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="progress">
+				<h4 class="progressTitle icon iconPeople"><span class="hideVisually480">Your Family</span></h4>
+				<ol>
+					<li class="progressStep progressStepCompleted"><span class="hideVisually480">Your Name</span><span class="hideVisually">. Completed.</span></li>
+					<li class="progressStep progressStepCurrent" data-mobile-label="Step 3 of 4: "><span class="hideVisually480">Find Your Grandfather</span><span class="hideVisually">. Current step.</span></li>
+					<li class="progressStep">Finish Your Tree</li>
+				</ol>
+			</div>
+		</div>
+		<div class="ancCol ancColRow w66">
+			<section class="con">
+				<header class="conHeader">
+					<h2 class="conTitle">Find Your Grandfather</h2>
+				</header>
+				<menu class="tabs tabsCon tabs320" data-tab="standard_demo">
+					<button class="tab tabActive">Search</button>
+					<button class="tab">Choose from a list</button>
+				</menu>
+				<div class="conBody" data-tab-group="standard_demo">
+					<div class="tabContent tabActive">
+						<form action="#" class="form" enctype="multipart/form-data" method="post" id="myFirstValidatedForm">
+							<p class="requiredIndicator">Indicates required field</p>
+							<div class="ancGrid full320 topSpacing">
+								<div class="ancCol w50 ">
+									<label for="firstName1" class="required">First Name</label>
+									<input type="text" data-callout="The First Name needs to be at least 3 characters" id="firstName1" name="firstName1" />
+								</div>
+								<div class="ancCol w50">
+									<label for="lastName1" class="required">Last Name</label>
+									<input type="text" id="lastName1" name="lastName1" />
+								</div>
+								<div class="ancCol w100 ancColRow">
+									<label for="birthplace">Birthplace</label>
+									<input type="text" id="birthplace" name="birthplace" placeholder="Ex: Boston, Sacramento, Provo"/>
+								</div>
+								<div class="ancCol ancColRow w100 formFooter">
+									<input class="ancBtn orange" type="submit" id="submitMyName" name="submit" value="Search" />
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tabContent">
+						second tab contents
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="ancCol w33">
+			<aside class="conSecond">
+				<header class="conHeader">
+					<h3 class="">Need Help?</h3>
+				</header>
+				<div class="conBody">
+					<p class="topSpacing">If you are having a hard time finding your grandfather, you can contact our support for help.</p>
+				</div>
+				<a href="" class="ancBtn green topSpacing">get help</a>
+			</aside>
+		</div>
+	</div>
+</article>
+<footer class="mainFooter"></footer>
+</body>
+<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.0.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v1/form.js&x/js/v3/modal.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js"></script>
+ <script>
+	$(function() {
+		$('#myFirstValidatedForm').validator({
+			"fields": {
+				"firstName1": { "required": true, "errorLocation": "callout", "minLength": 3},
+				"lastName1": { "required": true, "errorLocation": "callout" }
+			}
+		});
+	});
+</script>
+</html>

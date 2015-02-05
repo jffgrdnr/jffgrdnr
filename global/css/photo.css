@@ -1,0 +1,45 @@
+@charset "utf-8";
+/****************************************
+	/css/v1/photo.css
+*****************************************/
+.photo { background-color:#dedcd6; border-radius:3px; box-shadow:0 0 0 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, .2); display:inline-block; line-height:0; max-width:100%; overflow:hidden; position:relative; text-align:center; -webkit-transition:box-shadow .2s; transition:box-shadow .2s; vertical-align:top; }
+.link.photo:not([class*="photoOutline"]):hover,
+.link:hover .photo:not([class*="photoOutline"]),
+a.photo:not([class*="photoOutline"]):hover,
+a:hover .photo:not([class*="photoOutline"]) { box-shadow:0 0 0 3px rgba(0, 0, 0, .25); }
+.photo[class*="photoOutline"]:not(:active):not(:hover):focus { outline-offset:4px; }
+.photo > img { max-height:100%; max-width:100%; vertical-align:middle; }
+.photoPortrait > img { max-height:none; }
+.photoLandscape > img { max-width:none; }
+.photoCircle { border-radius:50%; }
+.photoCenter { background-position:50%; background-repeat:no-repeat; background-size:cover; }
+.photoCenter > img { opacity:0; }
+.photoCenter:not(.icon) { line-height:0; }
+.photoCenter:not(.icon) > img { margin-left:50%; margin-top:50%; -ms-transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%); }
+.photoSize1 { height:600px; line-height:600px; width:600px; }
+.photoSize2 { height:250px; line-height:250px; width:250px; }
+.photoSize3 { height:160px; line-height:160px; width:160px; }
+.photoSize4 { height:100px; line-height:100px; width:100px; }
+.photoSize5 { height:30px; line-height:30px; width:30px; }
+.photoSize6 { height:120px; line-height:120px; width:120px; }
+.photoSize1.icon::before { font-size:560px; }
+.photoSize2.icon::before { font-size:240px; }
+.photoSize3.icon::before { font-size:140px; }
+.photoSize4.icon::before { font-size:80px; }
+.photoSize5.icon::before { font-size:28px; }
+.photoSize6.icon::before { font-size:96px; }
+/* Photo icons */
+.photo.icon { color:#9f9d98; display:inline-block; position:relative; }
+.photo.icon:before { height:inherit; left:0; line-height:inherit; position:absolute; text-align:center; top:0; width:inherit; }
+.photoProfileMale,
+.photo.iconMale { background-color:#a7cbca; color:#7ba29f; }
+.photoProfileFemale,
+.photo.iconFemale { background-color:#dfa296; color:#cc7d6d; }
+.photo.iconMale::before,
+.photo.iconFemale::before,
+.photo.iconPerson::before { -ms-transform:translateY(11%); -webkit-transform:translateY(11%); transform:translateY(11%); }
+/* Selected State */
+.photoOutline1 { box-shadow:0 0 0 3px #9e9a91; } /* Pebble */
+.photoOutline2 { box-shadow:0 0 0 3px #897ea2; } /* Purple */
+.photoOutline3 { box-shadow:0 0 0 3px #64afca; } /* Blue */
+.photoOutline4 { box-shadow:0 0 0 3px #9cbe30; } /* Green */
