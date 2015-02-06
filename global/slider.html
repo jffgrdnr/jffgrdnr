@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html class="r" lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Sliders | Ancestry.com® Standards</title>
+	<!-- Head content from header section -->
+	<!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+	<!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+	<!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content=" "/>
+	<link rel="canonical" href="" />
+	<script>var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+	document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');</script>
+	<link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v2/paging.css&x/css/v1/photo.css&x/css/v2/progress.css&x/css/v2/tab.css&x/css/v1/table.css&x/css/v1/template.css&x/css/v1/user-card.css&x/css/standards/standards.css&x/css/standards/prism.css" type="text/css" rel="stylesheet" />
+	<!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+	<style>form { padding:30px; }</style>
+	<style>
+		.toggle { height:1px !important; opacity:0; pointer-events:none; position:absolute; top:-500px; width:1px !important; }
+		.toggle + label { margin-bottom:45px; position:relative; }
+		.toggler { background-color:#BEBBB3; border-radius:15px; bottom:-35px; cursor:pointer; height:30px; left:0; overflow:hidden; position:absolute; -webkit-transition:background-color .2s; transition:background-color .2s; vertical-align:top; white-space:nowrap; word-wrap:normal; }
+		.calloutMenu,
+		.toggler,
+		.toggle + label { -webkit-touch-callout:none; -webkit-user-select:none; -ms-user-select:none; user-select:none; }
+		.toggle + label,
+		.toggler::selection { background:rgba(0, 0, 0, 0); }
+		.toggler::-moz-selection,
+		.toggle + label::-moz-selection { background:rgba(0, 0, 0, 0); }
+		.toggler::before,
+		.toggler::after { -webkit-box-sizing:border-box; box-sizing:border-box; clear:left; color:#fff; cursor:pointer; float:left; line-height:30px; min-width:100%; text-align:center; text-transform:uppercase; -webkit-transition:opacity .1s .1s; transition:opacity .1s .1s; }
+		.toggler::before { content:attr(data-label-off); opacity:1; padding:0 12px 0 34px; }
+		.toggler::after { content:attr(data-label-on); opacity:0; padding:0 34px 0 12px; }
+		.toggler span { background-color:#f2f1ee; background-image:-webkit-linear-gradient(#fff, #e2e1d9); background-image:linear-gradient(#fff, #e2e1d9); border:0; border-radius:12px; box-shadow:0 1px 1px rgba(0, 0, 0, .2); height:24px; left:4px; position:absolute; top:3px; width:24px; }
+		.toggler span::before { bottom:-3px; content:''; left:-3px; position:absolute; right:-3px; top:-3px;  }
+		.toggler:not(.toggling) span { -webkit-transition:left .2s; transition:left .2s; }
+		.toggle:checked + label .toggler:not(.togglingToOff),
+		.toggler.togglingToOn { background-color:#97b817; }
+		.togglingToOn { -webkit-transition-duration:.2s; transition-duration:.2s; }
+		.toggle:checked + label .toggler span { left:calc(100% - 28px); }
+		.toggle:checked + label .toggler::before { margin-top:-30px; opacity:0; }
+		.toggle:checked + label .toggler:not(.toggling)::after { opacity:1; }
+		label:not(:hover) + .toggle:focus + label .toggler:not(:hover) { box-shadow:0 0 0 2px #ff8223 !important; outline:none; }
+		.toggling.toggler::before,
+		.toggling.toggler::after { opacity:0; -webkit-transition-delay:0; transition-delay:0; }
+		/* In a callout menu */
+		.calloutMenu .toggle + label { margin-bottom:0; }
+		.calloutMenu .toggler { bottom:0; float:right; margin:-3px -7px 0 10px; position:relative; }
+	</style>
+</head>
+<body>
+	<form action="" class="form formage">
+		<button type="button" class="ancBtn calloutTrigger iconAfter iconArrowSmallDownAfter" id="sortMenuTrigger">Options</button>
+
+		<input class="toggle" type="checkbox" checked="checked" name="option3" id="option3" value="C" />
+		<label for="option3" class="topSpacingBlock"><span class="toggler"><span></span></span>Use random subscription pricing</label>
+
+		<input class="toggle" type="checkbox" name="option1" id="option1" value="On" />
+		<label for="option1" class="topSpacing"><span class="toggler" data-label-on="Yes" data-label-off="No"><span></span></span>Do you want to build a snowman?</label>
+
+		<input class="toggle" type="checkbox" name="option2" id="option2" value="No" />
+		<label for="option2" class="topSpacing"><span class="toggler" data-label-on="Nope" data-label-off="Not Really"><span></span></span>Do you like slider controls?</label>
+
+		<input class="toggle" type="checkbox" name="option8" id="option8" value="No" />
+		<label for="option8" class="topSpacing"><span class="toggler" data-label-on="Beta On" data-label-off="Beta Off"><span></span></span>Use beta?</label>
+	</form>
+	<ul id="sortMenu" class="calloutDomContent calloutMenu">
+		<li>
+			<input class="toggle" type="checkbox" name="option4" id="option4" value="D" />
+			<label class="link" for="option4"><span class="toggler"><span></span></span>Use high resolution images</label>
+		</li>
+		<li>
+			<input class="toggle" type="checkbox" name="option5" id="option5" value="E" />
+			<label class="link" for="option5"><span class="toggler"><span></span></span>Display random images</label>
+		</li>
+		<li>
+			<input class="toggle" checked="checked" type="checkbox" name="option6" id="option6" value="F" />
+			<label class="link" for="option6"><span class="toggler" data-label-on="Boo Yeah" data-label-off="Please No"><span></span></span>Show in rainbow colors or a spectrum of super fabulous sparkles</label>
+		</li>
+		<li>
+			<input class="toggle" checked="checked" type="checkbox" name="option7" id="option7" value="G" />
+			<label class="link" for="option7"><span class="toggler" data-label-on="On" data-label-off="Off"><span></span></span>Allow toggles</label>
+		</li>
+	</ul>
+	<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v1/form.js&x/js/v3/modal.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js"></script>
+	<script>
+		$(function () {
+			"use strict";
+			// -- This is specific to the demo page - should not be included in form.js
+			$('#sortMenuTrigger').callout({
+				'content': '#sortMenu'
+			});
+			// --
+			$('.toggle').on('change.form', function () {
+				var $this = $(this);
+				$this
+					.next('label')
+					//Make certain each toggle element gets only one click event
+					.one('mousemove.form', function () {
+						$this.blur();
+					});
+			});
+			$('.toggler')
+				.on('mousedown.form touchstart.form', 'span', function (e) {
+					var newX = false,
+						lastPageX = false,
+						sideSpacing = 4,
+						$toggleBtn = $(this),
+						$toggler = $toggleBtn.parent(),
+						inputId = $toggler.closest('label').attr('for'),
+						$toggle = $('#' + inputId),
+						currentlyChecked = $toggle.prop('checked'),
+						selectorToThisToggle = 'label[for="' + inputId + '"] .toggler',
+						currentLeftX = $toggleBtn.position().left,
+						//Getting native event x coordinate, whether desktop or touch enabled device
+						startPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+						minX = sideSpacing,
+						maxX = parseInt($toggler.css('width'), 10) - parseInt($toggleBtn.css('width'), 10) - sideSpacing;
+					function toggle (e) {
+						$toggler.removeClass('toggling togglingToOn togglingToOff').off('.toggle');
+						$toggleBtn.css('left', '');
+						$(document).off('.toggle');
+						setTimeout(function () {
+							//Set current 
+							$toggle.prop('checked', (Math.abs(startPageX - lastPageX) / (maxX - minX) > .3) || !newX ? !currentlyChecked : currentlyChecked);
+						});
+						return false;
+					}
+					$toggler.addClass('toggling').on('mouseleave.form.toggle', toggle);
+					$(document)
+						.on('mousemove.form.toggle touchmove.form.toggle', selectorToThisToggle, function (e) {
+							lastPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+							console.log(e.originEvent);
+							newX = currentLeftX + lastPageX - startPageX;
+							if (newX <= minX) {
+								newX = minX;
+							} else if (newX >= maxX) {
+								newX = maxX;
+							}
+							if ((currentLeftX === minX && (newX - sideSpacing || 1) / (maxX - minX) > .3) || (currentLeftX === maxX && (newX - sideSpacing) / (maxX - minX) > .7)) {
+								$toggler.addClass('togglingToOn').removeClass('togglingToOff');
+							} else {
+								$toggler.addClass('togglingToOff').removeClass('togglingToOn');
+							}
+							$toggleBtn.css('left', newX);
+							return false;
+						})
+						.on('mouseup.form.toggle touchend.form.toggle', toggle);
+					return false;
+				});
+		});
+	</script>
+</body>
+</html>
