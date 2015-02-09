@@ -4,13 +4,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Sliders | Ancestry.com® Standards</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<!-- Head content from header section -->
 	<!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
 	<!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
 	<!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content=" "/>
+	<meta name="description" content=" "/>
 	<link rel="canonical" href="" />
 	<script>var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
 	document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');</script>
@@ -18,7 +17,7 @@
 	<!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
 	<style>form { padding:30px; }</style>
 	<style>
-		.toggle { height:1px !important; opacity:0; pointer-events:none; position:absolute; top:-500px; width:1px !important; }
+		.toggle { height:1px !important; left:-1px; opacity:0; pointer-events:none; position:fixed; top:-1px; width:1px !important; }
 		.toggle + label { margin-bottom:45px; position:relative; }
 		.toggler { background-color:#BEBBB3; border-radius:15px; bottom:-35px; cursor:pointer; height:30px; left:0; overflow:hidden; position:absolute; -webkit-transition:background-color .2s; transition:background-color .2s; vertical-align:top; white-space:nowrap; word-wrap:normal; }
 		.calloutMenu,
@@ -50,7 +49,7 @@
 	</style>
 </head>
 <body>
-	<form action="" class="form formage">
+	<form action="" class="form formage" id="firstToggleForm">
 		<button type="button" class="ancBtn calloutTrigger iconAfter iconArrowSmallDownAfter" id="sortMenuTrigger">Options</button>
 
 		<input class="toggle" type="checkbox" checked="checked" name="option3" id="option3" value="C" />
@@ -83,14 +82,691 @@
 			<label class="link" for="option7"><span class="toggler" data-label-on="On" data-label-off="Off"><span></span></span>Allow toggles</label>
 		</li>
 	</ul>
-	<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v1/form.js&x/js/v3/modal.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js"></script>
+	<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v3/modal.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js"></script>
+	
 	<script>
-		$(function () {
+		/****************************************
+			/js/v1/form.js
+		*****************************************/
+		(function ($) {
 			"use strict";
-			// -- This is specific to the demo page - should not be included in form.js
-			$('#sortMenuTrigger').callout({
-				'content': '#sortMenu'
+			var Form,
+				Validator;
+			/* Exit if this file has already been included */
+			if ($.validator) {
+				log("Warning: form.js is being included more than once");
+				return false;
+			}
+			/***********************************
+			"Form" handles all needed
+			polyfills and provides some
+			basic form enhancements
+			************************************/
+			Form = {};
+			Form.isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+			Form.isPlaceholderSupported = typeof (document.createElement('input')).placeholder !== 'undefined';
+
+			/***********************************
+			Polyfill for placeholders which
+			are not supported in IE8/9. Adds
+			focus and blur events then
+			changes value as needed.
+			************************************/
+			Form.handlePlaceholders = function ($form) {
+				if (!Form.isPlaceholderSupported) {
+					$form
+						.find('input[placeholder], textarea[placeholder]')
+						.each(function () {
+							var placeholder;
+							/* Do not re-add placeholder polyfill && never add to password fields */
+							if ($(this).data('usesPlaceholderPolyfill') || $(this).attr('type') === "password") {
+								return true;
+							}
+							placeholder = $(this).attr('placeholder');
+							Form.addPlaceholderValue($(this), placeholder);
+							$(this)
+								.data('usesPlaceholderPolyfill', true)
+								.on('blur.form', function () {
+									if ($(this).val() === '') {
+										$(this)
+											.val(placeholder)
+											.addClass('placeholderPolyfill');
+									} else {
+										$(this).removeClass('placeholderPolyfill');
+									}
+								})
+								.on('focus.form', function () {
+									$(this).removeClass('placeholderPolyfill');
+									if ($(this).val() === placeholder) {
+										$(this).val('');
+									}
+								});
+						});
+				}
+			};
+			/***********************************
+			Remove Placeholders so they
+			aren't submitted in IE 8 & 9.
+			Allow them to be added back in
+			after a failed validation
+			************************************/
+			Form.removePlaceholderValues = function ($form) {
+				$form.find('input[placeholder]').each(function () {
+					if ($(this).val() === $(this).attr('placeholder')) {
+						$(this).val('');
+					}
+				});
+			};
+			Form.addPlaceholderValues = function ($form) {
+				$form.find('input[placeholder]:not([type="password"]), textarea[placeholder]').each(function() {
+					Form.addPlaceholderValue($(this), $(this).attr('placeholder'));
+				});
+			};
+			Form.addPlaceholderValue = function ($field, placeholder) {
+				/* Do not change value if field already has value */
+				if ($field.val() === '') {
+					$field.val(placeholder);
+				}
+				/* Add placeholder class if value is placeholder */
+				if ($field.val() === placeholder) {
+					$field.addClass('placeholderPolyfill');
+				}
+			};
+			/***********************************
+			Auto appends http:// if not
+			present on blur of URL field.
+			************************************/
+			Form.handleUrls = function ($field) {
+				if ($field.data('usesUrlPlaceholder')) {
+					return true;
+				}
+				$field
+					.data('usesUrlPlaceholder', true)
+					.on('blur.form', function () {
+						if ($field.val() && $field.val().indexOf("://") === -1 && ($field.val() !== $field.attr('placeholder'))) {
+							$field.val("http://" + $field.val());
+						}
+					});
+			};
+			/***********************************
+			Auto appends necessary extra
+			elements required to match UX
+			style guidelines. Also
+			prettifies the file name.
+			************************************/
+			Form.handleFileInputs = function ($form) {
+				$form
+					.find('input[type="file"]')
+					.each(function () {
+						var $field = $(this),
+							fileInputText;
+						if ($field.data('usesFilePolyfill')) {
+							return true;
+						}
+						fileInputText = Form.getLocalizedFileInputText($field.closest('[lang]').attr('lang'));
+						$field
+							.data('usesFilePolyfill', true)
+							.after('<label class="ancBtn fileBtn silver" for="' + $field.attr('id') + '">' + fileInputText + '</label><span class="filename"></span>')
+							.on('change.form', function () {
+								var filename = $(this).val().replace(/C:\\fakepath\\/, "");
+								filename = filename.substring(filename.lastIndexOf('\\') + 1, filename.length);
+								if (filename) {
+									$(this).siblings('.filename').html(filename);
+								} else {
+									$(this).siblings('.filename').html('');
+								}
+								/* Blur field to trigger validation cross-browser */
+								$(this).blur();
+							});
+						/*	Clicking the label in FF 21 & below does not trigger the file
+							select window. Fix this with custom event, but triggering the
+							click event in IE though throws a security error, preventing
+							form from being submitted, so we only do this for FF. */
+						if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+							var browserVersion,
+								ua = navigator.userAgent,
+								tem,
+								M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*([\d\.]+)/i) || [];
+							if(/trident/i.test(M[1])){
+								tem =  /\brv[ :]+(\d+(\.\d+)?)/g.exec(ua) || [];
+								browserVersion = 'IE '+(tem[1] || '');
+							} else {
+								M = M[2]? [M[1], M[2]]:[navigator.appName, navigator.appVersion, '-?'];
+								if ((tem = ua.match(/version\/([\.\d]+)/i))!= null) {
+									M[2]= tem[1];
+								}
+								browserVersion = M.join(' ');
+							}
+							browserVersion = browserVersion.split(' ');
+							browserVersion = browserVersion[1].split('.');
+							browserVersion = parseInt(browserVersion[0], 10);
+							if (browserVersion < 22) {
+								$('label[for="' + $field.attr('id') + '"]').on('click.form', function () {
+									$field.click();
+								});
+							}
+						}
+					});
+			};
+			Form.getLocalizedFileInputText = function (lang) {
+				lang = lang ? lang.substring(0, 2) : null;
+				switch (lang) {
+					case 'fr':
+						return 'Choisir le fichier';
+					case 'de':
+						return 'Datei ausw&#228;hlen';
+					case 'it':
+						return 'Scegli file';
+					case 'es':
+						return 'Selecciona un archivo';
+					case 'se':
+					case 'sv':
+						return 'V&#228;lj fil';
+					default:
+						return 'Choose file';
+				}
+			};
+			/***********************************
+			"Validator" handles all needed
+			validation on field inputs.
+			Exposes some common validation
+			methods that can be directly
+			called as well.
+			************************************/
+			Validator = {};
+			Validator.defaults = {
+				"validateOnSubmitHover": false,
+				"submitButton": null,
+				"onSubmit": false,
+				"fields": {}
+			};
+			Validator.patterns = {
+				match: function (value, match) {
+					return value === $('#' + match).val();
+				},
+				maxLength: function (value, maxLength) {
+					return value.length <= maxLength;
+				},
+				minLength: function (value, minLength) {
+					return value.length >= minLength;
+				},
+				extensions: function (value, extensions) {
+					return $.inArray(value.split('.').pop().toLowerCase(), extensions) !== -1;
+				},
+				email: function (value) {
+					return !!value.match(/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/);
+				},
+				number: function (value) {
+					return !!value.match(/^[0-9]*(\.[0-9]+)?$/);
+				},
+				tel: function (value) {
+					return !!value.match(/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/);
+				},
+				url: function (value) {
+					return !!value.match(/^(http|https|ftp):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i);
+				}
+			};
+			Validator.validateCollection = function ($collection, required) {
+				if (Number(required) > $collection.filter(':checked').length) {
+					return false;
+				}
+				return true;
+			};
+			Validator.isValid = function ($field, e) {
+				var value = '',
+					restrictions = $field.data('restrictions');
+				/* Ignore value of field if is only whitespace */
+				if ($field.val() && !/^\s*$/.test($field.val())) {
+					value = $field.val();
+				}
+				/* Validate checkboxes and radios */
+				if ($field.is('input[type="checkbox"], input[type="radio"]')) {
+					return Validator.validateCollection(restrictions.collection, restrictions.required);
+				}
+				/* Validate everything */
+				if (restrictions.pattern && $.isFunction(restrictions.pattern)) {
+					return restrictions.pattern(value, $field, !!restrictions.required, e || {"type": "validation"});
+				} else if (restrictions.required || value.length) {
+					/* validate if required and blank */
+					/* extensions, match, minLength, maxLength */
+					if (!value.length ||
+						(restrictions.extensions && !$.validator.extensions(value, restrictions.extensions)) ||
+						(restrictions.match && !$.validator.match(value, restrictions.match)) ||
+						(restrictions.minLength && !$.validator.minLength(value, restrictions.minLength)) ||
+						(restrictions.maxLength && !$.validator.maxLength(value, restrictions.maxLength))) {
+						return false;
+					}
+					/* validate if has pattern */
+					if (restrictions.pattern) {
+						return $.validator[restrictions.pattern](value);
+					}
+				}
+				return true;
+			};
+			Validator.removeErrorAndSuccess = function ($field) {
+				var $label = $field.data('$label');
+				$field
+					.removeClass('error success inform')
+					.removeAttr('aria-invalid')
+					.parent()
+					.find('.errorMessage')
+					.remove();
+				$label
+					.removeClass('error success inform')
+					.find('.errorMessage')
+					.remove();
+				if ($field.data('restrictions').collection) {
+					$field
+						.data('restrictions')
+						.collection
+						.removeClass('error success inform');
+				}
+				if ($field.data('hasErrorCallout') && jQuery().callout) {
+					$field
+						.data('hasErrorCallout', false)
+						.callout('destroy');
+					if ($field.attr('data-callout')) {
+						$field.callout();
+					}
+				}
+			};
+			Validator.updateValidationMessage = function($field, isValid) {
+				var errorClass,
+					$label = $field.data('$label'),
+					whichMessage = $label.attr('data-error-index') || 0,
+					restrictions = $field.data('restrictions'),
+					errorMessage = $.trim(($label.attr('data-error') || '').split('|')[whichMessage]);
+				Validator.removeErrorAndSuccess($field);
+				/* Leave as === true and === false so it's possible to pass in null/undefined/'delay'/'clear'/'info' to simply clear the validation message */
+				if (isValid === true) {
+					if ($field.data('restrictions').collection) {
+						$field
+							.data('restrictions')
+							.collection
+							.addClass('success');
+					}
+					$field.addClass('success');
+					$label.addClass('success');
+				} else if (isValid === false || isValid === 'info') {
+					errorClass = isValid === 'info' ? 'inform' : 'error';
+					if ($field.data('restrictions').collection) {
+						$field
+							.data('restrictions')
+							.collection
+							.addClass(errorClass);
+					}
+					$field
+						.addClass(errorClass)
+						.attr('aria-invalid', true);
+					$label.addClass(errorClass);
+					if (restrictions.errorLocation === 'callout' && jQuery().callout) {
+						$label.append('<span class="errorMessage icon iconWarning"></span>');
+						$field
+							.callout('destroy')
+							.data('hasErrorCallout', true)
+							.callout({
+								content: errorMessage,
+								classes: 'errorCallout'
+							});
+					} else if (restrictions.errorLocation === 'below' || restrictions.errorLocation === 'callout') {
+						$field
+							.parent()
+							.append('<div class="errorMessage icon iconWarning">' + errorMessage + '</div>');
+					} else {
+						$label.append('<span class="errorMessage icon iconWarning">' + errorMessage + '</span>');
+					}
+				}
+				$label.removeAttr('data-error-index');
+			};
+			Validator.validateForm = function ($form, scroll) {
+				var $firstErrorLabel = false,
+					$firstErrorInput = false,
+					customSuccess = true,
+					result,
+					validation = {
+						"success": true,
+						"errorFieldLabels": []
+					};
+				if (!Form.isPlaceholderSupported) {
+					Form.removePlaceholderValues($form);
+				}
+				$.each($form.data('fields'), function (key, $field) {
+					var $label = $field.data('$label');
+					/*	If an element was dynamically removed, delete
+					it from the validation list and continue on */
+					if ($field.length === 0) {
+						delete $form.data('fields')[key];
+						return true;
+					}
+					result = Validator.isValid($field);
+					if (result !== 'delay') {
+						if (!result || result === 'info') {
+							if ($firstErrorLabel === false) {
+								$firstErrorLabel = $label;
+								$firstErrorInput = $field;
+							}
+							Validator.updateValidationMessage($field, result);
+							validation.success = false;
+							if ($label.attr('data-error-label')) {
+								validation
+									.errorFieldLabels
+									.push($label.attr('data-error-label'));
+							} else {
+							validation
+								.errorFieldLabels
+								.push($label.contents().filter(function () {
+									return !$(this).is('a, b, button, i, em, span, strong');
+								}).text());
+							}
+						} else if ($field.val().length) {
+							Validator.updateValidationMessage($field, true);
+						}
+					}
+				});
+				if (!validation.success && scroll) {
+					/* Only scroll if not at top of page. */
+					if ($firstErrorLabel.offset().top < ($('html').scrollTop() || $(document).scrollTop())) {
+						$(document).scrollTop($firstErrorLabel.offset().top);
+					}
+					$firstErrorInput.focus();
+				}
+				if ($form.data('onSubmit')) {
+					/*	To cancel submit event on form, a boolean
+					is required. This line allows external onSubmit
+					function to return a truthy or falsy response */
+					validation.success = $form.data('onSubmit')(validation.success, $form) ? true : false;
+				}
+					/*	Since we removed placeholders above, then
+					the custom onSubmit function failed, add
+					placeholders back in. */
+				if (!validation.success && !Form.isPlaceholderSupported) {
+					Form.addPlaceholderValues($form);
+				}
+				return validation;
+			};
+			Validator.handleValidationOnSubmitHover = function ($form, settings) {
+				var localizedErrorMessage,
+					hoverAlertTimer,
+					spaceBetweenButtonAndAlert = 8,
+					$formAlert = $('#formAlert');
+				if (settings.validateOnSubmitHover && !Form.isTouchDevice) {
+					localizedErrorMessage = Validator.getLocalizedErrorMessage($form.closest('[lang]').attr('lang'));
+					settings.submitButton
+						.on('mouseenter.form focus.form', function () {
+							var $submitButton = $(this),
+								offset,
+								validationResults = Validator.validateForm($form, false);
+							clearTimeout(hoverAlertTimer);
+							if (!validationResults.success && validationResults.errorFieldLabels.length) {
+								offset = $submitButton.offset();
+								$formAlert
+									.css("opacity", 1)
+									.html('<h4><strong>' + localizedErrorMessage + '</strong></h4><p>' + validationResults.errorFieldLabels.join(', ') + '</p>')
+									.addClass('alert alertOverlay formAlertActive')
+									.offset({'left': offset.left + $submitButton.outerWidth() + spaceBetweenButtonAndAlert, 'top': offset.top - ($formAlert.outerHeight() - $submitButton.outerHeight()) / 2 });
+							}
+							if (!Form.isPlaceholderSupported) {
+								Form.addPlaceholderValues($form);
+							}
+						})
+						.on('mouseleave.form blur.form', function () {
+							$formAlert.css("opacity", 0);
+							hoverAlertTimer = setTimeout(function () {
+								$formAlert.removeClass('alert alertOverlay formAlertActive').removeAttr('style');
+							}, 500);
+						});
+				}
+			};
+			Validator.namespaceEvents = function (events) {
+				return events.split(" ").join(".form ") + ".form";
+			};
+			Validator.validateInput = function ($field, e) {
+				var result = Validator.isValid($field, e);
+				if (result === 'delay' || result === 'info') {
+					Validator.updateValidationMessage($field, result);
+				} else if (!result && $field.val() !== $field.attr('placeholder')) {
+					Validator.updateValidationMessage($field, false);
+				} else if ($field.val() && $field.val() !== $field.attr('placeholder')) {
+					Validator.updateValidationMessage($field, true);
+				} else {
+					Validator.removeErrorAndSuccess($field);
+				}
+			};
+			Validator.getLocalizedErrorMessage = function (lang) {
+				lang = lang ? lang.substring(0, 2) : null;
+				switch (lang) {
+					case 'fr':
+						return 'Il y a d&#8217;erreurs dans ces champs:';
+					case 'de':
+						return 'Es liegen Feldfehler vor:';
+					case 'it':
+						return 'Ci sono errori in questi campi:';
+					case 'mx':
+						return 'Hay campos con errores:';
+					case 'se':
+					case 'sv':
+						return 'Det uppstod fel f&#246;r dessa f&#228;lt:';
+					default:
+						return 'There are errors on these fields:';
+				}
+			};
+			Validator.init = function ($form, options) {
+				var settings = $.extend({}, Validator.defaults, options);
+				settings.submitButton = settings.submitButton || $form.find('input[type="submit"]').first();
+				/* Only allow form to be submitted once */
+				$form.data('allowSubmit', true);
+				/* Only run these once */
+				if (!$form.data('fields')) {
+					$form.on('submit.form', function () {
+						var validation = Validator.validateForm($form, true);
+						// Prevent double submission
+						if (validation.success && $form.data('allowSubmit')) {
+							$form.data('allowSubmit', false);
+							if (settings.allowMultipleSubmissions) {
+								setTimeout(function() {
+									$form.data('allowSubmit', true);
+								}, 1000);
+							}
+							return true;
+						}
+						return false;
+					});
+					Validator.handleValidationOnSubmitHover($form, settings);
+				}
+				/* Save external on submit function */
+				if (settings.onSubmit) {
+					$form.data('onSubmit', settings.onSubmit);
+				}
+				/* Save fields as data on the form to know which to validate later */
+				if (!$form.data('fields')) {
+					$form.data('fields', {});
+				}
+				/*	Only looping through the current fields that
+				were passed in with this instantiation. */
+				$.each(settings.fields, function (key, restrictions) {
+					var $field = $form.find('#' + key),
+						$label = $('label[for="' + key + '"]').first();
+					/*	Each input should have a unique ID, but some
+					services currently do not support this so
+					we also have to allow for unique names to
+					be passed in to be used as the identifier. */
+					if ($field.length === 0) {
+						$field = $form.find('[name="' + key + '"]');
+						/*	If an element was dynamically removed, delete
+						it from the validation list and continue on */
+						if ($field.length === 0) {
+							log("Invalid field ID: " + key);
+							return true;
+						}
+					}
+					/*	This is here because the only way to detect if an input
+					is of type="url" is by setting the pattern to be "url".
+					IE8 and 9 convert all unknown input types to type="text" */
+					if (restrictions.pattern === 'url') {
+						Form.handleUrls($field);
+					}
+					/*	To validate checkboxes and radios, you have
+					to pass in the ID of the label element */
+					if ($field.is('label, legend')) {
+						$label = $field;
+						$field = restrictions.collection;
+						restrictions.when = 'blur change';
+						/*	When a single checkbox needs validation
+						we need to set that checkbox as the
+						collection to later be able to validate
+						if it has been checked or not. */
+					} else if ($field.is('input[type="checkbox"]')) {
+						restrictions.collection = $field;
+						restrictions.when = 'blur change';
+					} else if (!restrictions.when) {
+						restrictions.when = 'blur';
+					}
+					/* Remove all previously bound events on each of these new fields */
+					if ($field.data('hasFormEvents')) {
+						$field.off('.form');
+					}
+					/*	Save field restrictions and label
+					onto element for easy retrieval. */
+					$field
+						.data('hasFormEvents', true)
+						.data('restrictions', restrictions)
+						.data('$label', $label);
+					/*	Save or replace field into form data for later use. */
+					$form.data('fields')[key] = $field;
+					/*	Bind the validation to the event from
+					the settings for this field. Default
+					event is on blur */
+					if (restrictions.when !== "submit") {
+						$field.on(Validator.namespaceEvents(restrictions.when), function (e) {
+							Validator.validateInput($(this), e);
+						});
+					}
+					/*	Show all server side validation and validate
+					all fields with value on load. */
+					if ($label.attr('data-error-index')) {
+						Validator.updateValidationMessage($field, false);
+					} else if ($field.val() && !$field.is('input[type="checkbox"], input[type="radio"], input[type="submit"]') && $field.val() !== $field.attr('placeholder')) {
+						if (!Validator.isValid($field)) {
+							Validator.updateValidationMessage($field, false);
+						} else {
+							Validator.updateValidationMessage($field, true);
+						}
+					}
+					/* Deprecate this for the sake of consistency. */
+					$field.on('showValidationMessage.form', function (e, isValid, indexOfErrorMessage) {
+						log("Deprecation Notice: Use $('selector').trigger('validation-message', [isValid, indexOfErrorMessage]); instead.");
+						$(this).trigger('validation-message.form', [isValid, indexOfErrorMessage]);
+					});
+				});
+
+				function getField($field) {
+					if ($field.is('label, legend')) {
+						$field = $form.data('fields')[$field.attr('id')] || $field;
+					}
+					return $field;
+				}
+
+				$form
+					/* Disable native browser validation */
+					.attr('novalidate', 'novalidate')
+					/* Allow for polyfills to be triggered here or after since a form can
+					be dynamically added. Must be bound after validation events are bound. */
+					.off('polyfills.form')
+					.on('polyfills.form', function() {
+						var $form = $(this);
+						Form.handlePlaceholders($form);
+						Form.handleFileInputs($form);
+					})
+					/* Ability to allow for a delayed callback to display the correct error message */
+					.off('validation-message.form')
+					.on('validation-message.form', 'input, label, legend, select, textarea', function (e, isValid, indexOfErrorMessage) {
+						var $field = getField($(this));
+						if (!$field.data('hasFormEvents')) { return false; } /* Exit if validation hasn't already been bound */
+						$field.data('$label').attr('data-error-index', indexOfErrorMessage);
+						Validator.updateValidationMessage($field, isValid);
+					})
+					/* Ability to dynamically set error index on a field */
+					.off('validation-error-index.form')
+					.on('validation-error-index.form', 'input, label, legend, select, textarea', function (e, index) {
+						var $field = getField($(this));
+						if (!$field.data('hasFormEvents')) { return false; } /* Exit if validation hasn't already been bound */
+						$field.data('$label').attr('data-error-index', index);
+					})
+					/* Ability to remove all validation from a field */
+					.off('validation-remove.form')
+					.on('validation-remove.form', 'input, label, legend, select, textarea', function () {
+						var $this = $(this),
+							$fieldId = $this.attr('id'),
+							$field = getField($this);
+						if (!$field.data('hasFormEvents')) { return false; } /* Exit if validation hasn't already been bound */
+						$field.trigger('validation-message.form', 'clear');
+						$field.off('.form').data('hasFormEvents', false);
+						delete $form.data('fields')[$fieldId];
+					})
+					/* Ability to trigger validation on each field */
+					.off('validation.form')
+					.on('validation.form', 'input, label, legend, select, textarea', function (e) {
+						var $field = getField($(this));
+						if (!$field.data('hasFormEvents')) { return false; } /* Exit if validation hasn't already been bound */
+						Validator.validateInput($field, e);
+					})
+					.trigger('polyfills.form');
+			};
+			/****************************************
+			Validator Plugin Options:
+			If plugin is instantiated on an input, label, select, or textarea is passed in o
+			"validateOnSubmitHover": BOOLEAN, true
+			"submitButton": jQuery OBJECT, default $form.find('input[type="submit"]')
+			"allowMultipleSubmissions": BOOLEAN, allows ajax forms to be submitted multiple times, default is false
+			"onSubmit": FUNCTION, default false
+			"fields": OBJECT,
+				"inputId" => OBJECT
+					Each field can have the following options:
+					'collection': jQuery Object, used for radio/checkbox inputs. Select each input in the group. i.e. $('input[name="interests[]"]')
+					'errorLocation': STRING, where to put the error message. - null, 'below', 'callout'
+					'pattern': STRING or FUNCTION - 'number', 'url', 'tel', 'email', function(value, $field) { ... return true || false; }
+					'match': STRING, pass in ID of the field to match. i.e. password field
+					'maxLength': INTEGER, max number of characters allowed in field
+					'minLength': INTEGER, min number of characters allowed in field
+					'required': BOOLEAN or INTEGER - whether field is required or number of checkboxes that must be selected
+					'extensions': ARRAY of STRINGs, allowed file extentions for input[type="file"]. Must be lowercase. (i.e. ['png', 'jpg', 'gif'])
+					'when': STRING, when to validate - any event. Default is on blur.
+			*****************************************/
+			$.fn.validator = function (options) {
+				if (this.is('label, legend, input, select, textarea')) {
+					log("Deprecation Notice: Use $('selector').trigger('validation'); instead.");
+					Validator.validateInput(this);
+				} else {
+					Validator.init(this, options);
+				}
+				return this;
+			};
+			/* Ability to trigger polyfills without the appearance of validating. */
+			$.fn.polyfill = $.fn.validator;
+			/* Publicly expose some validation methods */
+			$.validator = Validator.patterns;
+			$.validator.setErrorIndex = function ($field, index) {
+				log("Deprecation Notice: Use $('field-selector').trigger('validation-error-index', [0]); instead.");
+				$field.data('$label').attr('data-error-index', index);
+			};
+			/* Execute all validation and form polyfills that need to run onload. */
+			$(function () {
+				/* Add marker to allow for styles changes based on whether the device supports touch or not */
+				if (Form.isTouchDevice) {
+					$('html').addClass('touch');
+				} else {
+					$('html').addClass('noTouch');
+				}
+				if (!$('#formAlert').length) {
+					$('<div id="formAlert"></div>').appendTo('body');
+				}
 			});
+			/* Debug function */
+			function log(msg) {
+				if (window.console) {
+					console.log(msg);
+				}
+			}
 			// --
 			$('.toggle').on('change.form', function () {
 				var $this = $(this);
@@ -149,6 +825,16 @@
 						.on('mouseup.form.toggle touchend.form.toggle', toggle);
 					return false;
 				});
+		}(jQuery));
+	</script>
+	<script>
+		$(function() {
+			$('#firstToggleForm').validator({
+				"fields": {
+					"option1": { "required": true, "errorLocation": null},
+					"option2": { "required": true, "errorLocation": null }
+				}
+			});
 		});
 	</script>
 </body>
