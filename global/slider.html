@@ -840,8 +840,24 @@
 		}(jQuery));
 	</script>
 	<script>
+		//Run the validator
+		//Instantiate slider
+		//Add callout to button
 		$(function() {
-			
+			$('#firstToggleForm').validator({
+				"fields": {
+					"option1": { "required": true, "errorLocation": null},
+					"option2": { "required": true, "errorLocation": null }
+				}
+			});
+			$('#secondToggleForm').validator({
+				"fields": {
+					"option4": { "required": true, "errorLocation": null},
+					"option5": { "required": true, "errorLocation": null }
+				}
+			});
+			$(".toggle").slider();
+			$('#sortMenuTrigger').callout({'content': '#sortMenu'});
 		});
 	</script>
 </body>
