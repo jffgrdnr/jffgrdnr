@@ -64,24 +64,26 @@
 		<input class="toggle" type="checkbox" name="option8" id="option8" value="No" />
 		<label for="option8" class="topSpacing"><span class="toggler" data-label-on="Beta On" data-label-off="Beta Off"><span></span></span>Use beta?</label>
 	</form>
-	<ul id="sortMenu" class="calloutDomContent calloutMenu">
-		<li>
-			<input class="toggle" type="checkbox" name="option4" id="option4" value="D" />
-			<label class="link" for="option4"><span class="toggler"><span></span></span>Use high resolution images</label>
-		</li>
-		<li>
-			<input class="toggle" type="checkbox" name="option5" id="option5" value="E" />
-			<label class="link" for="option5"><span class="toggler"><span></span></span>Display random images</label>
-		</li>
-		<li>
-			<input class="toggle" checked="checked" type="checkbox" name="option6" id="option6" value="F" />
-			<label class="link" for="option6"><span class="toggler" data-label-on="Boo Yeah" data-label-off="Please No"><span></span></span>Show in rainbow colors or a spectrum of super fabulous sparkles</label>
-		</li>
-		<li>
-			<input class="toggle" checked="checked" type="checkbox" name="option7" id="option7" value="G" />
-			<label class="link" for="option7"><span class="toggler" data-label-on="On" data-label-off="Off"><span></span></span>Allow toggles</label>
-		</li>
-	</ul>
+	<form class="form" id="secondToggleForm">
+		<ul id="sortMenu" class="calloutDomContent calloutMenu">
+			<li>
+				<input class="toggle" type="checkbox" name="option4" id="option4" value="D" />
+				<label class="link" for="option4"><span class="toggler"><span></span></span>Use high resolution images</label>
+			</li>
+			<li>
+				<input class="toggle" type="checkbox" name="option5" id="option5" value="E" />
+				<label class="link" for="option5"><span class="toggler"><span></span></span>Display random images</label>
+			</li>
+			<li>
+				<input class="toggle" checked="checked" type="checkbox" name="option6" id="option6" value="F" />
+				<label class="link" for="option6"><span class="toggler" data-label-on="Boo Yeah" data-label-off="Please No"><span></span></span>Show in rainbow colors or a spectrum of super fabulous sparkles</label>
+			</li>
+			<li>
+				<input class="toggle" checked="checked" type="checkbox" name="option7" id="option7" value="G" />
+				<label class="link" for="option7"><span class="toggler" data-label-on="On" data-label-off="Off"><span></span></span>Allow toggles</label>
+			</li>
+		</ul>
+	</form>
 	<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v3/modal.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js"></script>
 	
 	<script>
@@ -768,73 +770,78 @@
 				}
 			}
 			// --
-			$('.toggle').on('change.form', function () {
-				var $this = $(this);
-				$this
-					.next('label')
-					//Make certain each toggle element gets only one click event
-					.one('mousemove.form', function () {
-						$this.blur();
+
+			// Slider plugin
+			$.fn.slider = function (options) {
+				var defaults = {}, 
+					options = $.extend(defaults, options), 
+					hiddenTrigger = $('.toggle'),
+					slider = $('.toggler');
+				return this.each(function() {
+					$(hiddenTrigger).on('change.form', function () {
+						var $this = $(this);
+						$this
+							.next('label')
+							//Make certain each toggle element gets only one click event
+							.one('mousemove.form', function () {
+								$this.blur();
+							});
 					});
-			});
-			$('.toggler')
-				.on('mousedown.form touchstart.form', 'span', function (e) {
-					var newX = false,
-						lastPageX = false,
-						sideSpacing = 4,
-						$toggleBtn = $(this),
-						$toggler = $toggleBtn.parent(),
-						inputId = $toggler.closest('label').attr('for'),
-						$toggle = $('#' + inputId),
-						currentlyChecked = $toggle.prop('checked'),
-						selectorToThisToggle = 'label[for="' + inputId + '"] .toggler',
-						currentLeftX = $toggleBtn.position().left,
-						//Getting native event x coordinate, whether desktop or touch enabled device
-						startPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
-						minX = sideSpacing,
-						maxX = parseInt($toggler.css('width'), 10) - parseInt($toggleBtn.css('width'), 10) - sideSpacing;
-					function toggle (e) {
-						$toggler.removeClass('toggling togglingToOn togglingToOff').off('.toggle');
-						$toggleBtn.css('left', '');
-						$(document).off('.toggle');
-						setTimeout(function () {
-							//Set current 
-							$toggle.prop('checked', (Math.abs(startPageX - lastPageX) / (maxX - minX) > .3) || !newX ? !currentlyChecked : currentlyChecked);
-						});
-						return false;
-					}
-					$toggler.addClass('toggling').on('mouseleave.form.toggle', toggle);
-					$(document)
-						.on('mousemove.form.toggle touchmove.form.toggle', selectorToThisToggle, function (e) {
-							lastPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
-							console.log(e.originEvent);
-							newX = currentLeftX + lastPageX - startPageX;
-							if (newX <= minX) {
-								newX = minX;
-							} else if (newX >= maxX) {
-								newX = maxX;
+					$(slider)
+						.on('mousedown.form touchstart.form', 'span', function (e) {
+							var newX = false,
+								lastPageX = false,
+								sideSpacing = 0,
+								$toggleBtn = $(this),
+								$toggler = $toggleBtn.parent(),
+								inputId = $toggler.closest('label').attr('for'),
+								$toggle = $('#' + inputId),
+								currentlyChecked = $toggle.prop('checked'),
+								selectorToThisToggle = 'label[for="' + inputId + '"] .toggler',
+								currentLeftX = $toggleBtn.position().left,
+								//Getting native event x coordinate, whether desktop or touch enabled device
+								startPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+								minX = sideSpacing,
+								maxX = parseInt($toggler.css('width'), 10) - parseInt($toggleBtn.css('width'), 10) - sideSpacing;
+							function toggle (e) {
+								$toggler.removeClass('toggling togglingToOn togglingToOff').off('.toggle');
+								$toggleBtn.css('left', '');
+								$(document).off('.toggle');
+								setTimeout(function () {
+									//Set current 
+									$toggle.prop('checked', (Math.abs(startPageX - lastPageX) / (maxX - minX) > .3) || !newX ? !currentlyChecked : currentlyChecked);
+								});
+								return false;
 							}
-							if ((currentLeftX === minX && (newX - sideSpacing || 1) / (maxX - minX) > .3) || (currentLeftX === maxX && (newX - sideSpacing) / (maxX - minX) > .7)) {
-								$toggler.addClass('togglingToOn').removeClass('togglingToOff');
-							} else {
-								$toggler.addClass('togglingToOff').removeClass('togglingToOn');
-							}
-							$toggleBtn.css('left', newX);
+							$toggler.addClass('toggling').on('mouseleave.form.toggle', toggle);
+							$(document)
+								.on('mousemove.form.toggle touchmove.form.toggle', selectorToThisToggle, function (e) {
+									lastPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+									console.log(e.originEvent);
+									newX = currentLeftX + lastPageX - startPageX;
+									if (newX <= minX) {
+										newX = minX;
+									} else if (newX >= maxX) {
+										newX = maxX;
+									}
+									if ((currentLeftX === minX && (newX - sideSpacing || 1) / (maxX - minX) > .3) || (currentLeftX === maxX && (newX - sideSpacing) / (maxX - minX) > .7)) {
+										$toggler.addClass('togglingToOn').removeClass('togglingToOff');
+									} else {
+										$toggler.addClass('togglingToOff').removeClass('togglingToOn');
+									}
+									$toggleBtn.css('left', newX);
+									return false;
+								})
+								.on('mouseup.form.toggle touchend.form.toggle', toggle);
 							return false;
-						})
-						.on('mouseup.form.toggle touchend.form.toggle', toggle);
-					return false;
+						});
 				});
+			}
 		}(jQuery));
 	</script>
 	<script>
 		$(function() {
-			$('#firstToggleForm').validator({
-				"fields": {
-					"option1": { "required": true, "errorLocation": null},
-					"option2": { "required": true, "errorLocation": null }
-				}
-			});
+			
 		});
 	</script>
 </body>
