@@ -771,7 +771,7 @@
 			}
 			// --
 
-			// Slider plugin
+			/* Slider plugin */
 			$.fn.slider = function (options) {
 				var defaults = {},
 					hiddenTrigger = $('.slider'),
@@ -781,13 +781,17 @@
 						var $this = $(this);
 						$this
 							.next('label')
-							//Make certain each slider element gets only one click event
+							/* Make certain each slider element gets only one click event */
 							.one('mousemove.form', function () {
 								$this.blur();
 							});
 					});
 					$(sliderHandle)
 						.on('mousedown.form touchstart.form', 'span', function (e) {
+							/* If right click, return false */
+							if (e.which !== 1 ) {
+								return false;
+							};
 							var newX = false,
 								lastPageX = false,
 								sideSpacing = 0,
@@ -798,7 +802,7 @@
 								currentlyChecked = $slider.prop('checked'),
 								selectorToThisSlider = 'label[for="' + inputId + '"] .sliderHandle',
 								currentLeftX = $sliderBtn.position().left,
-								//Getting native event x coordinate, whether desktop or touch enabled device
+								/* Getting native event x coordinate, whether desktop or touch enabled device */
 								startPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
 								minX = sideSpacing,
 								maxX = parseInt($sliderHandle.css('width'), 10) - parseInt($sliderBtn.css('width'), 10) - sideSpacing;
@@ -807,7 +811,7 @@
 								$sliderBtn.css('left', '');
 								$(document).off('.slider');
 								setTimeout(function () {
-									//Set current 
+									/* Set current */
 									$slider.prop('checked', (Math.abs(startPageX - lastPageX) / (maxX - minX) > .3) || !newX ? !currentlyChecked : currentlyChecked);
 								});
 								return false;
