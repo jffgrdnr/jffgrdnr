@@ -788,10 +788,6 @@
 					});
 					$(sliderHandle)
 						.on('mousedown.form touchstart.form', 'span', function (e) {
-							/* If right click, return false */
-							if (e.which !== 1 ) {
-								return false;
-							};
 							var newX = false,
 								lastPageX = false,
 								sideSpacing = 0,
