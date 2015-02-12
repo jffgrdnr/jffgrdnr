@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="r" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Modals | Ancestry.com® Standards</title>
+    <!-- Head content from header section -->
+    <!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+    <!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+    <!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=" " />
+    <link rel="canonical" href="" />
+    <script>
+    var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+    document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');
+    </script>
+    <link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v2/paging.css&x/css/v1/photo.css&x/css/v2/progress.css&x/css/v2/tab.css&x/css/v1/table.css&x/css/v1/template.css&x/css/v1/user-card.css&x/css/standards/standards.css&x/css/standards/prism.css" type="text/css" rel="stylesheet" />
+    <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+    <section class="con">
+    	<a href="javascript:void(0);" class="ancBtn lrg" id="openModal">Open Modal</a>
+    </section>
+    <script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v3/modal.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js"></script>
+    <section id="modal1" class="modal" data-title="Default Modal">
+    	<header></header>
+    	<form>
+    		<fieldset>
+    			<label>Hi, I'm a label</label>
+    			<input type="text" />
+				<a href="javascript:void(0);" class="ancBtn sml" id="resizeModal">Resize Modal</a>
+    		</fieldset>
+    	</form>
+    </section>
+    <section id="modal2" class="modal" data-title="Default Modal">
+    	<header></header>
+    	Another Modal
+    </section>
+        <script>
+    	$("#openModal").click(function(e) {
+    		$("#modal1").modal({
+    			width: '500',
+    			onOpen: function() {
+    				$("#resizeModal").click(function(e) {
+			    		$("<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>").modal({
+				    			width: '200'
+				    		});
+			    	});
+    			}
+    			onClose: 
+    		});
+    	});
+    	
+    	$('#modalModal').click(function(e) {
+			$('<div>Here is a dynamic example of a modal after a modal. <a class="btn" id="modal-embedded" href="javascript:void(0)">Click to see the next...</a></div>').modal({
+				onOpen: function() {
+					$('#modal-embedded').click(function(e) {
+						$('<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>').modal({
+							width: '200px',
+							onClose: function() {
+								console.log('2nd closed');
+							}
+						});
+					});
+				},
+				onClose: function() {
+					console.log('1st closed');
+				}
+			});
+		});
+    </script>
+</body>
+</html>
