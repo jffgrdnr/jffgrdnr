@@ -7,6 +7,7 @@
 
 	cheese = prompt("Do you like cheese?");
 
+	console.log(cheese);
 	defaults = 1e1;
 
 })();
