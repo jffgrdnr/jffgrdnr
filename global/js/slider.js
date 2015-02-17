@@ -4,18 +4,18 @@
 ;(function ($) {
 	$.fn.slider = function () {
 		return this.each(function () {
-			var $this = $(this);
-			$this
+			var $input = $(this),
+				$sliderHandle = $input.next().find('.sliderHandle');
+			$input
 				.on('change.form', function () {
-					$this
+					$input
 						.next('label')
 						/* Make certain each slider element gets only one click event */
 						.one('mousemove.form', function () {
-							$this.blur();
+							$input.blur();
 						});
 				})
-				.next()
-				.find('.sliderHandle')
+				$sliderHandle
 				.on('mousedown.form touchstart.form', 'span', function (e) {
 					var newX = false,
 						lastPageX = false,
