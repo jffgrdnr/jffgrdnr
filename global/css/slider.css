@@ -20,7 +20,7 @@
 .sliderHandle span::before { bottom:-3px; content:''; left:-3px; position:absolute; right:-3px; top:-3px;  }
 .sliderHandle:not(.sliding) span { -webkit-transition:left .2s; transition:left .2s; }
 .slider:checked + label .sliderHandle:not(.slidingToOff),
-.sliderHandle.slidingToOn { background-color:#899c02; }
+.sliderHandle.slidingToOn { background-color:#97b817; }
 .slidingToOn { -webkit-transition-duration:.2s; transition-duration:.2s; }
 .slider:checked + label .sliderHandle span { left:calc(100%  -  28px); }
 .slider:checked + label .sliderHandle::before { margin-top:-30px; opacity:0; }
