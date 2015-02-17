@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html class="r" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Forms | Ancestry.com® Standards</title>
+    <!-- Head content from header section -->
+    <!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+    <!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+    <!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content=" " />
+    <link rel="canonical" href="" />
+    <script>
+    var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+    document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');
+    </script>
+    <link rel="stylesheet" href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v1/activity-indicator.css&amp;x/css/v2/alert.css&amp;x/css/v1/autocomplete.css&amp;x/css/v1/button.css&amp;x/css/v1/callout.css&amp;x/css/v1/card.css&amp;x/css/v2/carousel.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v1/icon.css&amp;x/css/v3/modal.css&amp;x/css/v2/paging.css&amp;x/css/v1/photo.css&amp;x/css/v2/progress.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css&amp;x/css/v1/user-card.css&amp;x/css/standards/standards.css&amp;x/css/standards/prism.css">
+    <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+    <!-- Head content from page -->
+    <meta name="description" content="Ancestry.com® encourages developers to use the standardized input fields, select dropdowns, textareas, and form validation when coding forms to the site." />
+    <style>
+    #examples .hList img {
+        height: 135px;
+    }
+    .photo {
+        max-height: 154px;
+        max-width: 154px;
+        overflow: hidden;
+        position: relative;
+    }
+    .photo img {
+        display: block;
+        max-width: none;
+    }
+    .mainContent .form {
+        max-width: 600px;
+    }
+    dl dl {
+        margin-left: 24px;
+    }
+    dl dl > dt:before {
+        content: '\2013';
+        margin: 0 8px 0 -16px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="standards">
+        <header class="mainHeader" role="banner">
+            <!-- Content from header section -->
+            <button type="button" class="icon iconList menuButton calloutTriggerNoArrow" title="Menu Button"></button>
+            <div class="clearfix logoArea">
+                <a href="home" title="back to Home page"><img alt="back to Home page" src="http://c.mfcreative.com/header/i/logos/ancestry-com.png" />
+                </a>
+                <h1 class="logoText text2xlrg"><a href="home" title="back to Home page">Standards</a></h1>
+                <div class="searchWrap">
+                    <p class="contact"><a href="mailto:standards@ancestry.com" title="Contact the standards team">Contact the Standards Team</a>
+                    </p>
+                    <form class="form" id="liveSearchWrap" method="post" autocomplete="off" role="search">
+                        <fieldset>
+                            <label class="icon iconSearch" for="liveSearch" title="Enter a class, filename, or keyword..." tabindex="-1">Search</label>
+                            <input type="text" placeholder="Enter a class, filename, or keyword..." id="liveSearch" value="" data-index="0" class="ancBtn silver">
+                            <div class="tooltipBox">
+                                <p>Press
+                                    <kbd>/</kbd> to open the search field.</p>
+                                <p class="howto">Type a keyword to see related standards. Press
+                                    <kbd>&crarr;</kbd> to go to highlighted standard.</p>
+                            </div>
+                            <div id="liveSearchResults"></div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="navMenu" id="navMenu" role="navigation">
+                <ul>
+                    <li class="menuTab homeTab"><a href="home">Home</a>
+                    </li>
+                    <li class="menuTab uxGuidelinesTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="1">UX Guidelines </button>
+                        <ul class="menuList">
+                            <li class="nav-accessibility" data-related-classes="" data-keywords="accessibility, blind, color-blind, deaf, hearing impaired, visually impaired contrast ratio visual presentation keyboard accessibility"><a href="accessibility">Accessibility</a>
+                            </li>
+                            <li class="nav-branding" data-related-classes="" data-keywords="branding, manifesto, mission, values, position, promise, voice, tone, audience profiles, portfolio, architecture, design guidelines, logos, color palette, typography, photography, graphics, iconography, leaf mark, copy guidelines, bonsai, component reference, contrast, illustrations, details, touch, testing, resources"><a href="branding">Branding</a>
+                            </li>
+                            <li class="nav-copywriting" data-related-classes="" data-keywords="copywrite, copywriting, ancestry brand"><a href="copywriting">Copywriting</a>
+                            </li>
+                            <li class="nav-designPrinciples" data-related-classes="" data-keywords="design principles, ui principles, ux principles, design for the 80%, design with content, define the audience, don't make me think, add life and motion, make it shine"><a href="design-principles">Design Principles</a>
+                            </li>
+                            <li class="nav-photography" data-related-classes="" data-keywords="photography, photos, photographs, pictures, images, graphics"><a href="graphics">Photography</a>
+                            </li>
+                            <li class="nav-productPrinciples" data-related-classes="" data-keywords="product principles, ux principles, rich, simple, social, tell me a story, get me to the good stuff, make it meaningful to me, connect me to other people"><a href="product-principles">Product Principles</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menuTab pageStructureTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="2">Page Structure </button>
+                        <ul class="menuList">
+                            <li class="nav-containers" data-related-classes=".con, .conInner, .conSecond, .conThird, .conHeader, .conTitle, .conBody, .conFooter, .conFooterAlt, .conSection, .conDivider" data-keywords="container.css, containers, subcontainers, panels, boxes, widgets, tabbed containers, inner containers, main content containers, secondary content containers, tertiary content containers"><a href="containers">Containers</a>
+                            </li>
+                            <!-- <li class="nav-globalHeaderAndFooter" data-related-classes="" data-keywords="global header, global footer"><a href="global-header-and-footer">Global&nbsp;Header&nbsp;&amp;&nbsp;Footer</a></li> -->
+                            <li class="nav-gridLayouts" data-related-classes=".ancCol, .ancColRight, .ancColRow, .ancColRow320, .ancCol480, .ancCol768, .ancGrid, .ancGridBreak, .ancGridBreak320, .ancGridBreak480, .ancGridBreak768, .ancGridEqual, .ancGridNoGutters, .ancGridPadded, .ancGridSmall, .con, .conBody, .conSecond, .conThird, .full320, .full480, .full768, .half320, .half480, .half768, .hide320, .hide480, .hide768, .third320, .third480, .third768, .w10, .w12, .w16, .w20. .w20, .w25, .w30, .w33, .w37, .w40, .w50, .w60, .w62, .w66, .w70, .w75, .w80, .w83, .w87, .w90, .w100" data-keywords="grid.css, grids, responsive grid systems, responsive grid layouts, responsive page layouts, responsive framework"><a href="grid-layouts">Grid&nbsp;Layouts</a>
+                            </li>
+                            <li class="nav-pageTemplates" data-related-classes=".page, .pageHeader, .pageTitle, .pageNav, .pageCrumbs, .pageCrumb, .pageIntro, .pageHeaderImage, .pageHeaderCaption, .pageBack, .pagePrint, .pageSimpleHeader, .pagePadded" data-keywords="template.css, breadcrumbs, breadcrumb navigation, back buttons, inter-page navigations, page templates, page layouts, page structure, default layout, default page layout"><a href="page-templates">Page&nbsp;Templates</a>
+                            </li>
+                            <!-- <li class="nav-sideNavigation" data-related-classes="" data-keywords=""><a href="side-navigation">Side&nbsp;Navigation</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="menuTab styleGuideTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="3">Style Guide </button>
+                        <ul class="menuList">
+                            <!-- <li class="nav-ancestryBrand" data-related-classes="" data-keywords="ancestry brands, ancestry brandings, ancestry logos, leaf logos"><a href="ancestry-brand">Ancestry&nbsp;Brand</a></li> -->
+                            <!-- <li class="nav-breadcrumbs" data-related-classes="" data-keywords="breadcrumbs, breadcrumb navigation, back buttons, inter-page navigations"><a href="breadcrumbs">Breadcrumbs</a></li> -->
+                            <li class="nav-buttons" data-related-classes=".active, .ancBtn, .ancBtnL, .ancBtnM, .ancBtnR, .ancBtnRnd, .brown, .disabled, .focus, .full320, .full480, .full768, .orange, .silver, .lrg, .sml, .tin" data-keywords="button.css, button.js, buttons, links, calls to action, CTAs, call to action"><a href="buttons">Buttons</a>
+                            </li>
+                            <li class="nav-badges inBonsai" data-related-classes="" data-keywords="button.css, badges"><a href="badges">Badges</a>
+                            </li>
+                            <li class="nav-cards" data-related-classes=".card, .cardAction, .cardActions, .cardEmpty, .cardHasBottomSelectAction, .cardHasSelectAction, .cardSubtitle, .cardTitle" data-keywords="card.css, cards"><a href="cards">Cards</a>
+                            </li>
+                            <li class="nav-colorPalette" data-related-classes="" data-keywords="ancestry colors, ancestry color palette, leaf green, antique grey, antique wash, shaded leaf, northern sky, field grass, light leaf, old black, desert clay, burnt earth, sunlit, link colors, hyperlink colors"><a href="color-palette">Color&nbsp;Palette</a>
+                            </li>
+                            <li class="nav-forms" data-related-classes="#calloutContent, #formAlert, .alert, .alertOverlay, .ancBtn, .btnInline, .checkbox, .disabled, .error, .errorCallout, .errorMessage, .fileBtn, .filename, .form, .formAlertActive, .formFooter, .formLarge, .formLarge480, .formLargest, .full320, .full480, .full768, .helpText, .inform, .noLabel, .textareaLarge, .helpText, .icon, .iconWarning, .ie, .ie7, .ie8, .inform, .inputSubmit, .link, .lrg, .noLabel, .noTouch, .placeholderPolyfill, .radio, .required, .requiredIndicator, .silver, .sml, .success, .textareaLarge, .tin, .touch" data-keywords="form.css, form.js, forms, inputs, text fields, checkboxes, radio buttons, submit buttons, textareas, labels, ledgend, select, option, file input, check boxes"><a href="forms">Forms</a>
+                            </li>
+                            <li class="nav-graphics" data-related-classes=".photo, .photoPortrait, .photoLandscape, .photoCenter, .photoSize1, .photoSize2, .photoSize3, .photoSize4, .photoSize5, .photoSize6, .photoProfile, .photoProfileMale, .photoProfileFemale" data-keywords="photo.css, images, imagery, graphics, icons, iconography, logos, retina display, retina images, retina devices"><a href="graphics">Graphics</a>
+                            </li>
+                            <li class="nav-iconography" data-related-classes=".icon, .iconAfter, .iconAcom, .iconAdd, .iconArrowBack, .iconArrowDown, .iconArrowLeft, .iconArrowRight, .iconArrowUp, .iconArrowSmallDown, .iconArrowSmallDownAfter, .iconArrowSmallLeft, .iconArrowSmallLeftAfter, .iconArrowSmallRight, .iconArrowSmallRightAfter, .iconArrowSmallUp, .iconArrowSmallUpAfter, .iconAttachment, .iconAudio, .iconBeginThread, .iconBell, .iconBookmark, .iconCalculator, .iconCalendar, .iconCamera, .iconCart, .iconCenter, .iconChat, .iconCheck, .iconClock, .iconClose, .iconCreditCard, .iconCustomerSupport, .iconDenied, .iconDislike, .iconDna, .iconDocument, .iconDocumentAdd, iconDocumentExcel, .iconDocumnetPdf, .iconDocumentWord, .iconDownload, .iconEdit, .iconEmail, .iconExpand, .iconFacebook, .iconFamily, .iconFastForward, .iconFemale, .iconFlag, .iconFlipHorizontal, .iconFlipHorizontal-2, .iconFlipVertical, .iconFlipVertical-2, .iconFolder, .iconGallery, .iconGooglePlus, .iconHeart, .iconHelp, .iconHelpAfter, .iconHome, .iconImage, .iconInbox, .iconInfo, .iconInvert, .iconLightbulb, .iconLike, .iconList, .iconLock, .iconMailSent, .iconMale, .iconMap, .iconMerge, .iconMessageBoard, .iconMilitary, .iconMinus, .iconMove, .iconNewWindow, .iconNote, .iconNoteAlt, .iconPause, .iconPeople, .iconPerson, .iconPersonAdd, .iconPhone, .iconPin, .iconPinterest, .iconPlay, .iconPlus, .iconPrint, .iconProfileCard, .iconRemove, .iconReportError, .iconRewind, .iconRotateLeft, .iconRotateRight, .iconRss, .iconSave, .iconSearch, .iconSettings, .iconShare, .iconStar, .iconStarHalf, .iconStarOutline, .iconStop, .iconStore, .iconStories, .iconStory, .iconSupport, .iconSync, .iconTag, .iconTrash, .iconTreeAdd, .iconTreeFamily, .iconTreePedigree, .iconTumblr, .iconTwitter, .iconUnlock, .iconUpload, .iconVideo, .iconView, .iconVolumeMax, .iconVolumeMedium, .iconVolumeMin, .iconWarning, .iconWebLink, .iconYoutube, .iconArrowRightAfter, .iconShakyLeaf, .iconLeaf, .iconBars, .iconBarsLow, .iconBarsMed, .iconBarsHigh" data-keywords="icon.css, graphics, images, imagery, icons, retina display, retina images, retina devices"><a href="iconography">Iconography</a>
+                            </li>
+                            <li class="nav-links" data-related-classes=".link, .underline" data-keywords="links, a, href, hyperlinks"><a href="links">Links</a>
+                            </li>
+                            <li class="nav-typography" data-related-classes=".bulleted, .numbered" data-keywords="unordered lists, ordered lists, definition lists"><a href="lists">Lists</a>
+                            </li>
+                            <li class="nav-logos" data-related-classes="" data-keywords="logos, graphics, imagery, images"><a href="logos">Logos</a>
+                            </li>
+                            <li class="nav-progress-indicators" data-related-classes="" data-keywords="progress bars, sign up flow, signup flow, determinate progress bars, step progress bars, progress indicators, indicators"><a href="progress-indicators">Progress&nbsp;Indicators</a>
+                            </li>
+                            <li class="nav-spacing" data-related-classes="" data-keywords="spacing, 4px rhythm, 4 pixel rhythm, four pixel rhythm, paddings, margins, grids, grid system, grid layouts, page templates, page layouts"><a href="spacing">Spacing</a>
+                            </li>
+                            <li class="nav-tables" data-related-classes=".table, .tableHorizontal, .table480, .table320" data-keywords="table.css, tables, data layout, rows, columns, thead, tbody, tr, th, td, tfoot"><a href="tables">Tables</a>
+                            </li>
+                            <li class="nav-typography" data-related-classes=".bold, .italic, .normal, .textdefault, .smallLineHeight, .topSpacing, .noTopSpacing, .textalt, .textnormal, .coloralt, .coloralt2, .coloralt3, .coloralt4, .colornormal, .notPrintable, .screenReaderText" data-keywords="typography, line-height, headings, paragraphs, text, fonts, font-size, font-family, font-families, small, color, spacing, padding, margining"><a href="typography">Typography</a>
+                            </li>
+                            <li class="nav-userCards" data-related-classes=".icon, .iconAcom, .iconFemale, .iconPerson, .link, .userCard, .userCardContent, .userCardImg, .userCardInfo, .userCardLandscape, .userCardMini, .userCardName, .userCardPortrait, .userCardSize2, .userCardSize3" data-keywords="user-card.css, user cards, member cards, comments, user profile, username, user name, member module"><a href="user-cards">User&nbsp;Cards</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menuTab widgetsTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="4">Widgets </button>
+                        <ul class="menuList">
+                            <li class="nav-activityIndicators" data-related-classes=".ancBtn, .brown, .ie8, .loading, .loadingLarge, .loadingOnBlack, .loadingOnGreen, .loadingSmall, .lrg, .orange, .silver, .sml" data-keywords="activity-indicators.css, activity indicators, loading icons, loading gifs"><a href="activity-indicators">Activity Indicators</a>
+                            </li>
+                            <li class="nav-alerts" data-related-classes=".alert, .alertCloseable, .alertCloseBtn, .alertHidden, .alertInfo, .alertNoIcon, .alertNote, .alertOverlay, .alertSection, .alertSitewide, .alertSuccess, .alertVisible, .ancBtn, .closeAlert, .con, .conBody, .conSection, .info, .link, .note, .silver, .success, .top" data-keywords="alert.css, alert.js, alerts, errors, information, successful, notes, site-wide"><a href="alerts">Alerts</a>
+                            </li>
+                            <li class="nav-autocomplete" data-related-classes="#autocomplete, .autocompleAttached, .autocompleteCon, .autocompleteHighlighted, .autocompleteNoResults, .autocompleteResults, .autocompleteSelected, .autocompleteVisible" data-keywords="autocomplete.css, autocomplete.js, autocomplete, auto complete, auto-complete, typeahead, type ahead, type-ahead"><a href="autocomplete">Autocomplete</a>
+                            </li>
+                            <li class="nav-callouts" data-related-classes="#callout, #calloutContent, #calloutContentPlaceholder, #calloutPointer, #calloutPointerShadow, #modal, .active, .ancBtn, .callout, .calloutAlignCenter, .calloutAlignLeft, .calloutAlignMiddle, .calloutAlignRight, .calloutAlignTop, .calloutDomContent, .calloutHidePointer, .calloutMenu, .calloutPositionBottom, .calloutPositionLeft, .calloutPositionRight, .calloutPositionTop, .calloutStyleAlt, .calloutStyleDark, .calloutTooltip, .calloutTrigger, .calloutTriggerNoArrow, .calloutTypeCursor, .calloutTypeInput, .hover, .icon, .iconAfter, .iconArrowSmallDownAfter, .iconBars, .iconHelpAfter, .iconLeaf, .iconShakyLeaf, .ie8, .link, .noTouch" data-keywords="callout.css, callout.js, callouts, call outs, tooltips, tool tips, tool-tips, dropdown menus, drop down menus, drop-down menus, pop outs, popouts, pop-ups, pop ups, popups"><a href="callouts">Callouts</a>
+                            </li>
+                            <li class="nav-carousels" data-related-classes=".active, .ancBtn, .carElm, .carousel, .carouselActive, .carouselAnimating, .carouselAutoscroll, .carouselArrowsOutside, .carouselBg, .carouselCentered, .carouselContinuous, .carouselControlsDefault, .carouselCurrentSlide, .carouselFirstSlide, .carouselFullWidth, .carouselGoToSlide, .carouselInner, .carouselLastSlide, .carouselNextBtn, .carouselOverlay, .carouselPadded, .carouselPagination, .carouselPaginationDots, .carouselPaginationNumbers, .carouselPaused, .carouselPausePlay, .carouselPausePlayBtn, .CarouselPlaying, .carouselPreviousBtn, .carouselSlide, .carouselVariedHeight, .carouselVertical, .carouselWithPrevious, .icon, .iconArrowLeft, .iconArrowRight, .iconPause, .iconPlay, .loading, .noTouch, .silver, .sml, .touch" data-keywords="carousel.css, carousel.js, carousels, media slider, image slider, image gallery, slideshow"><a href="carousels">Carousels</a>
+                            </li>
+                            <!-- <li class="nav-familyCompareCards" data-related-classes="" data-keywords="family compare cards"><a href="family-compare-cards">Family&nbsp;Compare&nbsp;Cards</a></li> -->
+                            <!-- <li class="nav-maps" data-related-classes="" data-keywords="maps, charts"><a href="maps">Maps</a></li> -->
+                            <li class="nav-mediaPlayer" data-related-classes="" data-keywords="media player, video player, audio player"><a href="media-player">Media&nbsp;Player</a>
+                            </li>
+                            <!-- <li class="nav-meters" data-related-classes="" data-keywords="meters"><a href="meters">Meters</a></li> -->
+                            <li class="nav-modals" data-related-classes="#acomModal, #acomModalShadowForIE, #ancMdl, #ancMsk, #modal, #modalCenter, #modalClose, #modalContents, #modalHeader, .acomClose, .acomModalContent, .acomModalOpen, .acomOuterClose, .ancClose, .ancOuterClose, .ie, .ie7, .ie8, .ie9, .modal, .modalCentered, .modalHasTitle, .modalHeader, .modalOpen, .modalSection, .modalHeader, .modalLoading, .modalMarketing, .modalOpen, .modalSection, .modalShowClose .noTouch, .subCon, .touch" data-keywords="modal.css, modal.js, modals, dialogs, dialog boxes, popups, pop ups, confirmation boxes, confirmation dialogs, overlays, takeovers"><a href="modals">Modals</a>
+                            </li>
+                            <li class="nav-pagination" data-related-classes=".ancBtn, .disabled, .error, .icon, .iconArrowLeft, .iconArrowRight, .ie8, .next, .pagination, .paging, .pagingMax, .pagingMeta, .pagingNext, .pagingNum, .pagingPer, .pagingPrevious, .pagingRight, .prev, .selected, .silver, .sml" data-keywords="paging.css, paging.js, pagination, paging, page navigation"><a href="pagination">Pagination</a>
+                            </li>
+                            <!-- <li class="nav-panAndZoomControls" data-related-classes="" data-keywords="pan controls, zoom controls, pan and zoom controls, zoom and pan controls, record controls, interactive controls"><a href="pan-and-zoom-controls">Pan&nbsp;&amp;&nbsp;Zoom&nbsp;Controls</a></li> -->
+                            <!-- <li class="nav-sliders" data-related-classes="" data-keywords="sliders, interactive controls"><a href="sliders">Sliders</a></li> -->
+                            <!-- <li class="nav-socialAndShare" data-related-classes="" data-keywords="social and share, twitter, facebook, google+, google plus, pintrest, youtube, you tube, tumblr, blog, sharing, social media"><a href="social-and-share">Social&nbsp;&amp;&nbsp;Share</a></li> -->
+                            <li class="nav-tabs" data-related-classes=".activeTab, .con, .conBody, .pagePadded, .pageTitle, .tab, .tab2Arrow, .tabActive, .tabContent, .tabContents, .tabExpand, .tabLast, .tabMenuExpanded, .tabs, .tabs2, .tabs320, .tabs480, .tabsCon, .tabSelect, .tabsExpanded, .tabSingular, .tabsRight" data-keywords="tab.css, tab.js, tabs, inner page navigation"><a href="tabs">Tabs</a>
+                            </li>
+                            <!-- <li class="nav-timeline" data-related-classes="" data-keywords="timelines"><a href="timeline">Timeline</a></li> -->
+                            <!-- <li class="nav-treeNodes" data-related-classes="" data-keywords="tree nodes, trees nodes"><a href="tree-nodes">Tree&nbsp;Nodes</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="menuTab codingTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="5">Coding </button>
+                        <ul class="menuList">
+                            <li class="nav-accessibility" data-related-classes="" data-keywords="accessibility, blind, color-blind, deaf, hearing impaired, visually impaired contrast ratio visual presentation keyboard accessibility"><a href="accessibility">Accessibility</a>
+                            </li>
+                            <li class="nav-codingStandards" data-related-classes=".link, .underline, .bodyBkgAlt, .bulleted, .numbered, .clear, .clearfix, .noDisplay, .notPrintable, .screenReaderText, .itemCount, .r, .touch, .notouch, .ie7, .ie8, .ie9" data-keywords="main.css, FED coding standards, html coding standards, css coding standards, html standards, css standards, css3, html5, front end standards, front-end standards, fed best practices, front end best practices, front-end best practices, css properties, css selectors, css classes, css naming conventions, html validation, html tags, html formatting, css formatting"><a href="coding-standards">Coding&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-cssStandards" data-related-classes="" data-keywords="FED coding standards, css coding standards, css standards, css3, css formatting"><a href="css-standards">CSS&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-emailStandards" data-related-classes="" data-keywords="email, emails, coding emails, email standards"><a href="email-standards">Email&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-gridSandbox" data-related-classes=".ancGrid, .ancGridEqual" data-keywords="grid sandbox, grids sandbox"><a href="sandbox-grid">Grid&nbsp;Sandbox</a>
+                            </li>
+                            <li class="nav-htmlStandards" data-related-classes="" data-keywords="html, html coding standards, html standards, html5, html validation, html tags, html formatting"><a href="html-standards">HTML&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-jsStandards" data-related-classes="" data-keywords="js, javascript, js coding standards, javascript coding standards, js standards, javascript standards"><a href="js-standards">JS&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-langCodes" data-related-classes="" data-keywords="countries, country codes, en-AU, en-CA, en-GB, en-US, fr-CA, fr-FR, de-DE, it-IT, lang attribute, lang codes, language codes, languages, sv-SE"><a href="lang-codes">Lang&nbsp;Codes</a>
+                            </li>
+                            <li class="nav-marketingSnippets" data-related-classes="marketing-snippets, resourcemanager, resource-manager"><a href="marketing-snippets">Marketing Snippets</a>
+                            </li>
+                            <li class="nav-medalStandards" data-related-classes="" data-keywords="fed medal standards, front-end medal standards, front end medal standards, front end standards, front-end standards, js validation, javascript validation, css validation, html validation, jslint, csslint, accessibility, seo, responsive, mobile"><a href="medal-standards">Medal&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-responsivePresentation" data-related-classes="" data-keywords="responsive design, mobile, retina display, retina devices"><a href="responsive-presentation">Responsive&nbsp;Presentation</a>
+                            </li>
+                            <li class="nav-specificityQuiz" data-related-classes="" data-keywords="CSS Specificity Quiz, selectors, property, properties, values, ids, classes"><a href="specificity-quiz">Specificity&nbsp;Quiz</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menuTab teamsTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="6">Teams </button>
+                        <ul class="menuList">
+                            <li class="nav-creativeTeam" data-related-classes="" data-keywords="the creative team, the marketing team"><a href="creative-home">Creative</a>
+                            </li>
+                            <li class="nav-fedTeam" data-related-classes="" data-keywords="FED team, FEDs, front-end developers, front end developers, front end team, jeff lord, peter funk, bailey stewart, jason boyer, tyson zimmerman, kim Belanger, chris whitchurch, jason bramble, peter mueller, david richardson, jon mongan, nate bartlett, billy hunter, brett wilson, david randell, andy phillips"><a href="FED-home">FED</a>
+                            </li>
+                            <li class="nav-uxTeam" data-related-classes="" data-keywords="UX team, UI team, user experience team, user interactive team"><a href="UX-home">UX</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </header>
+        <div class="mainContent" role="main" aria-labelledby="standardsPageTitle">
+            <!-- Content from page -->
+            <!-- Content from page -->
+            <header class="pageHeader">
+                <nav class="pageCrumbs">
+                    <a class="pageCrumb" href="home">Home</a>
+                    <span class="pageCrumb icon iconArrowRight"></span>
+                    <strong class="pageCrumb">Forms</strong>
+                </nav>
+                <h1 class="pageTitle">Forms</h1>
+                <div class="pageNav">
+                    <strong>Related Standards:</strong>
+                    <a href="activity-indicators">Activity Indicators</a>
+                    <a href="alerts">Alerts</a>
+                    <a href="buttons">Buttons</a>
+                    <a href="callouts">Callouts</a>
+                    <a href="grid-layouts">Grid Layouts</a>
+                    <a href="iconography">Iconography</a>
+                    <a href="links">Links</a>
+                    <a href="tables">Tables</a>
+                </div>
+            </header>
+            <div class="page">
+                <div class="ancGrid full480 ancGridPadded">
+                    <div class="ancCol w66">
+                        <section class="demo" id="demo" aria-label="Demos">
+                            <div class="ancGrid full480">
+                                <div class="ancCol w33">
+                                    <figure class="thumb">
+                                        <a class="photo photoSize3 photoPortrait" href="http://canary.mfcreativestage.com/i/standards/forms/live-form.png"><img src="http://canary.mfcreativestage.com/i/standards/forms/live-form.png" alt="Live Form">
+                                        </a>
+                                        <figcaption><a href="http://search.ancestry.com/search/"><strong>Search:</strong></a> live form example.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="ancCol w33">
+                                    <figure class="thumb">
+                                        <a class="photo photoSize3 photoLandscape" href="http://canary.mfcreativestage.com/i/standards/forms/base-controls.png"><img src="http://canary.mfcreativestage.com/i/standards/forms/base-controls.png" alt="Base Form Controls" />
+                                        </a>
+                                        <figcaption>Base form controls.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="ancCol w33">
+                                    <figure class="thumb">
+                                        <a class="photo photoSize3 photoLandscape" href="http://canary.mfcreativestage.com/i/standards/forms/callouts.png"><img src="http://canary.mfcreativestage.com/i/standards/forms/callouts.png" alt="Callout examples" />
+                                        </a>
+                                        <figcaption>Callout form examples.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="ancCol ancColRow w33">
+                                    <figure class="thumb">
+                                        <a class="photo photoSize3 photoLandscape" href="http://canary.mfcreativestage.com/i/standards/forms/sizes.png"><img src="http://canary.mfcreativestage.com/i/standards/forms/sizes.png" alt="3 Available Styles" />
+                                        </a>
+                                        <figcaption>Three available styles.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="ancCol w33">
+                                    <figure class="thumb">
+                                        <a class="photo photoSize3 photoLandscape" href="http://canary.mfcreativestage.com/i/standards/forms/required-icons.png"><img src="http://canary.mfcreativestage.com/i/standards/forms/required-icons.png" alt="Required State" />
+                                        </a>
+                                        <figcaption>Required state.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="ancCol w33">
+                                    <figure class="thumb">
+                                        <a class="photo photoSize3 photoLandscape" href="http://canary.mfcreativestage.com/i/standards/forms/disabled-focus-error-states.png"><img src="http://canary.mfcreativestage.com/i/standards/forms/disabled-focus-error-states.png" alt="Disabled, error, and focus states" />
+                                        </a>
+                                        <figcaption>Disabled, error, and focus states.</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <aside class="ancCol w33" id="examples">
+                        <div class="conThird">
+                            <div class="conHeader">
+                                <h2 class="conTitle">Examples</h2>
+                            </div>
+                            <ul>
+                                <li><a href="/cs/standards/sample-form-callouts">Callout examples</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-error-locations">Error message locations</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-server-validation">Server-side validation</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-collections">Validate collection of checkboxes/radios</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-singular-checkbox">Validate singular checkboxes</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-multiple-fields">Validate against multiple fields <em>(i.e. require one or the other)</em></a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-onsubmit">Custom validation on form submit</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-custom">Custom field validation</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-ajax">Ajax validation</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-file">File input validation</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-optionally-required">Optionally required fields</a>
+                                </li>
+                                <li><a href="/cs/standards/sample-form-search">Search Form Example</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                    <div class="ancCol ancColRow w100">
+                        <section class="con" id="ux">
+                            <header class="conHeader">
+                                <h2 class="conTitle">UX Guidelines</h2>
+                            </header>
+                            <div class="conBody">
+                                <p>Forms handle all user inputs and form validation. We encourage developers to use the standardized input fields, select dropdowns, textareas, and validation.</p>
+                                <hr class="conDivider" />
+                                <h3 class="bold">Proper Usage</h3>
+                                <p>Guidelines for web form design.</p>
+                                <ul class="bulleted">
+                                    <li>Labels should be placed above the form fields.</li>
+                                    <li>Labels can be placed inside text fields in special circumstances. (For example: person lookups on the Tree Viewer) However, always place field labels outside text boxes on multiple field forms. When using labels inside fields, the field should always reset to the label if the user blurs the field and no data is present.</li>
+                                    <li>Form fields should employ default values when:
+                                        <ul class="bulleted">
+                                            <li>The user has previously entered a value (such as in form validation or editing set values)</li>
+                                            <li>The number of choices on the form is overwhelming to the point of overcomplexity</li>
+                                            <li>You have a strong qualified guess as to what most users will choose/want</li>
+                                            <li>The user has already chosen enough to calibrate the default option based on another choice they’ve entered.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Dropdowns should either display the default option or should display the text "Choose..."</li>
+                                    <li>There should only be one primary action button per form. If you have multiple action choices, use a text link or a brown button for the secondary action.</li>
+                                    <li>Checkboxes and radio buttons can be either vertically stacked or side-by-side. If there are just a few, short options (e.g. Male, Female, Unknown) use side-by-side layout. For everything else, use vertically stacked layout for options.</li>
+                                </ul>
+                                <hr class="conDivider" />
+                                <h3 class="bold">Required &amp; Optional Fields</h3>
+                                <ul class="bulleted">
+                                    <li>Required fields are denoted using a red asterick</li>
+                                </ul>
+                                <hr class="conDivider" />
+                                <h3 class="bold">Default Style Rules</h3>
+                                <ul class="bulleted">
+                                    <li>Labels are bold #333 13px <em>(Exception: labels next to radio/check inputs are not bolded)</em>
+                                    </li>
+                                    <li>Fields are regular 13px #333</li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="con" id="coding">
+                            <header class="conHeader">
+                                <h2 class="conTitle">Coding Guidelines</h2>
+                            </header>
+                            <div class="conBody">
+                                <h2 id="prerequisites">Prerequisites</h2>
+                                <ul class="bulleted">
+                                    <li>CSS: <a href="http://canary.mfcreativestage.com/css/v1/main.css?minify=false" title="View source"><code>/css/v1/<strong>main.css</strong></code></a>, <a href="http://canary.mfcreativestage.com/css/v1/button.css?minify=false" title="View source"><code>/css/v1/<strong>button.css</strong></code></a>, <a href="http://canary.mfcreativestage.com/css/v1/form.css?minify=false" title="View source"><code>/css/v1/<strong>form.css</strong></code></a>, <a href="http://canary.mfcreativestage.com/css/v1/grid.css?minify=false" title="View source"><code>/css/v1/<strong>grid.css</strong></code></a>, <a href="http://canary.mfcreativestage.com/css/v1/icon.css?minify=false" title="View source"><code>/css/v1/<strong>icon.css</strong></code></a>
+                                    </li>
+                                    <li>JS: <a href="http://canary.mfcreativestage.com/js/v1/form.js?minify=false" title="View source"><code>/js/v1/form.js</code></a>
+                                    </li>
+                                    <li>The <code>[lang]</code> attribute must be on the <code>&lt;html&gt;</code> element with its <a class="underline" href="/cs/standards/lang-codes">correct language and country code</a>. <em>(It technically can be on the <code>&lt;form&gt;</code> element as well, but this is not recommended).</em>
+                                    </li>
+                                    <li><strong>Optional prerequisites based on usage:</strong>
+                                        <ul class="bulleted">
+                                            <li>CSS: <a href="http://canary.mfcreativestage.com/css/v2/alert.css?minify=false" title="View source"><code>/css/v2/alert.css</code></a>, <a href="http://canary.mfcreativestage.com/css/v1/callout.css?minify=false" title="View source"><code>/css/v1/callout.css</code></li>
+										<li>JS: <a href="http://canary.mfcreativestage.com/js/v2/alert.js?minify=false" title="View source"><code>/js/v2/alert.js</code></a>, <a href="http://canary.mfcreativestage.com/js/v1/callout.js?minify=false" title="View source"><code>/js/v1/callout.js</code></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <h2 id="instructions">Instructions</h2>
+                                <ol class="numbered">
+                                    <li>Forms should be laid out using our responsive grid.</li>
+                                    <li>The <code>&lt;form&gt;</code> element should have the class <code>form</code> to trigger the newer styles. This exists to avoid conflicts with older pages.</li>
+                                    <li>Labels should be actual <code>&lt;label&gt;</code> elements that are tied to their respective fields using the <code>[for]</code> attribue.</li>
+                                    <li><code>&lt;input /&gt;</code>, <code>&lt;select&gt;</code>, and <code>&lt;textarea&gt;</code> elements should all have unique IDs for screen readers to be able to announce the correct <code>&lt;label&gt;</code> to the correct field.</li>
+                                </ol>
+                                <h3 id="basicForm">Example #1 - Basic Form</h3>
+                                <figure>
+                                    <form action="#" class="form" enctype="multipart/form-data" method="post" id="myNameForm">
+                                        <div class="ancGrid full320">
+                                            <div class="ancCol w50">
+                                                <label for="firstName">First Name</label>
+                                                <input type="text" id="firstName" name="firstName" />
+                                            </div>
+                                            <div class="ancCol w50">
+                                                <label for="lastName">Last Name</label>
+                                                <input type="text" id="lastName" name="lastName" />
+                                            </div>
+                                            <div class="ancCol w100 ancColRow">
+                                                <label for="description">Description</label>
+                                                <textarea class="textareaLarge" id="description" name="description"></textarea>
+                                            </div>
+                                            <div class="ancCol ancColRow w100 formFooter">
+                                                <input class="ancBtn orange" type="submit" id="submitMyName" name="submit" value="Save" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <pre class="code html collapse">
+	                                    <code>
+	                                    	&lt;form action="#" class="form" enctype="multipart/form-data" method="post" id="myNameForm">
+											&lt;div class="ancGrid full320">
+												&lt;div class="ancCol w50">
+													&lt;label for="firstName">First Name&lt;/label>
+													&lt;input type="text" id="firstName" name="firstName" />
+												&lt;/div>
+												&lt;div class="ancCol w50">
+													&lt;label for="lastName">Last Name&lt;/label>
+													&lt;input type="text" id="lastName" name="lastName" />
+												&lt;/div>
+												&lt;div class="ancCol w100 ancColRow"&gt;
+													&lt;label for="description">Description&lt;/label>
+													&lt;textarea class="textareaLarge" id="description" name="description"&gt;&lt;/textarea&gt;
+												&lt;/div&gt;
+												&lt;div class="ancCol ancColRow w100 formFooter">
+													&lt;input class="ancBtn orange" type="submit" id="submitMyName" name="submit" value="Save" />
+												&lt;/div>
+											&lt;/div>
+											&lt;/form>
+										</code>
+									</pre>
+                                    <figcaption><strong>Example #1:</strong> Basic responsive form layout. All fields go full-width in 320-479px range.</figcaption>
+                                </figure>
+                                <ol class="numbered" start="5">
+                                    <li>Form fields go 100% of width when using the <code>.form</code> class. This makes it extremely easy to use the grid for form layout.</li>
+                                    <li>Take note that the grid allows you to have multiple "rows" of fields inside of a single parent container by taking advantage of the class <code>.ancColrow</code>.</li>
+                                    <li>Also take note that the grid allows you to jump not only to 100% of the width of your container, but also to 33% and 50% by using the classes <code>half768</code>, <code>half480</code>, <code>half320</code>, <code>third768</code>, <code>third480</code>, <code>third320</code>. When using these classes, you'll need to mark the field that beings a new row at a certain breakpoint by using the one of these corresponding classes: <code>.ancColRow768</code>, <code>.ancColRow480</code>, <code>.ancColRow320</code>. <a class="underline" href="/cs/standards/grid-layouts">See the grid for more examples.</a>
+                                    </li>
+                                    <li>Remember when using the classes to change the widths of the columns that you should either use a single "full" class on the parent container of the columns or use the "full/half/third" classes on each individual column.</li>
+                                    <li>Add the class <code>textareaLarge</code> for larger height textareas.</li>
+                                </ol>
+                                <h3 id="widthBreakpoint">Example #2 - Different Width @ Different Breakpoints</h3>
+                                <figure>
+                                    <form action="#" class="form" enctype="multipart/form-data" method="post" id="myDates">
+                                        <div class="ancGrid">
+                                            <div class="ancCol w25 half480">
+                                                <label for="birthDate">Birth Date</label>
+                                                <input type="text" id="birthDate" name="birthDate" />
+                                            </div>
+                                            <div class="ancCol w25 half480">
+                                                <label for="draftDate">Draft Date</label>
+                                                <input type="text" id="draftDate" name="draftDate" />
+                                            </div>
+                                            <div class="ancCol w25 ancColRow480 half480">
+                                                <label for="marriageDate">Marriage Date</label>
+                                                <input type="text" id="marriageDate" name="marriageDate" />
+                                            </div>
+                                            <div class="ancCol w25 half480">
+                                                <label for="deathDate">Death Date</label>
+                                                <input type="text" id="deathDate" name="deathDate" />
+                                            </div>
+                                            <div class="ancCol ancColRow w66 full320">
+                                                <label for="deathLocation">Death Location</label>
+                                                <input type="text" id="deathLocation" name="deathLocation" />
+                                            </div>
+                                            <div class="ancCol w33 full320">
+                                                <label for="deathZip">Death Zip</label>
+                                                <input type="text" id="deathZip" name="deathZip" />
+                                            </div>
+                                            <fieldset class="ancCol w100">
+                                                <label id="myCollection">Dates you don&rsquo;t know:</label>
+                                                <div class="ancGrid myCollection">
+                                                    <div class="ancCol w25 third320">
+                                                        <input id="dateGraduation" name="myCollection[]" type="checkbox" class="checkbox" checked="checked" />
+                                                        <label for="dateGraduation">Graduation</label>
+                                                    </div>
+                                                    <div class="ancCol w25 third320">
+                                                        <input id="dateRetirement" name="myCollection[]" type="checkbox" class="checkbox" />
+                                                        <label for="dateRetirement">Retirement</label>
+                                                    </div>
+                                                    <div class="ancCol w25 third320">
+                                                        <input id="dateBaptism" name="myCollection[]" type="checkbox" class="checkbox" />
+                                                        <label for="dateBaptism">Baptism</label>
+                                                    </div>
+                                                    <div class="ancCol w25 third320 clear">
+                                                        <input id="dateWifesBirthday" name="myCollection[]" type="checkbox" class="checkbox" />
+                                                        <label for="dateWifesBirthday">Wife&rsquo;s Birthday</label>
+                                                    </div>
+                                                    <div class="ancCol w25 third320">
+                                                        <input id="date2ndMarriage" name="myCollection[]" type="checkbox" class="checkbox" />
+                                                        <label for="date2ndMarriage">2nd Marriage</label>
+                                                    </div>
+                                                    <div class="ancCol w25 third320">
+                                                        <input id="date3rdMarriage" name="myCollection[]" type="checkbox" class="checkbox" />
+                                                        <label for="date3rdMarriage">3rd Marriage</label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div class="ancCol ancColRow w100 formFooter">
+                                                <input class="ancBtn orange" type="submit" id="submitMyDates" name="submit" value="Save" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <pre class="code html collapse">
+                                    	<code>
+	                                    	&lt;form action="#" class="form" enctype="multipart/form-data" method="post" id="myDates">
+											&lt;div class="ancGrid">
+												&lt;div class="ancCol w25 half480">
+													&lt;label for="birthDate">Birth Date&lt;/label>
+													&lt;input type="text" id="birthDate" name="birthDate" />
+												&lt;/div>
+												&lt;div class="ancCol w25 half480">
+													&lt;label for="draftDate">Draft Date&lt;/label>
+													&lt;input type="text" id="draftDate" name="draftDate" />
+												&lt;/div>
+												&lt;div class="ancCol w25 ancColRow480 half480">
+													&lt;label for="marriageDate">Marriage Date&lt;/label>
+													&lt;input type="text" id="marriageDate" name="marriageDate" />
+												&lt;/div>
+												&lt;div class="ancCol w25 half480">
+													&lt;label for="deathDate">Death Date&lt;/label>
+													&lt;input type="text" id="deathDate" name="deathDate" />
+												&lt;/div>
+												&lt;div class="ancCol ancColRow w66 full320">
+													&lt;label for="deathLocation">Death Location&lt;/label>
+													&lt;input type="text" id="deathLocation" name="deathLocation" />
+												&lt;/div>
+												&lt;div class="ancCol w33 full320">
+													&lt;label for="deathZip">Death Zip&lt;/label>
+													&lt;input type="text" id="deathZip" name="deathZip" />
+												&lt;/div>
+												&lt;fieldset class="ancCol w100">
+													&lt;label id="myCollection">Dates you don&rsquo;t know:&lt;/label>
+													&lt;div class="ancGrid myCollection">
+														&lt;div class="ancCol w25 third320">
+															&lt;input id="dateGraduation" name="myCollection[]" type="checkbox" class="checkbox" checked="checked" />
+															&lt;label for="dateGraduation">Graduation&lt;/label>
+														&lt;/div>
+														&lt;div class="ancCol w25 third320">
+															&lt;input id="dateRetirement" name="myCollection[]" type="checkbox" class="checkbox" />
+															&lt;label for="dateRetirement">Retirement&lt;/label>
+														&lt;/div>
+														&lt;div class="ancCol w25 third320">
+															&lt;input id="dateBaptism" name="myCollection[]" type="checkbox" class="checkbox" />
+															&lt;label for="dateBaptism">Baptism&lt;/label>
+														&lt;/div>
+														&lt;div class="ancCol w25 third320 clear">
+															&lt;input id="dateWifesBirthday" name="myCollection[]" type="checkbox" class="checkbox" />
+															&lt;label for="dateWifesBirthday">Wife&rsquo;s Birthday&lt;/label>
+														&lt;/div>
+														&lt;div class="ancCol w25 third320">
+															&lt;input id="date2ndMarriage" name="myCollection[]" type="checkbox" class="checkbox" />
+															&lt;label for="date2ndMarriage">2nd Marriage&lt;/label>
+														&lt;/div>
+														&lt;div class="ancCol w25 third320">
+															&lt;input id="date3rdMarriage" name="myCollection[]" type="checkbox" class="checkbox" />
+															&lt;label for="date3rdMarriage">3rd Marriage&lt;/label>
+														&lt;/div>
+													&lt;/div>
+												&lt;/fieldset>
+												&lt;div class="ancCol ancColRow w100 formFooter">
+													&lt;input class="ancBtn orange" type="submit" id="submitMyDates" name="submit" value="Save" />
+												&lt;/div>
+											&lt;/div>
+											&lt;/form>
+										</code>
+									</pre>
+                                    <figcaption><strong>Example #2:</strong> Layout illustrating multiple width breakpoints. Some fields jump to 50% width at the 480 range. Others jump to 100% width at the 320 range. While the last never&nbsp;changes.</figcaption>
+                                </figure>
+                                <ol class="numbered" start="10">
+                                    <li>There are 3 supported form sizes: the default size, <code>.formLarge</code>, and <code>.formLargest</code>. These are in addition to the <code>form</code> class.</li>
+                                    <li>On most forms it is recommended to bump up the field size from the default size to the large size. This increases the hit area for mobile devices making it easier to focus on a field. This is done by adding the class <code>.formLarge480</code> in addition to the <code>.form</code> class.</li>
+                                    <li>The <code>.formLarge</code> class should only be used when there are 3-6 fields.</li>
+                                    <li>The <code>.formLargest</code> class should only be used when there are 1-3 fields.</li>
+                                    <li><a class="underline" href="/cs/standards/sample-form-sizes">See all size examples here</a>
+                                    </li>
+                                </ol>
+                                <ol class="numbered" start="15">
+                                    <li>All radio button groups must have a button checked by default.</li>
+                                    <li>Use the class <code>.requiredIndicator</code> on a paragraph describing required fields.</li>
+                                    <li>To disable a field, add the <code>[disabled="disabled"]</code> to the input and add the class <code>.disabled</code> to the label.</li>
+                                </ol>
+                                <h3 id="fieldStates">Example #3 - Varied field states</h3>
+                                <figure>
+                                    <form action="#" class="form" enctype="multipart/form-data" method="post" id="myValidation">
+                                        <div class="ancGrid">
+                                            <div class="ancCol w50">
+                                                <label for="name01" class="required">Name</label>
+                                                <input type="text" id="name01" name="name01" placeholder="Shows required field indicator" />
+                                            </div>
+                                            <div class="ancCol w50">
+                                                <label for="deathDate1" class="disabled">Death Date <em>disabled text field</em>
+                                                </label>
+                                                <input disabled="disabled" type="text" id="deathDate1" name="deathDate1" value="Disabled text is here" />
+                                            </div>
+                                            <div class="ancCol ancColRow w100">
+                                                <input class="checkbox" id="enableEverything" name="enableEverything" type="checkbox" />
+                                                <label for="enableEverything">Enable everything <em>normal enabled checkbox</em>
+                                                </label>
+                                            </div>
+                                            <div class="ancCol ancColRow w100">
+                                                <label for="readOnlyTextArea" class="disabled">Read only textarea</label>
+                                                <textarea readonly="readonly" id="readOnlyTextArea">Example text</textarea>
+                                            </div>
+                                            <div class="ancCol ancColRow w100">
+                                                <input class="checkbox" disabled="disabled" id="agree2" name="agree2" type="checkbox" />
+                                                <label for="agree2" class="disabled" data-error="Please indicate that you have read and agree to the Terms and Conditions." data-error-label="Terms and Conditions">I agree to this <em>disabled checkbox</em>
+                                                </label>
+                                            </div>
+                                            <fieldset class="ancCol ancColRow w100">
+                                                <legend class="disabled" data-error="Please select a gender" id="myRadioCollection1">Your Gender <em>entire fieldset is disabled</em>
+                                                </legend>
+                                                <div class="ancGrid myRadioCollection1">
+                                                    <div class="ancCol w33">
+                                                        <input id="genderMale" name="gender" type="radio" class="radio" disabled="disabled">
+                                                        <label class="disabled" for="genderMale">Male <em>disabled radio</em>
+                                                        </label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="genderFemale" name="gender" type="radio" class="radio" disabled="disabled">
+                                                        <label class="disabled" for="genderFemale">Female <em>disabled radio</em>
+                                                        </label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="genderUnknown" name="gender" type="radio" class="radio" disabled="disabled">
+                                                        <label class="disabled" for="genderUnknown">Unknown <em>disabled radio</em>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div class="ancCol ancColRow w100 formFooter">
+                                                <input class="ancBtn orange" type="submit" id="submitMyValidation" name="submit" value="Save" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <pre class="code html collapse">
+	                                    <code>
+		                                    &lt;form action="#" class="form" enctype="multipart/form-data" method="post" id="myValidation">
+											&lt;div class="ancGrid">
+												&lt;div class="ancCol w50">
+													&lt;label for="name01" class="required">Name&lt;/label>
+													&lt;input type="text" id="name01" name="name01" placeholder="Shows required field indicator" />
+												&lt;/div>
+												&lt;div class="ancCol w50">
+													&lt;label for="deathDate1" class="disabled">Death Date &lt;em>disabled text field&lt;/em>&lt;/label>
+													&lt;input disabled="disabled" type="text" id="deathDate1" name="deathDate1" />
+												&lt;/div>
+												&lt;div class="ancCol ancColRow w100">
+													&lt;input class="checkbox" id="enableEverything" name="enableEverything" type="checkbox" />
+													&lt;label for="enableEverything">Enable everything &lt;em>normal enabled checkbox&lt;/em>&lt;/label>
+												&lt;/div>
+												&lt;div class="ancCol ancColRow w100">
+													&lt;input class="checkbox" disabled="disabled" id="agree2" name="agree2" type="checkbox" />
+													&lt;label for="agree2" class="disabled" data-error="Please indicate that you have read and agree to the Terms and Conditions." data-error-label="Terms and Conditions">I agree to this &lt;em>disabled checkbox&lt;/em>&lt;/label>
+												&lt;/div>
+												&lt;fieldset class="ancCol ancColRow w100">
+													&lt;legend class="disabled" data-error="Please select a gender" id="myRadioCollection1">Your Gender &lt;em>entire fieldset is disabled&lt;/em>&lt;/legend>
+													&lt;div class="ancGrid myRadioCollection1">
+														&lt;div class="ancCol w33">
+															&lt;input id="genderMale" name="gender" type="radio" class="radio" disabled="disabled">
+															&lt;label class="disabled" for="genderMale">Male &lt;em>disabled radio&lt;/em>&lt;/label>
+														&lt;/div>
+														&lt;div class="ancCol w33">
+															&lt;input id="genderFemale" name="gender" type="radio" class="radio" disabled="disabled">
+															&lt;label class="disabled" for="genderFemale">Female &lt;em>disabled radio&lt;/em>&lt;/label>
+														&lt;/div>
+														&lt;div class="ancCol w33">
+															&lt;input id="genderUnknown" name="gender" type="radio" class="radio" disabled="disabled">
+															&lt;label class="disabled" for="genderUnknown">Unknown &lt;em>disabled radio&lt;/em>&lt;/label>
+														&lt;/div>
+													&lt;/div>
+												&lt;/fieldset>
+												&lt;div class="ancCol ancColRow w100 formFooter">
+													&lt;input class="ancBtn orange" type="submit" id="submitMyValidation" name="submit" value="Save" />
+												&lt;/div>
+											&lt;/div>
+										&lt;/form>
+									</code>
+								</pre>
+                                    <figcaption><strong>Example #3:</strong> Shows required and disabled field states</figcaption>
+                                </figure>
+                                <hr class="conDivider" />
+                                <h2 id="formValidation">Instructions - Validation</h2>
+                                <ol class="numbered">
+                                    <li>Form validation is done with our custom unobtrusive jQuery plugin.</li>
+                                    <li>Instantiating the <code>$().validator()</code> plugin also adds multiple polyfills that add cross-browser support for: placeholder text, URL inputs, and styled file inputs.</li>
+                                    <li>There are many ways to augment the validator with certain CSS classes and some custom <code>[data]</code> attributes, but these are not required.</li>
+                                </ol>
+                                <h3 id="simpleValidation">Example #4 - Simplest possible validation</h3>
+                                <figure class="collapseTabs">
+                                    <form action="#" class="form" enctype="multipart/form-data" method="post" id="mySimpleValidation">
+                                        <div class="ancGrid">
+                                            <div class="ancCol w100">
+                                                <label for="username1">Username</label>
+                                                <input type="text" id="username1" name="username1" />
+                                            </div>
+                                            <div class="ancCol ancColRow w100">
+                                                <label for="password1">Password</label>
+                                                <input type="text" id="password1" name="password1" />
+                                            </div>
+                                            <div class="ancCol ancColRow w100 formFooter">
+                                                <input class="ancBtn orange" type="submit" id="submitMySimpleValidation" name="submit" value="Save" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <menu class="tabs tabsCon tabs320 topSpacing" data-tab="example4">
+                                        <button class="tab">HTML</button>
+                                        <button class="tab">JS</button>
+                                    </menu>
+                                    <div data-tab-group="example4">
+                                        <div class="tabContent">
+                                            <pre class="code html"><code>&lt;form action="#" class="form" enctype="multipart/form-data" method="post" id="mySimpleValidation">
+												&lt;div class="ancGrid">
+													&lt;div class="ancCol w100">
+														&lt;label for="username1">Username&lt;/label>
+														&lt;input type="text" id="username1" name="username1" />
+													&lt;/div>
+													&lt;div class="ancCol ancColRow w100">
+														&lt;label for="password1">Password&lt;/label>
+														&lt;input type="text" id="password1" name="password1" />
+													&lt;/div>
+													&lt;div class="ancCol ancColRow w100 formFooter">
+														&lt;input class="ancBtn orange" type="submit" id="submitMySimpleValidation" name="submit" value="Save" />
+													&lt;/div>
+												&lt;/div>
+											&lt;/form></code></pre>
+											                                        </div>
+											                                        <div class="tabContent">
+											                                            <pre class="code js"><code>&lt;!-- at the bottom of the bottom of the page -->
+											&lt;script src="http://c.mfcreativestage.com/js/v1/form.js">&lt;/script>
+											&lt;script>
+											$(function() {
+												$('#mySimpleValidation').validator({
+													"fields": {
+														"username1": { "required": true },
+														"password1": { "required": true }
+													}
+												});
+											});
+											&lt;/script></code></pre>
+                                        </div>
+                                    </div>
+                                    <figcaption><strong>Example #4:</strong> Basic validation illustrating how to make 2 fields required.</figcaption>
+                                </figure>
+                                <ol class="numbered" start="4">
+                                    <li>As shown above, you instantiate our "validator" plugin on the form itself, like so: <code>$('#myFormId').validator();</code>
+                                    </li>
+                                    <li>
+                                        <p>For this plugin, you must pass in a few options. There are 4 available options:</p>
+                                        <dl>
+                                            <dt><code>fields</code>
+                                            </dt>
+                                            <dd>
+                                                <p><em>Object</em>, a list of the all the fields in the form to validate with the options for each field. There are a lot of available options for each field:</p>
+                                                <dl>
+                                                    <dt><code>required</code>
+                                                    </dt>
+                                                    <dd><em>Boolean or Integer</em>, whether field is required or number of checkboxes that must be selected</dd>
+                                                    <dt><code>errorLocation</code>
+                                                    </dt>
+                                                    <dd><em>String</em>, where to put the error message. - null, 'below', 'callout'</dd>
+                                                    <dt><code>pattern</code>
+                                                    </dt>
+                                                    <dd><em>String or Function</em> - 'number', 'url', 'tel', 'email', function(value, $field, required) { ... return true || false; }
+                                                        <br /><strong>Important:</strong> When using a custom function, the <code>required</code> parameter must be handled by the function itself. The required parameter is passed in as the 3rd parameter to custom functions.</dd>
+                                                    <dt><code>maxLength</code>
+                                                    </dt>
+                                                    <dd><em>Integer</em>, max number of characters allowed in field</dd>
+                                                    <dt><code>minLength</code>
+                                                    </dt>
+                                                    <dd><em>Integer</em>, min number of characters allowed in field</dd>
+                                                    <dt><code>extensions</code>
+                                                    </dt>
+                                                    <dd><em>Array of Strings</em>, allowed file extentions for input[type="file"]. Must be lowercase. (i.e. ['png', 'jpg', 'gif'])</dd>
+                                                    <dt><code>when</code>
+                                                    </dt>
+                                                    <dd><em>String</em>, when to validate - any event. Default is on blur.</dd>
+                                                    <dt><code>collection</code>
+                                                    </dt>
+                                                    <dd><em>jQuery Object</em>, used for radio/checkbox inputs. Select each input in the group. i.e. $('input[name="interests[]"]')</dd>
+                                                    <dt><code>match</code>
+                                                    </dt>
+                                                    <dd><em>String</em>, pass in ID of the field to match. i.e. password field</dd>
+                                                </dl>
+                                            </dd>
+                                            <dt><code>validateOnSubmitHover</code>
+                                            </dt>
+                                            <dd><em>Boolean</em>, default true</dd>
+                                            <dt><code>submitButton</code>
+                                            </dt>
+                                            <dd><em>jQuery Object</em>, default $form.find('input[type="submit"]')</dd>
+                                            <dt><code>onSubmit(valid, $form)</code>
+                                            </dt>
+                                            <dd><em>Function</em>, default false. This function is called after the entire form has been validated (and marked as such) and is ready to be submitted. The <code>valid</code> parameter tells you if the entire form is valid up to this point. Return true to submit the form and return false to prevent the form from submitting. This allows you to do custom validation of multiple fields prior to submission.</dd>
+                                            <dt><code>allowMultipleSubmissions</code>
+                                            </dt>
+                                            <dd><em>Boolean</em>, default false - Forms generally are only ever submitted a singular time. If your form is using ajax to handle the submission, and you want the user to be able to submit the same form multiple times, set this option to <em>true</em>.</dd>
+                                        </dl>
+                                    </li>
+                                </ol>
+                                <h3 id="advancedValidationExample">Example #5 - Advanced validation</h3>
+                                <figure class="collapseTabs">
+                                    <form action="#" class="form formLarge480" enctype="multipart/form-data" id="advancedValidation" method="post">
+                                        <p class="requiredIndicator">Indicates required field</p>
+                                        <div class="ancGrid topSpacing">
+                                            <div class="ancCol w50 full320">
+                                                <label for="yourName" data-error="At least 3 characters">Your Name</label>
+                                                <input type="text" id="yourName" name="yourName" placeholder="Blank or >= 3 chars" data-callout="Blank or >= 3 chars" />
+                                            </div>
+                                            <div class="ancCol w50 full320">
+                                                <label class="required" for="email1" data-error="Enter a valid email or else">Email</label>
+                                                <input type="email" id="email1" name="email1" placeholder="Valid email." data-callout="This will also be your username." />
+                                            </div>
+                                            <div class="ancCol w50 ancColRow full320">
+                                                <label for="url" data-error="Enter a valid URL">URL</label>
+                                                <input type="url" id="url" name="url" placeholder="http://" />
+                                            </div>
+                                            <div class="ancCol w30 half320 ancColRow320">
+                                                <label for="tel" data-error="Please enter a valid 10-digit number">Telephone</label>
+                                                <input type="tel" id="tel" name="tel" placeholder="Blank or valid phone." />
+                                            </div>
+                                            <div class="ancCol w20 half320">
+                                                <label class="required" for="number" data-error="A number is required">Number</label>
+                                                <input type="number" id="number" name="number" placeholder="Number only" data-callout="This could be some kind of additional prompt" />
+                                            </div>
+                                            <div class="ancCol w50 ancColRow">
+                                                <label class="required" for="passwordA" data-error="Must be at least 6 characters">Password</label>
+                                                <input type="password" id="passwordA" name="passwordA" placeholder="At least 6 digits" />
+                                            </div>
+                                            <div class="ancCol w50">
+                                                <label class="required" for="passwordB">Retype Password</label>
+                                                <input type="password" id="passwordB" name="passwordB" placeholder="Match example" />
+                                            </div>
+                                            <div class="ancCol w30 ancColRow full320">
+                                                <label for="selectSomething" data-error="Please choose one">A Select Dropdown</label>
+                                                <select id="selectSomething">
+                                                    <option value="">Choose...</option>
+                                                    <option value="birth">Some groovy value</option>
+                                                    <option value="marriage">Some pop thing</option>
+                                                    <option value="death">Do not choose this</option>
+                                                </select>
+                                            </div>
+                                            <div class="ancCol w70 full320">
+                                                <label data-error="File must be a jpg, png, or gif" for="file">Choose an image</label>
+                                                <input type="file" id="file" name="file" />
+                                            </div>
+                                            <div class="ancCol ancColRow w100">
+                                                <label for="custom2" data-error="Must start with capital 'A' and be >= 4 characters | Must start with capital A | Must be >= 4 characters">Enter a name starting with "A"</label>
+                                                <input type="text" id="custom2" name="custom2" placeholder="This is showing different error messages based on input" />
+                                            </div>
+                                            <div class="ancCol ancColRow w100">
+                                                <label for="disabledInput" class="disabled">I am disabled</label>
+                                                <input disabled="disabled" type="text" id="disabledInput" name="disabledInput" />
+                                            </div>
+                                            <fieldset class="ancCol w100">
+                                                <label class="required" id="myCollection" data-error="More!!!">Choose at least 3 of these</label>
+                                                <div class="ancGrid myCollection2">
+                                                    <div class="ancCol w33">
+                                                        <input id="collection1" name="collection1" type="checkbox" class="checkbox" />
+                                                        <label for="collection1">Marriage</label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="collection2" name="collection2" type="checkbox" checked="checked" class="checkbox" />
+                                                        <label for="collection2">Death is the end</label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="collection3" name="collection3" type="checkbox" class="checkbox" />
+                                                        <label for="collection3">Birth</label>
+                                                    </div>
+                                                    <div class="ancCol w33 clear">
+                                                        <input id="collection4" name="collection4" type="checkbox" class="checkbox" />
+                                                        <label for="collection4">Military</label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="collection5" name="collection5" type="checkbox" class="checkbox" />
+                                                        <label for="collection5">Other</label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="collection6" name="collection6" type="checkbox" checked="checked" class="checkbox" />
+                                                        <label for="collection6">Should be on one line</label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="ancCol ancColRow w100">
+                                                <label data-error="Please select a gender" class="required" id="myRadioCollection">Your Gender</label>
+                                                <div class="ancGrid myRadioCollection">
+                                                    <div class="ancCol w33">
+                                                        <input id="genderMale" name="gender" type="radio" class="radio">
+                                                        <label for="genderMale">Male</label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="genderFemale" name="gender" type="radio" class="radio">
+                                                        <label for="genderFemale">Female</label>
+                                                    </div>
+                                                    <div class="ancCol w33">
+                                                        <input id="genderUnknown" name="gender" type="radio" class="radio">
+                                                        <label for="genderUnknown">Unknown</label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="ancCol ancColRow w100">
+                                                <label for="feedback" data-error="No more than 20 characters">Feedback</label>
+                                                <textarea name="feedback" id="feedback" placeholder="Validated on keyup rather than on blur. Blank or max length of 20 characters"></textarea>
+                                            </fieldset>
+                                            <fieldset class="ancCol ancColRow w100 formFooter">
+                                                <input class="ancBtn orange" id="submitBtn" type="submit" value="Search" />
+                                                <button class="link" type="button" id="addFields">Add more fields with validation</button>
+                                            </fieldset>
+                                        </div>
+                                    </form>
+                                    <menu class="tabs tabsCon tabs320 topSpacing" data-tab="example5">
+                                        <button class="tab">HTML</button>
+                                        <button class="tab">JS</button>
+                                    </menu>
+                                    <div data-tab-group="example5">
+                                        <div class="tabContent">
+                                            <pre class="code html">
+                                            	<code>
+	                                            	&lt;form action="#" class="form formLarge480" enctype="multipart/form-data" id="advancedValidation" method="post">
+													&lt;div class="ancGrid">
+														&lt;div class="ancCol w50 full320">
+															&lt;label for="yourName" data-error="At least 3 characters">Your Name&lt;/label>
+															&lt;input type="text" id="yourName" name="yourName" placeholder="Blank or >= 3 chars" data-callout="Blank or >= 3 chars" />
+														&lt;/div>
+														&lt;div class="ancCol w50 full320">
+															&lt;label class="required" for="email1" data-error="Enter a valid email or else">Email&lt;/label>
+															&lt;input type="email" id="email1" name="email1" placeholder="Valid email." data-callout="This will also be your username." />
+														&lt;/div>
+														&lt;div class="ancCol w50 ancColRow full320">
+															&lt;label for="url" data-error="Enter a valid URL">URL&lt;/label>
+															&lt;input type="url" id="url" name="url" placeholder="http://" />
+														&lt;/div>
+														&lt;div class="ancCol w30 half320 ancColRow320">
+															&lt;label for="tel" data-error="Please enter a valid 10-digit number">Telephone&lt;/label>
+															&lt;input type="tel" id="tel" name="tel" placeholder="Blank or valid phone." />
+														&lt;/div>
+														&lt;div class="ancCol w20 half320">
+															&lt;label class="required" for="number" data-error="A number is required">Number&lt;/label>
+															&lt;input type="number" id="number" name="number" placeholder="Number only" data-callout="This could be some kind of additional prompt" />
+														&lt;/div>
+														&lt;div class="ancCol w50 ancColRow">
+															&lt;label class="required" for="passwordA" data-error="Must be at least 6 characters">Password&lt;/label>
+															&lt;input type="password" id="passwordA" name="passwordA" placeholder="At least 6 digits" />
+														&lt;/div>
+														&lt;div class="ancCol w50">
+															&lt;label class="required" for="passwordB">Retype Password&lt;/label>
+															&lt;input type="password" id="passwordB" name="passwordB" placeholder="Match example"/>
+														&lt;/div>
+														&lt;div class="ancCol w30 ancColRow full320">
+															&lt;label for="selectSomething" data-error="Please choose one">A Select Dropdown&lt;/label>
+															&lt;select id="selectSomething">
+																&lt;option value="">Choose...&lt;/option>
+																&lt;option value="birth">Some awesome value&lt;/option>
+																&lt;option value="marriage">Some other thing&lt;/option>
+																&lt;option value="death">Do not choose this&lt;/option>
+															&lt;/select>
+														&lt;/div>
+														&lt;div class="ancCol w70 full320">
+															&lt;label data-error="File must be a jpg, png, or gif" for="file">Choose an image&lt;/label>
+															&lt;input type="file" id="file" name="file" />
+														&lt;/div>
+														&lt;div class="ancCol ancColRow w100">
+															&lt;label for="custom2" data-error="Must start with capital 'A' and be >= 4 characters | Must start with capital A | Must be >= 4 characters">Enter a name starting with "A"&lt;/label>
+															&lt;input type="text" id="custom2" name="custom2" placeholder="This is showing different error messages based on input" />
+														&lt;/div>
+														&lt;div class="ancCol ancColRow w100">
+															&lt;label for="disabledInput" class="disabled">I am disabled&lt;/label>
+															&lt;input disabled="disabled" type="text" id="disabledInput" name="disabledInput" />
+														&lt;/div>
+														&lt;fieldset class="ancCol w100">
+															&lt;label class="required" id="myCollection" data-error="More!!!">Choose at least 3 of these&lt;/label>
+															&lt;div class="ancGrid myCollection2">
+																&lt;div class="ancCol w33">
+																	&lt;input id="collection1" name="collection1" type="checkbox" class="checkbox" />
+																	&lt;label for="collection1">Marriage&lt;/label>
+																&lt;/div>
+																&lt;div class="ancCol w33">
+																	&lt;input id="collection2" name="collection2" type="checkbox" checked="checked" class="checkbox" />
+																	&lt;label for="collection2">Death is the end&lt;/label>
+																&lt;/div>
+																&lt;div class="ancCol w33">
+																	&lt;input id="collection3" name="collection3" type="checkbox" class="checkbox" />
+																	&lt;label for="collection3">Birth&lt;/label>
+																&lt;/div>
+																&lt;div class="ancCol w33 clear">
+																	&lt;input id="collection4" name="collection4" type="checkbox" class="checkbox" />
+																	&lt;label for="collection4">Military&lt;/label>
+																&lt;/div>
+																&lt;div class="ancCol w33">
+																	&lt;input id="collection5" name="collection5" type="checkbox" class="checkbox" />
+																	&lt;label for="collection5">Other&lt;/label>
+																&lt;/div>
+																&lt;div class="ancCol w33">
+																	&lt;input id="collection6" name="collection6" type="checkbox" checked="checked" class="checkbox" />
+																	&lt;label for="collection6">Should be on one line&lt;/label>
+																&lt;/div>
+															&lt;/div>
+														&lt;/fieldset>
+														&lt;fieldset class="ancCol ancColRow w100">
+															&lt;label data-error="Please select a gender" class="required" id="myRadioCollection">Your Gender&lt;/label>
+															&lt;div class="ancGrid myRadioCollection">
+																&lt;div class="ancCol w33">
+																	&lt;input id="genderMale" name="gender" type="radio" class="radio">
+																	&lt;label for="genderMale">Male&lt;/label>
+																&lt;/div>
+																&lt;div class="ancCol w33">
+																	&lt;input id="genderFemale" name="gender" type="radio" class="radio">
+																	&lt;label for="genderFemale">Female&lt;/label>
+																&lt;/div>
+																&lt;div class="ancCol w33">
+																	&lt;input id="genderUnknown" name="gender" type="radio" class="radio">
+																	&lt;label for="genderUnknown">Unknown&lt;/label>
+																&lt;/div>
+															&lt;/div>
+														&lt;/fieldset>
+														&lt;fieldset class="ancCol ancColRow w100">
+															&lt;label for="feedback" data-error="No more than 20 characters">Feedback&lt;/label>
+															&lt;textarea name="feedback" id="feedback" placeholder="Validated on keyup rather than on blur. Blank or max length of 20 characters">&lt;/textarea>
+														&lt;/fieldset>
+														&lt;fieldset class="ancCol ancColRow w100 formFooter">
+															&lt;input class="ancBtn orange" id="submitBtn" type="submit" value="Search" />
+															&lt;button class="link" type="button" id="addFields">Add more fields with validation&lt;/button>
+														&lt;/fieldset>
+													&lt;/div>
+													&lt;/form>
+												</code>
+											</pre>
+                                        </div>
+                                        <div class="tabContent">
+                                            <pre class="code js"><code>
+	                                            	&lt;!-- at the bottom of the bottom of the page -->
+													&lt;script src="http://canary.mfcreativestage.com/js/v1/form.js">&lt;/script>
+													&lt;script>
+													$('#advancedValidation').validator({
+														"fields": {
+															"yourName": { "minLength": 3, "errorLocation": "below" },
+															"email1": { "required": true, "pattern": "email" },
+															"url": { "pattern": "url" },
+															"tel": { "pattern": "tel", "errorLocation": "below" },
+															"number": { "required": true, "pattern": "number", "errorLocation": "callout" },
+															"passwordA": { "required": true, "minLength": 6 },
+															"passwordB": { "match": "passwordA", "required": true },
+															"file": { "required": true, "extensions": ["jpg", "jpeg", "png", "gif"] },
+															"myCollection": { "required": 3, "collection": $('.myCollection2').find('input[type="checkbox"]') },
+															"myRadioCollection": { "required": true, "collection": $('.myRadioCollection').find('input[name="gender"]') },
+															"feedback": { "maxLength": 20, "when": "keyup" },
+															"custom2": {
+																"pattern": function(value, $field, required) {
+																	if (!value.match(/^A/) && value.length < 4) {
+																		$.validator.setErrorIndex($field, '0');
+																		return false;
+																	} else if (!value.match(/^A/)) {
+																		$.validator.setErrorIndex($field, '1');
+																		return false;
+																	} else if (value.length < 4) {
+																		$.validator.setErrorIndex($field, '2');
+																		return false;
+																	}
+																	return true;
+																}
+															}
+														}
+													});
+													&lt;/script>
+												</code>
+											</pre>
+                                        </div>
+                                    </div>
+                                    <figcaption><strong>Example #5:</strong> Advanced validation showing various options including custom field validation.</figcaption>
+                                </figure>
+                                <h3>Externally exposed validator methods</h3>
+                                <dl>
+                                    <dt><code>$.validator.match(value, match)</code>
+                                    </dt>
+                                    <dt><code>$.validator.maxLength(value, maxLength)</code>
+                                    </dt>
+                                    <dt><code>$.validator.minLength(value, minLengthh)</code>
+                                    </dt>
+                                    <dt><code>$.validator.extensions(value, extensions)</code>
+                                    </dt>
+                                    <dt><code>$.validator.email(value)</code>
+                                    </dt>
+                                    <dt><code>$.validator.number(value)</code>
+                                    </dt>
+                                    <dt><code>$.validator.tel(value)</code>
+                                    </dt>
+                                    <dt><code>$.validator.url(value)</code>
+                                    </dt>
+                                    <dd>These each return a boolean of whether the pattern is met.</dd>
+                                </dl>
+                                <h3>Each field has these custom functions</h3>
+                                <dl>
+                                    <dt><code>$('#yourField').trigger('validation');</code>
+                                    </dt>
+                                    <dd>Triggers the previously bound validation on that field. This can be useful when you want some non-standard event to trigger validation on a field.</dd>
+                                    <dt><code>$('#yourField').trigger('validation-message', [isValid, indexOfErrorMessage]);</code>
+                                    </dt>
+                                    <dd>Ability to allow for a delayed callback to display the correct error message.
+                                        <br /><code>isValid</code>: true, false, 'clear'
+                                        <br /><code>indexOfErrorMessage</code>: Optional integer to set the error index of the message to display</dd>
+                                    <dt><code>$('#yourField').trigger('validation-error-index', [indexOfErrorMessage]);</code>
+                                    </dt>
+                                    <dd>Ability to easily set the error index of the error message to display
+                                        <br /><code>indexOfErrorMessage</code>: Integer to set the error index of the message to display</dd>
+                                    <dt><code>$('#yourField').trigger('validation-remove');</code>
+                                    </dt>
+                                    <dd>Completely remove all validation from a field including error and success messages</dd>
+                                </dl>
+                            </div>
+                        </section>
+                        <section class="con" id="sliders">
+			        		<header class="conHeader">
+                                <h2 class="conTitle">Sliders</h2>
+                            </header>
+                            <div class="conBody">
+                                <p>Sliders are essentially a more mobile-friendly version of a checkbox.</p>
+                                <hr class="conDivider" />
+                                <h3 id="prerequisites" class="bold">Prerequisites</h3>
+                                <ul class="bulleted">
+                                    <li>CSS: <a href="http://canary.mfcreativestage.com/css/v1/slider.css?minify=false" title="View source"><code>/css/v1/<strong>slider.css</strong></code></a></li>
+                                    <li>JS: <a href="http://canary.mfcreativestage.com/js/v1/slider.js?minify=false" title="View source"><code>/js/v1/<strong>slider.js</strong></code></a></li>
+                                    <li>Optional: <a href="http://canary.mfcreativestage.com/js/v1/form.js?minify=false" title="View source"><code>/js/v1/<strong>form.js</strong></code></a> (for validation)</li>
+                                </ul>
+                                <hr class="conDivider" />
+                                <h3 class="bold">Instructions</h3>
+                                <p>Guidelines for using sliders.</p>
+                                <ul class="bulleted">
+                                	<li>Sliders are to be used like a checkbox, in cases where you need to the user to select a "true / false", "accept / decline" or "yes / no" option.</li>
+                                	<li>Sliders may be used inside or outside a <code>&lt;form&gt;</code>.</li>
+                                	<li>The on / off states of the slider must be set with the data attributes: <code>data-label-on="</code>[name]<code>"</code> and <code>data-label-off="</code>[name]<code>"</code></li>
+                                    <li>Sliders are auto-instantiated by slider.js, unless:
+                                        <ul class="bulleted">
+                                            <li>A data attribute of <code>data-auto-instaniate="off"</code> is set</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <hr class="conDivider" />
+                                <h3 id="basicForm" class="bold">Example #1 - Basic Slider</h3>
+                                <figure>
+                                    <form action="" class="form" id="firstToggleForm">
+										<input class="slider" type="checkbox" name="option3" id="option3" value="C" />
+										<label for="option3" class="topSpacingBlock"><span class="sliderHandle"><span></span></span>Please accept the terms and conditions to proceed</label>
+
+										<input class="slider" type="checkbox" checked="checked" name="option1" id="option1" value="On" data-auto-instantiate="off" />
+										<label for="option1" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No"><span></span></span>Turn on settings?</label>
+
+										<input class="slider" type="checkbox" name="option2" id="option2" value="No" />
+										<label for="option2" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No, it isn't"><span></span></span>Is this the correct year?</label>
+									</form>
+                                    <pre class="code html collapse"><code>
+&lt;form action="" class="form" id="firstToggleForm">
+	&lt;input class="slider" type="checkbox" name="option3" id="option3" value="C" />
+	&lt;label for="option3" class="topSpacingBlock">&lt;span class="sliderHandle">&lt;span>&lt;/span>&lt;/span>Please accept the terms and conditions to proceed&lt;/label>
+	&lt;input class="slider" type="checkbox" checked="checked"  name="option1" id="option1" value="On" data-auto-instantiate="off" />
+	&lt;label for="option1" class="topSpacing">&lt;span class="sliderHandle" data-label-on="Yes" data-label-off="No">&lt;span>&lt;/span>&lt;/span>Turn on settings?&lt;/label>
+	&lt;input class="slider" type="checkbox" name="option2" id="option2" value="No" />
+	&lt;label for="option2" class="topSpacing">&lt;span class="sliderHandle" data-label-on="Yes" data-label-off="No, it isn't">&lt;	span>&lt;/span>&lt;/span>DIs this the correct year?&lt;/label>
+&lt;/form>
+									</code></pre>
+                                    <figcaption><strong>Example #1:</strong> Basic slider control layout. Sliders can be clicked, clicked and dragged, or touched and dragged.</figcaption>
+                                </figure>
+                                <hr class="conDivider" />
+                                <h3 class="bold">Default Style Rules</h3>
+                                <ul class="bulleted">
+                                    <li>The background-color for the slider in Bonsai is #97b817. In the old styles, the background-color is #899c02.</em>
+                                    </li>
+                                </ul>
+                            </div>
+			        	</section>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mainSidebar">
+            <!--Content from sidebar section -->
+
+        </div>
+        <footer class="mainFooter" role="contentinfo">
+            <!--Content from footer section -->
+            <ul class="mainFooterContents">
+                <li class="mainFooterCopyright">&copy;2013 Ancestry.com<sup>&reg;</sup> Standards</li>
+                <li><a href="past-news">Past News</a>
+                </li>
+                <li><a href="standards-status">Status</a>
+                </li>
+                <li><a href="mailto:standards@ancestry.com">Contact</a>
+                </li>
+                <li><a href="sitemap">Site Map</a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+    <!-- Bottom content from header section -->
+    <script src="http://c.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.0.min.js&amp;x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v1/callout.js&amp;x/js/v2/carousel.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/paging.js&amp;x/js/v2/tab.js&amp;x/js/standards/prism.js&amp;x/js/standards/standards.js"></script>
+    <script>
+    /* Apply Ancestry Styles and Line Numbering */
+    (function($) {
+        "use strict";
+        /* Apply Prism classes to existing code where snippets.js classes already exist */
+        $('pre.code.html').addClass('language-markup');
+        $('pre.code.js').addClass('language-javascript');
+        $('pre.code.css').addClass('language-css');
+        /* Apply line numbering to code blocks */
+        $('pre.language-markup, pre.language-javascript, pre.language-css').addClass('line-numbers');
+    }(jQuery));
+    </script>
+    <script>
+    var query_string = {};
+    (function() {
+        var params = window.location.search.substr(1).split("&"),
+            paramsLength = params.length,
+            i,
+            pair,
+            arr;
+        for (i = 0; i < paramsLength; i += 1) {
+            pair = params[i].split("=");
+            // If first entry with this name
+            if (query_string[pair[0]] === undefined) {
+                query_string[pair[0]] = pair[1];
+                // If second entry with this name
+            } else if (typeof query_string[pair[0]] === "string") {
+                arr = [query_string[pair[0]], pair[1]];
+                query_string[pair[0]] = arr;
+                // If third or later entry with this name
+            } else {
+                query_string[pair[0]].push(pair[1]);
+            }
+        }
+        if (query_string["presentation"]) {
+            var a = document.createElement("style");
+            a.innerHTML = "pre.code { background-color:#fff !important; color:#000 !important; }pre.code * { color:#000 !important; }pre.code ol li,pre.code ol li code { background-color:#fff !important; }pre.code ol li:nth-child(2n+1),pre.code ol li:nth-child(2n+1) code { background-color:#eee !important; }";
+            document.body.appendChild(a);
+        }
+    })();
+    </script>
+
+
+    <!-- Bottom content from page -->
+    <script>
+    $(function() {
+        "use strict";
+
+        $(".styleGuideTab").addClass("selected");
+
+        /* Example #4 */
+        $(function() {
+            $('#mySimpleValidation').validator({
+                "fields": {
+                    "username1": {
+                        "required": true
+                    },
+                    "password1": {
+                        "required": true
+                    }
+                }
+            });
+        });
+
+        /* Validator Instantiation */
+        $('#advancedValidation').validator({
+            "fields": {
+                "yourName": {
+                    "minLength": 3,
+                    "errorLocation": "below"
+                },
+                "email1": {
+                    "required": true,
+                    "pattern": "email"
+                },
+                "url": {
+                    "pattern": "url"
+                },
+                "tel": {
+                    "pattern": "tel",
+                    "errorLocation": "below"
+                },
+                "number": {
+                    "required": true,
+                    "pattern": "number",
+                    "errorLocation": "callout"
+                },
+                "passwordA": {
+                    "required": true,
+                    "minLength": 6
+                },
+                "passwordB": {
+                    "match": "passwordA",
+                    "required": true
+                },
+                "file": {
+                    "required": true,
+                    "extensions": ["jpg", "jpeg", "png", "gif"]
+                },
+                "myCollection": {
+                    "required": 3,
+                    "collection": $('.myCollection2').find('input[type="checkbox"]')
+                },
+                "myRadioCollection": {
+                    "required": true,
+                    "collection": $('.myRadioCollection').find('input[name="gender"]')
+                },
+                "feedback": {
+                    "maxLength": 20,
+                    "when": "keyup"
+                },
+                "custom2": {
+                    "pattern": function(value, $field) {
+                        if (!value.length || !value.match(/^A/) && value.length < 4) {
+                            $.validator.setErrorIndex($field, '0');
+                            return false;
+                        } else if (!value.match(/^A/)) {
+                            $.validator.setErrorIndex($field, '1');
+                            return false;
+                        } else if (value.length < 4) {
+                            $.validator.setErrorIndex($field, '2');
+                            return false;
+                        }
+                        return true;
+                    }
+                }
+            }
+        });
+
+        $('#enableEverything').on('click.formSample', function() {
+            $(this).closest('form').find('.disabled').removeClass('disabled').end().find('[disabled], [readonly]').removeAttr('disabled').removeAttr('readonly');
+            $(this).parent().remove();
+        });
+        /* Instantiate slider */
+        $('.slider:not([data-auto-instantiate="off"])').slider();
+		$('#sortMenuTrigger').callout({'content': '#sortMenu'});
+    });
+    </script>
+</body>
+
+</html>

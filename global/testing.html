@@ -19,7 +19,7 @@
 <body>
 	<div class="page">
 		<div class="ancGrid full480 ancGridPadded">
-			<section class="con">
+			<section class="con modal" id="keyCodeModal">
 				<h3 class="conTitle">Check for keyCodes</h3>
 				<p>The "keyCode" to that key is: <span id="keyCode"></span></p>
 			</section>
@@ -27,10 +27,13 @@
 	</div>
 <script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v3/modal.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js"></script>
 <script>
-	$(document).keyup(function(e) {
-	  $("#keyCode")
-	  .empty()
-	  .append(e.keyCode);
+	$(function(e) {
+		$("#keyCodeModal").modal({
+		  $(document).keyup(function (){
+		  	.empty()
+		  	.append(e.keyCode);
+		  });
+		});
 	});
 </script>
 </body>

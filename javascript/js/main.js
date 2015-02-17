@@ -4,10 +4,14 @@
 	console.log(myArr);
 	myArr.push('bin');
 	console.log(myArr);
+	
+	var p = document.getElementById("one"),
+		pInnards = p.innerHTML;
 
-	cheese = prompt("Do you like cheese?");
+	console.warn(pInnards);
 
-	console.log(cheese);
-	defaults = 1e1;
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    console.log("DOM fully loaded and parsed");
+	  });
 
 })();
