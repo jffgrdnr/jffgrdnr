@@ -2,26 +2,25 @@
 	/js/v1/slider.js
 *****************************************/
 ;(function ($) {
+	"use strict";
 	$.fn.slider = function () {
 		return this.each(function () {
 			var $input = $(this),
 				$sliderHandle = $input.next().find('.sliderHandle');
-			$input
-				.on('change.form', function () {
-					$input
-						.next('label')
-						/* Make certain each slider element gets only one click event */
-						.one('mousemove.form', function () {
-							$input.blur();
-						});
-				})
-				$sliderHandle
+			$input.on('change.form', function () {
+				$input
+					.next('label')
+					/* Make certain each slider element gets only one click event */
+					.one('mousemove.form', function () {
+						$input.blur();
+					});
+			});
+			$sliderHandle
 				.on('mousedown.form touchstart.form', 'span', function (e) {
 					var newX = false,
 						lastPageX = false,
 						sideSpacing = 4,
 						$sliderBtn = $(this),
-						$sliderHandle = $sliderBtn.parent(),
 						inputId = $sliderHandle.closest('label').attr('for'),
 						$slider = $('#' + inputId),
 						currentlyChecked = $slider.prop('checked'),
@@ -37,11 +36,13 @@
 						$(document).off('.slider');
 						setTimeout(function () {
 							/* Set current */
-							$slider.prop('checked', (Math.abs(startPageX - lastPageX) / (maxX - minX) > .3) || !newX ? !currentlyChecked : currentlyChecked);
+							$slider.prop('checked', (Math.abs(startPageX - lastPageX) / (maxX - minX) > 0.3) || !newX ? !currentlyChecked : currentlyChecked);
 						});
 						return false;
 					}
-					$sliderHandle.addClass('sliding').on('mouseleave.form.slider', slide);
+					$sliderHandle
+						.addClass('sliding')
+						.on('mouseleave.form.slider', slide);
 					$(document)
 						.on('mousemove.form.slider touchmove.form.slider', selectorToThisSlider, function (e) {
 							lastPageX = e.originalEvent && e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
@@ -51,7 +52,7 @@
 							} else if (newX >= maxX) {
 								newX = maxX;
 							}
-							if ((currentLeftX === minX && (newX - sideSpacing || 1) / (maxX - minX) > .3) || (currentLeftX === maxX && (newX - sideSpacing) / (maxX - minX) > .7)) {
+							if ((currentLeftX === minX && (newX - sideSpacing || 1) / (maxX - minX) > 0.3) || (currentLeftX === maxX && (newX - sideSpacing) / (maxX - minX) > 0.7)) {
 								$sliderHandle.addClass('slidingToOn').removeClass('slidingToOff');
 							} else {
 								$sliderHandle.addClass('slidingToOff').removeClass('slidingToOn');
@@ -65,7 +66,7 @@
 		});
 	};
 	/* Auto instantiating only those not explicitly excluded */
-	$(function (){
+	$(function () {
 		$('.slider:not([data-auto-instantiate="off"])').slider();
 	});
 }(jQuery));
