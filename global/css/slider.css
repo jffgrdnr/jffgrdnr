@@ -2,7 +2,7 @@
 /****************************************
 	/css/v1/slider.css
 *****************************************/
-.slider { height:1px !important; left:-1px; opacity:0; pointer-events:none; position:fixed; top:-1px; width:1px !important; }
+.slider { height:1px !important; opacity:0; pointer-events:none; position:absolute; width:1px !important;  }
 .slider + label { margin-bottom:45px; position:relative; }
 .sliderHandle { background-color:#bebbb3; border-radius:15px; bottom:-35px; cursor:pointer; height:30px; left:0; overflow:hidden; position:absolute; -webkit-transition:background-color .2s; transition:background-color .2s; vertical-align:top; white-space:nowrap; word-wrap:normal; }
 .calloutMenu,

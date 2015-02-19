@@ -323,6 +323,8 @@
                                 </li>
                                 <li><a href="/cs/standards/sample-form-search">Search Form Example</a>
                                 </li>
+                                <li><a href="/cs/standards/sample-form-slider">Slider Example</a>
+                                </li>
                             </ul>
                         </div>
                     </aside>
@@ -688,13 +690,64 @@
                                     <figcaption><strong>Example #3:</strong> Shows required and disabled field states</figcaption>
                                 </figure>
                                 <hr class="conDivider" />
-                                <h2 id="formValidation">Instructions - Validation</h2>
+                                <h2 class="conTitle" id="formSliders">Slider</h2>
+                                <div class="conBody">
+                                    <p>A slider is essentially a more mobile-friendly version of a checkbox.</p>
+                                    <h3 id="prerequisites">Prerequisites</h3>
+                                    <ul class="bulleted">
+                                        <li>CSS: <a href="http://canary.mfcreativestage.com/css/v1/slider.css?minify=false" title="View source"><code>/css/v1/<strong>slider.css</strong></code></a></li>
+                                        <li>JS: <a href="http://canary.mfcreativestage.com/js/v1/slider.js?minify=false" title="View source"><code>/js/v1/<strong>slider.js</strong></code></a></li>
+                                        <li>Optional: <a href="http://canary.mfcreativestage.com/js/v1/form.js?minify=false" title="View source"><code>/js/v1/<strong>form.js</strong></code></a> (for validation)</li>
+                                    </ul>
+                                    <h3 >Instructions</h3>
+                                    <ul class="bulleted">
+                                        <li>A slider is to be used like a checkbox, in cases where you need to the user to select a "true / false", "accept / decline" or "yes / no" option.</li>
+                                        <li>A slider may be used inside or outside a <code>&lt;form&gt;</code>.</li>
+                                        <li>The on / off states of the slider must be set with the data attributes: <code>data-label-on="</code>[name]<code>"</code> and <code>data-label-off="</code>[name]<code>"</code></li>
+                                        <li>A slider is auto-instantiated by slider.js, unless:
+                                            <ul class="bulleted">
+                                                <li>A data attribute of <code>data-auto-instaniate="off"</code> is set</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <h3>Default Styles</h3>
+                                    <ul class="bulleted">
+                                        <li>The background-color for a slider in Bonsai is #97b817. In the "burnt summer" styles, the background-color is #899c02.</em>
+                                        </li>
+                                    </ul>
+                                    <hr class="conDivider" />
+                                    <h3 id="basicForm" >Example #4 - Basic Slider</h3>
+                                    <figure>
+                                        <form action="" class="form" id="firstToggleForm">
+                                            <input class="slider" type="checkbox" name="option3" id="option3" value="C" />
+                                            <label for="option3" class="topSpacingBlock"><span class="sliderHandle"><span></span></span>Please accept the terms and conditions to proceed</label>
+
+                                            <input class="slider" type="checkbox" checked="checked" name="option1" id="option1" value="On" data-auto-instantiate="off" />
+                                            <label for="option1" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No"><span></span></span>Turn on settings?</label>
+
+                                            <input class="slider" type="checkbox" name="option2" id="option2" value="No" />
+                                            <label for="option2" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No, it isn't"><span></span></span>Is this the correct year?</label>
+                                        </form>
+                                        <pre class="code html collapse"><code>&lt;form action="" class="form" id="firstToggleForm">
+    &lt;input class="slider" type="checkbox" name="option3" id="option3" value="C" />
+    &lt;label for="option3" class="topSpacingBlock">&lt;span class="sliderHandle">&lt;span>&lt;/span>&lt;/span>Please accept the terms and conditions to proceed&lt;/label>
+    &lt;input class="slider" type="checkbox" checked="checked"  name="option1" id="option1" value="On" data-auto-instantiate="off" />
+    &lt;label for="option1" class="topSpacing">&lt;span class="sliderHandle" data-label-on="Yes" data-label-off="No">&lt;span>&lt;/span>&lt;/span>Turn on settings?&lt;/label>
+    &lt;input class="slider" type="checkbox" name="option2" id="option2" value="No" />
+    &lt;label for="option2" class="topSpacing">&lt;span class="sliderHandle" data-label-on="Yes" data-label-off="No, it isn't">&lt; span>&lt;/span>&lt;/span>DIs this the correct year?&lt;/label>
+&lt;/form></code></pre>
+                                        <figcaption><strong>Example #4:</strong> Basic slider control layout. Sliders can be clicked, clicked and dragged, or touched and dragged.</figcaption>
+                                    </figure> 
+                                </div>
+                                <hr class="conDivider" />
+                                <h2 class="conTitle" id="formValidation">Validation</h2>
+                                <h3>Instructions</h3>
                                 <ol class="numbered">
                                     <li>Form validation is done with our custom unobtrusive jQuery plugin.</li>
                                     <li>Instantiating the <code>$().validator()</code> plugin also adds multiple polyfills that add cross-browser support for: placeholder text, URL inputs, and styled file inputs.</li>
                                     <li>There are many ways to augment the validator with certain CSS classes and some custom <code>[data]</code> attributes, but these are not required.</li>
                                 </ol>
-                                <h3 id="simpleValidation">Example #4 - Simplest possible validation</h3>
+                                <h3 id="simpleValidation">Example #5 - Simplest possible validation</h3>
                                 <figure class="collapseTabs">
                                     <form action="#" class="form" enctype="multipart/form-data" method="post" id="mySimpleValidation">
                                         <div class="ancGrid">
@@ -715,7 +768,7 @@
                                         <button class="tab">HTML</button>
                                         <button class="tab">JS</button>
                                     </menu>
-                                    <div data-tab-group="example4">
+                                    <div data-tab-group="example5">
                                         <div class="tabContent">
                                             <pre class="code html"><code>&lt;form action="#" class="form" enctype="multipart/form-data" method="post" id="mySimpleValidation">
 												&lt;div class="ancGrid">
@@ -748,7 +801,7 @@
 											&lt;/script></code></pre>
                                         </div>
                                     </div>
-                                    <figcaption><strong>Example #4:</strong> Basic validation illustrating how to make 2 fields required.</figcaption>
+                                    <figcaption><strong>Example #5:</strong> Basic validation illustrating how to make 2 fields required.</figcaption>
                                 </figure>
                                 <ol class="numbered" start="4">
                                     <li>As shown above, you instantiate our "validator" plugin on the form itself, like so: <code>$('#myFormId').validator();</code>
@@ -806,7 +859,7 @@
                                         </dl>
                                     </li>
                                 </ol>
-                                <h3 id="advancedValidationExample">Example #5 - Advanced validation</h3>
+                                <h3 id="advancedValidationExample">Example #6 - Advanced validation</h3>
                                 <figure class="collapseTabs">
                                     <form action="#" class="form formLarge480" enctype="multipart/form-data" id="advancedValidation" method="post">
                                         <p class="requiredIndicator">Indicates required field</p>
@@ -920,7 +973,7 @@
                                         <button class="tab">HTML</button>
                                         <button class="tab">JS</button>
                                     </menu>
-                                    <div data-tab-group="example5">
+                                    <div data-tab-group="example6">
                                         <div class="tabContent">
                                             <pre class="code html">
                                             	<code>
@@ -1116,65 +1169,6 @@
                                 </dl>
                             </div>
                         </section>
-                        <section class="con" id="sliders">
-			        		<header class="conHeader">
-                                <h2 class="conTitle">Sliders</h2>
-                            </header>
-                            <div class="conBody">
-                                <p>Sliders are essentially a more mobile-friendly version of a checkbox.</p>
-                                <hr class="conDivider" />
-                                <h3 id="prerequisites" class="bold">Prerequisites</h3>
-                                <ul class="bulleted">
-                                    <li>CSS: <a href="http://canary.mfcreativestage.com/css/v1/slider.css?minify=false" title="View source"><code>/css/v1/<strong>slider.css</strong></code></a></li>
-                                    <li>JS: <a href="http://canary.mfcreativestage.com/js/v1/slider.js?minify=false" title="View source"><code>/js/v1/<strong>slider.js</strong></code></a></li>
-                                    <li>Optional: <a href="http://canary.mfcreativestage.com/js/v1/form.js?minify=false" title="View source"><code>/js/v1/<strong>form.js</strong></code></a> (for validation)</li>
-                                </ul>
-                                <hr class="conDivider" />
-                                <h3 class="bold">Instructions</h3>
-                                <p>Guidelines for using sliders.</p>
-                                <ul class="bulleted">
-                                	<li>Sliders are to be used like a checkbox, in cases where you need to the user to select a "true / false", "accept / decline" or "yes / no" option.</li>
-                                	<li>Sliders may be used inside or outside a <code>&lt;form&gt;</code>.</li>
-                                	<li>The on / off states of the slider must be set with the data attributes: <code>data-label-on="</code>[name]<code>"</code> and <code>data-label-off="</code>[name]<code>"</code></li>
-                                    <li>Sliders are auto-instantiated by slider.js, unless:
-                                        <ul class="bulleted">
-                                            <li>A data attribute of <code>data-auto-instaniate="off"</code> is set</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <hr class="conDivider" />
-                                <h3 id="basicForm" class="bold">Example #1 - Basic Slider</h3>
-                                <figure>
-                                    <form action="" class="form" id="firstToggleForm">
-										<input class="slider" type="checkbox" name="option3" id="option3" value="C" />
-										<label for="option3" class="topSpacingBlock"><span class="sliderHandle"><span></span></span>Please accept the terms and conditions to proceed</label>
-
-										<input class="slider" type="checkbox" checked="checked" name="option1" id="option1" value="On" data-auto-instantiate="off" />
-										<label for="option1" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No"><span></span></span>Turn on settings?</label>
-
-										<input class="slider" type="checkbox" name="option2" id="option2" value="No" />
-										<label for="option2" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No, it isn't"><span></span></span>Is this the correct year?</label>
-									</form>
-                                    <pre class="code html collapse"><code>
-&lt;form action="" class="form" id="firstToggleForm">
-	&lt;input class="slider" type="checkbox" name="option3" id="option3" value="C" />
-	&lt;label for="option3" class="topSpacingBlock">&lt;span class="sliderHandle">&lt;span>&lt;/span>&lt;/span>Please accept the terms and conditions to proceed&lt;/label>
-	&lt;input class="slider" type="checkbox" checked="checked"  name="option1" id="option1" value="On" data-auto-instantiate="off" />
-	&lt;label for="option1" class="topSpacing">&lt;span class="sliderHandle" data-label-on="Yes" data-label-off="No">&lt;span>&lt;/span>&lt;/span>Turn on settings?&lt;/label>
-	&lt;input class="slider" type="checkbox" name="option2" id="option2" value="No" />
-	&lt;label for="option2" class="topSpacing">&lt;span class="sliderHandle" data-label-on="Yes" data-label-off="No, it isn't">&lt;	span>&lt;/span>&lt;/span>DIs this the correct year?&lt;/label>
-&lt;/form>
-									</code></pre>
-                                    <figcaption><strong>Example #1:</strong> Basic slider control layout. Sliders can be clicked, clicked and dragged, or touched and dragged.</figcaption>
-                                </figure>
-                                <hr class="conDivider" />
-                                <h3 class="bold">Default Style Rules</h3>
-                                <ul class="bulleted">
-                                    <li>The background-color for the slider in Bonsai is #97b817. In the old styles, the background-color is #899c02.</em>
-                                    </li>
-                                </ul>
-                            </div>
-			        	</section>
                     </div>
                 </div>
 
