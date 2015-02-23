@@ -1,11 +1,7 @@
-.userCardName { color:#695e49; font-weight:bold; }
-a.userCardName,
-.link.userCardName { color:#afbc22; text-decoration:none; }
-a.userCardName:hover,
-a.userCardName:focus,
-.link.userCardName:hover,
-.link.userCardName:focus { color:#566c11; text-decoration:underline; }
-
+@charset "utf-8";
+/****************************************
+	/css/v1/user-card.css
+****************************************/
 .userCard { display:block; line-height:40px; margin-top:8px; min-height:40px; padding-left:48px; position:relative; word-wrap:break-word; }
 .userCard:first-child { margin-top:0; }
 /* Colors / Spacing */
@@ -58,6 +54,8 @@ a.userCardName:focus,
 /* Smaller 20x20 */
 .userCardSize3,
 .userCardMini { line-height:20px; min-height:20px; padding-left:28px; }
+.userCardSize3 .userCardTitle,
+.userCardSize3 .userCardSubTitle { display:inline-block; }
 .userCardSize3 .userCardImg,
 .userCardMini .userCardImg { height:20px; width:20px; }
 .userCardSize3 .userCardImg.icon:before,
