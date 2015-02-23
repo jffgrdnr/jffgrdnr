@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Card Examples | Ancestry.com® Standards</title>
+	<!-- Head content from header section -->
+		<!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+	<!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+	<!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="description" content=" "/>
+	<link rel="canonical" href="" />
+	<script>var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+	document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');</script>
+	<style>
+	/* Reset */
+	* { margin:0; padding:0; }
+	*, *:before, *:after { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+	/* Relevant to this demo */
+	</style>
+	<link rel="stylesheet" href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v1/activity-indicator.css&amp;x/css/v2/alert.css&amp;x/css/v1/autocomplete.css&amp;x/css/v1/button.css&amp;x/css/v1/callout.css&amp;x/css/v1/card.css&amp;x/css/v2/carousel.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v1/icon.css&amp;x/css/v3/modal.css&amp;x/css/v2/paging.css&amp;x/css/v1/photo.css&amp;x/css/v2/progress.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css&amp;x/css/standards/standards.css&amp;x/css/standards/prism.css">
+	<!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+	<!--[if lte IE 9]><script src="/playground/scripts/html5-shiv.js"></script><![endif]-->
+</head>
+<body>
+	<div class="ancGrid full480">
+        <div class="ancCol w50">
+            <div class="card cardHasBottomSelectAction" tabindex="0" role="button" aria-pressed="false" data-toggle-classes="cardOutline2 cardSelected">
+                <h4 class="cardTitle">Bottom Actions Slide</h4>
+                <h5 class="cardSubtitle">Card Subtitle</h5>
+                <p>Bacon are capicola pork loin brisket meatloaf turkey tri-tip cow jerky. Turducken strip steak rump pastrami tenderloin.</p>
+                <div class="cardActions">
+                    <button type="button" class="ancBtn silver sml cardAction">Edit</button><button type="button" class="ancBtn silver sml cardAction">Move</button><button type="button" class="ancBtn silver sml cardAction">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="ancCol w50">
+            <div class="card icon iconAudio cardHasSelectAction" tabindex="0" role="button" aria-pressed="false" data-toggle-classes="cardOutline1 cardSelected">
+                <button type="button" class="ancBtn silver sml cardAction">Save</button>
+                <h4 class="cardTitle">Card Title</h4>
+                <h5 class="cardSubtitle">Card Subtitle</h5>
+                <p>Bacon are capicola pork loin brisket meatloaf turkey tri-tip cow jerky. Turducken strip steak rump pastrami tenderloin.</p>
+            </div>
+        </div>
+        <div class="ancCol ancColRow w50">
+            <a class="card cardHasBottomSelectAction icon iconWarning cardOutline4 cardSelected" href="https://www.google.com/search?q=meaning+of+life">
+                <h4 class="cardTitle">As a link</h4>
+                <h5 class="cardSubtitle">Card Subtitle</h5>
+                <p>This <code>&lt;a&gt;</code> element is always selected.</p>
+                <div class="cardActions">
+                    <button type="button" class="ancBtn silver sml cardAction">Rachfraganonan</button><button type="button" class="ancBtn silver sml cardAction">Meschoffcanconan</button>
+                </div>
+            </a>
+        </div>
+        <div class="ancCol w50">
+            <div class="card cardEmpty" tabindex="0" role="button" aria-pressed="false">
+                <h4 class="cardTitle">Empty State</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic nisi qui error voluptatum ullam, praesentium ipsa cupiditate saepe deserunt exercitationem</p>
+            </div>
+        </div>
+    </div>
+<script src="http://c.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.0.min.js&amp;x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v1/callout.js&amp;x/js/v2/carousel.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/paging.js&amp;x/js/v2/tab.js&amp;x/js/standards/prism.js&amp;x/js/standards/standards.js"></script>
+<script>
+$(function() {
+	$('.card[tabindex]:not(.cardEmpty), a.card')
+	    .on('click keypress', '.ancBtn', function(e) {
+	        if (e.type === 'click' || e.keyCode === 32 || e.keyCode === 13) {
+	            return false;
+	        }
+	    })
+	    .on('click keypress', function(e) {
+	        var $this = $(this);
+	        if (e.type === 'click' || e.keyCode === 32 || e.keyCode === 13) {
+	            if ($this.is('a')) {
+	                if (!$this.hasClass('cardSelected')) {
+	                    $this.toggleClass($this.data('toggle-classes'));
+	                    return false;
+	                }
+	            } else {
+	                $this.toggleClass($this.data('toggle-classes'));
+	            }
+	        }
+	        /* Remove focus state per UX */
+	        $this.one('mousemove', function() {
+	            $this.blur();
+	        });
+	    });
+	});
+</script>
+</body>
+</html>
