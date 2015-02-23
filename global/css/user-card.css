@@ -1,0 +1,72 @@
+.userCardName { color:#695e49; font-weight:bold; }
+a.userCardName,
+.link.userCardName { color:#afbc22; text-decoration:none; }
+a.userCardName:hover,
+a.userCardName:focus,
+.link.userCardName:hover,
+.link.userCardName:focus { color:#566c11; text-decoration:underline; }
+
+.userCard { display:block; line-height:40px; margin-top:8px; min-height:40px; padding-left:48px; position:relative; word-wrap:break-word; }
+.userCard:first-child { margin-top:0; }
+/* Colors / Spacing */
+/* max-width to fix IE8 rendering, margin-top is for line-height issues */
+.userCardContent { color:#695e49; display:inline-block; line-height:1.5; margin-top:-.25em; width:100%; vertical-align:middle; }
+.userCardInfo a,
+.userCardInfo .link,
+.userCardInfo small { color:#a59e92; font-size:11px; margin-right:12px; }
+.userCardSubTitle { margin-top:2px; }
+/* Default 40x40 */
+.userCardImg { border:1px solid #dbd9d3; border-radius:50%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; height:40px; left:0; overflow:hidden; position:absolute; top:0; width:40px; }
+.userCardName { font-weight:bold; }
+a.userCardName,
+.link.userCardName { color:#afbc22; text-decoration:none; }
+a.userCardName:hover,
+a.userCardName:focus,
+.link.userCardName:hover,
+.link.userCardName:focus { color:#566c11; text-decoration:underline; }
+.userCardImg.icon { background-color:#695e49; border:0; text-align:center; }
+.userCardImg.icon:before { color:#a59e92; display:inline-block; font-size:34px; line-height:39px; }
+.userCardImg.iconAcom:before { font-size:24px; line-height:36px; }
+.userCardImg img { height:100%; width:100%; }
+/* Portrait / Landscape */
+.userCardPortrait img { height:auto; }
+.userCardLandscape img { width:auto; }
+/* Large 96x96 */
+.userCardLarge,
+.userCardSize4 { line-height:96px; min-height:96px; padding-left:108px; }
+.userCardLarge .userCardImg,
+.userCardSize4 .userCardImg { height:96px; width:96px; }
+.userCardLarge .userCardImg.icon.iconMale:before, 
+.userCardSize4 .userCardImg.icon.iconMale:before { text-align:left; text-indent:2px; }
+.userCardLarge .userCardImg.icon:before,
+.userCardSize4 .userCardImg.icon:before { font-size:64px; line-height:80px; }
+.userCardLarge .userCardImg.iconPerson:before,
+.userCardSize4 .userCardImg.iconPerson:before,
+.userCardLarge .userCardImg.iconMale:before,
+.userCardSize4 .userCardImg.iconMale:before,
+.userCardLarge .userCardImg.iconFemale:before,
+.userCardSize4 .userCardImg.iconFemale:before { font-size:92px; height:96px; line-height:94px; }
+.userCardLarge .userCardImg.iconAcom:before,
+.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:80px; }
+/* Small 30x30 */
+.userCardSize2 { line-height:30px; min-height:30px; padding-left:38px; }
+.userCardSize2 .userCardImg { height:30px; width:30px; }
+.userCardSize2 .userCardImg.iconPerson:before,
+.userCardSize2 .userCardImg.iconMale:before,
+.userCardSize2 .userCardImg.iconFemale:before { font-size:25px; height:30px; line-height:32px; }
+.userCardSize2 .userCardImg.iconAcom:before { font-size:18px; line-height:26px; }
+/* Smaller 20x20 */
+.userCardSize3,
+.userCardMini { line-height:20px; min-height:20px; padding-left:28px; }
+.userCardSize3 .userCardImg,
+.userCardMini .userCardImg { height:20px; width:20px; }
+.userCardSize3 .userCardImg.icon:before,
+.userCardMini .userCardImg.icon:before { font-size:13px; line-height:17px; }
+.userCardSize3 .userCardImg.iconPerson:before,
+.userCardMini .userCardImg.iconPerson:before,
+.userCardSize3 .userCardImg.iconMale:before,
+.userCardMini .userCardImg.iconMale:before,
+.userCardSize3 .userCardImg.iconFemale:before,
+.userCardMini .userCardImg.iconFemale:before { font-size:16px; height:20px; line-height:20px; }
+/* For use above the header */
+.userCardMini { display:inline-block; position:relative; }
