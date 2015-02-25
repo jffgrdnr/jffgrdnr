@@ -238,6 +238,8 @@
                         });
                         Modal.showLoading(false);
                         window.scrollTo(settings.windowPosition[0], settings.windowPosition[1]);
+                        Modal.openButton.focus(); /* Focus on button that first opened modal */
+                        $(Modal.modalOpenButtons).attr("aria-expanded","false"); /* Set all triggered modal buttons back to aria-expanded false */
                     }
                     removeEvents();
                     if (Modal.previousSettings.el.data('dynamic')) {
@@ -247,8 +249,6 @@
                     }
                     Modal.previousSettings.onClose($this);
                     return Modal.previousSettings.windowPosition;
-                    Modal.openButton.focus(); /* Focus on button that first opened modal */
-                    $(Modal.modalOpenButtons).attr("aria-expanded","false"); /* Set all triggered modal buttons back to aria-expanded false */
                 };
                 /* visible, focusable, and tabbable functions for accessibility when opening a modal */
                 function visible(element) {
@@ -441,7 +441,7 @@
                     $("#fourthModal").click(function(e) {
                         var $this = $(this);
                         $this.attr("aria-expanded","true");
-                        $("<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>").modal({
+                        $("<div id='modal'><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>").modal({
                             width: '200'
                         });
                     });
