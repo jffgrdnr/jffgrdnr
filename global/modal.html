@@ -67,7 +67,8 @@
             "use strict";
             var Modal,
                 version = 3,
-                isIe8 = $('html').hasClass('ie8'), /* detect ie8 and earlier without $.browser for 1.11.0 */
+                isIe8 = $('html').hasClass('ie8'),
+                /* detect ie8 and earlier without $.browser for 1.11.0 */
                 isIe9 = $('html').hasClass('ie9'); /* detect ie9 without $.browser for 1.11.0 */
             /* Use the newer version if the file is included twice and one version is newer than the other. */
             if ($.modal && version <= $.modal.version) {
@@ -84,26 +85,18 @@
                 showLoading: false,
                 width: '',
                 title: '',
-                onOpen: function () { },
-                onClose: function () { }
+                $trigger: false,
+                onOpen: function () { return; },
+                onClose: function () { return; }
             };
             Modal.isOpen = false;
             Modal.isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
             Modal.paddingLeftRight = 40; /* Left and right padding on desktop view */
             Modal.widthTransition = 410; /* Animation width time */
-            Modal.modalOpenButtons = $.makeArray($("button[aria-controls='modal']")); /* Make array of buttons whose aria-controls point to modals */
-            /* Save original openModal button click event */
-            $(Modal.modalOpenButtons).on("click.button", function() {
-                if (Modal.isOpen) {
-                    return false;
-                } else {
-                    Modal.openButton = $(this);
-                    $(Modal.openButton).attr("aria-expanded", "true");
-                }
-            });
+            Modal.openButton = false;
             /* Add marker to allow for styles changes based on whether the device supports touch or not */
             Modal.addToPage = function () {
-                $('<section id="modal"><div id="modalCenter"></div><div id="modalContents" aria-describedby="modalHeader" aria-expanded="true" role="alertdialog" tabIndex="-1"><button class="closeBtn" id="modalClose" title="Close modal" type="button"></button></div></section>').appendTo('body');
+                $('<section id="modal" aria-describedby="modalHeader" aria-expanded="true" role="alertdialog"><div id="modalCenter"></div><div id="modalContents" tabIndex="-1"><button class="closeBtn" id="modalClose" title="Close modal" type="button"></button></div></section>').appendTo('body');
                 /* Add events */
                 $('#modalClose').on('click.modal', function () {
                     $('body').trigger('closeModal.modal');
@@ -131,7 +124,9 @@
                 var windowHeight = $('html').height(),
                     $modalContents = $('#modalContents'),
                     modalHeight = $modalContents.outerHeight();
-                $('#modalCenter').css({ "margin-bottom": (-modalHeight / 2) + "px" });
+                $('#modalCenter').css({
+                    "margin-bottom": (-modalHeight / 2) + "px"
+                });
                 modalHeight += parseInt($modalContents.css('margin-top'), 10) + parseInt($modalContents.css('margin-bottom'), 10);
                 if (Modal.isTouchDevice) {
                     if (modalHeight <= windowHeight) {
@@ -191,6 +186,9 @@
                 if (!settings.title && $this.attr('data-title')) {
                     settings.title = $this.attr('data-title');
                 }
+                if (settings.$trigger) {
+                    settings.$trigger.attr('aria-controls', 'modal');
+                }
                 addEvents = function () {
                     $('body').on('closeModal.modal', function () {
                         $('#modal').animate({
@@ -226,11 +224,12 @@
                 };
                 /* Remove specific modal events, title, and optional classes */
                 closeModal = function (alreadyOpen) {
+                    var $modal = $('#modal');
                     if (alreadyOpen !== true) {
                         Modal.isOpen = false;
                         $('html').removeClass('modalOpen');
                         $('body').css('padding-right', '').height('');
-                        $('#modal').removeAttr('style');
+                        $modal.removeAttr('style');
                         $('#modalCenter').removeClass('modalCentered');
                         $('#modalContents').attr({
                             'style': '',
@@ -238,8 +237,13 @@
                         });
                         Modal.showLoading(false);
                         window.scrollTo(settings.windowPosition[0], settings.windowPosition[1]);
-                        Modal.openButton.focus(); /* Focus on button that first opened modal */
-                        $(Modal.modalOpenButtons).attr("aria-expanded","false"); /* Set all triggered modal buttons back to aria-expanded false */
+                        if (Modal.openButton) {
+                            Modal.openButton
+                                .removeAttr("aria-expanded") /* Focus on and remove aria-expanded from button that opened modal */
+                                .focus();
+                        }
+                        $modal.removeAttr("aria-expanded");
+                        Modal.openButton = false;
                     }
                     removeEvents();
                     if (Modal.previousSettings.el.data('dynamic')) {
@@ -257,6 +261,7 @@
                             return $.css(this, "visibility") === "hidden";
                         }).length;
                 }
+
                 function focusable(element, isTabIndexNotNaN) {
                     var map,
                         mapName,
@@ -273,13 +278,15 @@
                     }
                     return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled : "a" === nodeName ? element.href || isTabIndexNotNaN : isTabIndexNotNaN) && visible(element);
                 }
+
                 function tabbable(element) {
                     var tabIndex = $.attr(element, "tabindex"),
                         isTabIndexNaN = isNaN(tabIndex);
                     return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
                 }
                 openModal = function () {
-                    var $modalContents,
+                    var $modal,
+                        $modalContents,
                         $modalImages,
                         imageLength,
                         screenWidth = $(window).width(),
@@ -289,6 +296,7 @@
                     if (!$('#modal').length) {
                         Modal.addToPage();
                     }
+                    $modal = $('#modal');
                     $modalContents = $('#modalContents');
                     /* If a previous modal is open, close it, then store the proper scroll location */
                     if (Modal.isOpen) {
@@ -297,6 +305,12 @@
                         settings.windowPosition = [$(document).scrollLeft(), $(document).scrollTop()];
                     } else {
                         settings.windowPosition = [$('html').scrollLeft(), $('html').scrollTop()];
+                    }
+                    if (!Modal.isOpen) {
+                        $modal.attr("aria-expanded", "true");
+                        if (settings.$trigger) {
+                            Modal.openButton = settings.$trigger.attr("aria-expanded", "true");
+                        }
                     }
                     /* Warn if they passed in an invalid selector */
                     if ($this === undefined || $this.length === 0) {
@@ -373,7 +387,7 @@
                     /* We don't call centerModal if modal is already open so CSS transition can complete first */
                     /* But <= IE9 doesn't support transitions, so center immediately */
                     if (!Modal.isOpen || isIe8 || isIe9) {
-                        $('#modal').show();
+                        $modal.show();
                         Modal.centerModal();
                     }
                     /* Catch-most for when .load fails. Also fixes Android */
@@ -393,7 +407,7 @@
                     setTimeout(function () {
                         Modal.isAnimating = false;
                     }, settings.fade + 300);
-                    $('#modal').animate({
+                    $modal.animate({
                         opacity: 1
                     }, settings.fade, 'linear', function () {
                         /* .modalCentered Exists to prevent transition until after first load */
@@ -424,58 +438,81 @@
             });
             /* Publicly expose a few shorthand methods */
             $.modal = {};
-            $.modal.center = function () { Modal.centerModal(); };
-            $.modal.close = function () { $('body').trigger('closeModal.modal'); };
-            $.modal.showLoading = function (loading) { Modal.showLoading(loading); };
-            $.modal.resize = function (width) { Modal.resizeModal(width); };
-            $.modal.title = function (title) { Modal.setTitle(title, false); };
-            $.modal.preventClosing = function () { Modal.stopClosing = true; };
+            $.modal.center = function () {
+                Modal.centerModal();
+            };
+            $.modal.close = function () {
+                $('body').trigger('closeModal.modal');
+            };
+            $.modal.showLoading = function (loading) {
+                Modal.showLoading(loading);
+            };
+            $.modal.resize = function (width) {
+                Modal.resizeModal(width);
+            };
+            $.modal.title = function (title) {
+                Modal.setTitle(title, false);
+            };
+            $.modal.preventClosing = function () {
+                Modal.stopClosing = true;
+            };
             $.modal.version = version;
         }(jQuery));
+
     </script>
     <script>
-        $("#firstModal").click(function(e) {
-            $("#modal1").modal({
+    $(function () {
+        $('#firstModal').click(function(e) {
+            $('#modal1').modal({
                 width: '500',
                 onOpen: function() {
-                    $("#fourthModal").click(function(e) {
+                    $('#fourthModal').click(function(e) {
                         var $this = $(this);
-                        $this.attr("aria-expanded","true");
-                        $("<div id='modal'><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>").modal({
+                        $this.attr('aria-expanded','true');
+                        $('<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>').modal({
                             width: '200'
                         });
                     });
-                }
+                },
+                $trigger: $(this)
             });
         });
-        $("#secondModal").click(function(e) {
-            $("#modal2").modal({
+        $('#secondModal').click(function(e) {
+            $('#modal2').modal({
                 width: '500',
                 onOpen: function() {
-                    $("#fifthModal").click(function(e) {
+                    $('#fifthModal').click(function(e) {
                         var $this = $(this);
-                        $this.attr("aria-expanded","true");
-                        $("<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>").modal({
+                        $this.attr('aria-expanded','true');
+                        $('<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>').modal({
                             width: '200'
                         });
                     });
-                }
+                },
+                $trigger: $(this)
             });
         });
-        $("#thirdModal").click(function(e) {
-            $("#modal3").modal({
+        $('#thirdModal').click(function(e) {
+            $('#modal3').modal({
                 width: '500',
                 onOpen: function() {
-                    $("#sixthModal").click(function(e) {
+                    $('#sixthModal').click(function(e) {
                         var $this = $(this);
-                        $this.attr("aria-expanded","true");
-                        $("<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>").modal({
+                        $this.attr('aria-expanded','true');
+                        $('<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>').modal({
                             width: '200'
                         });
                     });
-                }
+                },
+                $trigger: $(this)
             });
         });
+        setTimeout(function () {
+            $('<div><p>Timeout modal</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>').modal({
+                width: '500'
+            });
+        }, 5000); 
+    });
     </script>
 </body>
 
