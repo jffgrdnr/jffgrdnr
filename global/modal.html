@@ -333,7 +333,6 @@
                     $('html').addClass('modalOpen');
                     /* Focus on modal contents and remove event on blur */
                     $("#modalContents")
-                        .attr('role', 'alertdialog')
                         .focus()
                         .on("keydown.modal", function (e) {
                             /* Tab only within modal */
