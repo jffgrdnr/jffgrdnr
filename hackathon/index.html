@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content=" " />
     <link rel="canonical" href="" />
-    <link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/template.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css" type="text/css" rel="stylesheet" />
+    <link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/template.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/user-card.css" type="text/css" rel="stylesheet" />
     <link href="css/style.css" type="text/css" rel="stylesheet" />
     <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
     <script>document.write("<base href=\"" + document.location + "\" />");</script>
@@ -24,17 +24,24 @@
 				<section class="con">
 					<header>
 						<h2 class="conTitle">Interactive Image Viewer</h2>
+						<button type="button" class="link"></button>
 					</header>
-					<ul>
+					<ul class="recordList">
 						<li ng-repeat="record in records" class="record">
-							<span data-callout="<img src='img/baby.png' width='256' height='225' alt='Image for [name].'/>" type="button" class="link">{{record.firstName}} {{record.lastName}}</span>	
-							<span>{{record.birthPlace}}</span>
+							<div class="userCard">
+								<div class="userCardImg">
+									<img src="img/{{record.image}}.png"/>
+								</div>
+								<div class="userCardContent">
+									<button data-callout="<p>callout</p>" type="button" class="link">{{record.firstName}} {{record.lastName}}</button>	{{record.birthPlace}}
+								</div>
+							</div>
       					</li>
 					</ul>
 				</section>
 			</div>
 		</div>
 	</div>
-<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js&x/js/v3/modal.js"></script>
+	<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js&x/js/v3/modal.js"></script>
 </body>
 </html>
