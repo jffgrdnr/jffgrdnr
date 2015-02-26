@@ -1,7 +1,7 @@
 [
-	{ "firstName":"Jeff", "lastName":"Gardner" },
- 	{ "firstName":"Janelle", "lastName":"Gardner" },
- 	{ "firstName":"Corbin", "lastName":"Gardner" },
- 	{ "firstName":"Ayda", "lastName":"Gardner" }, 
- 	{ "firstName":"Gavin", "lastName":"Gardner" } 
+	{ "firstName":"Jeff", "lastName":"Gardner", "birthPlace":"Houston, Texas" },
+ 	{ "firstName":"Janelle", "lastName":"Gardner", "birthPlace":"Downey, California" },
+ 	{ "firstName":"Corbin", "lastName":"Gardner", "birthPlace":"American Fork, Utah" },
+ 	{ "firstName":"Ayda", "lastName":"Gardner", "birthPlace":"American Fork, Utah" }, 
+ 	{ "firstName":"Gavin", "lastName":"Gardner", "birthPlace":"American Fork, Utah" } 
 ]
