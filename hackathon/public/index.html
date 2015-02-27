@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+	<meta charset="utf-8">
+    <title>Census Viewer</title>
+    <!-- Head content from header section -->
+    <!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+    <!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+    <!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=" " />
+    <link rel="canonical" href="" />
+    <link href="http://canary.mfcreativestage.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/template.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/user-card.css&x/css/v1/photo.css&x/css/v1/table.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+  	<script src="app.js"></script>
+</head>
+<body>
+	<div class="page" ng-controller="ViewerCtrl">
+		<div class="ancGrid">
+			<div class="ancCol w100">
+				<section class="con">
+					<header class="conHeader">
+                        <h2 class="conTitle" id="example480" ng-model="newRecords">1940 Census - Parowan, Utah</h2>
+                    </header>
+                    <div class="conBody">
+						<table class="table table480">
+							<thead>
+								<tr>
+									<th>Profile</th>
+									<!-- <th id="tableCityState">City / State</th> -->
+									<th id="tableFull">Full Name</th>
+									<th id="tableRace">Race</th>
+									<th id="tableOccupation">Occupation</th>
+									<th id="tableGender">Gender</th>
+									<th id="tableAge">Age</th>
+									<th id="tableRelationship">Relationship</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>Profile</td>
+									<!-- <th id="tableCityState">City / State</th> -->
+									<td>Full Name</td>
+									<td>Race</td>
+									<td>Occupation</td>
+									<td>Gender</td>
+									<td>Age</td>
+									<td>Relationship</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr ng-repeat="record in newRecords" class="record">
+									<td>
+										<!-- type 1 = good, type 2 = no picture, type 3 = private -->
+										<div class="photo photoCircle photoSize5" ng-class="{icon:record.People[0].Type == '2' || record.People[0].Type == '3', iconPerson:record.People[0].Type == '2' || record.People[0].Type == '3'}" >
+											<img ng-show="record.People[0].Type == '1'" src="http://mediasvc.ancestry.com/image/{{record.People[0].ProfileImage}}.jpg?Client=Hackathon&NamespaceID=1093"/>
+										</div>
+									</td>
+									<!-- <td data-label="CityState">{{record.RecAttr.CityState}}</td> -->
+									<td data-label="Full Name">
+										<a ng-show="record.People[0].Type == '1' || record.People[0].Type == '2'" href="http://person.ancestry.com/tree/{{record.People[0].tid}}/person/{{record.People[0].pid}}/story" data-callout="<p>callout</p>" type="button" class="link">{{record.RecAttr.FirstName}} {{record.RecAttr.LastName}}</a>
+										<span ng-show="record.People[0].Type == '3'">{{record.RecAttr.FirstName}} {{record.RecAttr.LastName}}</span>
+									</td>
+									<td data-label="Ethnicity"> {{record.RecAttr.Race}}</td>
+									<td data-label="Occupation"> {{record.RecAttr.Occupation}}</td>
+									<td data-label="Gender"> {{record.RecAttr.Gender}}</td>
+									<td data-label="Age"> {{record.RecAttr.Age}}</td>
+									<td data-label="Relationship"> {{record.RecAttr.Relationship}}</td>
+	      						</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js&x/js/v3/modal.js"></script>
+</body>
+</html>

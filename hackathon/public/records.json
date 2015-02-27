@@ -1,0 +1,12 @@
+[
+	{ "tid":"1", "pid":"1", "firstName":"Jeff", "lastName":"Gardner", "birthPlace":"Houston, Texas", "image":"me", "gender":"male", "age":"32", "ethnicity":"W", "relationship":"" },
+ 	{ "tid":"2", "pid":"1", "firstName":"Janelle", "lastName":"Gardner", "birthPlace":"Downey, California", "image":"", "gender":"", "age":"33", "ethnicity":"W", "relationship":"wife" },
+ 	{ "tid":"3", "pid":"1", "firstName":"Corbin", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"corbin", "gender":"male", "age":"6", "ethnicity":"W", "relationship":"son" },
+ 	{ "tid":"4", "pid":"1", "firstName":"Ayda", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"ayda", "gender":"female", "age":"4", "ethnicity":"W", "relationship":"daughter" }, 
+ 	{ "tid":"5", "pid":"1", "firstName":"Gavin", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"gavin", "gender":"male", "age":"2", "ethnicity":"W", "relationship":"wife" },
+ 	{ "tid":"6", "pid":"1", "firstName":"Jeff", "lastName":"Gardner", "birthPlace":"Houston, Texas", "image":"me", "gender":"male", "age":"32", "ethnicity":"W", "relationship":"" },
+ 	{ "tid":"7", "pid":"1", "firstName":"Janelle", "lastName":"Gardner", "birthPlace":"Downey, California", "image":"", "gender":"", "age":"33", "ethnicity":"W", "relationship":"wife" },
+ 	{ "tid":"8", "pid":"1", "firstName":"Corbin", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"corbin", "gender":"male", "age":"6", "ethnicity":"W", "relationship":"son" },
+ 	{ "tid":"9", "pid":"1", "firstName":"Ayda", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"ayda", "gender":"female", "age":"4", "ethnicity":"W", "relationship":"daughter" }, 
+ 	{ "tid":"10", "pid":"1", "firstName":"Gavin", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"gavin", "gender":"male", "age":"2", "ethnicity":"W", "relationship":"wife" }  
+]

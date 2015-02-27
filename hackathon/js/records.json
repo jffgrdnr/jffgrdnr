@@ -1,7 +1,0 @@
-[
-	{ "firstName":"Jeff", "lastName":"Gardner", "birthPlace":"Houston, Texas", "image":"me" },
- 	{ "firstName":"Janelle", "lastName":"Gardner", "birthPlace":"Downey, California", "image":"nelle" },
- 	{ "firstName":"Corbin", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"corbin" },
- 	{ "firstName":"Ayda", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"ayda" }, 
- 	{ "firstName":"Gavin", "lastName":"Gardner", "birthPlace":"American Fork, Utah", "image":"gavin" } 
-]

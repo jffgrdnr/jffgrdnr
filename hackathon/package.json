@@ -1,0 +1,24 @@
+{
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "Hack project for linking census to person",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash:7999/mil/hackathon.git"
+  },
+  "keywords": [
+    "hackathon"
+  ],
+  "author": "Jeff Gardner",
+  "dependencies" : {
+    "express"    : "~4.7.2",
+    "mongoose"   : "~3.6.2",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
+    }
+}
