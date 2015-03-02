@@ -1,0 +1,263 @@
+@charset "utf-8";
+/****************************************
+	/css/v1/icon.css
+	Dependents:
+	/css/v2/alert.css
+	/css/v1/button.css
+	/css/v1/callout.css
+	/css/v1/card.css
+	/css/v1/form.css
+*****************************************/
+@font-face { font-family:"icon"; src:url("/font/v1/15/ancestry.eot?#iefix") format("embedded-opentype"), url("/font/v1/15/ancestry.woff") format("woff"), url("/font/v1/15/ancestry.ttf") format("truetype"), url("/font/v1/15/ancestry.svg#icon") format("svg"); }
+.icon:before,
+.iconAfter:after { font:normal 107%/0 "icon"; -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; position:relative; speak:none; text-transform:none; top:.075em; }
+.icon:before { margin-right:.25em; }
+.icon:empty::before { margin-right:0; }
+.iconAfter:after { margin-left:.25em; }
+/* Icons */
+.iconLeaf2:before { content:"\e610"; }
+.iconLeafOutline:before { content:"\e687"; }
+.iconMenu:before { content:"\e686"; }
+.iconCrop:before { content:"\e603"; }
+.iconSearch:before { content:"\e604"; }
+.iconZoomOut:before { content:"\e605"; }
+.iconZoomIn:before { content:"\e606"; }
+.iconDna:before { content:"\e607"; }
+.iconTemple:before { content:"\e608"; }
+.iconFamilySearch:before { content:"\e60a"; }
+.iconFamilySearch2:before { content:"\e609"; }
+.iconStar:before { content:"\e60b"; }
+.iconStarHalf:before { content:"\e60c"; }
+.iconStarOutline:before { content:"\e60d"; }
+.iconClock:before { content:"\e60e"; }
+.iconEye:before { content:"\e60f"; }
+.iconArrowLargeRight:before { content:"\e611"; }
+.iconFlipVertical-2:before,
+.iconFlipVertical2:before { content:"\e612"; }
+.iconFlipHorizontal-2:before,
+.iconFlipHorizontal2:before { content:"\e613"; }
+.iconInvert:before { content:"\e614"; }
+.iconExpand:before { content:"\e615"; }
+.iconMove:before { content:"\e616"; }
+.iconFlipVertical:before { content:"\e617"; }
+.iconFlipHorizontal:before { content:"\e618"; }
+.iconSync:before { content:"\e61d"; }
+.iconWebLink:before { content:"\e622"; }
+.iconArrowBack:before { content:"\e623"; }
+.iconMerge:before { content:"\e624"; }
+.iconStory:before { content:"\e625"; }
+.iconStories:before { content:"\e626"; }
+.iconRewind:before { content:"\e627"; }
+.iconPlay:before { content:"\e628"; }
+.iconPause:before { content:"\e629"; }
+.iconStop:before { content:"\e62a"; }
+.iconFastForward:before { content:"\e62b"; }
+.iconVideo:before { content:"\e62c"; }
+.iconVolumeMin:before { content:"\e62d"; }
+.iconVolumeMedium:before { content:"\e62e"; }
+.iconVolumeMax:before { content:"\e62f"; }
+.iconAudio:before { content:"\e630"; }
+.iconUpload:before { content:"\e631"; }
+.iconSave:before { content:"\e632"; }
+.iconFolder:before { content:"\e633"; }
+.iconDownload:before { content:"\e634"; }
+.iconStore:before { content:"\e63c"; }
+.iconSupport:before { content:"\e63d"; }
+.iconInfo:before { content:"\e63f"; }
+.iconPrint:before { content:"\e640"; }
+.iconNoteAlt:before { content:"\e641"; }
+.iconMilitary:before { content:"\e642"; }
+.iconList:before { content:"\e643"; }
+.iconNewWindow:before { content:"\e644"; }
+.iconLike:before { content:"\e645"; }
+.iconDislike:before { content:"\e646"; }
+.iconFlag:before { content:"\e647"; }
+.iconShare:before { content:"\e648"; }
+.iconHeart:before { content:"\e649"; }
+.iconPerson:before { content:"\e64a"; }
+.iconPersonAdd:before { content:"\e64b"; }
+.iconPeople:before { content:"\e64c"; }
+.iconCustomerSupport:before { content:"\e64d"; }
+.iconMessageBoard:before { content:"\e64e"; }
+.iconReportError:before { content:"\e64f"; }
+.iconBeginThread:before { content:"\e650"; }
+.iconChat:before { content:"\e651"; }
+.iconTag:before { content:"\e652"; }
+.iconMinus:before { content:"\e654"; }
+.iconPlus:before { content:"\e655"; }
+.iconClose:before { content:"\e657"; }
+.iconDenied:before { content:"\e658"; }
+.iconRotateRight:before { content:"\e659"; }
+.iconRotateLeft:before { content:"\e65a"; }
+.iconEdit:before { content:"\e65b"; }
+.iconBookmark:before { content:"\e65c"; }
+.iconPin:before { content:"\e65d"; }
+.iconCart:before { content:"\e65e"; }
+.iconCamera:before { content:"\e65f"; }
+.iconInbox:before { content:"\e660"; }
+.iconMailSent:before { content:"\e661"; }
+.iconFamily:before { content:"\e662"; }
+.iconCalculator:before { content:"\e663"; }
+.iconBell:before { content:"\e664"; }
+.iconGallery:before { content:"\e665"; }
+.iconCreditCard:before { content:"\e666"; }
+.iconCalendar:before { content:"\e667"; }
+.iconWarning:before { content:"\e668"; }
+.iconAttachment:before { content:"\e669"; }
+.iconEmail:before { content:"\e66a"; }
+.iconDocumentAdd:before { content:"\e66b"; }
+.iconDocument:before { content:"\e66c"; }
+.iconDocumentPdf:before { content:"\e66d"; }
+.iconDocumentExcel:before { content:"\e66e"; }
+.iconDocumentWord:before { content:"\e66f"; }
+.iconNote:before { content:"\e670"; }
+.iconHome:before { content:"\e671"; }
+.iconCenter:before { content:"\e672"; }
+.iconTreeAdd:before { content:"\e673"; }
+.iconTreePedigree:before { content:"\e674"; }
+.iconTreeFamily:before { content:"\e675"; }
+.iconLightbulb:before { content:"\e678"; }
+.iconPhone:before { content:"\e679"; }
+.iconProfileCard:before { content:"\e67a"; }
+.iconMap:before { content:"\e67b"; }
+.iconRemove:before { content:"\e67c"; }
+.iconAdd:before { content:"\e67d"; }
+.iconImage:before { content:"\e67e"; }
+.iconSettings:before { content:"\e67f"; }
+.iconTrash:before { content:"\e680"; }
+.iconUnlock:before { content:"\e681"; }
+.iconLock:before { content:"\e682"; }
+.iconMale:before { content:"\e683"; }
+.iconFemale:before { content:"\e684"; }
+.iconTools:before { content:"\e68a"; }
+.iconUnlink:before { content:"\e68b"; }
+.iconLink:before { content:"\e68c"; }
+.iconDrag:before { content:"\e68d"; }
+.iconTileLarge:before { content:"\e68e"; }
+.iconTileSmall:before { content:"\e68f"; }
+.iconBirth:before { content:"\e692"; }
+.iconMarriage:before { content:"\e690"; }
+.iconDeath:before { content:"\e691"; }
+.iconFilmstrip:before { content:"\e693"; }
+.iconMobile:before { content:"\e694"; }
+.iconDnaMatch:before { content:"\e695"; }
+.iconDnaCad:before { content:"\e696"; }
+/* Colored */
+.iconArchives:before { color:#1e1f1c; content:"\e697"; }
+.iconFindAGrave:before { color:#60527e; content:"\e698"; }
+.iconFold3:before { color:#00677b; content:"\e699"; }
+.iconNewspapers:before { color:#000; content:"\e69a"; }
+.iconAcom:before { color:#afbc22; content:"\e685"; }
+.iconTwitter:before { color:#59bff0; content:"\e635"; }
+.iconTumblr:before { color:#2c4762; content:"\e636"; }
+.iconGooglePlus:before { color:#dd4b37; content:"\e637"; }
+.iconYoutube:before { color:#dd473b; content:"\e638"; }
+.iconPinterest:before { color:#cc2127; content:"\e639"; }
+.iconFacebook:before { color:#3b5999; content:"\e63a"; }
+.iconRss:before { color:#e98300; content:"\e63b"; }
+/* After */
+.iconHelp:before,
+.iconHelpAfter:after { content:"\e63e"; }
+.iconCheck:before,
+.iconAfterCheck:after { content:"\e656"; }
+/* Arrows */
+.iconArrowSmallUpAfter:after,
+.iconArrowSmallUp:before { content:"\e61e"; } /* e619 */
+.iconArrowSmallDownAfter:after,
+.iconArrowSmallDown:before { content:"\e621"; } /* e61a */
+.iconArrowSmallLeftAfter:after,
+.iconArrowSmallLeft:before { content:"\e620"; } /* e61b */
+.iconArrowSmallRightAfter:after,
+.iconArrowSmallRight:before { content:"\e61f"; } /* e61c */
+.iconArrowUpAfter:after,
+.iconArrowUp:before { content:"\e61e"; }
+.iconArrowRightAfter:after,
+.iconArrowRight:before { content:"\e61f"; }
+.iconArrowLeftAfter:after,
+.iconArrowLeft:before { content:"\e620"; }
+.iconArrowDownAfter:after,
+.iconArrowDown:before { content:"\e621"; }
+.iconArrowRightAfter:after { margin-left:4px; }
+@-webkit-keyframes shake {
+	25% { -webkit-transform:rotate(-10deg); }
+	50% { -webkit-transform:rotate(0deg); }
+	75% { -webkit-transform:rotate(10deg); }
+}
+@-moz-keyframes shake {
+	25% { -moz-transform:rotate(-10deg); }
+	50% { -moz-transform:rotate(0deg); }
+	75% { -moz-transform:rotate(10deg); }
+}
+@keyframes shake {
+	25% { transform:rotate(-10deg); }
+	50% { transform:rotate(0deg); }
+	75% { transform:rotate(10deg); }
+}
+.iconShakyLeaf:before,
+.iconShakyLeaf:after { -moz-animation:shake .3s linear 1s 3; -webkit-animation:shake .3s linear 1s 3; animation:shake .3s linear 1s 3; }
+/* IE9 (compounding font-size) fix */
+.icon.iconLeaf:after,
+.icon.iconShakyLeaf:after,
+.icon.iconBars:after { font-size:107%; }
+/* Leaf */
+.iconLeaf:before,
+.iconLeaf:after,
+.iconShakyLeaf:before,
+.iconShakyLeaf:after,
+.iconBars:before,
+.iconBars:after { font-family:"icon"; font-weight:normal; left:0; line-height:1em; position:absolute; speak:none; text-transform:none; top:.04em; -webkit-transform:translate3d(0, 0, 0); -moz-transform-origin:0 100%; -webkit-transform-origin:0 100%; transform-origin:0 100%; }
+.iconLeaf:before,
+.iconShakyLeaf:before { color:#afbc22; content:"\e676"; }
+.iconLeaf:after,
+.iconShakyLeaf:after { color:#566c11; content:"\e677"; }
+.iconLeaf,
+.iconShakyLeaf,
+.iconBars { margin:0 auto; min-height:1.25em; padding-left:1.25em; position:relative; }
+.iconBars:before { content:"\e653"; opacity:.3; }
+.iconBarsLow:before { content:"\e600"; }
+.iconBarsMed:before { content:"\e601"; }
+.iconBarsHigh:before { content:"\e653"; }
+.iconBars.iconBarsLow:before { content:"\e688"; }
+.iconBars.iconBarsLow:after { content:"\e600"; }
+.iconBars.iconBarsMed:before { content:"\e602"; }
+.iconBars.iconBarsMed:after { content:"\e689"; }
+.iconBars.iconBarsHigh:after { content:"\e653"; }
+.iconBars.iconBarsHigh:before { content:""; }
+/* Align multiline text next to an icon to not wrap below the icon. */
+.iconFlushText { display:inline-block; padding-left:1.3em; text-indent:-1.3em; }
+.iconFlushText::before { display:inline-block; line-height:1; text-indent:0; width:1.066667em; }
+/* Color options */
+.iconColor1:before { color:#bebbb3; }
+/****************************************
+	Icons on Links
+*****************************************/
+a.icon,
+button.icon,
+.icon:active,
+.icon:focus,
+.icon:hover,
+p .icon,
+a.iconAfter,
+button.iconAfter,
+.iconAfter:active,
+.iconAfter:focus,
+.iconAfter:hover,
+p .iconAfter { text-decoration:none; }
+.icon.underline > span,
+p .link.icon > span,
+p a.icon > span,
+.link.icon:focus > span,
+.link.icon:hover > span,
+.link.icon:active > span,
+a.icon:focus > span,
+a.icon:hover > span,
+a.icon:active > span,
+.iconAfter.underline > span,
+p .link.iconAfter > span,
+p a.iconAfter > span,
+.link.iconAfter:focus > span,
+.link.iconAfter:hover > span,
+.link.iconAfter:active > span,
+a.iconAfter:focus > span,
+a.iconAfter:hover > span,
+a.iconAfter:active > span { text-decoration:underline; }

@@ -97,7 +97,7 @@
             Modal.$modal = $('#modal');
             /* Add marker to allow for styles changes based on whether the device supports touch or not */
             Modal.addToPage = function () {
-                $('<section id="modal" aria-describedby="modalHeader" aria-expanded="true" role="alertdialog"><div id="modalCenter"></div><div id="modalContents" tabIndex="-1"><button class="closeBtn" id="modalClose" title="Close modal" type="button"></button></div></section>').appendTo('body');
+                $('<section id="modal" aria-describedby="modalHeader" aria-expanded="true" role="dialog"><div id="modalCenter"></div><div id="modalContents" tabIndex="-1"><button class="closeBtn" id="modalClose" title="Close modal" type="button"></button></div></section>').appendTo('body');
                 /* Add events */
                 $('#modalClose').on('click.modal', function () {
                     $('body').trigger('closeModal.modal');
@@ -190,7 +190,7 @@
                 }
                 addEvents = function () {
                     $('body').on('closeModal.modal', function () {
-                        $('#modal').animate({
+                        Modal.$modal.animate({
                             opacity: 0
                         }, (settings.fade / 2), 'linear', function () {
                             closeModal();
@@ -227,7 +227,6 @@
                         Modal.isOpen = false;
                         $('html').removeClass('modalOpen');
                         $('body').css('padding-right', '').height('');
-                        Modal.$modal = $('#modal');
                         Modal.$modal.removeAttr('style');
                         $('#modalCenter').removeClass('modalCentered');
                         $('#modalContents').attr({
@@ -291,7 +290,7 @@
                         scrollbarWidth = 0,
                         imageCount = 0;
                     /* Add modal to page if not present */
-                    if (!$('#modal').length) {
+                    if (!Modal.$modal.length) {
                         Modal.addToPage();
                     }
                     Modal.$modal = $('#modal');
@@ -331,7 +330,6 @@
                     $('html').addClass('modalOpen');
                     /* Focus on modal contents and remove event on blur */
                     $("#modalContents")
-                        .attr('role', 'alertdialog')
                         .focus()
                         .on("keydown.modal", function (e) {
                             /* Tab only within modal */
@@ -505,11 +503,6 @@
                 $trigger: $(this)
             });
         });
-        setTimeout(function () {
-            $('<div><p>Timeout modal</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>').modal({
-                width: '500'
-            });
-        }, 5000); 
     });
     </script>
 </body>
