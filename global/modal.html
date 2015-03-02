@@ -24,7 +24,7 @@
         <button class="ancBtn lrg" id="secondModal" aria-expanded="false" aria-controls="modal" type="button">Open Modal</button>
         <button class="ancBtn lrg" id="thirdModal" aria-expanded="false" aria-controls="modal" type="button">Open Modal</button>
     </section>
-    <section id="modal1" class="modal" data-title="Is This Your Ancestor?">
+    <section id="modal1" class="modal" data-title="Title 1">
     	<header></header>
     	<form>
     		<fieldset>
@@ -32,9 +32,18 @@
     			<input type="text" />
 				<button href="javascript:void(0);" type="button" aria-expanded="false" aria-controls="modal" class="ancBtn sml" id="fourthModal">Search</a>
     		</fieldset>
+            Bacon ipsum dolor amet spare ribs kevin picanha chicken frankfurter, turducken sausage meatloaf. Prosciutto pork loin tail drumstick ham bresaola, leberkas ball tip meatball kielbasa alcatra. Beef ribs andouille venison, ball tip filet mignon pancetta pastrami. Short ribs ham kielbasa filet mignon cupim turducken fatback turkey.
+
+            Brisket shoulder jerky frankfurter landjaeger turducken. Jowl picanha sausage shankle meatball, venison beef ribs meatloaf ground round salami. Tri-tip cupim strip steak shank ball tip, rump turducken brisket beef ribs ribeye swine chicken. Pork chop jowl filet mignon cow shankle. Ball tip bacon alcatra tenderloin pancetta.
+
+            Porchetta bacon beef t-bone landjaeger hamburger rump jowl cupim ball tip meatball shankle. Ham porchetta strip steak meatloaf, pastrami biltong bresaola cow tri-tip meatball sausage capicola boudin. Fatback alcatra landjaeger doner, shoulder sausage rump pig pork pastrami ground round pork chop. Meatball meatloaf bacon biltong. Brisket strip steak picanha fatback flank tongue, leberkas tenderloin chuck short loin pork sausage doner.
+
+            Leberkas biltong frankfurter brisket, salami tail fatback. Cow turducken spare ribs short ribs corned beef salami. Boudin corned beef prosciutto alcatra cow, fatback short ribs leberkas landjaeger flank meatloaf brisket picanha swine tenderloin. Sirloin strip steak t-bone rump hamburger chicken meatball tongue pastrami leberkas alcatra kevin ham hock shank boudin.
+
+            Filet mignon pork loin fatback turducken sausage boudin chuck biltong tail, jerky salami shank. Rump cow tri-tip, turkey strip steak chuck meatloaf sirloin ground round jerky. Sirloin meatloaf capicola pig chicken venison t-bone swine. Flank bacon meatball sirloin shankle pancetta swine kielbasa hamburger ball tip. Jowl fatback jerky tongue kielbasa rump hamburger.
     	</form>
     </section>
-    <section id="modal2" class="modal" data-title="Is This Your Ancestor?">
+    <section id="modal2" class="modal" data-title="Title 2">
         <header></header>
         <form>
             <fieldset>
@@ -44,7 +53,7 @@
             </fieldset>
         </form>
     </section>
-    <section id="modal3" class="modal" data-title="Is This Your Ancestor?">
+    <section id="modal3" class="modal" data-title="title 3">
         <header></header>
         <form>
             <fieldset>
@@ -67,8 +76,7 @@
             "use strict";
             var Modal,
                 version = 3,
-                isIe8 = $('html').hasClass('ie8'),
-                /* detect ie8 and earlier without $.browser for 1.11.0 */
+                isIe8 = $('html').hasClass('ie8'), /* detect ie8 and earlier without $.browser for 1.11.0 */
                 isIe9 = $('html').hasClass('ie9'); /* detect ie9 without $.browser for 1.11.0 */
             /* Use the newer version if the file is included twice and one version is newer than the other. */
             if ($.modal && version <= $.modal.version) {
@@ -94,10 +102,11 @@
             Modal.paddingLeftRight = 40; /* Left and right padding on desktop view */
             Modal.widthTransition = 410; /* Animation width time */
             Modal.openButton = false;
-            Modal.$modal = $('#modal');
+            Modal.$modal = '';
             /* Add marker to allow for styles changes based on whether the device supports touch or not */
             Modal.addToPage = function () {
-                $('<section id="modal" aria-describedby="modalHeader" aria-expanded="true" role="dialog"><div id="modalCenter"></div><div id="modalContents" tabIndex="-1"><button class="closeBtn" id="modalClose" title="Close modal" type="button"></button></div></section>').appendTo('body');
+                Modal.$modal = $('<section id="modal" aria-describedby="modalHeader" aria-expanded="true" role="dialog"><div id="modalCenter"></div><div id="modalContents" tabIndex="-1"><h4 id="modalHeader"></h4><button class="closeBtn" id="modalClose" id="modalClose" title="Close" type="button"></button></div></section>');
+                Modal.$modal.appendTo('body');
                 /* Add events */
                 $('#modalClose').on('click.modal', function () {
                     $('body').trigger('closeModal.modal');
@@ -106,26 +115,18 @@
                     Modal.stopClosing = true;
                 });
             };
-            Modal.setTitle = function (title, $currentModalContents) {
-                var $modalContents = $('#modalContents');
-                if ($currentModalContents === false) {
-                    $currentModalContents = $('#modalContents').find('.modalActive');
-                }
-                $modalContents.children('#modalHeader').remove();
+            Modal.setTitle = function (title) {
                 if (title) {
-                    $currentModalContents.before('<h4 id="modalHeader" class="modalHeader">' + title + '</h4>');
-                }
-                if (title || $currentModalContents.find('.modalHeader').length) {
-                    $modalContents.addClass('modalHasTitle');
+                    $('#modalContents').addClass('modalHasTitle').find('#modalHeader').html(title);
                 } else {
-                    $modalContents.removeClass('modalHasTitle');
+                    $('#modalContents').removeClass('modalHasTitle').find('#modalHeader').html('');
                 }
             };
             Modal.centerModal = function () {
                 var windowHeight = $('html').height(),
                     $modalContents = $('#modalContents'),
                     modalHeight = $modalContents.outerHeight();
-                $('#modalCenter').css({"margin-bottom": (-modalHeight / 2) + "px"});
+                $('#modalCenter').css({ "margin-bottom": (-modalHeight / 2) + "px" });
                 modalHeight += parseInt($modalContents.css('margin-top'), 10) + parseInt($modalContents.css('margin-bottom'), 10);
                 if (Modal.isTouchDevice) {
                     if (modalHeight <= windowHeight) {
@@ -134,7 +135,6 @@
                         $('body, #modal').height(modalHeight);
                     }
                 }
-                $('#modal').scrollTop(0);
             };
             Modal.resizeModal = function (width) {
                 Modal.setWidth(width);
@@ -150,8 +150,8 @@
                 if (width && String(width).indexOf("%") !== -1) {
                     $modalContents.css('width', width);
                 } else if (width) {
-                    if ($(window).width() < 768 && !$modalContents.hasClass('modalCustomPadding')) {
-                        Modal.paddingLeftRight = 20;
+                    if ($(window).width() < 768 && !$modalContents.hasClass('modalMarketing')) {
+                        Modal.paddingLeftRight = 24;
                     }
                     $modalContents.css('width', parseInt(width, 10) + Modal.paddingLeftRight);
                 } else {
@@ -175,7 +175,6 @@
                 settings.el = this; /* Need to save 'this' into settings to allow for modal after modal functionality */
                 settings.windowPosition = [0, 0];
                 Modal.stopClosing = false;
-                Modal.isAnimating = false;
                 /* Title should be passed in via the data-title attribute */
                 /* These lines are temporary and are to fix past implementations. */
                 if ($this.attr('title')) {
@@ -190,7 +189,7 @@
                 }
                 addEvents = function () {
                     $('body').on('closeModal.modal', function () {
-                        Modal.$modal.animate({
+                        $('#modal').animate({
                             opacity: 0
                         }, (settings.fade / 2), 'linear', function () {
                             closeModal();
@@ -204,7 +203,7 @@
                     if (settings.closeOnBkgClick) {
                         $('#modal').on('click.modal', function () {
                             /* Allow for events attached via live or on to propogate without closing modal */
-                            if (!Modal.stopClosing && !Modal.isAnimating) {
+                            if (!Modal.stopClosing) {
                                 $('body').trigger('closeModal.modal');
                             }
                             Modal.stopClosing = false;
@@ -247,7 +246,7 @@
                     if (Modal.previousSettings.el.data('dynamic')) {
                         Modal.previousSettings.el.remove();
                     } else {
-                        Modal.previousSettings.el.hide().removeClass('modalActive');
+                        Modal.previousSettings.el.hide();
                     }
                     Modal.previousSettings.onClose($this);
                     return Modal.previousSettings.windowPosition;
@@ -259,7 +258,6 @@
                             return $.css(this, "visibility") === "hidden";
                         }).length;
                 }
-
                 function focusable(element, isTabIndexNotNaN) {
                     var map,
                         mapName,
@@ -276,7 +274,6 @@
                     }
                     return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled : "a" === nodeName ? element.href || isTabIndexNotNaN : isTabIndexNotNaN) && visible(element);
                 }
-
                 function tabbable(element) {
                     var tabIndex = $.attr(element, "tabindex"),
                         isTabIndexNaN = isNaN(tabIndex);
@@ -293,7 +290,6 @@
                     if (!Modal.$modal.length) {
                         Modal.addToPage();
                     }
-                    Modal.$modal = $('#modal');
                     $modalContents = $('#modalContents');
                     /* If a previous modal is open, close it, then store the proper scroll location */
                     if (Modal.isOpen) {
@@ -326,7 +322,8 @@
                     if ($this.parent() !== $modalContents) {
                         $this.appendTo('#modalContents');
                     }
-                    $this.show().addClass('modalActive');
+                    /* Show only these modal contents */
+                    $this.show();
                     $('html').addClass('modalOpen');
                     /* Focus on modal contents and remove event on blur */
                     $("#modalContents")
@@ -358,24 +355,25 @@
                     } else {
                         window.scrollTo(settings.windowPosition[0], settings.windowPosition[1]);
                     }
-                    Modal.setTitle(settings.title, $this);
+                    /* Show title if there is one */
+                    Modal.setTitle(settings.title);
                     /* Add loading icon if requested */
                     Modal.showLoading(settings.showLoading);
                     /* Handle marketing options */
-                    if (settings.isMarketing || settings.useCustomPadding) {
-                        $modalContents.addClass('modalCustomPadding');
+                    if (settings.isMarketing) {
+                        $modalContents.addClass('modalMarketing');
                         Modal.paddingLeftRight = 0;
                     } else {
-                        $modalContents.removeClass('modalCustomPadding');
+                        $modalContents.removeClass('modalMarketing');
                         Modal.paddingLeftRight = 40;
                     }
                     /* Add width if passed in */
                     Modal.setWidth(settings.width);
                     /* Remove close button if necessary */
                     if (settings.hideCloseBtn) {
-                        $modalContents.addClass('modalHideClose');
+                        $modalContents.removeClass('modalShowClose');
                     } else {
-                        $modalContents.removeClass('modalHideClose');
+                        $modalContents.addClass('modalShowClose');
                     }
                     /* Add Events that modal specific */
                     addEvents();
@@ -383,7 +381,7 @@
                     /* We don't call centerModal if modal is already open so CSS transition can complete first */
                     /* But <= IE9 doesn't support transitions, so center immediately */
                     if (!Modal.isOpen || isIe8 || isIe9) {
-                        Modal.$modal.show();
+                        $('#modal').show();
                         Modal.centerModal();
                     }
                     /* Catch-most for when .load fails. Also fixes Android */
@@ -399,10 +397,6 @@
                             }
                         });
                     }
-                    Modal.isAnimating = true;
-                    setTimeout(function () {
-                        Modal.isAnimating = false;
-                    }, settings.fade + 300);
                     Modal.$modal.animate({
                         opacity: 1
                     }, settings.fade, 'linear', function () {
@@ -412,7 +406,7 @@
                             opacity: 1
                         }, (settings.fade / 2), 'linear');
                     });
-                    /* For modal after modal functionality */
+                    /*  For modal after modal functionality */
                     Modal.previousSettings = settings;
                     /* Set marker that modal is open */
                     Modal.isOpen = true;
@@ -434,24 +428,12 @@
             });
             /* Publicly expose a few shorthand methods */
             $.modal = {};
-            $.modal.center = function () {
-                Modal.centerModal();
-            };
-            $.modal.close = function () {
-                $('body').trigger('closeModal.modal');
-            };
-            $.modal.showLoading = function (loading) {
-                Modal.showLoading(loading);
-            };
-            $.modal.resize = function (width) {
-                Modal.resizeModal(width);
-            };
-            $.modal.title = function (title) {
-                Modal.setTitle(title, false);
-            };
-            $.modal.preventClosing = function () {
-                Modal.stopClosing = true;
-            };
+            $.modal.center = function () { Modal.centerModal(); };
+            $.modal.close = function () { $('body').trigger('closeModal.modal'); };
+            $.modal.showLoading = function (loading) { Modal.showLoading(loading); };
+            $.modal.resize = function (width) { Modal.resizeModal(width); };
+            $.modal.title = function (title) { Modal.setTitle(title); };
+            $.modal.preventClosing = function () { Modal.stopClosing = true; };
             $.modal.version = version;
         }(jQuery));
 
