@@ -22,7 +22,7 @@ a.userCardName:focus,
 .link.userCardName:focus { color:#566c11; text-decoration:underline; }
 .userCardImg.icon { background-color:#695e49; border:0; text-align:center; }
 .userCardImg.icon:before { color:#a59e92; display:inline-block; font-size:34px; line-height:39px; }
-.userCardImg.iconAcom:before { font-size:24px; line-height:36px; }
+.userCardImg.iconAcom:before { font-size:24px; line-height:38px; }
 .userCardImg img { height:100%; width:100%; }
 /* Portrait / Landscape */
 .userCardPortrait img { height:auto; }
@@ -33,7 +33,7 @@ a.userCardName:focus,
 .userCardLarge .userCardImg,
 .userCardSize4 .userCardImg { height:96px; width:96px; }
 .userCardLarge .userCardImg.icon:before,
-.userCardSize4 .userCardImg.icon:before { font-size:64px; line-height:80px; }
+.userCardSize4 .userCardImg.icon:before { font-size:64px; line-height:86px; }
 .userCardLarge .userCardImg.iconPerson:before,
 .userCardSize4 .userCardImg.iconPerson:before,
 .userCardLarge .userCardImg.iconMale:before,
@@ -41,14 +41,14 @@ a.userCardName:focus,
 .userCardLarge .userCardImg.iconFemale:before,
 .userCardSize4 .userCardImg.iconFemale:before { font-size:92px; height:96px; line-height:94px; }
 .userCardLarge .userCardImg.iconAcom:before,
-.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:80px; }
+.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:86px; }
 /* Small 30x30 */
 .userCardSize2 { line-height:30px; min-height:30px; padding-left:38px; }
 .userCardSize2 .userCardImg { height:30px; width:30px; }
 .userCardSize2 .userCardImg.iconPerson:before,
 .userCardSize2 .userCardImg.iconMale:before,
 .userCardSize2 .userCardImg.iconFemale:before { font-size:25px; height:30px; line-height:32px; }
-.userCardSize2 .userCardImg.iconAcom:before { font-size:18px; line-height:26px; }
+.userCardSize2 .userCardImg.iconAcom:before { font-size:18px; line-height:28px; }
 /* Smaller 20x20 */
 .userCardSize3,
 .userCardMini { line-height:20px; min-height:20px; padding-left:28px; }
@@ -57,7 +57,7 @@ a.userCardName:focus,
 .userCardSize3 .userCardImg,
 .userCardMini .userCardImg { height:20px; width:20px; }
 .userCardSize3 .userCardImg.icon:before,
-.userCardMini .userCardImg.icon:before { font-size:13px; line-height:17px; }
+.userCardMini .userCardImg.icon:before { font-size:13px; line-height:19px; }
 .userCardSize3 .userCardImg.iconPerson:before,
 .userCardMini .userCardImg.iconPerson:before,
 .userCardSize3 .userCardImg.iconMale:before,
