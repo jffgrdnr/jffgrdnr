@@ -94,6 +94,7 @@
             Modal.paddingLeftRight = 40; /* Left and right padding on desktop view */
             Modal.widthTransition = 410; /* Animation width time */
             Modal.openButton = false;
+            Modal.$modal = $('#modal');
             /* Add marker to allow for styles changes based on whether the device supports touch or not */
             Modal.addToPage = function () {
                 $('<section id="modal" aria-describedby="modalHeader" aria-expanded="true" role="alertdialog"><div id="modalCenter"></div><div id="modalContents" tabIndex="-1"><button class="closeBtn" id="modalClose" title="Close modal" type="button"></button></div></section>').appendTo('body');
@@ -124,9 +125,7 @@
                 var windowHeight = $('html').height(),
                     $modalContents = $('#modalContents'),
                     modalHeight = $modalContents.outerHeight();
-                $('#modalCenter').css({
-                    "margin-bottom": (-modalHeight / 2) + "px"
-                });
+                $('#modalCenter').css({"margin-bottom": (-modalHeight / 2) + "px"});
                 modalHeight += parseInt($modalContents.css('margin-top'), 10) + parseInt($modalContents.css('margin-bottom'), 10);
                 if (Modal.isTouchDevice) {
                     if (modalHeight <= windowHeight) {
@@ -224,12 +223,12 @@
                 };
                 /* Remove specific modal events, title, and optional classes */
                 closeModal = function (alreadyOpen) {
-                    var $modal = $('#modal');
                     if (alreadyOpen !== true) {
                         Modal.isOpen = false;
                         $('html').removeClass('modalOpen');
                         $('body').css('padding-right', '').height('');
-                        $modal.removeAttr('style');
+                        Modal.$modal = $('#modal');
+                        Modal.$modal.removeAttr('style');
                         $('#modalCenter').removeClass('modalCentered');
                         $('#modalContents').attr({
                             'style': '',
@@ -242,7 +241,7 @@
                                 .removeAttr("aria-expanded") /* Focus on and remove aria-expanded from button that opened modal */
                                 .focus();
                         }
-                        $modal.removeAttr("aria-expanded");
+                        Modal.$modal.removeAttr("aria-expanded");
                         Modal.openButton = false;
                     }
                     removeEvents();
@@ -285,8 +284,7 @@
                     return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
                 }
                 openModal = function () {
-                    var $modal,
-                        $modalContents,
+                    var $modalContents,
                         $modalImages,
                         imageLength,
                         screenWidth = $(window).width(),
@@ -296,7 +294,7 @@
                     if (!$('#modal').length) {
                         Modal.addToPage();
                     }
-                    $modal = $('#modal');
+                    Modal.$modal = $('#modal');
                     $modalContents = $('#modalContents');
                     /* If a previous modal is open, close it, then store the proper scroll location */
                     if (Modal.isOpen) {
@@ -307,7 +305,7 @@
                         settings.windowPosition = [$('html').scrollLeft(), $('html').scrollTop()];
                     }
                     if (!Modal.isOpen) {
-                        $modal.attr("aria-expanded", "true");
+                        Modal.$modal.attr("aria-expanded", "true");
                         if (settings.$trigger) {
                             Modal.openButton = settings.$trigger.attr("aria-expanded", "true");
                         }
@@ -333,6 +331,7 @@
                     $('html').addClass('modalOpen');
                     /* Focus on modal contents and remove event on blur */
                     $("#modalContents")
+                        .attr('role', 'alertdialog')
                         .focus()
                         .on("keydown.modal", function (e) {
                             /* Tab only within modal */
@@ -386,7 +385,7 @@
                     /* We don't call centerModal if modal is already open so CSS transition can complete first */
                     /* But <= IE9 doesn't support transitions, so center immediately */
                     if (!Modal.isOpen || isIe8 || isIe9) {
-                        $modal.show();
+                        Modal.$modal.show();
                         Modal.centerModal();
                     }
                     /* Catch-most for when .load fails. Also fixes Android */
@@ -406,7 +405,7 @@
                     setTimeout(function () {
                         Modal.isAnimating = false;
                     }, settings.fade + 300);
-                    $modal.animate({
+                    Modal.$modal.animate({
                         opacity: 1
                     }, settings.fade, 'linear', function () {
                         /* .modalCentered Exists to prevent transition until after first load */
