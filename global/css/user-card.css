@@ -32,8 +32,6 @@ a.userCardName:focus,
 .userCardSize4 { line-height:96px; min-height:96px; padding-left:108px; }
 .userCardLarge .userCardImg,
 .userCardSize4 .userCardImg { height:96px; width:96px; }
-.userCardLarge .userCardImg.icon.iconMale:before, 
-.userCardSize4 .userCardImg.icon.iconMale:before { text-align:left; text-indent:2px; }
 .userCardLarge .userCardImg.icon:before,
 .userCardSize4 .userCardImg.icon:before { font-size:64px; line-height:80px; }
 .userCardLarge .userCardImg.iconPerson:before,
