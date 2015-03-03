@@ -41,7 +41,7 @@ a.userCardName:focus,
 .userCardLarge .userCardImg.iconMale:before,
 .userCardSize4 .userCardImg.iconMale:before,
 .userCardLarge .userCardImg.iconFemale:before,
-.userCardSize4 .userCardImg.iconFemale:before { font-size:92px; height:96px; line-height:94px; }
+.userCardSize4 .userCardImg.iconFemale:before { font-size:92px; line-height:94px; }
 
 .userCardSize .userCardImg.icon:before { font-size:26px; line-height:38px; }
 .userCardSize .userCardImg.iconPerson:before, 
@@ -68,6 +68,6 @@ a.userCardName:focus,
 .userCardSize3 .userCardImg.iconMale:before,
 .userCardMini .userCardImg.iconMale:before,
 .userCardSize3 .userCardImg.iconFemale:before,
-.userCardMini .userCardImg.iconFemale:before { font-size:16px; height:20px; line-height:22px; }
+.userCardMini .userCardImg.iconFemale:before { font-size:16px; line-height:22px; }
 /* For use above the header */
 .userCardMini { display:inline-block; position:relative; }
