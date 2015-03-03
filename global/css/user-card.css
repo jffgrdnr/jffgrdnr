@@ -33,15 +33,15 @@ a.userCardName:focus,
 .userCardLarge .userCardImg,
 .userCardSize4 .userCardImg { height:96px; width:96px; }
 .userCardLarge .userCardImg.icon:before,
-.userCardSize4 .userCardImg.icon:before { font-size:64px; line-height:86px; }
+.userCardSize4 .userCardImg.icon:before, 
+.userCardLarge .userCardImg.iconAcom:before,
+.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:86px; }
 .userCardLarge .userCardImg.iconPerson:before,
 .userCardSize4 .userCardImg.iconPerson:before,
 .userCardLarge .userCardImg.iconMale:before,
 .userCardSize4 .userCardImg.iconMale:before,
 .userCardLarge .userCardImg.iconFemale:before,
 .userCardSize4 .userCardImg.iconFemale:before { font-size:92px; height:96px; line-height:94px; }
-.userCardLarge .userCardImg.iconAcom:before,
-.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:86px; }
 
 .userCardSize .userCardImg.icon:before { font-size:26px; line-height:38px; }
 .userCardSize .userCardImg.iconPerson:before, 
