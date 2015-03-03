@@ -40,7 +40,7 @@
 		.carouselVariedHeight .carouselSlide { vertical-align:top; }
 		/* Carousel with preview */
 		.carouselWithPreview { padding-left:64px; padding-right:64px; -moz-transition:padding .4s; -ms-transition:padding .4s; -o-transition:padding .4s; -webkit-transition:padding .4s; transition:padding .4s; }
-		.carouselWithPreview .carouselSlide { margin:0 1.5%; padding:0; }
+		.carouselWithPreview .carouselSlide { margin:0 1.5%; padding:4px 0; }
 		.carouselWithPreview:before,
 		.carouselWithPreview:after { bottom:0; content:" "; position:absolute; top:0; width:20px; z-index:2; }
 		.carouselWithPreview:before { background:none; background-image:-moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); background-image:-webkit-gradient(left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 0))); background-image:-webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); background-image:-o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); background-image:-ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); background-image:linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); left:0; }
@@ -102,8 +102,9 @@
 		.carouselControlsDefault .carouselPlay:before { content:"▶"; }
 
     
+        .carousel { margin:20px 0; }
         #galleryPagePerScroll1 .carouselSlide { padding:0; }
-
+        #galleryWithPreviews1.carouselWithPreview .carouselSlide { margin:0 1.5%; padding:0; }
     </style>
 </head>
 
@@ -112,7 +113,7 @@
         <div class="ancGrid full480 ancGridPadded">
             <div class="ancCol w100">
                 <div class="con">
-                    <h2 class="conTitle">Bad</h2>
+                    <h2 class="conTitle">Bad Hover</h2>
                     <div class="carousel carouselPadded" id="galleryPagePerScroll1">
                         <ul class="carouselInner">
                             <li class="carouselSlide">
@@ -191,14 +192,62 @@
                                 <a class="photo photoSize3" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"></a>
                             </li>
                         </ul>
-                    <menu class="carouselControlsDefault">
-                    <button class="carouselPreviousBtn icon iconArrowLeft" type="button" data-carousel-slide="previous" data-carousel-id="galleryPagePerScroll"></button>
-                    <button class="carouselNextBtn icon iconArrowRight" type="button" data-carousel-slide="next" data-carousel-id="galleryPagePerScroll"></button>
-                    </menu>
+                        <menu class="carouselControlsDefault">
+                            <button class="carouselPreviousBtn icon iconArrowLeft" type="button" data-carousel-slide="previous" data-carousel-id="galleryPagePerScroll"></button>
+                            <button class="carouselNextBtn icon iconArrowRight" type="button" data-carousel-slide="next" data-carousel-id="galleryPagePerScroll"></button>
+                        </menu>
                     </div>
+                    <div class="carousel carouselWithPreview" id="galleryWithPreviews1">
+                        <ul class="carouselInner" >
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png">
+                                    <img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png">
+                                </a>
+                                <p class="carouselOverlay">This is a <strong>carousel overlay</strong> (see <a href="sample-carousel-helpers#overlays">Helpers</a>).</p>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"></a>
+                                <p class="carouselOverlay">This sample carousel uses the <code>.photo</code> for content. This is not part of carousels, but illustrates how a gallery can be easily created.</p>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png"></a>
+                            </li>
+                            <li class="carouselSlide carouselActiveSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"></a>
+                            </li>
+                        </ul>
+                        <menu class="carouselControlsDefault">
+                            <button class="carouselPreviousBtn icon iconArrowLeft" type="button" data-carousel-slide="previous" data-carousel-id="galleryWithPreviews"></button>
+                            <button class="carouselNextBtn icon iconArrowRight" type="button" data-carousel-slide="next" data-carousel-id="galleryWithPreviews"></button>
+                        </menu>
                     </div>
-                    <div class="con">
-                    <h2 class="conTitle">Good</h2>
+                </div>
+                <div class="con">
+                    <h2 class="conTitle">Good Hover</h2>
                     <div class="carousel carouselPadded" id="galleryPagePerScroll2">
                         <ul class="carouselInner">
                             <li class="carouselSlide">
@@ -277,10 +326,58 @@
                                 <a class="photo photoSize3" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"></a>
                             </li>
                         </ul>
-                    <menu class="carouselControlsDefault">
-                    <button class="carouselPreviousBtn icon iconArrowLeft" type="button" data-carousel-slide="previous" data-carousel-id="galleryPagePerScroll"></button>
-                    <button class="carouselNextBtn icon iconArrowRight" type="button" data-carousel-slide="next" data-carousel-id="galleryPagePerScroll"></button>
-                    </menu>
+                        <menu class="carouselControlsDefault">
+                            <button class="carouselPreviousBtn icon iconArrowLeft" type="button" data-carousel-slide="previous" data-carousel-id="galleryPagePerScroll"></button>
+                            <button class="carouselNextBtn icon iconArrowRight" type="button" data-carousel-slide="next" data-carousel-id="galleryPagePerScroll"></button>
+                        </menu>
+                    </div>
+                    <div class="carousel carouselWithPreview" id="galleryWithPreviews2">
+                        <ul class="carouselInner" >
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png">
+                                    <img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png">
+                                </a>
+                                <p class="carouselOverlay">This is a <strong>carousel overlay</strong> (see <a href="sample-carousel-helpers#overlays">Helpers</a>).</p>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"></a>
+                                <p class="carouselOverlay">This sample carousel uses the <code>.photo</code> for content. This is not part of carousels, but illustrates how a gallery can be easily created.</p>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-1.png"></a>
+                            </li>
+                            <li class="carouselSlide carouselActiveSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-2.jpg"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-3.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-4.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-5.png"></a>
+                            </li>
+                            <li class="carouselSlide">
+                                <a class="photo photoSize2" href="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"><img src="http://canary.mfcreative.com/offer/dna/ethnicity/dna-slide-6.png"></a>
+                            </li>
+                        </ul>
+                        <menu class="carouselControlsDefault">
+                            <button class="carouselPreviousBtn icon iconArrowLeft" type="button" data-carousel-slide="previous" data-carousel-id="galleryWithPreviews"></button>
+                            <button class="carouselNextBtn icon iconArrowRight" type="button" data-carousel-slide="next" data-carousel-id="galleryWithPreviews"></button>
+                        </menu>
                     </div>
                 </div>
             </div>
@@ -294,6 +391,14 @@
                 /* Since 'slidesPerScroll': 'page' is the default setting, this does not need to be passed in the settings */
         });
         $("#galleryPagePerScroll2").carousel({
+            'fullWidth': false
+                /* Since 'slidesPerScroll': 'page' is the default setting, this does not need to be passed in the settings */
+        });
+        $("#galleryWithPreviews1").carousel({
+            'fullWidth': false
+                /* Since 'slidesPerScroll': 'page' is the default setting, this does not need to be passed in the settings */
+        });
+        $("#galleryWithPreviews2").carousel({
             'fullWidth': false
                 /* Since 'slidesPerScroll': 'page' is the default setting, this does not need to be passed in the settings */
         });
