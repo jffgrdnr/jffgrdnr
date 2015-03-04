@@ -42,11 +42,11 @@ a.userCardName:focus,
 .userCardSize4 .userCardImg.iconMale:before,
 .userCardLarge .userCardImg.iconFemale:before,
 .userCardSize4 .userCardImg.iconFemale:before { font-size:92px; line-height:94px; }
-
+/* Default 40x40 */
 .userCardSize1 .userCardImg.icon:before { font-size:26px; line-height:38px; }
 .userCardSize1 .userCardImg.iconPerson:before, 
 .userCardSize1 .userCardImg.iconMale:before,
-.userCardSize1 .userCardImg.iconFemale:before { font-size:32px; line-height:44px; }
+.userCardSize1 .userCardImg.iconFemale:before { font-size:34px; line-height:42px; }
 /* Small 30x30 */
 .userCardSize2 { line-height:30px; min-height:30px; padding-left:38px; }
 .userCardSize2 .userCardImg { height:30px; width:30px; }
