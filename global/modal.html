@@ -30,7 +30,7 @@
 			<fieldset>
 				<label>Type Ancestor Name</label>
 				<input type="text" />
-				<button href="javascript:void(0);" type="button" aria-expanded="false" aria-controls="modal" class="ancBtn sml" id="fourthModal">Search</a>
+				<button href="javascript:void(0);" type="button" aria-expanded="false" aria-controls="modal" class="ancBtn sml" id="insideModal">Search</a>
 			</fieldset>
 			Bacon ipsum dolor amet spare ribs kevin picanha chicken frankfurter, turducken sausage meatloaf. Prosciutto pork loin tail drumstick ham bresaola, leberkas ball tip meatball kielbasa alcatra. Beef ribs andouille venison, ball tip filet mignon pancetta pastrami. Short ribs ham kielbasa filet mignon cupim turducken fatback turkey.
 
@@ -514,7 +514,7 @@
 			$('#modal1').modal({
 				width: '500',
 				onOpen: function() {
-					$('#fourthModal').click(function(e) {
+					$('#insideModal').click(function(e) {
 						var $this = $(this);
 						$this.attr('aria-expanded','true');
 						$('<div><p>Here is the 2nd modal.</p><p>A whole bunch of stuff.</p><p>And some more stuff.</p></div>').modal({
