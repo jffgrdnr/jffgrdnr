@@ -16,7 +16,7 @@
     var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
     document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');
     </script>
-    <link rel="stylesheet" href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v1/activity-indicator.css&amp;x/css/v2/alert.css&amp;x/css/v1/autocomplete.css&amp;x/css/v1/button.css&amp;x/css/v1/callout.css&amp;x/css/v1/card.css&amp;x/css/v2/carousel.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v1/icon.css&amp;x/css/v3/modal.css&amp;x/css/v2/paging.css&amp;x/css/v1/photo.css&amp;x/css/v2/progress.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css&amp;x/css/v1/user-card.css&amp;x/css/standards/standards.css&amp;x/css/standards/prism.css">
+    <link rel="stylesheet" href="http://c.mfcreativestage.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v1/activity-indicator.css&amp;x/css/v2/alert.css&amp;x/css/v1/autocomplete.css&amp;x/css/v1/button.css&amp;x/css/v1/callout.css&amp;x/css/v1/card.css&amp;x/css/v2/carousel.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v1/icon.css&amp;x/css/v3/modal.css&amp;x/css/v2/paging.css&amp;x/css/v1/photo.css&amp;x/css/v2/progress.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css&amp;x/css/v1/user-card.css&amp;x/css/standards/standards.css&amp;x/css/standards/prism.css&x/css/v1/slider.css">
     <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
     <!-- Head content from page -->
     <meta name="description" content="Ancestry.com® encourages developers to use the standardized input fields, select dropdowns, textareas, and form validation when coding forms to the site." />
@@ -698,6 +698,7 @@
                                         <li>CSS: <a href="http://canary.mfcreativestage.com/css/v1/slider.css?minify=false" title="View source"><code>/css/v1/<strong>slider.css</strong></code></a></li>
                                         <li>JS: <a href="http://canary.mfcreativestage.com/js/v1/slider.js?minify=false" title="View source"><code>/js/v1/<strong>slider.js</strong></code></a></li>
                                         <li>Optional: <a href="http://canary.mfcreativestage.com/js/v1/form.js?minify=false" title="View source"><code>/js/v1/<strong>form.js</strong></code></a> (for validation)</li>
+                                        <li>Optional: <a href="http://canary.mfcreativestage.com/js/v1/callout.js?minify=false" title="View source"><code>/js/v1/<strong>callout.js</strong></code></a> (for callouts)</li>
                                     </ul>
                                     <h3 >Instructions</h3>
                                     <ul class="bulleted">
@@ -716,21 +717,41 @@
                                         </li>
                                     </ul>
                                     <hr class="conDivider" />
-                                    <h3 id="basicForm" >Example #4 - Basic Slider</h3>
+                                    <h3 id="basicSlider" >Example #4 - Basic Slider</h3>
                                     <figure>
                                         <form action="" class="form" id="firstToggleForm">
+                                            <button type="button" class="ancBtn calloutTrigger iconAfter iconArrowSmallDownAfter" id="sortMenuTrigger">Options</button>
+
                                             <input class="slider" type="checkbox" name="option3" id="option3" value="C" />
                                             <label for="option3" class="topSpacingBlock"><span class="sliderHandle"><span></span></span>Please accept the terms and conditions to proceed</label>
-
-                                            <input class="slider" type="checkbox" checked="checked" name="option1" id="option1" value="On" data-auto-instantiate="off" />
-                                            <label for="option1" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No"><span></span></span>Turn on settings?</label>
 
                                             <input class="slider" type="checkbox" name="option2" id="option2" value="No" />
                                             <label for="option2" class="topSpacing"><span class="sliderHandle" data-label-on="Yes" data-label-off="No, it isn't"><span></span></span>Is this the correct year?</label>
                                         </form>
-                                        <pre class="code html collapse"><code>&lt;form action="" class="form" id="firstToggleForm">
-    &lt;input class="slider" type="checkbox" name="option3" id="option3" value="C" />
-    &lt;label for="option3" class="topSpacingBlock">&lt;span class="sliderHandle">&lt;span>&lt;/span>&lt;/span>Please accept the terms and conditions to proceed&lt;/label>
+                                        <form class="form" id="secondToggleForm">
+                                            <ul id="sortMenu" class="calloutDomContent calloutMenu">
+                                                <li>
+                                                    <input class="slider" type="checkbox" name="option4" id="option4" value="D" />
+                                                    <label class="link" for="option4"><span class="sliderHandle"><span></span></span>Use high resolution images</label>
+                                                </li>
+                                                <li>
+                                                    <input class="slider" type="checkbox" name="option5" id="option5" value="E" />
+                                                    <label class="link" for="option5"><span class="sliderHandle"><span></span></span>Display random images</label>
+                                                </li>
+                                                <li>
+                                                    <input class="slider" checked="checked" type="checkbox" name="option6" id="option6" value="F" />
+                                                    <label class="link" for="option6"><span class="sliderHandle" data-label-on="Boo Yeah" data-label-off="Please No"><span></span></span>Show in rainbow colors or a spectrum of super fabulous sparkles</label>
+                                                </li>
+                                                <li>
+                                                    <input class="slider" checked="checked" type="checkbox" name="option7" id="option7" value="G" />
+                                                    <label class="link" for="option7"><span class="sliderHandle" data-label-on="On" data-label-off="Off"><span></span></span>Allow toggles</label>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                                                            <pre class="code html collapse"><code>&lt;form action="" class="form" id="firstToggleForm">
+                                        &lt;button type="button" class="ancBtn calloutTrigger iconAfter iconArrowSmallDownAfter" id="sortMenuTrigger">Options&lt;/button>
+                                        &lt;input class="slider" type="checkbox" name="option3" id="option3" value="C" />
+                                        &lt;label for="option3" class="topSpacingBlock">&lt;span class="sliderHandle">&lt;span>&lt;/span>&lt;/span>Please accept the terms and conditions to proceed&lt;/label>
     &lt;input class="slider" type="checkbox" checked="checked"  name="option1" id="option1" value="On" data-auto-instantiate="off" />
     &lt;label for="option1" class="topSpacing">&lt;span class="sliderHandle" data-label-on="Yes" data-label-off="No">&lt;span>&lt;/span>&lt;/span>Turn on settings?&lt;/label>
     &lt;input class="slider" type="checkbox" name="option2" id="option2" value="No" />
@@ -1196,7 +1217,7 @@
         </footer>
     </div>
     <!-- Bottom content from header section -->
-    <script src="http://c.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.0.min.js&amp;x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v1/callout.js&amp;x/js/v2/carousel.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/paging.js&amp;x/js/v2/tab.js&amp;x/js/standards/prism.js&amp;x/js/standards/standards.js"></script>
+    <script src="http://c.mfcreativestage.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.0.min.js&amp;x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v1/callout.js&amp;x/js/v2/carousel.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/paging.js&amp;x/js/v2/tab.js&amp;x/js/standards/prism.js&amp;x/js/standards/standards.js&x/js/v1/slider.js"></script>
     <script>
     /* Apply Ancestry Styles and Line Numbering */
     (function($) {
@@ -1332,6 +1353,12 @@
         });
         /* Instantiate slider */
         $('.slider:not([data-auto-instantiate="off"])').slider();
+        $('#secondToggleForm').validator({
+            "fields": {
+                "option4": { "required": true, "errorLocation": null},
+                "option5": { "required": true, "errorLocation": null }
+            }
+        });
 		$('#sortMenuTrigger').callout({'content': '#sortMenu'});
     });
     </script>
