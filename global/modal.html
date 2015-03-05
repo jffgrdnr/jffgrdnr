@@ -20,12 +20,12 @@
 </head>
 <body>
 	<section class="con">
-		<button class="ancBtn lrg" id="firstModal" aria-expanded="false" aria-controls="modal" type="button">Open Modal</button>
-		<button class="ancBtn lrg" id="secondModal" aria-expanded="false" aria-controls="modal" type="button">Open Modal</button>
-		<button class="ancBtn lrg" id="thirdModal" aria-expanded="false" aria-controls="modal" type="button">Open Modal</button>
+		<button class="ancBtn lrg" id="firstModal" aria-expanded="false" aria-controls="modal" type="button">Open First Modal</button>
+		<button class="ancBtn lrg" id="secondModal" aria-expanded="false" aria-controls="modal" type="button">Open Second Modal</button>
+		<button class="ancBtn lrg" id="thirdModal" aria-expanded="false" aria-controls="modal" type="button">Open Third Modal</button>
+		<button class="ancBtn lrg" id="fourthModal" aria-expanded="false" aria-controls="modal" type="button">Open Fourth Modal</button>
 	</section>
 	<section id="modal1" class="modal" >
-		<header></header>
 		<form>
 			<fieldset>
 				<label>Type Ancestor Name</label>
@@ -55,6 +55,22 @@
 	</section>
 	<section id="modal3" class="modal" data-title="title 3">
 		<header></header>
+		<form>
+			<fieldset>
+				<label>Type Ancestor Name</label>
+				<input type="text" />
+				<button href="javascript:void(0);" type="button" aria-expanded="false" aria-controls="modal" class="ancBtn sml" id="sixthModal">Search</a>
+			</fieldset>
+		</form>
+	</section>
+	<section id="modal4" class="modal">
+		<header class="modalHeader">
+			<div class="modalHeaderActions">
+	            <button type="button" class="ancBtn full320">Done</button>
+	            <button type="button" class="ancBtn full320 silver">Cancel</button>
+	        </div>
+			<h2 class="modalTitle">I'm a conTitle</h2> 
+		</header>
 		<form>
 			<fieldset>
 				<label>Type Ancestor Name</label>
@@ -540,6 +556,12 @@
 						});
 					});
 				},
+				$trigger: $(this)
+			});
+		});
+		$('#fourthModal').click(function(e) {
+			$('#modal4').modal({
+				width: '500',
 				$trigger: $(this)
 			});
 		});
