@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+<html class="r" lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>User Card Examples | Ancestry.com® Standards</title>
+	<!-- Head content from header section -->
+		<!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+	<!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+	<!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="description" content=" "/>
+	<link rel="canonical" href="" />
+	<script>var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+	document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');</script>
+	<link rel="stylesheet" href="http://canary.mfcreativestage.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v1/activity-indicator.css&amp;x/css/v2/alert.css&amp;x/css/v1/autocomplete.css&amp;x/css/v1/button.css&amp;x/css/v1/callout.css&amp;x/css/v1/card.css&amp;x/css/v2/carousel.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v3/modal.css&amp;x/css/v2/paging.css&amp;x/css/v1/photo.css&amp;x/css/v2/progress.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css&amp;x/css/standards/standards.css&amp;x/css/standards/prism.css">
+	<!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+	<!-- Head content from page -->
+    <link rel="stylesheet" href="css/user-card.css">
+    <link rel="stylesheet" href="css/icon.css">
+</head>
+<body>
+	<div class="standards">
+		<header class="mainHeader" role="banner">
+			<!-- Content from header section -->
+			<button type="button" class="icon iconList menuButton calloutTriggerNoArrow" title="Menu Button"></button>
+            <div class="clearfix logoArea">
+                <a href="home" title="back to Home page"><img alt="back to Home page" src="http://c.mfcreative.com/header/i/logos/ancestry-com.png" />
+                </a>
+                <h1 class="logoText text2xlrg"><a href="home" title="back to Home page">Standards</a></h1>
+                <div class="searchWrap">
+                    <p class="contact"><a href="mailto:standards@ancestry.com" title="Contact the standards team">Contact the Standards Team</a>
+                    </p>
+                    <form class="form" id="liveSearchWrap" method="post" autocomplete="off" role="search">
+                        <fieldset>
+                            <label class="icon iconSearch" for="liveSearch" title="Enter a class, filename, or keyword..." tabindex="-1">Search</label>
+                            <input type="text" placeholder="Enter a class, filename, or keyword..." id="liveSearch" value="" data-index="0" class="ancBtn silver">
+                            <div class="tooltipBox">
+                                <p>Press
+                                    <kbd>/</kbd> to open the search field.</p>
+                                <p class="howto">Type a keyword to see related standards. Press
+                                    <kbd>&crarr;</kbd> to go to highlighted standard.</p>
+                            </div>
+                            <div id="liveSearchResults"></div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="navMenu" id="navMenu" role="navigation">
+                <ul>
+                    <li class="menuTab homeTab"><a href="home">Home</a>
+                    </li>
+                    <li class="menuTab uxGuidelinesTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="1">UX Guidelines </button>
+                        <ul class="menuList">
+                            <li class="nav-accessibility" data-related-classes="" data-keywords="accessibility, blind, color-blind, deaf, hearing impaired, visually impaired contrast ratio visual presentation keyboard accessibility"><a href="accessibility">Accessibility</a>
+                            </li>
+                            <li class="nav-branding" data-related-classes="" data-keywords="branding, manifesto, mission, values, position, promise, voice, tone, audience profiles, portfolio, architecture, design guidelines, logos, color palette, typography, photography, graphics, iconography, leaf mark, copy guidelines, bonsai, component reference, contrast, illustrations, details, touch, testing, resources"><a href="branding">Branding</a>
+                            </li>
+                            <li class="nav-copywriting" data-related-classes="" data-keywords="copywrite, copywriting, ancestry brand"><a href="copywriting">Copywriting</a>
+                            </li>
+                            <li class="nav-designPrinciples" data-related-classes="" data-keywords="design principles, ui principles, ux principles, design for the 80%, design with content, define the audience, don't make me think, add life and motion, make it shine"><a href="design-principles">Design Principles</a>
+                            </li>
+                            <li class="nav-photography" data-related-classes="" data-keywords="photography, photos, photographs, pictures, images, graphics"><a href="graphics">Photography</a>
+                            </li>
+                            <li class="nav-productPrinciples" data-related-classes="" data-keywords="product principles, ux principles, rich, simple, social, tell me a story, get me to the good stuff, make it meaningful to me, connect me to other people"><a href="product-principles">Product Principles</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menuTab pageStructureTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="2">Page Structure </button>
+                        <ul class="menuList">
+                            <li class="nav-containers" data-related-classes=".con, .conInner, .conSecond, .conThird, .conHeader, .conTitle, .conBody, .conFooter, .conFooterAlt, .conSection, .conDivider" data-keywords="container.css, containers, subcontainers, panels, boxes, widgets, tabbed containers, inner containers, main content containers, secondary content containers, tertiary content containers"><a href="containers">Containers</a>
+                            </li>
+                            <!-- <li class="nav-globalHeaderAndFooter" data-related-classes="" data-keywords="global header, global footer"><a href="global-header-and-footer">Global&nbsp;Header&nbsp;&amp;&nbsp;Footer</a></li> -->
+                            <li class="nav-gridLayouts" data-related-classes=".ancCol, .ancColRight, .ancColRow, .ancColRow320, .ancCol480, .ancCol768, .ancGrid, .ancGridBreak, .ancGridBreak320, .ancGridBreak480, .ancGridBreak768, .ancGridEqual, .ancGridNoGutters, .ancGridPadded, .ancGridSmall, .con, .conBody, .conSecond, .conThird, .full320, .full480, .full768, .half320, .half480, .half768, .hide320, .hide480, .hide768, .third320, .third480, .third768, .w10, .w12, .w16, .w20. .w20, .w25, .w30, .w33, .w37, .w40, .w50, .w60, .w62, .w66, .w70, .w75, .w80, .w83, .w87, .w90, .w100" data-keywords="grid.css, grids, responsive grid systems, responsive grid layouts, responsive page layouts, responsive framework"><a href="grid-layouts">Grid&nbsp;Layouts</a>
+                            </li>
+                            <li class="nav-pageTemplates" data-related-classes=".page, .pageHeader, .pageTitle, .pageNav, .pageCrumbs, .pageCrumb, .pageIntro, .pageHeaderImage, .pageHeaderCaption, .pageBack, .pagePrint, .pageSimpleHeader, .pagePadded" data-keywords="template.css, breadcrumbs, breadcrumb navigation, back buttons, inter-page navigations, page templates, page layouts, page structure, default layout, default page layout"><a href="page-templates">Page&nbsp;Templates</a>
+                            </li>
+                            <!-- <li class="nav-sideNavigation" data-related-classes="" data-keywords=""><a href="side-navigation">Side&nbsp;Navigation</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="menuTab styleGuideTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="3">Style Guide </button>
+                        <ul class="menuList">
+                            <!-- <li class="nav-ancestryBrand" data-related-classes="" data-keywords="ancestry brands, ancestry brandings, ancestry logos, leaf logos"><a href="ancestry-brand">Ancestry&nbsp;Brand</a></li> -->
+                            <!-- <li class="nav-breadcrumbs" data-related-classes="" data-keywords="breadcrumbs, breadcrumb navigation, back buttons, inter-page navigations"><a href="breadcrumbs">Breadcrumbs</a></li> -->
+                            <li class="nav-buttons" data-related-classes=".active, .ancBtn, .ancBtnL, .ancBtnM, .ancBtnR, .ancBtnRnd, .brown, .disabled, .focus, .full320, .full480, .full768, .orange, .silver, .lrg, .sml, .tin" data-keywords="button.css, button.js, buttons, links, calls to action, CTAs, call to action"><a href="buttons">Buttons</a>
+                            </li>
+                            <li class="nav-badges inBonsai" data-related-classes="" data-keywords="button.css, badges"><a href="badges">Badges</a>
+                            </li>
+                            <li class="nav-cards" data-related-classes=".card, .cardAction, .cardActions, .cardEmpty, .cardHasBottomSelectAction, .cardHasSelectAction, .cardSubtitle, .cardTitle" data-keywords="card.css, cards"><a href="cards">Cards</a>
+                            </li>
+                            <li class="nav-colorPalette" data-related-classes="" data-keywords="ancestry colors, ancestry color palette, leaf green, antique grey, antique wash, shaded leaf, northern sky, field grass, light leaf, old black, desert clay, burnt earth, sunlit, link colors, hyperlink colors"><a href="color-palette">Color&nbsp;Palette</a>
+                            </li>
+                            <li class="nav-forms" data-related-classes="#calloutContent, #formAlert, .alert, .alertOverlay, .ancBtn, .btnInline, .checkbox, .disabled, .error, .errorCallout, .errorMessage, .fileBtn, .filename, .form, .formAlertActive, .formFooter, .formLarge, .formLarge480, .formLargest, .full320, .full480, .full768, .helpText, .inform, .noLabel, .textareaLarge, .helpText, .icon, .iconWarning, .ie, .ie7, .ie8, .inform, .inputSubmit, .link, .lrg, .noLabel, .noTouch, .placeholderPolyfill, .radio, .required, .requiredIndicator, .silver, .sml, .success, .textareaLarge, .tin, .touch" data-keywords="form.css, form.js, forms, inputs, text fields, checkboxes, radio buttons, submit buttons, textareas, labels, ledgend, select, option, file input, check boxes"><a href="forms">Forms</a>
+                            </li>
+                            <li class="nav-graphics" data-related-classes=".photo, .photoPortrait, .photoLandscape, .photoCenter, .photoSize1, .photoSize2, .photoSize3, .photoSize4, .photoSize5, .photoSize6, .photoProfile, .photoProfileMale, .photoProfileFemale" data-keywords="photo.css, images, imagery, graphics, icons, iconography, logos, retina display, retina images, retina devices"><a href="graphics">Graphics</a>
+                            </li>
+                            <li class="nav-iconography" data-related-classes=".icon, .iconAfter, .iconAcom, .iconAdd, .iconArrowBack, .iconArrowDown, .iconArrowLeft, .iconArrowRight, .iconArrowUp, .iconArrowSmallDown, .iconArrowSmallDownAfter, .iconArrowSmallLeft, .iconArrowSmallLeftAfter, .iconArrowSmallRight, .iconArrowSmallRightAfter, .iconArrowSmallUp, .iconArrowSmallUpAfter, .iconAttachment, .iconAudio, .iconBeginThread, .iconBell, .iconBookmark, .iconCalculator, .iconCalendar, .iconCamera, .iconCart, .iconCenter, .iconChat, .iconCheck, .iconClock, .iconClose, .iconCreditCard, .iconCustomerSupport, .iconDenied, .iconDislike, .iconDna, .iconDocument, .iconDocumentAdd, iconDocumentExcel, .iconDocumnetPdf, .iconDocumentWord, .iconDownload, .iconEdit, .iconEmail, .iconExpand, .iconFacebook, .iconFamily, .iconFastForward, .iconFemale, .iconFlag, .iconFlipHorizontal, .iconFlipHorizontal-2, .iconFlipVertical, .iconFlipVertical-2, .iconFolder, .iconGallery, .iconGooglePlus, .iconHeart, .iconHelp, .iconHelpAfter, .iconHome, .iconImage, .iconInbox, .iconInfo, .iconInvert, .iconLightbulb, .iconLike, .iconList, .iconLock, .iconMailSent, .iconMale, .iconMap, .iconMerge, .iconMessageBoard, .iconMilitary, .iconMinus, .iconMove, .iconNewWindow, .iconNote, .iconNoteAlt, .iconPause, .iconPeople, .iconPerson, .iconPersonAdd, .iconPhone, .iconPin, .iconPinterest, .iconPlay, .iconPlus, .iconPrint, .iconProfileCard, .iconRemove, .iconReportError, .iconRewind, .iconRotateLeft, .iconRotateRight, .iconRss, .iconSave, .iconSearch, .iconSettings, .iconShare, .iconStar, .iconStarHalf, .iconStarOutline, .iconStop, .iconStore, .iconStories, .iconStory, .iconSupport, .iconSync, .iconTag, .iconTrash, .iconTreeAdd, .iconTreeFamily, .iconTreePedigree, .iconTumblr, .iconTwitter, .iconUnlock, .iconUpload, .iconVideo, .iconView, .iconVolumeMax, .iconVolumeMedium, .iconVolumeMin, .iconWarning, .iconWebLink, .iconYoutube, .iconArrowRightAfter, .iconShakyLeaf, .iconLeaf, .iconBars, .iconBarsLow, .iconBarsMed, .iconBarsHigh" data-keywords="icon.css, graphics, images, imagery, icons, retina display, retina images, retina devices"><a href="iconography">Iconography</a>
+                            </li>
+                            <li class="nav-links" data-related-classes=".link, .underline" data-keywords="links, a, href, hyperlinks"><a href="links">Links</a>
+                            </li>
+                            <li class="nav-typography" data-related-classes=".bulleted, .numbered" data-keywords="unordered lists, ordered lists, definition lists"><a href="lists">Lists</a>
+                            </li>
+                            <li class="nav-logos" data-related-classes="" data-keywords="logos, graphics, imagery, images"><a href="logos">Logos</a>
+                            </li>
+                            <li class="nav-progress-indicators" data-related-classes="" data-keywords="progress bars, sign up flow, signup flow, determinate progress bars, step progress bars, progress indicators, indicators"><a href="progress-indicators">Progress&nbsp;Indicators</a>
+                            </li>
+                            <li class="nav-spacing" data-related-classes="" data-keywords="spacing, 4px rhythm, 4 pixel rhythm, four pixel rhythm, paddings, margins, grids, grid system, grid layouts, page templates, page layouts"><a href="spacing">Spacing</a>
+                            </li>
+                            <li class="nav-tables" data-related-classes=".table, .tableHorizontal, .table480, .table320" data-keywords="table.css, tables, data layout, rows, columns, thead, tbody, tr, th, td, tfoot"><a href="tables">Tables</a>
+                            </li>
+                            <li class="nav-typography" data-related-classes=".bold, .italic, .normal, .textdefault, .smallLineHeight, .topSpacing, .noTopSpacing, .textalt, .textnormal, .coloralt, .coloralt2, .coloralt3, .coloralt4, .colornormal, .notPrintable, .screenReaderText" data-keywords="typography, line-height, headings, paragraphs, text, fonts, font-size, font-family, font-families, small, color, spacing, padding, margining"><a href="typography">Typography</a>
+                            </li>
+                            <li class="nav-userCards" data-related-classes=".icon, .iconAcom, .iconFemale, .iconPerson, .link, .userCard, .userCardContent, .userCardImg, .userCardInfo, .userCardLandscape, .userCardMini, .userCardName, .userCardPortrait, .userCardSize2, .userCardSize3" data-keywords="user-card.css, user cards, member cards, comments, user profile, username, user name, member module"><a href="user-cards">User&nbsp;Cards</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menuTab widgetsTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="4">Widgets </button>
+                        <ul class="menuList">
+                            <li class="nav-activityIndicators" data-related-classes=".ancBtn, .brown, .ie8, .loading, .loadingLarge, .loadingOnBlack, .loadingOnGreen, .loadingSmall, .lrg, .orange, .silver, .sml" data-keywords="activity-indicators.css, activity indicators, loading icons, loading gifs"><a href="activity-indicators">Activity Indicators</a>
+                            </li>
+                            <li class="nav-alerts" data-related-classes=".alert, .alertCloseable, .alertCloseBtn, .alertHidden, .alertInfo, .alertNoIcon, .alertNote, .alertOverlay, .alertSection, .alertSitewide, .alertSuccess, .alertVisible, .ancBtn, .closeAlert, .con, .conBody, .conSection, .info, .link, .note, .silver, .success, .top" data-keywords="alert.css, alert.js, alerts, errors, information, successful, notes, site-wide"><a href="alerts">Alerts</a>
+                            </li>
+                            <li class="nav-autocomplete" data-related-classes="#autocomplete, .autocompleAttached, .autocompleteCon, .autocompleteHighlighted, .autocompleteNoResults, .autocompleteResults, .autocompleteSelected, .autocompleteVisible" data-keywords="autocomplete.css, autocomplete.js, autocomplete, auto complete, auto-complete, typeahead, type ahead, type-ahead"><a href="autocomplete">Autocomplete</a>
+                            </li>
+                            <li class="nav-callouts" data-related-classes="#callout, #calloutContent, #calloutContentPlaceholder, #calloutPointer, #calloutPointerShadow, #modal, .active, .ancBtn, .callout, .calloutAlignCenter, .calloutAlignLeft, .calloutAlignMiddle, .calloutAlignRight, .calloutAlignTop, .calloutDomContent, .calloutHidePointer, .calloutMenu, .calloutPositionBottom, .calloutPositionLeft, .calloutPositionRight, .calloutPositionTop, .calloutStyleAlt, .calloutStyleDark, .calloutTooltip, .calloutTrigger, .calloutTriggerNoArrow, .calloutTypeCursor, .calloutTypeInput, .hover, .icon, .iconAfter, .iconArrowSmallDownAfter, .iconBars, .iconHelpAfter, .iconLeaf, .iconShakyLeaf, .ie8, .link, .noTouch" data-keywords="callout.css, callout.js, callouts, call outs, tooltips, tool tips, tool-tips, dropdown menus, drop down menus, drop-down menus, pop outs, popouts, pop-ups, pop ups, popups"><a href="callouts">Callouts</a>
+                            </li>
+                            <li class="nav-carousels" data-related-classes=".active, .ancBtn, .carElm, .carousel, .carouselActive, .carouselAnimating, .carouselAutoscroll, .carouselArrowsOutside, .carouselBg, .carouselCentered, .carouselContinuous, .carouselControlsDefault, .carouselCurrentSlide, .carouselFirstSlide, .carouselFullWidth, .carouselGoToSlide, .carouselInner, .carouselLastSlide, .carouselNextBtn, .carouselOverlay, .carouselPadded, .carouselPagination, .carouselPaginationDots, .carouselPaginationNumbers, .carouselPaused, .carouselPausePlay, .carouselPausePlayBtn, .CarouselPlaying, .carouselPreviousBtn, .carouselSlide, .carouselVariedHeight, .carouselVertical, .carouselWithPrevious, .icon, .iconArrowLeft, .iconArrowRight, .iconPause, .iconPlay, .loading, .noTouch, .silver, .sml, .touch" data-keywords="carousel.css, carousel.js, carousels, media slider, image slider, image gallery, slideshow"><a href="carousels">Carousels</a>
+                            </li>
+                            <!-- <li class="nav-familyCompareCards" data-related-classes="" data-keywords="family compare cards"><a href="family-compare-cards">Family&nbsp;Compare&nbsp;Cards</a></li> -->
+                            <!-- <li class="nav-maps" data-related-classes="" data-keywords="maps, charts"><a href="maps">Maps</a></li> -->
+                            <li class="nav-mediaPlayer" data-related-classes="" data-keywords="media player, video player, audio player"><a href="media-player">Media&nbsp;Player</a>
+                            </li>
+                            <!-- <li class="nav-meters" data-related-classes="" data-keywords="meters"><a href="meters">Meters</a></li> -->
+                            <li class="nav-modals" data-related-classes="#acomModal, #acomModalShadowForIE, #ancMdl, #ancMsk, #modal, #modalCenter, #modalClose, #modalContents, #modalHeader, .acomClose, .acomModalContent, .acomModalOpen, .acomOuterClose, .ancClose, .ancOuterClose, .ie, .ie7, .ie8, .ie9, .modal, .modalCentered, .modalHasTitle, .modalHeader, .modalOpen, .modalSection, .modalHeader, .modalLoading, .modalMarketing, .modalOpen, .modalSection, .modalShowClose .noTouch, .subCon, .touch" data-keywords="modal.css, modal.js, modals, dialogs, dialog boxes, popups, pop ups, confirmation boxes, confirmation dialogs, overlays, takeovers"><a href="modals">Modals</a>
+                            </li>
+                            <li class="nav-pagination" data-related-classes=".ancBtn, .disabled, .error, .icon, .iconArrowLeft, .iconArrowRight, .ie8, .next, .pagination, .paging, .pagingMax, .pagingMeta, .pagingNext, .pagingNum, .pagingPer, .pagingPrevious, .pagingRight, .prev, .selected, .silver, .sml" data-keywords="paging.css, paging.js, pagination, paging, page navigation"><a href="pagination">Pagination</a>
+                            </li>
+                            <!-- <li class="nav-panAndZoomControls" data-related-classes="" data-keywords="pan controls, zoom controls, pan and zoom controls, zoom and pan controls, record controls, interactive controls"><a href="pan-and-zoom-controls">Pan&nbsp;&amp;&nbsp;Zoom&nbsp;Controls</a></li> -->
+                            <!-- <li class="nav-sliders" data-related-classes="" data-keywords="sliders, interactive controls"><a href="sliders">Sliders</a></li> -->
+                            <!-- <li class="nav-socialAndShare" data-related-classes="" data-keywords="social and share, twitter, facebook, google+, google plus, pintrest, youtube, you tube, tumblr, blog, sharing, social media"><a href="social-and-share">Social&nbsp;&amp;&nbsp;Share</a></li> -->
+                            <li class="nav-tabs" data-related-classes=".activeTab, .con, .conBody, .pagePadded, .pageTitle, .tab, .tab2Arrow, .tabActive, .tabContent, .tabContents, .tabExpand, .tabLast, .tabMenuExpanded, .tabs, .tabs2, .tabs320, .tabs480, .tabsCon, .tabSelect, .tabsExpanded, .tabSingular, .tabsRight" data-keywords="tab.css, tab.js, tabs, inner page navigation"><a href="tabs">Tabs</a>
+                            </li>
+                            <!-- <li class="nav-timeline" data-related-classes="" data-keywords="timelines"><a href="timeline">Timeline</a></li> -->
+                            <!-- <li class="nav-treeNodes" data-related-classes="" data-keywords="tree nodes, trees nodes"><a href="tree-nodes">Tree&nbsp;Nodes</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="menuTab codingTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="5">Coding </button>
+                        <ul class="menuList">
+                            <li class="nav-accessibility" data-related-classes="" data-keywords="accessibility, blind, color-blind, deaf, hearing impaired, visually impaired contrast ratio visual presentation keyboard accessibility"><a href="accessibility">Accessibility</a>
+                            </li>
+                            <li class="nav-codingStandards" data-related-classes=".link, .underline, .bodyBkgAlt, .bulleted, .numbered, .clear, .clearfix, .noDisplay, .notPrintable, .screenReaderText, .itemCount, .r, .touch, .notouch, .ie7, .ie8, .ie9" data-keywords="main.css, FED coding standards, html coding standards, css coding standards, html standards, css standards, css3, html5, front end standards, front-end standards, fed best practices, front end best practices, front-end best practices, css properties, css selectors, css classes, css naming conventions, html validation, html tags, html formatting, css formatting"><a href="coding-standards">Coding&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-cssStandards" data-related-classes="" data-keywords="FED coding standards, css coding standards, css standards, css3, css formatting"><a href="css-standards">CSS&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-emailStandards" data-related-classes="" data-keywords="email, emails, coding emails, email standards"><a href="email-standards">Email&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-gridSandbox" data-related-classes=".ancGrid, .ancGridEqual" data-keywords="grid sandbox, grids sandbox"><a href="sandbox-grid">Grid&nbsp;Sandbox</a>
+                            </li>
+                            <li class="nav-htmlStandards" data-related-classes="" data-keywords="html, html coding standards, html standards, html5, html validation, html tags, html formatting"><a href="html-standards">HTML&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-jsStandards" data-related-classes="" data-keywords="js, javascript, js coding standards, javascript coding standards, js standards, javascript standards"><a href="js-standards">JS&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-langCodes" data-related-classes="" data-keywords="countries, country codes, en-AU, en-CA, en-GB, en-US, fr-CA, fr-FR, de-DE, it-IT, lang attribute, lang codes, language codes, languages, sv-SE"><a href="lang-codes">Lang&nbsp;Codes</a>
+                            </li>
+                            <li class="nav-marketingSnippets" data-related-classes="marketing-snippets, resourcemanager, resource-manager"><a href="marketing-snippets">Marketing Snippets</a>
+                            </li>
+                            <li class="nav-medalStandards" data-related-classes="" data-keywords="fed medal standards, front-end medal standards, front end medal standards, front end standards, front-end standards, js validation, javascript validation, css validation, html validation, jslint, csslint, accessibility, seo, responsive, mobile"><a href="medal-standards">Medal&nbsp;Standards</a>
+                            </li>
+                            <li class="nav-responsivePresentation" data-related-classes="" data-keywords="responsive design, mobile, retina display, retina devices"><a href="responsive-presentation">Responsive&nbsp;Presentation</a>
+                            </li>
+                            <li class="nav-specificityQuiz" data-related-classes="" data-keywords="CSS Specificity Quiz, selectors, property, properties, values, ids, classes"><a href="specificity-quiz">Specificity&nbsp;Quiz</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menuTab teamsTab">
+                        <button type="button" class="iconAfter iconArrowSmallDownAfter" tabindex="6">Teams </button>
+                        <ul class="menuList">
+                            <li class="nav-creativeTeam" data-related-classes="" data-keywords="the creative team, the marketing team"><a href="creative-home">Creative</a>
+                            </li>
+                            <li class="nav-fedTeam" data-related-classes="" data-keywords="FED team, FEDs, front-end developers, front end developers, front end team, jeff lord, peter funk, bailey stewart, jason boyer, tyson zimmerman, kim Belanger, chris whitchurch, jason bramble, peter mueller, david richardson, jon mongan, nate bartlett, billy hunter, brett wilson, david randell, andy phillips"><a href="FED-home">FED</a>
+                            </li>
+                            <li class="nav-uxTeam" data-related-classes="" data-keywords="UX team, UI team, user experience team, user interactive team"><a href="UX-home">UX</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+		</header>
+        <div class="mainContent" role="main" aria-labelledby="standardsPageTitle">
+        	<!-- Content from page -->
+        	<header class="pageHeader">
+        		<nav class="pageCrumbs">
+        			<a class="pageCrumb" href="home">Home</a>
+        			<span class="pageCrumb icon iconArrowRight"></span>
+        			<a class="pageCrumb" href="user-cards">User Cards</a>
+        			<span class="pageCrumb icon iconArrowRight"></span>
+        			<strong class="pageCrumb">User Card Examples</strong>
+        		</nav>
+        		<h1 class="pageTitle">User Card Examples</h1>
+        	</header>
+        	<div class="page">
+        		<div class="ancGrid ancGridPadded full480">
+        			<div class="article ancCol w100">
+        				<section class="con">
+        					<header class="conHeader">
+        						<h2 class="conTitle" id="defaultImageSize">Default image size</h2>
+        					</header>
+        					<div class="conBody">
+        						<div class="userCard">
+        							<div class="userCardImg icon iconMale"></div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><a class="userCardName" href="#">Username</a> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg icon iconMale"></div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg icon iconFemale"></div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment.</p>
+        								<div class="userCardInfo"><small class="icon iconUpload">6 months ago</small><small class="icon iconView">100 Views</small><small class="icon iconHeart">6 Likes</small><small class="icon iconChat">0 Comments</small><small>23 Aug 2013</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg icon iconPerson"></div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> Long comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis. Consectetur adipisicing elit. Ipsum totam ipsam aut voluptatum necessitatibus officiis labore ipsa vel. Quam voluptas optio repellat soluta. Ex, deserunt, ipsam molestiae laudantium voluptatem nam.</p>
+        								<div class="userCardInfo"><small>23 Aug 2013</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg icon iconAcom"></div>
+        							<div class="userCardContent">
+        								<p class="userCardComment">Comment from Ancestry with no additional info.</p>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        							</div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        							</div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg userCardLandscape"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        							</div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="userCard">
+        							<div class="userCardImg userCardPortrait"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        							</div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        					</div>
+        				</section>
+
+        				<section class="con">
+        					<header class="conHeader">
+        						<h2 class="conTitle" id="largeImageSize">Large image size</h2>
+        					</header>
+        					<div class="conBody">
+        						<div class="userCard userCardSize4">
+        							<div class="userCardImg icon iconMale"></div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize4">
+        								<div class="userCardImg icon iconFemale"></div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment.</p>
+        									<div class="userCardInfo"><small class="icon iconUpload">6 months ago</small><small class="icon iconView">100 Views</small><small class="icon iconHeart">6 Likes</small><small class="icon iconChat">0 Comments</small><small>23 Aug 2013</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize4">
+        								<div class="userCardImg icon iconPerson"></div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> Long comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis. Consectetur adipisicing elit. Ipsum totam ipsam aut voluptatum necessitatibus officiis labore ipsa vel. Quam voluptas optio repellat soluta. Ex, deserunt, ipsam molestiae laudantium voluptatem nam.</p>
+        									<div class="userCardInfo"><small>23 Aug 2013</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize4">
+        								<div class="userCardImg icon iconAcom"></div>
+        								<div class="userCardContent">
+        									<p class="userCardComment">Comment from Ancestry with no additional info.</p>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize4">
+        								<div class="userCardImg"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize4">
+        								<div class="userCardImg"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize4">
+        								<div class="userCardImg userCardLandscape"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize4">
+        								<div class="userCardImg userCardPortrait"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment text3xlrg"><a class="userCardName" href="#"><strong>Username</strong></a>
+        									</p>
+        									<p class="userCardComment noTopSpacing"> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        					</div>
+        				</section>
+
+        				<section class="con">
+        					<header class="conHeader">
+        						<h2 class="conTitle" id="smallImageSize">Small image size</h2>
+        					</header>
+        					<div class="conBody">
+        						<div class="userCard userCardSize2">
+        							<div class="userCardImg icon iconMale"></div>
+        							<div class="userCardContent">
+        								<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        								<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize2">
+        								<div class="userCardImg icon iconFemale"></div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment.</p>
+        									<div class="userCardInfo"><small class="icon iconUpload">6 months ago</small><small class="icon iconView">100 Views</small><small class="icon iconHeart">6 Likes</small><small class="icon iconChat">0 Comments</small><small>23 Aug 2013</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize2">
+        								<div class="userCardImg icon iconPerson"></div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> Long comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis. Consectetur adipisicing elit. Ipsum totam ipsam aut voluptatum necessitatibus officiis labore ipsa vel. Quam voluptas optio repellat soluta. Ex, deserunt, ipsam molestiae laudantium voluptatem nam.</p>
+        									<div class="userCardInfo"><small>23 Aug 2013</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize2">
+        								<div class="userCardImg icon iconAcom"></div>
+        								<div class="userCardContent">
+        									<p class="userCardComment">Comment from Ancestry with no additional info.</p>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize2">
+        								<div class="userCardImg"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize2">
+        								<div class="userCardImg"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize2">
+        								<div class="userCardImg userCardLandscape"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        						<div class="conSection">
+        							<div class="userCard userCardSize2">
+        								<div class="userCardImg userCardPortrait"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        								</div>
+        								<div class="userCardContent">
+        									<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        									<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+        					</div>
+        				</section>
+        				<section class="con">
+        					<header class="conHeader">
+        						<h2 class="conTitle" id="smallerImageSize">Smaller image size</h2>
+        					</header>
+        					<div class="conBody">
+        						<div class="ancGrid">
+        							<div class="ancCol half480 w25">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg icon iconMale"></div>
+        									<div class="userCardContent">
+        										<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+        										<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        										</div>
+        									</div>
+        								</div>
+        							</div>
+        							<div class="ancCol half480 w25">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg icon iconFemale"></div>
+        									<div class="userCardContent">
+        										<p class="userCardComment"><strong>Username</strong> User comment.</p>
+        										<div class="userCardInfo"><small class="icon iconUpload">6 months ago</small><small class="icon iconView">100 Views</small><small class="icon iconHeart">6 Likes</small><small class="icon iconChat">0 Comments</small><small>23 Aug 2013</small>
+        										</div>
+        									</div>
+        								</div>
+        							</div>
+        							<div class="ancCol half480 ancColRow480 w25">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg icon iconPerson"></div>
+        									<div class="userCardContent">
+        										<p class="userCardComment"><strong>Username</strong> Long comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis. Consectetur adipisicing elit. Ipsum totam ipsam aut voluptatum necessitatibus officiis labore ipsa vel. Quam voluptas optio repellat soluta. Ex, deserunt, ipsam molestiae laudantium voluptatem nam.</p>
+        										<div class="userCardInfo"><small>23 Aug 2013</small>
+        										</div>
+        									</div>
+        								</div>
+        							</div>
+        							<div class="ancCol half480 w25">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg icon iconAcom"></div>
+        									<div class="userCardContent">
+        										<p class="userCardComment">Ancestry comment.</p>
+        									</div>
+        								</div>
+        							</div>
+        							<div class="ancCol ancColRow w50">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        									</div>
+        									<div class="userCardContent">
+        										<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        										<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        										</div>
+        									</div>
+        								</div>
+        							</div>
+        							<div class="ancCol w50">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        									</div>
+        									<div class="userCardContent">
+        										<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        										<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        										</div>
+        									</div>
+        								</div>
+        							</div>
+        							<div class="ancCol ancColRow w50">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg userCardLandscape"><img alt="" src="http://c.mfcreativestage.com/offer/fed/examples/football2.jpg">
+        									</div>
+        									<div class="userCardContent">
+        										<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        										<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        										</div>
+        									</div>
+        								</div>
+        							</div>
+        							<div class="ancCol w50">
+        								<div class="userCard userCardSize3">
+        									<div class="userCardImg userCardPortrait"><img alt="" src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg">
+        									</div>
+        									<div class="userCardContent">
+        										<p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        										<div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+        										</div>
+        									</div>
+        								</div>
+        							</div>
+                                    <div class="ancCol w100">
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconCamera"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+                                                <div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconStory"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+                                                <div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconDocument"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+                                                <div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconVideo"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment"><strong>Username</strong> User comment lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, obcaecati, repellendus, tenetur ipsa eos alias amet est laboriosam optio asperiores eius in porro eligendi quaerat corporis omnis delectus perferendis quis.</p>
+                                                <div class="userCardInfo"><small class="icon iconHeart">123 Likes</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="list"><li><span class="listColumn"><a class="icon iconPeople" href="#"><span>All people with hints</span></a></span> <span class="listColumn"><span class="badge badgeColor3">122</span></span></li> <li><span class="listColumn"><a class="icon iconLeaf2" href="#"><span>All hints</span></a></span> <span class="listColumn"><span class="badge badgeColor3">3579</span></span></li> <li><a class="icon iconDocument" href="#"><span>Record hints</span></a></li> <li><a class="icon iconCamera" href="#"><span>Photo hints</span></a></li> <li><a class="icon iconStory" href="#"><span>Story hints</span></a></li> <li><a class="icon iconTreePedigree" href="#"><span>Member tree hints</span></a></li> <li><a class="icon iconVideo" href="#"><span>Videos</span></a></li></ul>
+                                        <ul class="list"><li><a class="icon iconPeople" href="#"><span>People</span></a></li> <li><a class="icon iconCamera" href="#"><span>Photos</span></a></li> <li><a class="icon iconStories" href="#"><span>Stories</span></a></li> <li><a class="icon iconDocument" href="#"><span>Records</span></a></li> <li><a class="icon iconChat" href="#"><span>Comments</span></a></li> <li><a class="icon iconAudio" href="#"><span>Audio</span></a></li> <li><a class="icon iconVideo" href="#"><span>Videos</span></a></li></ul>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconFemale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconFemale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconFemale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconFemale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconMale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconMale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconMale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconMale"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconPerson"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconPerson"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconPerson"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconPerson"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconAcom"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconAcom"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconAcom"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconAcom"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconVideo"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconVideo"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconVideo"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconVideo"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconStory"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconStory"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconStory"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconStory"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconAudio"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconAudio"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconAudio"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconAudio"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconMilitary"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconMilitary"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconMilitary"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconMilitary"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconWarning"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconWarning"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconWarning"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconWarning"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconCalculator"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconCalculator"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconCalculator"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconCalculator"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize4">
+                                            <div class="userCardImg icon iconGallery"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize1">
+                                            <div class="userCardImg icon iconGallery"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize2">
+                                            <div class="userCardImg icon iconGallery"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                        <div class="userCard userCardSize3">
+                                            <div class="userCardImg icon iconGallery"></div>
+                                            <div class="userCardContent">
+                                                <p class="userCardComment">Comment from Ancestry with no additional info.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+        						</div>
+        					</div>
+        				</section>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+		<div class="mainSidebar">
+			<!--Content from sidebar section -->
+		</div>
+		<footer class="mainFooter" role="contentinfo">
+			<!--Content from footer section -->
+			<ul class="mainFooterContents">
+	<li class="mainFooterCopyright">&copy;2013 Ancestry.com<sup>&reg;</sup> Standards</li>
+	<li><a href="past-news">Past News</a></li>
+	<li><a href="standards-status">Status</a></li>
+	<li><a href="mailto:standards@ancestry.com">Contact</a></li>
+	<li><a href="sitemap">Site Map</a></li>
+</ul>
+		</footer>
+	</div>
+	<!-- Bottom content from header section -->
+		<script src="http://c.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.0.min.js&amp;x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v1/callout.js&amp;x/js/v2/carousel.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/paging.js&amp;x/js/v2/tab.js&amp;x/js/standards/prism.js&amp;x/js/standards/standards.js"></script>
+<script>
+/* Apply Ancestry Styles and Line Numbering */
+(function($) {
+    "use strict";
+    /* Apply Prism classes to existing code where snippets.js classes already exist */
+    $('pre.code.html').addClass('language-markup');
+    $('pre.code.js').addClass('language-javascript');
+    $('pre.code.css').addClass('language-css');
+    /* Apply line numbering to code blocks */
+    $('pre.language-markup, pre.language-javascript, pre.language-css').addClass('line-numbers');
+}(jQuery));
+</script>
+<script>var query_string = {};
+(function () {
+var params = window.location.search.substr(1).split("&"),
+					paramsLength = params.length,
+					i,
+					pair,
+					arr;
+				for (i = 0; i < paramsLength; i += 1) {
+					pair = params[i].split("=");
+					// If first entry with this name
+					if (query_string[pair[0]] === undefined) {
+						query_string[pair[0]] = pair[1];
+					// If second entry with this name
+					} else if (typeof query_string[pair[0]] === "string") {
+						arr = [query_string[pair[0]], pair[1]];
+						query_string[pair[0]] = arr;
+					// If third or later entry with this name
+					} else {
+						query_string[pair[0]].push(pair[1]);
+					}
+				}
+			if (query_string["presentation"]) {
+				var a = document.createElement("style");
+				a.innerHTML = "pre.code { background-color:#fff !important; color:#000 !important; }pre.code * { color:#000 !important; }pre.code ol li,pre.code ol li code { background-color:#fff !important; }pre.code ol li:nth-child(2n+1),pre.code ol li:nth-child(2n+1) code { background-color:#eee !important; }";
+				document.body.appendChild(a);
+			}
+})();</script>
+
+
+	<!-- Bottom content from page -->
+	<script>$(function () {
+	"use strict";
+	$(".widgetsTab").addClass("selected");
+});</script>
+</body>
+</html>
