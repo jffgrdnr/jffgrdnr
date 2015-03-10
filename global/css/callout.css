@@ -1,0 +1,120 @@
+@charset "utf-8";
+/****************************************
+	/css/v1/callout.css
+	CONTAINS STYLES FOR:
+	/css/v1/user-card.css
+*****************************************/
+html { } /* Fix charset issue */
+/* Callout */
+.callout { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; display:none; height:1px; position:absolute; width:1px; z-index:1000; }
+.callout.active,
+.callout:hover { display:block; }
+/* Callout content */
+.calloutContent { background-color:#fff; border:1px solid #dbd9d3; border-radius:6px; -webkit-box-shadow:0 2px 8px rgba(0, 0, 0, .2); box-shadow:0 2px 8px rgba(0, 0, 0, .2); -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; display:inline-block; height:auto; max-width:480px; min-height:32px; padding:8px; position:relative; white-space:normal; width:auto; z-index:1; }
+.calloutContent:focus { outline:none; }
+.calloutDomContent { display:none; }
+#callout .calloutDomContent { display:block; }
+/* Callout arrow pointer */
+.calloutPointer { height:11px; left:-16px; overflow:hidden; pointer-events:none; position:absolute; top:0; width:32px; z-index:1; }
+.calloutPointerShadow { background-color:#fff; border:1px solid #dbd9d3; -webkit-box-shadow:1px 1px 6px rgba(0, 0, 0, .2); box-shadow:1px 1px 6px rgba(0, 0, 0, .2); height:16px; left:7px; position:absolute; top:3px; -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg); -webkit-transform:rotate(45deg); transform:rotate(45deg); width:16px; }
+/* Position bottom */
+.calloutPositionBottom .calloutContent { margin-top:10px; position:absolute; }
+/* Position top */
+.calloutPositionTop .calloutContent { bottom:100%; margin-bottom:10px; position:absolute; }
+.calloutPositionTop .calloutPointer { bottom:-1px; height:13px; top:auto; }
+.calloutPositionTop .calloutPointerShadow { bottom:5px; top:auto; }
+/* Position left */
+.calloutPositionLeft .calloutContent { margin-right:10px; position:absolute; right:0; }
+.calloutPositionLeft .calloutPointer { height:32px; left:auto; right:0; top:-16px; width:11px; }
+.calloutPositionLeft .calloutPointerShadow { left:auto; right:3px; top:7px; }
+/* Position right */
+.calloutPositionRight .calloutContent { margin-left:10px; position:absolute; }
+.calloutPositionRight .calloutPointer { height:32px; left:0; top:-16px; width:11px; }
+.calloutPositionRight .calloutPointerShadow { left:3px; top:7px; }
+/* Align left */
+.calloutAlignLeft .calloutContent { position:absolute; right:-24px; }
+/* Align right */
+.calloutAlignRight .calloutContent { left:-24px; position:absolute; }
+/* Align bottom (of trigger) */
+.calloutAlignBottom .calloutContent { bottom:0; position:absolute; }
+/* Align top (of trigger) */
+.calloutAlignTop .calloutContent { position:absolute; top:0; }
+/* Hide pointer */
+.calloutHidePointer .calloutContent { margin:0; }
+.calloutHidePointer .calloutPointer { display:none; }
+/* Cursor callout */
+.calloutTypeCursor { margin-left:-8px; margin-top:20px; }
+.calloutTypeCursor .calloutContent { left:-8px; margin-top:10px; }
+.calloutTypeCursor.calloutStyleAlt .calloutContent { margin-top:10px; }
+/* Input callout */
+.calloutTypeInput .calloutContent { max-width:none; }
+/* Callout alt style 1 */
+.calloutStyleDark .calloutContent { background-color:#566c11; border:1px solid #fff; color:#fff; }
+.calloutStyleDark a,
+.calloutStyleDark a:link,
+.calloutStyleDark .link { color:#fff; color:rgba(255, 255, 255, 1); text-decoration:underline; }
+.calloutStyleDark a:hover,
+.calloutStyleDark .link:hover,
+.calloutStyleDark a:focus,
+.calloutStyleDark .link:focus { color:rgba(255, 255, 255, .7); }
+.calloutStyleDark .calloutPointerShadow { background-color:#566c11; border-color:#fff; }
+.calloutStyleDark .calloutContent h1,
+.calloutStyleDark .calloutContent h2,
+.calloutStyleDark .calloutContent h3,
+.calloutStyleDark .calloutContent h4,
+.calloutStyleDark .calloutContent h5,
+.calloutStyleDark .calloutContent h6 { color:#fff; }
+/* Callout alt style 2 */
+.calloutStyleAlt .calloutContent { border:3px solid #afbc22; }
+.calloutStyleAlt .calloutPointerShadow { border:3px solid #afbc22; }
+.calloutStyleAlt.calloutPositionBottom .calloutPointer { height:13px; }
+.calloutStyleAlt.calloutPositionTop .calloutPointer { height:15px; }
+.calloutStyleAlt.calloutPositionLeft .calloutPointer,
+.calloutStyleAlt.calloutPositionRight .calloutPointer { width:13px; }
+.calloutStyleAlt.calloutPositionBottom .calloutPointerShadow { left:5px; top:4px; }
+.calloutStyleAlt.calloutPositionTop .calloutPointerShadow { bottom:6px; left:5px; }
+.calloutStyleAlt.calloutPositionLeft .calloutPointerShadow { right:4px; top:5px; }
+.calloutStyleAlt.calloutPositionRight .calloutPointerShadow { left:4px; top:5px; }
+/* Callout menu */
+.calloutMenu { padding:8px 0; }
+.calloutMenuTitle { padding-left:6px; }
+.calloutMenu ul { margin:0; min-width:100px; }
+ul.calloutMenu { margin:0 -8px; padding:4px 0 0; }
+.calloutMenu a,
+.calloutMenu .link { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; display:block; padding:4px 16px; width:100%; }
+.calloutMenu a,
+.calloutMenu a:hover,
+.calloutMenu .link { color:#445708; text-decoration:none !important; }
+.noTouch .calloutMenu a span { text-decoration:none !important; }
+.noTouch .calloutMenu a:hover,
+.noTouch .calloutMenu a:focus,
+.noTouch .calloutMenu .link:hover,
+.noTouch .calloutMenu .link:focus,
+.calloutMenu a:active,
+.calloutMenu .link:active { background-color:#afbc22; color:#fff; }
+.noTouch .calloutMenu a:hover .userCardContent,
+.noTouch .calloutMenu a:hover .userCardInfo small,
+.noTouch .calloutMenu .link:hover .userCardContent,
+.noTouch .calloutMenu .link:hover .userCardInfo small { color:inherit; }
+.noTouch .calloutMenu a:hover .userCardImg:before,
+.noTouch .calloutMenu .link:hover .userCardImg:before { color:#A59E92; }
+.noTouch .calloutMenu .icon:hover:before,
+.calloutMenu .icon:focus:before { color:#fff; }
+.calloutMenuUnchecked::after { opacity:0; }
+/* Remove dropdown arrow to callout trigger */
+.calloutTriggerNoArrow:after { display:none; }
+/* Active state for callout triggers that are also links */
+a.calloutTrigger:not(.ancBtn).active,
+.link.calloutTrigger:not(.ancBtn).active { color:#789200; }
+.calloutTrigger:not(.ancBtn).active > span { text-decoration:underline; }
+/* Tooltip trigger */
+.calloutTooltip { color:#695e49; }
+.calloutTooltip > span { border-bottom:1px dotted #83755c; display:inline-block; text-decoration:none !important; }
+.calloutTooltip.iconAfter:after { display:inline-block; font-size:90%; margin-left:0; padding-left:1px; padding-right:1px; vertical-align:super; }
+.calloutTooltip:hover > span,
+.calloutTooltip:focus > span,
+.calloutTooltip:active > span,
+.calloutTooltip.active > span { border-bottom:1px solid #789201; color:#789201; }
+/* IE8 fixes (hide pointer - there's a bug in IE8 where it incorrectly renders a callout arrow pointer when the style of the callout is changed) */
+.ie8 .calloutPointer { display:none; }
+.ie8 .calloutContent { margin:0; min-height:0; }
