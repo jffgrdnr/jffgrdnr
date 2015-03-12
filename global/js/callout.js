@@ -87,8 +87,7 @@
 			}
 			function hideCallout(runOnClose) {
 				var $openCalloutTrigger = $('.calloutTrigger.active'),
-					openCalloutSettings = $openCalloutTrigger.data('callout-settings'),
-					inModal = $openCalloutTrigger.closest('#modal').length > 0;
+					openCalloutSettings = $openCalloutTrigger.data('callout-settings');
 				if (!$openCalloutTrigger.length) { /* Callout was already closed */
 					return;
 				}
@@ -122,8 +121,6 @@
 					calloutOffset = 24, /* from CSS: .calloutContent left or right value */
 					inModal = $trigger.closest('#modal').length > 0,
 					calloutContentHeight,
-					currentMarginBottom,
-					newMarginBottom,
 					calloutIsPastModalArea;
 				/* Reset position */
 				calloutWrap
@@ -227,8 +224,6 @@
 									});
 								}
 							}
-							// console.log("position: " + position);
-							// console.log("align: " + align);
 							break;
 					}
 					/* Position the callout content */
@@ -238,23 +233,22 @@
 								.addClass('calloutPositionLeft')
 								.css({ 'left': leftOfTrigger - calloutWrap.outerWidth() });
 							calloutContent.css({ 'max-width': Math.max(leftOfTrigger - windowPadding - parseInt(calloutContent.css('margin-left'), 10) - parseInt(calloutContent.css('margin-right'), 10), calloutMinWidth) });
-							break;
+						break;
 						case 'right':
 							calloutWrap
 								.addClass('calloutPositionRight')
 								.css({ 'left': rightOfTrigger });
 							calloutContent.css({ 'max-width': Math.max(windowWidth - rightOfTrigger - windowPadding - parseInt(calloutContent.css('margin-left'), 10) - parseInt(calloutContent.css('margin-right'), 10), calloutMinWidth) });
-							break;
+						break;
 						case 'top':
 							calloutWrap
 								.addClass('calloutPositionTop')
 								.css({ 'top': topOfTrigger - calloutWrap.outerHeight() });
-							break;
+						break;
 						default:
 							calloutWrap
 								.addClass('calloutPositionBottom')
 								.css({ 'top': bottomOfTrigger });
-							break;
 					}
 					/* Tweak vertical position if out of viewport */
 					calloutContentHeight = calloutContent.outerHeight();
@@ -441,8 +435,7 @@
 						.css({
 							'position': 'relative',
 							'width': 'auto'
-						})
-						[0].getBoundingClientRect().width);
+						})[0].getBoundingClientRect().width);
 					calloutWrap
 						.add(calloutContent)
 						.removeAttr('style');
@@ -716,7 +709,7 @@
 	$.callout.close = function () {
 		var $trigger = $('.calloutTrigger.active');
 		if ($trigger.length) {
-			$trigger.trigger('close.callout')
+			$trigger.trigger('close.callout');
 		}
 	};
 	$.callout.content = function ($trigger, newContent) {
