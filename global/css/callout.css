@@ -35,10 +35,6 @@ html { } /* Fix charset issue */
 .calloutAlignLeft .calloutContent { position:absolute; right:-24px; }
 /* Align right */
 .calloutAlignRight .calloutContent { left:-24px; position:absolute; }
-/* Align bottom (of trigger) */
-.calloutAlignBottom .calloutContent { bottom:0; position:absolute; }
-/* Align top (of trigger) */
-.calloutAlignTop .calloutContent { position:absolute; top:0; }
 /* Hide pointer */
 .calloutHidePointer .calloutContent { margin:0; }
 .calloutHidePointer .calloutPointer { display:none; }

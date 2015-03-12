@@ -27,6 +27,7 @@
 	$.fn.callout = function (options) {
 		return this.each(function () {
 			var $trigger = $(this),
+				calloutId = this.id,
 				$window = $(window),
 				isInputField,
 				hideDelayTimer,
@@ -39,6 +40,7 @@
 				windowPadding = 8, /* Space callouts leave on each side of window */
 				calloutTouches = {},
 				settings = $.extend({}, defaults, options);
+				console.log(calloutId + ' created');
 			/* visible, focusable, and tabbable functions for accessibility when opening a callout */
 			function visible(element) {
 				return $.expr.filters.visible(element) &&
@@ -103,6 +105,7 @@
 				}
 				/* Deactivate active trigger */
 				$openCalloutTrigger.removeClass('hover active');
+				$(window).add('body').add(calloutWrap).off('.callout');
 			}
 			function positionCallout(position, align, lastRun) {
 				var windowWidth = $window.outerWidth(),
@@ -189,20 +192,20 @@
 								switch (align) {
 									case ('top'):
 										calloutWrap
-										.addClass('calloutAlignTop')
-										.css({ 'top': topOfTrigger + triggerHeight / 2 });
+											.addClass('calloutAlignTop')
+											.css({ 'top': topOfTrigger + triggerHeight / 2 });
 										calloutContent.css({ 'top': - triggerHeight / 2 });
 										break;
 									case ('bottom'):
 										calloutWrap
-										.addClass('calloutAlignBottom')
-										.css({ 'top': bottomOfTrigger - triggerHeight / 2 });
+											.addClass('calloutAlignBottom')
+											.css({ 'top': bottomOfTrigger - triggerHeight / 2 });
 										calloutContent.css({ 'bottom': - triggerHeight / 2 });
 										break;
 									default:
 										calloutWrap
-										.addClass('calloutAlignMiddle')
-										.css({ 'top': topOfTrigger + (triggerHeight / 2) - (calloutWrap.outerHeight() / 2) });
+											.addClass('calloutAlignMiddle')
+											.css({ 'top': topOfTrigger + (triggerHeight / 2) - (calloutWrap.outerHeight() / 2) });
 										calloutContent.css({ 'top': '-' + (calloutContent.outerHeight() / 2) + 'px' });
 										break;
 								}
@@ -224,6 +227,8 @@
 									});
 								}
 							}
+							// console.log("position: " + position);
+							// console.log("align: " + align);
 							break;
 					}
 					/* Position the callout content */
@@ -268,10 +273,16 @@
 						if (position === 'top' && !lastRun) {
 							positionCallout('bottom', 'center', true);
 						}
+						if (align === 'bottom') {
+							calloutWrap.removeClass('calloutAlignBottom');
+						}
 					}
 					/* Tweak horizontal position if out of viewport */
 					if (calloutContent.offset().left < 0 || windowWidth < calloutContent.offset().left + calloutContent.outerWidth()) {
 						if (!lastRun) {
+							if (align === 'bottom') {
+								calloutWrap.removeClass('calloutAlignBottom');
+							}
 							positionCallout((settings.position === 'left' || settings.position === 'right') ? 'bottom' : settings.position, 'center', true);
 						}
 					}
@@ -493,7 +504,7 @@
 					resetCalloutContent();
 				}
 				$trigger
-					.off('.callout')
+					.off('.callout.' + calloutId)
 					.removeClass('calloutTrigger iconAfter iconArrowSmallDownAfter')
 					.removeData('callout-content');
 			}
@@ -679,11 +690,6 @@
 						.not(':empty')
 						.wrapInner('<span>');
 				}
-				// /* Settings for left & right positioned callouts */
-				// if (settings.position === 'left' || settings.position === 'right') {
-				// 	settings.align = 'center';
-				// }
-				/* Add events */
 				addEvents();
 			}
 			/* Check options or initialize */
