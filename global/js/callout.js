@@ -1,7 +1,7 @@
 /****************************************
 	/js/v1/callout.js
 *****************************************/
-;(function ($) {
+(function ($) {
 	"use strict";
 	/* Callout defaults */
 	var defaults = {
