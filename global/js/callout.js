@@ -27,7 +27,6 @@
 	$.fn.callout = function (options) {
 		return this.each(function () {
 			var $trigger = $(this),
-				calloutId = this.id,
 				$window = $(window),
 				isInputField,
 				hideDelayTimer,
@@ -40,7 +39,6 @@
 				windowPadding = 8, /* Space callouts leave on each side of window */
 				calloutTouches = {},
 				settings = $.extend({}, defaults, options);
-				console.log(calloutId + ' created');
 			/* visible, focusable, and tabbable functions for accessibility when opening a callout */
 			function visible(element) {
 				return $.expr.filters.visible(element) &&
@@ -104,7 +102,7 @@
 				}
 				/* Deactivate active trigger */
 				$openCalloutTrigger.removeClass('hover active');
-				$(window).add('body').add(calloutWrap).off('.callout');
+				$(window).add('html').add(calloutWrap).off('.callout');
 			}
 			function positionCallout(position, align, lastRun) {
 				var windowWidth = $window.outerWidth(),
@@ -224,7 +222,6 @@
 									});
 								}
 							}
-							break;
 					}
 					/* Position the callout content */
 					switch (position) {
@@ -233,18 +230,18 @@
 								.addClass('calloutPositionLeft')
 								.css({ 'left': leftOfTrigger - calloutWrap.outerWidth() });
 							calloutContent.css({ 'max-width': Math.max(leftOfTrigger - windowPadding - parseInt(calloutContent.css('margin-left'), 10) - parseInt(calloutContent.css('margin-right'), 10), calloutMinWidth) });
-						break;
+							break;
 						case 'right':
 							calloutWrap
 								.addClass('calloutPositionRight')
 								.css({ 'left': rightOfTrigger });
 							calloutContent.css({ 'max-width': Math.max(windowWidth - rightOfTrigger - windowPadding - parseInt(calloutContent.css('margin-left'), 10) - parseInt(calloutContent.css('margin-right'), 10), calloutMinWidth) });
-						break;
+							break;
 						case 'top':
 							calloutWrap
 								.addClass('calloutPositionTop')
 								.css({ 'top': topOfTrigger - calloutWrap.outerHeight() });
-						break;
+							break;
 						default:
 							calloutWrap
 								.addClass('calloutPositionBottom')
@@ -361,11 +358,11 @@
 				/* Add html click event */
 				if (!calloutWrap.hasClass('calloutTypeCursor') && settings.type !== 'custom') {
 					$('html')
-						.on('touchstart.callout', function (e) {
+						.on('touchstart.callout' , function (e) {
 							calloutTouches.x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 							calloutTouches.y = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
 						})
-						.on('click.callout touchend.callout', function (e) {
+						.on('click.callout  touchend.callout', function (e) {
 							if (!preventClose && !$(e.srcElement || e.target || e.originalEvent.originalTarget).closest('#callout').length) {
 								if (e.type === 'click') {
 									hideCallout(true);
@@ -487,6 +484,12 @@
 				if (settings.onAfterOpen !== false) {
 					settings.onAfterOpen($trigger);
 				}
+				/* Reposition on browser resize and hide callout */
+				$window.on((isTouchDevice ? 'orientationchange' : 'resize') + '.callout', function () {
+					if (calloutWrap.hasClass('active')) {
+						hideCallout(false);
+					}
+				});
 			}
 			function destroyCallout() {
 				resetShowTimer();
@@ -497,7 +500,7 @@
 					resetCalloutContent();
 				}
 				$trigger
-					.off('.callout.' + calloutId)
+					.off('.callout')
 					.removeClass('calloutTrigger iconAfter iconArrowSmallDownAfter')
 					.removeData('callout-content');
 			}
@@ -586,12 +589,6 @@
 							hideCallout(true);
 						});
 				}
-				/* Reposition on browser resize and hide callout */
-				$window.on((isTouchDevice ? 'orientationchange' : 'resize') + '.callout', function () {
-					if (calloutWrap.hasClass('active')) {
-						hideCallout(false);
-					}
-				});
 			}
 			function initCallout() {
 				/* Check where callout content comes from */

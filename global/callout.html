@@ -14,7 +14,7 @@
     var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
     document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');
     </script>
-    <link href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/template.css" type="text/css" rel="stylesheet" />
+    <link href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/template.css&x/css/v1/photo.css" type="text/css" rel="stylesheet" />
     <link href="css/callout.css" type="text/css" rel="stylesheet" />
     <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
 </head>
@@ -26,33 +26,42 @@
 		<div class="ancGrid ancGridPadded">
 			<div class="ancCol ancColRow w100">
 				<section class="con">
+					<h2 class="conTitle">Align Top (New option)</h2>
 					<div class="conBody">
-						<button type="button" class="ancBtn" id='callout1'>Position Left Align Top</button>
+						<p><button type="button" class="ancBtn" id='callout1' callout-id="">Position Left Align TOP</button></p>
+						<p><button type="button" class="ancBtn" id='callout2' callout-id="">Position Right Align TOP</button></p>
+					</div>
+				</section>
+				<section class="con">
+				<h2 class="conTitle">Align Bottom (New option)</h2>
+					<div class="conBody">
+						<p><button type="button" class="ancBtn" id='callout4' callout-id="">Position Right Align Bottom</button></p>
+						<p><button type="button" class="ancBtn" id='callout5' callout-id="">Position Left Align Bottom</button></p>
+					</div>
+				</section>
+				<section class="con">
+					<h2 class="conTitle">Hover Callouts - 1 callout for many triggers</h2>
+					<div class="conBody">
+						<a class="photo photoSize3 photoPortrait photoCenter multipleCallouts">
+							<img src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg" />
+						</a>
+						<span class="photo photoSize3 photoPortrait photoCenter multipleCallouts">
+							<img src="http://c.mfcreative.com/i/standards/photography/photography.jpg" />
+						</span>
+						<span class="photo photoSize3 photoPortrait photoCenter multipleCallouts">
+							<img src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg" />
+						</span>
+						<span class="photo photoSize3 photoPortrait photoCenter multipleCallouts">
+							<img src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg" />
+						</span>
+						<span class="photo photoSize3 photoPortrait photoCenter multipleCallouts">
+							<img src="http://c.mfcreative.com/i/standards/graphics/portrait.jpg" />
+						</span>
 					</div>
 				</section>
 				<section class="con">
 					<div class="conBody">
-						<button type="button" class="ancBtn" id='callout2'>Position Right Align Top</button>
-					</div>
-				</section>
-				<section class="con">
-					<div class="conBody">
-						<button type="button" class="ancBtn" id='callout3'>Position Left Align Default</button>
-					</div>
-				</section>
-				<section class="con">
-					<div class="conBody">
-						<button type="button" class="ancBtn" id='callout4'>Position Right Align Bottom</button>
-					</div>
-				</section>
-				<section class="con">
-					<div class="conBody">
-						<button type="button" class="ancBtn" id='callout5'>Position Left Align Bottom</button>
-					</div>
-				</section>
-				<section class="con">
-					<div class="conBody">
-						<button type="button" class="ancBtn" id='callout6'>Position Right Align Default</button>
+						
 					</div>
 				</section>
 			</div>
@@ -72,10 +81,6 @@
 			'align': 'top',
 			'position': 'right'
 		});
-		$("#callout3").callout({
-			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
-			'position': 'left'
-		});
 		$("#callout4").callout({
 			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
 			'align': 'bottom',
@@ -86,9 +91,10 @@
 			'align': 'bottom',
 			'position': 'left'
 		});
-		$("#callout6").callout({
-			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
-			'position': 'right'
+		$(".multipleCallouts").callout({
+			'content': '<p>This is reusable content that was created for multiple triggers. It is bound to many triggers via an html class</p>',
+			'position': 'top',
+			'type': 'hover'
 		});
 	});
 	</script>
