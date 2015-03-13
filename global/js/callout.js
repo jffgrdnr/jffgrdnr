@@ -119,7 +119,9 @@
 					calloutOffset = 24, /* from CSS: .calloutContent left or right value */
 					inModal = $trigger.closest('#modal').length > 0,
 					calloutContentHeight,
-					calloutIsPastModalArea;
+					calloutIsPastModalArea,
+					calloutTopArrowOffset = 12,
+					calloutBottomArrowOffset = 10;
 				/* Reset position */
 				calloutWrap
 					.removeClass('calloutPositionBottom calloutPositionTop calloutPositionLeft calloutPositionRight calloutAlignLeft calloutAlignCenter calloutAlignMiddle calloutAlignRight calloutAlignTop')
@@ -188,13 +190,13 @@
 									case ('top'):
 										calloutWrap
 											.addClass('calloutAlignTop')
-											.css({ 'top': topOfTrigger + triggerHeight / 2 });
+											.css({ 'top': topOfTrigger + (triggerHeight / 2) - calloutTopArrowOffset });
 										calloutContent.css({ 'top': - triggerHeight / 2 });
 										break;
 									case ('bottom'):
 										calloutWrap
 											.addClass('calloutAlignBottom')
-											.css({ 'top': bottomOfTrigger - triggerHeight / 2 });
+											.css({ 'top': bottomOfTrigger - (triggerHeight / 2) + calloutBottomArrowOffset });
 										calloutContent.css({ 'bottom': - triggerHeight / 2 });
 										break;
 									default:

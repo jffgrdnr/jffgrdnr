@@ -28,15 +28,23 @@
 				<section class="con">
 					<h2 class="conTitle">Align Top (New option)</h2>
 					<div class="conBody">
-						<p><button type="button" class="ancBtn" id='callout1' callout-id="">Position Left Align TOP</button></p>
-						<p><button type="button" class="ancBtn" id='callout2' callout-id="">Position Right Align TOP</button></p>
+						<p><button type="button" class="ancBtn lrg" id='callout1' callout-id="">Position Left Align TOP</button></p>
+						<p><button type="button" class="ancBtn" id='callout2' callout-id="">Position Left Align TOP</button></p>
+						<p><button type="button" class="ancBtn sml" id='callout3' callout-id="">Position Left TOP</button></p>
+						<p><button type="button" class="ancBtn lrg" id='callout4' callout-id="">Position Right Align TOP</button></p>
+						<p><button type="button" class="ancBtn" id='callout5' callout-id="">Position Right Align TOP</button></p>
+						<p><button type="button" class="ancBtn sml" id='callout6' callout-id="">Position Right TOP</button></p>
 					</div>
 				</section>
 				<section class="con">
 				<h2 class="conTitle">Align Bottom (New option)</h2>
 					<div class="conBody">
-						<p><button type="button" class="ancBtn" id='callout4' callout-id="">Position Right Align Bottom</button></p>
-						<p><button type="button" class="ancBtn" id='callout5' callout-id="">Position Left Align Bottom</button></p>
+						<p><button type="button" class="ancBtn lrg" id='callout7' callout-id="">Position Left Align BOTTOM</button></p>
+						<p><button type="button" class="ancBtn" id='callout8' callout-id="">Position Left Align BOTTOM</button></p>
+						<p><button type="button" class="ancBtn sml" id='callout9' callout-id="">Position Left Align BOTTOM</button></p>
+						<p><button type="button" class="ancBtn lrg" id='callout10' callout-id="">Position Right Align BOTTOM</button></p>
+						<p><button type="button" class="ancBtn" id='callout11' callout-id="">Position Right Align BOTTOM</button></p>
+						<p><button type="button" class="ancBtn sml" id='callout12' callout-id="">Position Right Align BOTTOM</button></p>
 					</div>
 				</section>
 				<section class="con">
@@ -79,17 +87,57 @@
 		$("#callout2").callout({
 			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
 			'align': 'top',
-			'position': 'right'
+			'position': 'left'
+		});
+		$("#callout3").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'top',
+			'position': 'left'
 		});
 		$("#callout4").callout({
 			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
-			'align': 'bottom',
+			'align': 'top',
 			'position': 'right'
 		});
 		$("#callout5").callout({
 			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'top',
+			'position': 'right'
+		});
+		$("#callout6").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'top',
+			'position': 'right'
+		});
+		$("#callout7").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
 			'align': 'bottom',
 			'position': 'left'
+		});
+		$("#callout8").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'bottom',
+			'position': 'left'
+		});
+		$("#callout9").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'bottom',
+			'position': 'left'
+		});
+		$("#callout10").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'bottom',
+			'position': 'right'
+		});
+		$("#callout11").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'bottom',
+			'position': 'right'
+		});
+		$("#callout12").callout({
+			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'align': 'bottom',
+			'position': 'right'
 		});
 		$(".multipleCallouts").callout({
 			'content': '<p>This is reusable content that was created for multiple triggers. It is bound to many triggers via an html class</p>',

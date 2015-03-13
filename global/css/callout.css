@@ -35,6 +35,12 @@ html { } /* Fix charset issue */
 .calloutAlignLeft .calloutContent { position:absolute; right:-24px; }
 /* Align right */
 .calloutAlignRight .calloutContent { left:-24px; position:absolute; }
+/* Align top */
+.calloutAlignTop .calloutPointer { top:-4px; }
+.calloutAlignTop .calloutPointerShadow { top:8px; }
+/* Align bottom */
+.calloutAlignBottom .calloutPointer { top:-26px; }
+.calloutAlignBottom .calloutPointerShadow { top:8px; }
 /* Hide pointer */
 .calloutHidePointer .calloutContent { margin:0; }
 .calloutHidePointer .calloutPointer { display:none; }
