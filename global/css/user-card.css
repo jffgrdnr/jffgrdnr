@@ -36,7 +36,7 @@ a.userCardName:focus,
 .userCardLarge .userCardImg.icon:before,
 .userCardSize4 .userCardImg.icon:before, 
 .userCardLarge .userCardImg.iconAcom:before,
-.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:80px; }
+.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:82px; }
 .userCardLarge .userCardImg.iconPerson:before,
 .userCardSize4 .userCardImg.iconPerson:before,
 .userCardLarge .userCardImg.iconMale:before,
@@ -46,14 +46,14 @@ a.userCardName:focus,
 .userCardLarge .userCardImg.iconMale:before, 
 .userCardSize4 .userCardImg.iconMale:before { line-height:84px; }
 /* Default 40x40 */
-.userCardSize1 .userCardImg.icon:before { font-size:26px; line-height:34px; }
+.userCardSize1 .userCardImg.icon:before { font-size:26px; line-height:36px; }
 .userCardSize1 .userCardImg.iconPerson:before, 
 .userCardSize1 .userCardImg.iconMale:before,
 .userCardSize1 .userCardImg.iconFemale:before { font-size:34px; line-height:40px; }
 /* Small 30x30 */
 .userCardSize2 { line-height:30px; min-height:30px; padding-left:38px; }
 .userCardSize2 .userCardImg { height:30px; width:30px; }
-.userCardSize2 .userCardImg.icon:before { font-size:19px; line-height:26px; }
+.userCardSize2 .userCardImg.icon:before { font-size:19px; line-height:28px; }
 .userCardSize2 .userCardImg.iconPerson:before,
 .userCardSize2 .userCardImg.iconMale:before,
 .userCardSize2 .userCardImg.iconFemale:before { font-size:24px; line-height:32px; }
