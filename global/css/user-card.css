@@ -21,8 +21,9 @@ a.userCardName:focus,
 .link.userCardName:hover,
 .link.userCardName:focus { color:#566c11; text-decoration:underline; }
 .userCardImg.icon { background-color:#695e49; border:0; text-align:center; }
-.userCardImg.icon:before { color:#a59e92; display:inline-block; font-size:34px; line-height:42px; }
-.userCardImg.iconAcom:before { font-size:24px; line-height:34px; }
+.userCardImg.icon:before { color:#a59e92; display:inline-block; font-size:34px; line-height:40px; }
+.userCardImg.iconAcom:before { font-size:24px; line-height:36px; }
+.userCardImg.iconMale:before { line-height:38px; }
 .userCardImg img { height:100%; width:100%; }
 /* Portrait / Landscape */
 .userCardPortrait img { height:auto; }
@@ -42,32 +43,39 @@ a.userCardName:focus,
 .userCardSize4 .userCardImg.iconMale:before,
 .userCardLarge .userCardImg.iconFemale:before,
 .userCardSize4 .userCardImg.iconFemale:before { font-size:92px; line-height:94px; }
+.userCardLarge .userCardImg.iconMale:before, 
+.userCardSize4 .userCardImg.iconMale:before { line-height:84px; }
 /* Default 40x40 */
 .userCardSize1 .userCardImg.icon:before { font-size:26px; line-height:34px; }
 .userCardSize1 .userCardImg.iconPerson:before, 
 .userCardSize1 .userCardImg.iconMale:before,
-.userCardSize1 .userCardImg.iconFemale:before { font-size:34px; line-height:38px; }
+.userCardSize1 .userCardImg.iconFemale:before { font-size:34px; line-height:40px; }
 /* Small 30x30 */
 .userCardSize2 { line-height:30px; min-height:30px; padding-left:38px; }
 .userCardSize2 .userCardImg { height:30px; width:30px; }
-.userCardSize2 .userCardImg.icon:before { font-size:18px; line-height:26px; }
+.userCardSize2 .userCardImg.icon:before { font-size:19px; line-height:26px; }
 .userCardSize2 .userCardImg.iconPerson:before,
 .userCardSize2 .userCardImg.iconMale:before,
-.userCardSize2 .userCardImg.iconFemale:before { font-size:24px; line-height:30px; }
+.userCardSize2 .userCardImg.iconFemale:before { font-size:24px; line-height:32px; }
+.userCardSize2 .userCardImg.iconMale:before { font-size:26px; line-height:30px; }
 /* Smaller 20x20 */
 .userCardSize3,
 .userCardMini { line-height:20px; min-height:20px; padding-left:28px; }
+.userCardSize3 .icon:before, 
+.userCardMini .icon:before { top:.07em; }
 .userCardSize3 .userCardTitle,
 .userCardSize3 .userCardSubTitle { display:inline-block; }
 .userCardSize3 .userCardImg,
-.userCardMini .userCardImg { height:20px; width:20px; }
+.userCardMini .userCardImg { height:21px; width:21px; }
 .userCardSize3 .userCardImg.icon:before,
-.userCardMini .userCardImg.icon:before { font-size:13px; line-height:14px; }
+.userCardMini .userCardImg.icon:before { font-size:13px; line-height:20px; }
 .userCardSize3 .userCardImg.iconPerson:before,
 .userCardMini .userCardImg.iconPerson:before,
 .userCardSize3 .userCardImg.iconMale:before,
 .userCardMini .userCardImg.iconMale:before,
 .userCardSize3 .userCardImg.iconFemale:before,
-.userCardMini .userCardImg.iconFemale:before { font-size:16px; line-height:20px; }
+.userCardMini .userCardImg.iconFemale:before { font-size:16px; height:20px; line-height:24px; }
+.userCardMini .userCardImg.iconMale:before,
+.userCardSize3 .userCardImg.iconMale:before { font-size:18px; }
 /* For use above the header */
 .userCardMini { display:inline-block; position:relative; }

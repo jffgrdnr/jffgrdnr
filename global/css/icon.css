@@ -11,7 +11,7 @@
 html { } /* Fix charset issue */
 @font-face { font-family:"icon"; src:url("../font/v1/15/ancestry.eot?#iefix") format("embedded-opentype"), url("../font/v1/15/ancestry.woff") format("woff"), url("../font/v1/15/ancestry.ttf") format("truetype"), url("../font/v1/15/ancestry.svg#icon") format("svg"); }
 .icon:before,
-.iconAfter:after { font:normal 123%/0 "icon"; -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; position:relative; speak:none; text-transform:none; top:.125em; }
+.iconAfter:after { font:normal 123%/0 "icon"; -moz-osx-font-smoothing:grayscale; -webkit-font-smoothing:antialiased; position:relative; speak:none; text-transform:none; top:.115em; }
 .icon:before { margin-right:.25em; }
 .icon:empty::before { margin-right:0; }
 .iconAfter:after { margin-left:.25em; }
