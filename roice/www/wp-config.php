@@ -19,7 +19,7 @@
 define('DB_NAME', 'roice');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'jffgrdnr');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'trails24');
