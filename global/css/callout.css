@@ -25,7 +25,7 @@ html { } /* Fix charset issue */
 .calloutPositionTop .calloutPointerShadow { bottom:5px; top:auto; }
 /* Position left */
 .calloutPositionLeft .calloutContent { margin-right:10px; position:absolute; right:0; }
-.calloutPositionLeft .calloutPointer { height:32px; left:auto; right:0; top:-16px; width:11px; }
+.calloutPositionLeft .calloutPointer { height:32px; left:auto; right:0; top:-2px; width:11px; }
 .calloutPositionLeft .calloutPointerShadow { left:auto; right:3px; top:7px; }
 /* Position right */
 .calloutPositionRight .calloutContent { margin-left:10px; position:absolute; }
@@ -35,12 +35,6 @@ html { } /* Fix charset issue */
 .calloutAlignLeft .calloutContent { position:absolute; right:-24px; }
 /* Align right */
 .calloutAlignRight .calloutContent { left:-24px; position:absolute; }
-/* Align top */
-.calloutAlignTop .calloutPointer { top:-4px; }
-.calloutAlignTop .calloutPointerShadow { top:8px; }
-/* Align bottom */
-.calloutAlignBottom .calloutPointer { top:-26px; }
-.calloutAlignBottom .calloutPointerShadow { top:8px; }
 /* Hide pointer */
 .calloutHidePointer .calloutContent { margin:0; }
 .calloutHidePointer .calloutPointer { display:none; }

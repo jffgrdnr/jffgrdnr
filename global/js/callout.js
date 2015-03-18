@@ -189,15 +189,26 @@
 								switch (align) {
 									case ('top'):
 										calloutWrap
-											.addClass('calloutAlignTop')
-											.css({ 'top': topOfTrigger + (triggerHeight / 2) - calloutTopArrowOffset });
+											.addClass('calloutAlignTop');
+											if($trigger.hasClass('lrg')) {
+												calloutWrap.css({ 'top': topOfTrigger + (triggerHeight / 2) });
+											} else {
+												calloutWrap.css({ 'top': topOfTrigger + (triggerHeight / 2) - calloutTopArrowOffset });
+											}
 										calloutContent.css({ 'top': - triggerHeight / 2 });
+										console.log(triggerHeight);
+										calloutPointer.css({ 'top': (triggerHeight / 2) });
 										break;
 									case ('bottom'):
 										calloutWrap
-											.addClass('calloutAlignBottom')
-											.css({ 'top': bottomOfTrigger - (triggerHeight / 2) + calloutBottomArrowOffset });
+											.addClass('calloutAlignBottom');
+											if($trigger.hasClass('lrg')) {
+												calloutWrap.css({ 'top': bottomOfTrigger + (triggerHeight / 2) });
+											} else {
+												calloutWrap.css({ 'top': bottomOfTrigger - (triggerHeight / 2) + calloutBottomArrowOffset });
+											}
 										calloutContent.css({ 'bottom': - triggerHeight / 2 });
+										calloutPointer.css({ 'top': (triggerHeight / 2) });
 										break;
 									default:
 										calloutWrap
