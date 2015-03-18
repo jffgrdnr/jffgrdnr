@@ -15,7 +15,7 @@ html { } /* Fix charset issue */
 .calloutDomContent { display:none; }
 #callout .calloutDomContent { display:block; }
 /* Callout arrow pointer */
-.calloutPointer { height:11px; left:-16px; overflow:hidden; pointer-events:none; position:absolute; top:0; width:32px; z-index:1; }
+.calloutPointer { height:11px; left:-16px; overflow:hidden; pointer-events:none; position:absolute; width:32px; z-index:1; }
 .calloutPointerShadow { background-color:#fff; border:1px solid #dbd9d3; -webkit-box-shadow:1px 1px 6px rgba(0, 0, 0, .2); box-shadow:1px 1px 6px rgba(0, 0, 0, .2); height:16px; left:7px; position:absolute; top:3px; -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg); -webkit-transform:rotate(45deg); transform:rotate(45deg); width:16px; }
 /* Position bottom */
 .calloutPositionBottom .calloutContent { margin-top:10px; position:absolute; }
@@ -25,7 +25,7 @@ html { } /* Fix charset issue */
 .calloutPositionTop .calloutPointerShadow { bottom:5px; top:auto; }
 /* Position left */
 .calloutPositionLeft .calloutContent { margin-right:10px; position:absolute; right:0; }
-.calloutPositionLeft .calloutPointer { height:32px; left:auto; right:0; top:-2px; width:11px; }
+.calloutPositionLeft .calloutPointer { height:32px; left:auto; right:0; top:-16px; width:11px; }
 .calloutPositionLeft .calloutPointerShadow { left:auto; right:3px; top:7px; }
 /* Position right */
 .calloutPositionRight .calloutContent { margin-left:10px; position:absolute; }
@@ -35,6 +35,16 @@ html { } /* Fix charset issue */
 .calloutAlignLeft .calloutContent { position:absolute; right:-24px; }
 /* Align right */
 .calloutAlignRight .calloutContent { left:-24px; position:absolute; }
+/* Align top */
+.calloutAlignTop .calloutPointer { top:5px; }
+.calloutAlignTop .calloutPointerShadow { top:8px; }
+/* Align bottom */
+.calloutPositionLeft.calloutAlignBottom .calloutContent, 
+.calloutPositionRight.calloutAlignBottom .calloutContent { bottom:0; }
+.calloutPositionLeft.calloutAlignBottom .calloutPointer, 
+.calloutPositionRight.calloutAlignBottom .calloutPointer { bottom:5px; top:auto; }
+.calloutPositionLeft.calloutAlignBottom .calloutPointerShadow, 
+.calloutPositionRight.calloutAlignBottom .calloutPointerShadow { bottom:8px; top:auto; }
 /* Hide pointer */
 .calloutHidePointer .calloutContent { margin:0; }
 .calloutHidePointer .calloutPointer { display:none; }

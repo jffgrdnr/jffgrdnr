@@ -120,8 +120,7 @@
 					inModal = $trigger.closest('#modal').length > 0,
 					calloutContentHeight,
 					calloutIsPastModalArea,
-					calloutTopArrowOffset = 12,
-					calloutBottomArrowOffset = 10;
+					minTriggerHeight = 42; /* This needs to be the offset of the arrow * 2 + the height of the arrow as defined in the CSS */
 				/* Reset position */
 				calloutWrap
 					.removeClass('calloutPositionBottom calloutPositionTop calloutPositionLeft calloutPositionRight calloutAlignLeft calloutAlignCenter calloutAlignMiddle calloutAlignRight calloutAlignTop')
@@ -188,27 +187,20 @@
 							if (position === 'left' || position === 'right') {
 								switch (align) {
 									case ('top'):
-										calloutWrap
-											.addClass('calloutAlignTop');
-											if($trigger.hasClass('lrg')) {
-												calloutWrap.css({ 'top': topOfTrigger + (triggerHeight / 2) });
-											} else {
-												calloutWrap.css({ 'top': topOfTrigger + (triggerHeight / 2) - calloutTopArrowOffset });
-											}
-										calloutContent.css({ 'top': - triggerHeight / 2 });
-										console.log(triggerHeight);
-										calloutPointer.css({ 'top': (triggerHeight / 2) });
+										calloutWrap.addClass('calloutAlignTop');
+										if (triggerHeight < minTriggerHeight) {
+											calloutWrap.css({ 'top': topOfTrigger - (minTriggerHeight - triggerHeight) / 2});
+										} else {
+											calloutWrap.css({ 'top': topOfTrigger});
+										}
 										break;
 									case ('bottom'):
-										calloutWrap
-											.addClass('calloutAlignBottom');
-											if($trigger.hasClass('lrg')) {
-												calloutWrap.css({ 'top': bottomOfTrigger + (triggerHeight / 2) });
-											} else {
-												calloutWrap.css({ 'top': bottomOfTrigger - (triggerHeight / 2) + calloutBottomArrowOffset });
-											}
-										calloutContent.css({ 'bottom': - triggerHeight / 2 });
-										calloutPointer.css({ 'top': (triggerHeight / 2) });
+										calloutWrap.addClass('calloutAlignBottom');
+										if (triggerHeight < minTriggerHeight) {
+											calloutWrap.css({ 'top': bottomOfTrigger + (minTriggerHeight - triggerHeight) / 2});
+										} else {
+											calloutWrap.css({ 'top': bottomOfTrigger});
+										}
 										break;
 									default:
 										calloutWrap
