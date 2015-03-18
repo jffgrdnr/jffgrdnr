@@ -35,9 +35,7 @@ a.userCardName:focus,
 .userCardLarge .userCardImg,
 .userCardSize4 .userCardImg { height:96px; width:96px; }
 .userCardLarge .userCardImg.icon:before,
-.userCardSize4 .userCardImg.icon:before, 
-.userCardLarge .userCardImg.iconAcom:before,
-.userCardSize4 .userCardImg.iconAcom:before { font-size:64px; line-height:96px; }
+.userCardSize4 .userCardImg.icon:before { font-size:64px; line-height:96px; }
 .userCardLarge .userCardImg.iconPerson:before,
 .userCardSize4 .userCardImg.iconPerson:before,
 .userCardLarge .userCardImg.iconFemale:before,
