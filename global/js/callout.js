@@ -1,7 +1,7 @@
 /****************************************
 	/js/v1/callout.js
 *****************************************/
-(function ($) {
+;(function ($) {
 	"use strict";
 	/* Callout defaults */
 	var defaults = {
@@ -123,7 +123,7 @@
 					minTriggerHeight = 42; /* This needs to be the offset of the arrow * 2 + the height of the arrow as defined in the CSS */
 				/* Reset position */
 				calloutWrap
-					.removeClass('calloutPositionBottom calloutPositionTop calloutPositionLeft calloutPositionRight calloutAlignLeft calloutAlignCenter calloutAlignMiddle calloutAlignRight calloutAlignTop')
+					.removeClass('calloutPositionBottom calloutPositionTop calloutPositionLeft calloutPositionRight calloutAlignLeft calloutAlignCenter calloutAlignMiddle calloutAlignRight calloutAlignTop calloutAlignBottom')
 					.add(calloutContent)
 					.add(calloutPointer)
 					.removeAttr('style');
@@ -269,16 +269,10 @@
 						if (position === 'top' && !lastRun) {
 							positionCallout('bottom', 'center', true);
 						}
-						if (align === 'bottom') {
-							calloutWrap.removeClass('calloutAlignBottom');
-						}
 					}
 					/* Tweak horizontal position if out of viewport */
 					if (calloutContent.offset().left < 0 || windowWidth < calloutContent.offset().left + calloutContent.outerWidth()) {
 						if (!lastRun) {
-							if (align === 'bottom') {
-								calloutWrap.removeClass('calloutAlignBottom');
-							}
 							positionCallout((settings.position === 'left' || settings.position === 'right') ? 'bottom' : settings.position, 'center', true);
 						}
 					}
