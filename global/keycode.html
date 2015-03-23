@@ -29,11 +29,12 @@
 <script>
 	$(function(e) {
 		$("#keyCodeModal").modal({
-		  $(document).keyup(function (){
-		  	.empty()
-		  	.append(e.keyCode);
-		  });
+		  
 		});
+		$(document).keyup(function (e) {
+		  	$("#keyCode").empty();
+		  	$("#keyCode").html(e.keyCode);
+		  });
 	});
 </script>
 </body>
