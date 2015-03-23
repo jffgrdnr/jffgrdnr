@@ -15,8 +15,9 @@
     var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
     document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');
     </script>
-    <link href="http://canary.mfcreativedev.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/template.css" type="text/css" rel="stylesheet" />
-    <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+    <link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/template.css" type="text/css" rel="stylesheet" />
+    <link href="../../../ancestry/canary/css/v1/callout.css" rel="stylesheet" type="text/css" />
+	<!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
     <style>
     	#callout1 { position:absolute; top:0; }
 		#callout2 { position:absolute; bottom:0; }
@@ -28,20 +29,20 @@
         <h1 class="pageTitle">Callout Examples</h1>
     </header>
 	<p>
-	    <button type="button" class="ancBtn lrg calloutStyleDark" id='callout1' callout-id="">T</button>
-	     <button type="button" class="ancBtn lrg calloutStyleDark" id='callout2' callout-id="">B</button>
+	    <button type="button" class="ancBtn calloutTrigger iconAfter iconArrowSmallDownAfter calloutStyleDark" id='callout1' callout-id=""></button>
+	    <button type="button" class="ancBtn calloutTrigger iconAfter iconArrowSmallUpAfter " id='callout2' callout-id="">B</button>
 	</p>
 
     <script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js&x/js/v3/modal.js"></script>
     <script>
     $(function() {
     	$("#callout1").callout({
-			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'content': '<ul><li>I\'m a long sentence created for testing purposes</li><li>With another paragraph</li><li>and another paragraph</li><li>and another paragraph</li><li>and another paragraph</li><li>and another paragraph</li></ul>',
 			'align': 'right',
 			'position': 'bottom'
 		});
 		$("#callout2").callout({
-			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'content': '<ul><li>I\'m a long sentence created for testing purposes</li><li>With another paragraph</li><li>and another paragraph</li><li>and another paragraph</li><li>and another paragraph</li><li>and another paragraph</li></ul>',
 			'align': 'right',
 			'position': 'top'
 		});

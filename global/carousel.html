@@ -18,87 +18,86 @@
     <link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/template.css&x/css/v1/photo.css" type="text/css" rel="stylesheet" />
     <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
     <style>
-		.carousel { overflow:hidden; position:relative; }
-		.carousel.loading > ul,
-		.carousel.loading .carouselInner { left:100%; min-height:32px; opacity:0; }
-		.carousel.loading > ul > li { display:inline-block; }
-		.carouselInner { font-size:0; position:relative; white-space:nowrap; -ms-word-wrap:normal; word-wrap:normal; } /* font-size:0; to get ride of extra white-space from inline-block and add nowrap */
-		.carouselSlide { display:inline-block; font-size:13px; min-height:40px; position:relative; vertical-align:middle; white-space:normal; }
-        .carouselSlide > .photo { margin-bottom:3px; margin-top:3px; }
-		.carousel .carouselSlide > a { display:block; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
-		/* Make carousel flush to edges (only use inside of .con) */
-		.con .carouselFlushed { margin-left:-20px; margin-right:-20px; padding-left:20px; padding-right:20px; }
-		@media only screen and (max-width: 767px) {
-			.con .carouselFlushed { margin-left:-10px; margin-right:-10px; padding-left:10px; padding-right:10px; }
-		}
-		/* Full width carousel */
-		.carouselFullWidth .carouselSlide { width:100%; }
-		.carouselArrowsOutside .carouselSlide { padding-left:56px; padding-right:56px; }
-		.carouselSlide > img { max-width:100%; }
-		/* Varied height carousel */
-		.carouselVariedHeight .carouselSlide { vertical-align:top; }
-		/* Carousel with preview */
-		.carouselWithPreview { padding-left:64px; padding-right:64px; -webkit-transition:padding .4s; transition:padding .4s; }
-		.carouselWithPreview .carouselSlide { margin:0 1.5%; }
-		.carouselWithPreview:before,
-		.carouselWithPreview:after { bottom:0; content:" "; position:absolute; top:0; width:20px; z-index:2; }
-		.carouselWithPreview:before { background:-webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%); background:linear-gradient(to right, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%); left:0; }
-		.carouselWithPreview:after { background:-webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%); background:linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%); right:0; }
-		.page .carouselWithPreview:before { background:-webkit-linear-gradient(left, #f8f8f3 0, rgba(248, 248, 243, 0) 100%); background:linear-gradient(to right, #f8f8f3 0, rgba(248, 248, 243, 0) 100%); left:0; }
-		.page .carouselWithPreview:after { background:-webkit-linear-gradient(left, rgba(248, 248, 243, 0) 0, #f8f8f3 100%); background:linear-gradient(to right, rgba(248, 248, 243, 0) 0, #f8f8f3 100%); right:0; }
-		/* Carousel content helper classes */
-		.carouselCentered { text-align:center; }
-		.carouselPadded .carouselSlide { margin-right:8px; }
-		.carouselPadded .carouselSlide:first-child { margin-left:0; }
-		.carouselPadded .carouselSlide:last-child { margin-right:0; }
-		.carouselOverlay { background-color:rgba(0, 0, 0, .6); border-radius:0 0 4px 4px; bottom:3px; color:#fff; left:0; margin:0; padding:8px; position:absolute; right:0; text-align:left; text-shadow:0 0 8px #000; z-index:1; }
-		.carouselSlide .photo { position:relative; }
-		.photo .carouselOverlay { line-height:1.3; text-align:left; }
-		.carouselOverlay a { color:#afbc22; text-decoration:underline; }
-		.carouselOverlay a:hover,
-		.carouselOverlay a:focus { color:rgba(175, 188, 34, .8); }
-		.carouselSlide.photo { margin-bottom:1px; margin-top:1px; }
-		/* Carousel controls */
-		.carouselControlsDefault { text-align:center; }
-		.carouselControlsDefault .carouselPreviousBtn,
-		.carouselControlsDefault .carouselNextBtn { background-color:rgba(0, 0, 0, .2); border:0; border-radius:100%; color:#efefef; display:inline-block; font-size:20px; font-weight:normal; height:40px; margin-top:-20px; position:absolute; top:50%; -webkit-transition:background .2s; transition:background .2s; width:40px; z-index:5; }
-		.carouselControlsDefault .carouselPreviousBtn { left:8px; }
-		.carouselControlsDefault .carouselNextBtn { right:8px; }
-		.carouselControlsDefault .carouselNextBtn.iconArrowRight:before { right:-1px; }
-		.carouselControlsDefault .carouselPreviousBtn.iconArrowLeft:before { left:-2px; }
-		.noTouch .carousel:hover .carouselControlsDefault .carouselPreviousBtn,
-		.noTouch .carousel:hover .carouselControlsDefault .carouselNextBtn { background-color:rgba(0, 0, 0, .5); }
-		.noTouch .carousel .carouselControlsDefault .carouselPreviousBtn:hover,
-		.noTouch .carousel .carouselControlsDefault .carouselNextBtn:hover,
-		.touch .carouselControlsDefault .carouselPreviousBtn,
-		.touch .carouselControlsDefault .carouselNextBtn { background-color:#afbc22; }
-		.carousel .carouselControlsDefault .carouselPreviousBtn:active,
-		.carousel .carouselControlsDefault .carouselNextBtn:active,
-		.noTouch .carouselControlsDefault .carouselPreviousBtn:active,
-		.noTouch .carouselControlsDefault .carouselNextBtn:active { background-color:#9fa838; box-shadow:inset 1px 1px 12px rgba(0, 0, 0, .5); }
-		.carousel .carouselControlsDefault .carouselPreviousBtn:active:before,
-		.carousel .carouselControlsDefault .carouselNextBtn:active:before { color:rgba(255, 255, 255, .8); top:.2em; }
-		.carousel .carouselControlsDefault .carouselPreviousBtn.disabled,
-		.carousel .carouselControlsDefault .carouselNextBtn.disabled,
-		.carousel:hover .carouselControlsDefault .carouselPreviousBtn.disabled,
-		.carousel:hover .carouselControlsDefault .carouselNextBtn.disabled,
-		.carousel .carouselControlsDefault .carouselPreviousBtn.disabled:active,
-		.carousel .carouselControlsDefault .carouselNextBtn.disabled:active { background-color:rgba(0, 0, 0, .2); box-shadow:none; }
-		.carousel .carouselControlsDefault .carouselPreviousBtn.disabled:before,
-		.carousel .carouselControlsDefault .carouselNextBtn.disabled:before { color:rgba(255, 255, 255, .8); top:.125em; }
-		/* Pagination */
-		.carouselPagination button { margin-left:4px; margin-right:4px; }
-		.carouselPagination button.carouselPreviousBtn,
-		.carouselPagination button.carouselNextBtn { margin-left:0; margin-right:0; }
-		.carouselPagination button.silver.active { background-color:#7a8802; border-color:#485001; box-shadow:0 1px rgba(255, 255, 255, .5), inset 0 1px 2px rgba(0, 0, 0, .5); color:#fff; cursor:default; }
-		.carouselPagination button.ancBtn.sml { height:16px; padding:0; width:16px; }
-		.carouselControlsDefault button.ancBtn.sml { height:24px; line-height:18px; margin-bottom:6px; margin-top:6px; text-align:center; width:28px; }
-		.carouselPaginationDots button.ancBtn.sml { border-radius:100%; height:16px; min-height:0; padding:0; width:16px; }
-		/* Pause / Play button */
-		.carouselControlsDefault .carouselPausePlayBtn { height:24px; line-height:18px; margin-bottom:6px; margin-top:6px; padding:0 8px; width:36px; }
-		.ie8 .carouselControlsDefault .carouselPausePlayBtn:before { font-size:24px; font-weight:bold; }
-		.carouselControlsDefault .carouselPause:before { content:"ǁ"; }
-		.carouselControlsDefault .carouselPlay:before { content:"▶"; }
+        .carousel { overflow:hidden; position:relative; }
+        .carousel.loading > ul,
+        .carousel.loading .carouselInner { left:100%; min-height:32px; opacity:0; }
+        .carousel.loading > ul > li { display:inline-block; }
+        .carouselInner { font-size:0; position:relative; white-space:nowrap; -ms-word-wrap:normal; word-wrap:normal; } /* font-size:0; to get ride of extra white-space from inline-block and add nowrap */
+        .carouselSlide { display:inline-block; font-size:13px; min-height:40px; position:relative; vertical-align:middle; white-space:normal; }
+        .carousel .carouselSlide > a { display:block; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+        /* Make carousel flush to edges (only use inside of .con) */
+        .con .carouselFlushed { margin-left:-20px; margin-right:-20px; padding-left:20px; padding-right:20px; }
+        @media only screen and (max-width: 767px) {
+            .con .carouselFlushed { margin-left:-10px; margin-right:-10px; padding-left:10px; padding-right:10px; }
+        }
+        /* Full width carousel */
+        .carouselFullWidth .carouselSlide { width:100%; }
+        .carouselArrowsOutside .carouselSlide { padding-left:56px; padding-right:56px; }
+        .carouselSlide > img { max-width:100%; }
+        /* Varied height carousel */
+        .carouselVariedHeight .carouselSlide { vertical-align:top; }
+        /* Carousel with preview */
+        .carouselWithPreview { padding-left:64px; padding-right:64px; -webkit-transition:padding .4s; transition:padding .4s; }
+        .carouselWithPreview .carouselSlide { margin:0 1.5%; }
+        .carouselWithPreview:before,
+        .carouselWithPreview:after { bottom:0; content:" "; position:absolute; top:0; width:20px; z-index:2; }
+        .carouselWithPreview:before { background:-webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%); background:linear-gradient(to right, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%); left:0; }
+        .carouselWithPreview:after { background:-webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%); background:linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%); right:0; }
+        .page .carouselWithPreview:before { background:-webkit-linear-gradient(left, #f8f8f3 0, rgba(248, 248, 243, 0) 100%); background:linear-gradient(to right, #f8f8f3 0, rgba(248, 248, 243, 0) 100%); left:0; }
+        .page .carouselWithPreview:after { background:-webkit-linear-gradient(left, rgba(248, 248, 243, 0) 0, #f8f8f3 100%); background:linear-gradient(to right, rgba(248, 248, 243, 0) 0, #f8f8f3 100%); right:0; }
+        /* Carousel content helper classes */
+        .carouselCentered { text-align:center; }
+        .carouselPadded .carouselSlide { margin-left:10px; margin-right:10px; }
+        .carouselPadded .carouselSlide:first-child { margin-left:0; }
+        .carouselPadded .carouselSlide:last-child { margin-right:0; }
+        .carouselOverlay { background-color:rgba(0, 0, 0, .6); border-bottom-left-radius:inherit; border-bottom-right-radius:inherit; color:#fff; left:0; margin:0; padding:8px; position:absolute; right:0; text-align:left; text-shadow:0 0 8px #000; z-index:1; }
+        .carouselSlide .photo { position:relative; }
+        .photo .carouselOverlay { line-height:1.3; text-align:left; }
+        .carouselOverlay a { color:#afbc22; text-decoration:underline; }
+        .carouselOverlay a:hover,
+        .carouselOverlay a:focus { color:rgba(175, 188, 34, .8); }
+        .carouselSlide.photo { margin-bottom:3px; margin-top:3px; }
+        /* Carousel controls */
+        .carouselControlsDefault { text-align:center; }
+        .carouselControlsDefault .carouselPreviousBtn,
+        .carouselControlsDefault .carouselNextBtn { background-color:rgba(0, 0, 0, .2); border:0; border-radius:100%; color:#efefef; display:inline-block; font-size:20px; font-weight:normal; height:40px; margin-top:-20px; position:absolute; top:50%; -webkit-transition:background .2s; transition:background .2s; width:40px; z-index:5; }
+        .carouselControlsDefault .carouselPreviousBtn { left:8px; }
+        .carouselControlsDefault .carouselNextBtn { right:8px; }
+        .carouselControlsDefault .carouselNextBtn.iconArrowRight:before { right:-1px; }
+        .carouselControlsDefault .carouselPreviousBtn.iconArrowLeft:before { left:-2px; }
+        .noTouch .carousel:hover .carouselControlsDefault .carouselPreviousBtn,
+        .noTouch .carousel:hover .carouselControlsDefault .carouselNextBtn { background-color:rgba(0, 0, 0, .5); }
+        .noTouch .carousel .carouselControlsDefault .carouselPreviousBtn:hover,
+        .noTouch .carousel .carouselControlsDefault .carouselNextBtn:hover,
+        .touch .carouselControlsDefault .carouselPreviousBtn,
+        .touch .carouselControlsDefault .carouselNextBtn { background-color:#afbc22; }
+        .carousel .carouselControlsDefault .carouselPreviousBtn:active,
+        .carousel .carouselControlsDefault .carouselNextBtn:active,
+        .noTouch .carouselControlsDefault .carouselPreviousBtn:active,
+        .noTouch .carouselControlsDefault .carouselNextBtn:active { background-color:#9fa838; box-shadow:inset 1px 1px 12px rgba(0, 0, 0, .5); }
+        .carousel .carouselControlsDefault .carouselPreviousBtn:active:before,
+        .carousel .carouselControlsDefault .carouselNextBtn:active:before { color:rgba(255, 255, 255, .8); top:.2em; }
+        .carousel .carouselControlsDefault .carouselPreviousBtn.disabled,
+        .carousel .carouselControlsDefault .carouselNextBtn.disabled,
+        .carousel:hover .carouselControlsDefault .carouselPreviousBtn.disabled,
+        .carousel:hover .carouselControlsDefault .carouselNextBtn.disabled,
+        .carousel .carouselControlsDefault .carouselPreviousBtn.disabled:active,
+        .carousel .carouselControlsDefault .carouselNextBtn.disabled:active { background-color:rgba(0, 0, 0, .2); box-shadow:none; }
+        .carousel .carouselControlsDefault .carouselPreviousBtn.disabled:before,
+        .carousel .carouselControlsDefault .carouselNextBtn.disabled:before { color:rgba(255, 255, 255, .8); top:.125em; }
+        /* Pagination */
+        .carouselPagination button { margin-left:4px; margin-right:4px; }
+        .carouselPagination button.carouselPreviousBtn,
+        .carouselPagination button.carouselNextBtn { margin-left:0; margin-right:0; }
+        .carouselPagination button.silver.active { background-color:#7a8802; border-color:#485001; box-shadow:0 1px rgba(255, 255, 255, .5), inset 0 1px 2px rgba(0, 0, 0, .5); color:#fff; cursor:default; }
+        .carouselPagination button.ancBtn.sml { height:16px; padding:0; width:16px; }
+        .carouselControlsDefault button.ancBtn.sml { height:24px; line-height:18px; margin-bottom:6px; margin-top:6px; text-align:center; width:28px; }
+        .carouselPaginationDots button.ancBtn.sml { border-radius:100%; height:16px; min-height:0; padding:0; width:16px; }
+        /* Pause / Play button */
+        .carouselControlsDefault .carouselPausePlayBtn { height:24px; line-height:18px; margin-bottom:6px; margin-top:6px; padding:0 8px; width:36px; }
+        .ie8 .carouselControlsDefault .carouselPausePlayBtn:before { font-size:24px; font-weight:bold; }
+        .carouselControlsDefault .carouselPause:before { content:"ǁ"; }
+        .carouselControlsDefault .carouselPlay:before { content:"▶"; }
 
     
         .carousel { margin:20px 0; }
