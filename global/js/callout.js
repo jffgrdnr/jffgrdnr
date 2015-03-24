@@ -34,7 +34,7 @@
 				calloutContent,
 				calloutPointer,
 				calloutDefaultWidth,
-				calloutMinWidth = Math.max(240, parseInt($('#callout').css('min-width'), 10)),
+				calloutMinWidth,
 				modalScrollPos = 0,
 				windowPadding = 8, /* Space callouts leave on each side of window */
 				calloutTouches = {},
@@ -597,6 +597,7 @@
 				calloutWrap = $('#callout');
 				calloutContent = $('#calloutContent');
 				calloutPointer = $('#calloutPointer');
+				calloutMinWidth = Math.max(240, parseInt(calloutWrap.css('min-width'), 10));
 				/* Check where callout content comes from */
 				if (settings.content) {
 					try {
