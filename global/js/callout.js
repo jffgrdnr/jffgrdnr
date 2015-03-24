@@ -30,11 +30,11 @@
 				$window = $(window),
 				isInputField,
 				hideDelayTimer,
-				calloutWrap = $('#callout'),
-				calloutContent = $('#calloutContent'),
-				calloutPointer = $('#calloutPointer'),
+				calloutWrap,
+				calloutContent,
+				calloutPointer,
 				calloutDefaultWidth,
-				calloutMinWidth = Math.max(240, parseInt(calloutWrap.css('min-width'), 10)),
+				calloutMinWidth = Math.max(240, parseInt($('#callout').css('min-width'), 10)),
 				modalScrollPos = 0,
 				windowPadding = 8, /* Space callouts leave on each side of window */
 				calloutTouches = {},
@@ -420,7 +420,6 @@
 						/* Removes default max-width from CSS */
 						calloutContent.css({ 'max-width': 'none' });
 					}
-					console.log(calloutWrap);
 					calloutDefaultWidth = Math.ceil(calloutWrap
 						.css({
 							'display': 'block',
@@ -595,6 +594,9 @@
 				if (!$('#callout').length) {
 					$('<div id="callout" class="callout"><div id="calloutContent" class="calloutContent" tabindex="-1"></div><div id="calloutPointer" class="calloutPointer"><div id="calloutPointerShadow" class="calloutPointerShadow"></div></div></div>').appendTo('body');
 				}
+				calloutWrap = $('#callout');
+				calloutContent = $('#calloutContent');
+				calloutPointer = $('#calloutPointer');
 				/* Check where callout content comes from */
 				if (settings.content) {
 					try {
@@ -724,6 +726,6 @@
 	/* Initialize the callout */
 	$(function () {
 		/* Actually initialize anything with the data-callout attr */
-		$('[data-callout]').callout();
+		$('[data-callout]:not([data-auto-instantiate="off"])').callout();
 	});
 }(jQuery));

@@ -28,6 +28,7 @@
 				<section class="con">
 					<h2 class="conTitle">Align Top (New option)</h2>
 					<div class="conBody">
+						<p><button type="button" class="ancBtn lrg" data-callout="<p>test</p>" data-auto-instantiate="on">auto instantiate</button></p>
 						<p><button type="button" class="ancBtn lrg" id='callout1' callout-id="">Position Left Align TOP</button></p>
 						<p><button type="button" class="ancBtn" id='callout2' callout-id="">Position Left Align TOP</button></p>
 						<p><button type="button" class="ancBtn sml" id='callout3' callout-id="">Position Left TOP</button></p>
@@ -120,7 +121,7 @@
 	<script>
 	$(function() {
 		$("#callout1").callout({
-			'content': '<p>I\'m a long sentence created for testing purposes</p><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
+			'content': '<span>FIRST: I\'m a long sentence created for testing purposes</span><p>With another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p><p>and another paragraph</p>',
 			'align': 'top',
 			'position': 'left'
 		});
