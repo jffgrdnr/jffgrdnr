@@ -420,6 +420,7 @@
 						/* Removes default max-width from CSS */
 						calloutContent.css({ 'max-width': 'none' });
 					}
+					console.log(calloutWrap);
 					calloutDefaultWidth = Math.ceil(calloutWrap
 						.css({
 							'display': 'block',
@@ -590,6 +591,10 @@
 				}
 			}
 			function initCallout() {
+				/* Add callout to page */
+				if (!$('#callout').length) {
+					$('<div id="callout" class="callout"><div id="calloutContent" class="calloutContent" tabindex="-1"></div><div id="calloutPointer" class="calloutPointer"><div id="calloutPointerShadow" class="calloutPointerShadow"></div></div></div>').appendTo('body');
+				}
 				/* Check where callout content comes from */
 				if (settings.content) {
 					try {
@@ -718,10 +723,6 @@
 	};
 	/* Initialize the callout */
 	$(function () {
-		/* Add callout to page */
-		if (!$('#callout').length) {
-			$('<div id="callout" class="callout"><div id="calloutContent" class="calloutContent" tabindex="-1"></div><div id="calloutPointer" class="calloutPointer"><div id="calloutPointerShadow" class="calloutPointerShadow"></div></div></div>').appendTo('body');
-		}
 		/* Actually initialize anything with the data-callout attr */
 		$('[data-callout]').callout();
 	});

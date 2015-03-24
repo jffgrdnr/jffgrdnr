@@ -19,15 +19,15 @@
 	<div id="navWrapper">
 		<nav id="mainNav">
 		    <div id="logo">
-		        <h1>roice krueger</h1>
+		        <h1><a href="/">roice krueger</a></h1>
 		    </div>
-		    <ul class="clearfix">
-		        <li><a href="" data-nav="read">Read</a></li>
-		        <li><a href="" data-nav="watch">Watch</a></li>
-		        <li><a href="" data-nav="listen">Listen</a></li>
-		        <li><a href="" data-nav="leadership">Leadership</a></li>
-		        <li><a href="" data-nav="self">Self Development</a></li>
-		        <li><a href="" data-nav="org">Organization</a></li>
+		    <ul id="desktopNav" class="clearfix">
+		        <li class="main"><a href="/Read" data-nav="read">Read</a></li>
+		        <li class="main"><a href="/Watch" data-nav="watch">Watch</a></li>
+		        <li class="main"><a href="/Listen" data-nav="listen">Listen</a></li>
+		        <li class="main"><a href="/Leadership" data-nav="leadership">Leadership</a></li>
+		        <li class="main"><a href="/Self-Development" data-nav="self">Self Development</a></li>
+		        <li class="main"><a href="/Organization" data-nav="org">Organization</a></li>
 		        <menu id="mainMenu">
 			        <ul data-nav="read">
 			            <li>
@@ -139,12 +139,26 @@
 			        </ul>
 			    </menu>
 		    </ul>
+		    <div id="mobileNav">
+		    	<i class="fa fa-list drawer"></i>
+		    	<ul>
+		    		<li><a href="/Read">Read</a></li>
+		    		<li><a href="/Watch">Watch</a></li>
+		    		<li><a href="/Listen">Listen</a></li>
+		    		<li><a href="/Leadership">Leadership</a></li>
+		    		<li><a href="/Self-Development">Self Development</a></li>
+		    		<li><a href="/Organization">Organization</a></li>
+		    	</ul>
+		    </div>
 		</nav>
 	</div>
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<h2><?php the_title(); ?></h2>
-	<?php the_content(); ?>
-	<?php comments_template( '', true ); ?>
-	<?php endwhile; ?>
+	<section id="mainContent">
+		<?php if ( is_front_page()) get_page_template('basic') ?>
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			<h2><?php the_title(); ?></h2>
+			<?php the_content(); ?>
+			<?#php comments_template( '', true ); ?>
+		<?php endwhile; ?>
+	</section>
 </div>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
