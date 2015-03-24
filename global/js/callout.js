@@ -105,16 +105,16 @@
 				$(window).add('html').add(calloutWrap).off('.callout');
 			}
 			function positionCallout(position, align, lastRun) {
-				var windowWidth = $window.outerWidth(),
-					triggerHeight = $trigger.outerHeight(),
-					triggerWidth = $trigger.outerWidth(),
+				var windowWidth = $window.outerWidth(false),
+					triggerHeight = $trigger.outerHeight(false),
+					triggerWidth = $trigger.outerWidth(false),
 					triggerPos = $trigger.offset(),
 					leftOfTrigger = triggerPos.left,
 					centerOfTrigger = leftOfTrigger + (triggerWidth / 2),
 					rightOfTrigger = leftOfTrigger + triggerWidth,
 					topOfTrigger = triggerPos.top,
 					bottomOfTrigger = topOfTrigger + triggerHeight,
-					calloutTempWidth = calloutContent.outerWidth(),
+					calloutTempWidth = calloutContent.outerWidth(false),
 					calloutInputOffset = 16, /* from CSS: .callout margin-left + .calloutContent left (for .calloutCursor) */
 					calloutOffset = 24, /* from CSS: .calloutContent left or right value */
 					inModal = $trigger.closest('#modal').length > 0,
@@ -147,11 +147,11 @@
 					$trigger.on('mousemove.callout', function (e) {
 						calloutWrap
 							.css({
-								'left': Math.max(calloutInputOffset + windowPadding, Math.min(e.pageX, windowWidth - windowPadding - calloutContent.outerWidth() + calloutInputOffset)),
+								'left': Math.max(calloutInputOffset + windowPadding, Math.min(e.pageX, windowWidth - windowPadding - calloutContent.outerWidth(false) + calloutInputOffset)),
 								'top': e.pageY
 							});
-						if (e.pageX > windowWidth + calloutInputOffset - calloutContent.outerWidth()) {
-							calloutPointer.css({ 'left': Math.min(e.pageX - calloutWrap.offset().left - (calloutInputOffset / 2), calloutContent.outerWidth() - 48) }); /* 48 = keeps pointer centered inside of callout */
+						if (e.pageX > windowWidth + calloutInputOffset - calloutContent.outerWidth(false)) {
+							calloutPointer.css({ 'left': Math.min(e.pageX - calloutWrap.offset().left - (calloutInputOffset / 2), calloutContent.outerWidth(false) - 48) }); /* 48 = keeps pointer centered inside of callout */
 						} else {
 							calloutPointer.css({ 'left': 0 });
 						}
@@ -205,17 +205,17 @@
 									default:
 										calloutWrap
 											.addClass('calloutAlignMiddle')
-											.css({ 'top': topOfTrigger + (triggerHeight / 2) - (calloutWrap.outerHeight() / 2) });
-										calloutContent.css({ 'top': '-' + (calloutContent.outerHeight() / 2) + 'px' });
+											.css({ 'top': topOfTrigger + (triggerHeight / 2) - (calloutWrap.outerHeight(false) / 2) });
+										calloutContent.css({ 'top': '-' + (calloutContent.outerHeight(false) / 2) + 'px' });
 										break;
 								}
 							} else {
 								calloutWrap.addClass('calloutAlignCenter');
-								calloutContent.css({ 'left': -Math.abs(calloutContent.outerWidth() / 2) });
+								calloutContent.css({ 'left': -Math.abs(calloutContent.outerWidth(false) / 2) });
 								/* Tweak if off page right */
-								if (calloutContent.offset().left + calloutContent.outerWidth() - $(document).scrollLeft() > windowWidth) {
+								if (calloutContent.offset().left + calloutContent.outerWidth(false) - $(document).scrollLeft() > windowWidth) {
 									calloutContent.css({
-										'left': -Math.abs(calloutContent.outerWidth() / 2) + (windowWidth - calloutContent.offset().left - calloutContent.outerWidth()) + $(document).scrollLeft() - windowPadding,
+										'left': -Math.abs(calloutContent.outerWidth(false) / 2) + (windowWidth - calloutContent.offset().left - calloutContent.outerWidth(false)) + $(document).scrollLeft() - windowPadding,
 										'max-width': windowWidth - (windowPadding * 2)
 									});
 								}
@@ -233,7 +233,7 @@
 						case 'left':
 							calloutWrap
 								.addClass('calloutPositionLeft')
-								.css({ 'left': leftOfTrigger - calloutWrap.outerWidth() });
+								.css({ 'left': leftOfTrigger - calloutWrap.outerWidth(false) });
 							calloutContent.css({ 'max-width': Math.max(leftOfTrigger - windowPadding - parseInt(calloutContent.css('margin-left'), 10) - parseInt(calloutContent.css('margin-right'), 10), calloutMinWidth) });
 							break;
 						case 'right':
@@ -245,7 +245,7 @@
 						case 'top':
 							calloutWrap
 								.addClass('calloutPositionTop')
-								.css({ 'top': topOfTrigger - calloutWrap.outerHeight() });
+								.css({ 'top': topOfTrigger - calloutWrap.outerHeight(false) });
 							break;
 						default:
 							calloutWrap
@@ -253,11 +253,11 @@
 								.css({ 'top': bottomOfTrigger });
 					}
 					/* Tweak vertical position if out of viewport */
-					calloutContentHeight = calloutContent.outerHeight();
+					calloutContentHeight = calloutContent.outerHeight(false);
 					/* If callout is off-bottom... */
-					if (calloutContent.offset().top + calloutContentHeight > $window.scrollTop() + $window.outerHeight()) {
+					if (calloutContent.offset().top + calloutContentHeight > $window.scrollTop() + $window.outerHeight(false)) {
 						if (position === 'left' || position === 'right') {
-							calloutContent.css({ 'top': Math.max(parseInt(calloutContent.css('top'), 10) - (calloutContent.offset().top + calloutContentHeight - $window.scrollTop() - $window.outerHeight() + windowPadding), -Math.abs(calloutContentHeight - calloutOffset)) });
+							calloutContent.css({ 'top': Math.max(parseInt(calloutContent.css('top'), 10) - (calloutContent.offset().top + calloutContentHeight - $window.scrollTop() - $window.outerHeight(false) + windowPadding), -Math.abs(calloutContentHeight - calloutOffset)) });
 						}
 					}
 					/* If callout is off-top... */
@@ -271,7 +271,7 @@
 						}
 					}
 					/* Tweak horizontal position if out of viewport */
-					if (calloutContent.offset().left < 0 || windowWidth < calloutContent.offset().left + calloutContent.outerWidth()) {
+					if (calloutContent.offset().left < 0 || windowWidth < calloutContent.offset().left + calloutContent.outerWidth(false)) {
 						if (!lastRun) {
 							positionCallout((settings.position === 'left' || settings.position === 'right') ? 'bottom' : settings.position, 'center', true);
 						}
@@ -279,9 +279,9 @@
 					/* Adjust modal height so callout is fully visible. */
 					if (inModal && !lastRun && calloutWrap.hasClass('calloutPositionBottom')) {
 						if (isTouchDevice) {
-							calloutIsPastModalArea = calloutContent.offset().top + calloutContent.outerHeight() > $('#modal').height();
+							calloutIsPastModalArea = calloutContent.offset().top + calloutContent.outerHeight(false) > $('#modal').height();
 						} else {
-							calloutIsPastModalArea = $('#modal').scrollTop() + calloutContent.offset().top + calloutContent.outerHeight() - Math.max($('body').scrollTop(), $('html').scrollTop()) > Math.max($('#modal').outerHeight(), $('#modalContents').outerHeight());
+							calloutIsPastModalArea = $('#modal').scrollTop() + calloutContent.offset().top + calloutContent.outerHeight(false) - Math.max($('body').scrollTop(), $('html').scrollTop()) > Math.max($('#modal').outerHeight(false), $('#modalContents').outerHeight(false));
 						}
 						if (calloutIsPastModalArea) {
 							positionCallout('top', align, true);
@@ -454,7 +454,7 @@
 				}
 				if (settings.type === 'cursor') {
 					calloutWrap.addClass('calloutTypeCursor');
-					calloutContent.css({ 'width': Math.min(parseInt(calloutDefaultWidth, 10), $window.outerWidth() - (windowPadding * 2)) });
+					calloutContent.css({ 'width': Math.min(parseInt(calloutDefaultWidth, 10), $window.outerWidth(false) - (windowPadding * 2)) });
 				}
 				positionCallout();
 				/* Adjust z-index if inside of modal */
