@@ -68,6 +68,7 @@
 				return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
 			}
 			function resetCalloutContent() {
+				//debugger;
 				calloutWrap
 					.add(calloutContent)
 					.add(calloutPointer)
@@ -542,9 +543,12 @@
 								preventClick = false;
 							}, 600); /* Magic number after 300ms delay on touch devices */
 						})
-						.on('mouseleave.callout close.callout', function () {
+						.on('mouseleave.callout', function () {
 							$trigger.removeClass('hover');
 							hideDelay();
+						})
+						.on('close.callout', function () {
+							hideCallout(true);
 						});
 					if (isTouchDevice) {
 						/* If you want the hover callout to be triggered separately

@@ -1,0 +1,66 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test callout content</title>
+			<link href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v2/alert.css&amp;x/css/v1/button.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v1/icon.css&amp;x/css/v2/modal.css&amp;x/css/v1/pagination.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css" rel="stylesheet" />
+			<link rel="stylesheet" href="css/callout.css">
+			<style>
+				/*#callout:not([style]) { opacity:0; }*/
+			</style>
+	</head>
+
+	<body>
+		<div class="ancGrid">
+			<div class="ancCol w33">
+				<button type="button" id="coTrigger" class="ancBtn calloutTypeHover calloutTriggerNoArrow textCenter">Hover callout</button>
+				<div id="coContent" class="calloutDomContent">
+					<p>This should be the hover callout</p>
+					<button id="first" type="button" class="ancBtn">Close hover callout</button>
+				</div>
+			</div>
+
+			<div class="ancCol w33">
+				<button type="button" id="coTrigger2" class="ancBtn calloutTriggerNoArrow textCenter">Click callout</button>
+				<div id="coContent2" class="calloutDomContent">
+					<p>This should be the click callout</p>
+					<button id="second" type="button" class="ancBtn" >Close click callout</button>
+				</div>
+			</div>
+
+			<div class="ancCol w33">
+				<div id="coTrigger3" class="calloutTriggerNoArrow textCenter">Nothing to see here</div>
+				<div id="coContent3" class="calloutDomContent">
+					<p>This should be the hover link callout</p>
+					<button id="third" type="button" class="ancBtn">Close hover link callout</button>
+				</div>
+			</div>
+		</div>
+		<script src="http://c.mfcreativedev.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&amp;x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v2/carousel.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/paging.js&amp;x/js/v1/slider.js&amp;x/js/v2/tab.js"></script>
+		<script src="js/callout.js"></script>
+		<script>
+		$(function () {
+			$('#coTrigger').callout({
+				'content': '#coContent'
+			});
+
+			$('#first').on('click', function (e) {
+ 				$('#coTrigger').callout('close');
+			});
+
+			$('#coTrigger2').callout({'content': '#coContent2'});
+
+			$('#second').on('click', function (e) {
+ 				$('#coTrigger2').callout('close');
+			});
+
+			$('#coTrigger3').callout({'content': '#coContent3'});
+
+			$('#third').on('click', function (e) {
+ 				$('#coTrigger3').callout('close');
+			});
+		});
+		</script>
+	</body>
+</html>
