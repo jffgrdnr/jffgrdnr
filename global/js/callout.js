@@ -2,7 +2,7 @@
 	/js/v1/callout.js
 *****************************************/
 ;(function ($) {
-	"use strict";
+	'use strict';
 	/* Callout defaults */
 	var defaults = {
 		'style': 'light', /* 'light' (default) | 'dark' | 'alt' */
@@ -38,12 +38,13 @@
 				modalScrollPos = 0,
 				windowPadding = 8, /* Space callouts leave on each side of window */
 				calloutTouches = {},
-				settings = $.extend({}, defaults, options);
+				settings = $.extend({}, defaults, options),
+				htmlTag = $('html');
 			/* visible, focusable, and tabbable functions for accessibility when opening a callout */
 			function visible(element) {
 				return $.expr.filters.visible(element) &&
 					!$(element).parents().andSelf().filter(function () {
-						return $.css(this, "visibility") === "hidden";
+						return $.css(this, 'visibility') === 'hidden';
 					}).length;
 			}
 			function focusable(element, isTabIndexNotNaN) {
@@ -51,19 +52,19 @@
 					mapName,
 					img,
 					nodeName = element.nodeName.toLowerCase();
-				if ("area" === nodeName) {
+				if ('area' === nodeName) {
 					map = element.parentNode;
 					mapName = map.name;
-					if (!element.href || !mapName || map.nodeName.toLowerCase() !== "map") {
+					if (!element.href || !mapName || map.nodeName.toLowerCase() !== 'map') {
 						return false;
 					}
-					img = $("img[usemap=#" + mapName + "]")[0];
+					img = $('img[usemap=#' + mapName + ']')[0];
 					return !!img && visible(img);
 				}
-				return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled : "a" === nodeName ? element.href || isTabIndexNotNaN : isTabIndexNotNaN) && visible(element);
+				return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled : 'a' === nodeName ? element.href || isTabIndexNotNaN : isTabIndexNotNaN) && visible(element);
 			}
 			function tabbable(element) {
-				var tabIndex = $.attr(element, "tabindex"),
+				var tabIndex = $.attr(element, 'tabindex'),
 					isTabIndexNaN = isNaN(tabIndex);
 				return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
 			}
@@ -73,14 +74,14 @@
 					.add(calloutPointer)
 					.removeAttr('style class');
 				calloutContent
-					.attr("role", "")
-					.off("keydown.callout")
+					.attr('role', '')
+					.off('keydown.callout')
 					.addClass('calloutContent');
 				calloutWrap.addClass('callout');
 				calloutPointer.addClass('calloutPointer');
-				$('#modal, html').off('.callout');
-				calloutWrap
-					.add('html')
+				$('#modal, html')
+					.add(window)
+					.add(calloutWrap)
 					.off('.callout');
 			}
 			function hideCallout(runOnClose) {
@@ -102,7 +103,6 @@
 				}
 				/* Deactivate active trigger */
 				$openCalloutTrigger.removeClass('hover active');
-				$(window).add('html').add(calloutWrap).off('.callout');
 			}
 			function positionCallout(position, align, lastRun) {
 				var windowWidth = $window.outerWidth(false),
@@ -317,23 +317,19 @@
 					return;
 				}
 				oldScrollTop = Math.max($('body').scrollTop(), $('html').scrollTop());
-				$("#calloutContent")
+				$('#calloutContent')
 					.focus()
-					.off("keydown.callout")
-					.on("keydown.callout", function (e) {
+					.off('keydown.callout')
+					.on('keydown.callout', function (e) {
 						var tabbableElements,
 							focusedElement,
 							$this = $(this);
 						if (e.keyCode === 9) {
-							tabbableElements = $this.find("*").filter(function () {
+							tabbableElements = $this.find('*').filter(function () {
 								return tabbable(this);
 							});
-							focusedElement = $this.find(":focus") || $this;
-							if ((e.shiftKey && (focusedElement.get(0) === tabbableElements.first().get(0) || $("#calloutContent:focus").length))
-								|| (!e.shiftKey && focusedElement.get(0) === tabbableElements.last().get(0))
-								|| (focusedElement.eq(0).is('[type="radio"]')
-									&& ((e.shiftKey && focusedElement.eq(0).attr("name") === tabbableElements.first().eq(0).attr("name"))
-										|| (!e.shiftKey && focusedElement.eq(0).attr("name") === tabbableElements.last().eq(0).attr("name"))))) {
+							focusedElement = $this.find(':focus') || $this;
+							if ((e.shiftKey && (focusedElement.get(0) === tabbableElements.first().get(0) || $('#calloutContent:focus').length)) || (!e.shiftKey && focusedElement.get(0) === tabbableElements.last().get(0)) || (focusedElement.eq(0).is('[type="radio"]') && ((e.shiftKey && focusedElement.eq(0).attr('name') === tabbableElements.first().eq(0).attr('name')) || (!e.shiftKey && focusedElement.eq(0).attr('name') === tabbableElements.last().eq(0).attr('name'))))) {
 								$trigger.focus();
 								hideCallout(true);
 							}
@@ -361,7 +357,7 @@
 							calloutTouches.x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 							calloutTouches.y = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
 						})
-						.on('click.callout  touchend.callout', function (e) {
+						.on('click.callout touchend.callout', function (e) {
 							if (!preventClose && !$(e.srcElement || e.target || e.originalEvent.originalTarget).closest('#callout').length) {
 								if (e.type === 'click') {
 									hideCallout(true);
@@ -472,13 +468,13 @@
 					});
 				}
 				$trigger.addClass('hover active');
-				if ($('#calloutContent').find("*").filter(function () { return tabbable(this); }).length) {
-					$('#calloutContent').attr("role", "alertdialog");
+				if ($('#calloutContent').find('*').filter(function () { return tabbable(this); }).length) {
+					$('#calloutContent').attr('role', 'alertdialog');
 					if (settings.type !== 'hover' && settings.disableAutofocusOnOpen !== true) {
 						focusOnCallout();
 					}
 				} else {
-					$('#calloutContent').attr("role", "alert");
+					$('#calloutContent').attr('role', 'alert');
 				}
 				if (settings.onAfterOpen !== false) {
 					settings.onAfterOpen($trigger);
@@ -608,9 +604,12 @@
 				calloutContent = $('#calloutContent');
 				calloutPointer = $('#calloutPointer');
 				calloutMinWidth = Math.max(240, parseInt(calloutWrap.css('min-width'), 10));
-				/* Add noTouch class for non-touch enabled devices */
-				if (($('html').hasClass('touch') || $('html').hasClass('noTouch')) && isTouchDevice !== true) {
-					calloutWrap.addClass('noTouch');
+				/* Check to see if touch/noTouch has been added to html. If not, add noTouch class for non-touch enabled devices */
+				if (!htmlTag.hasClass('touch') && isTouchDevice == true) {
+					htmlTag.addClass('touch');
+				}
+				if (!htmlTag.hasClass('noTouch') && isTouchDevice !== true) {
+					htmlTag.addClass('noTouch');
 				}
 				/* Check where callout content comes from */
 				if (settings.content) {
@@ -623,7 +622,7 @@
 							$trigger.data('callout-content', settings.content);
 						}
 					} catch (e) {
-						settings.content = "<div>" + settings.content + "</div>";
+						settings.content = '<div>' + settings.content + '</div>';
 						settings.keepContentInPlace = false;
 						$trigger.data('callout-content', settings.content);
 					}
@@ -651,7 +650,7 @@
 							$c = $e.children(),
 							$l = $c.length,
 							$f = $c.first();
-						return $l ? !($l === 1 && $f.is("span") && $.trim($e.text()) === $.trim($f.text())) : $.trim($e.text());
+						return $l ? !($l === 1 && $f.is('span') && $.trim($e.text()) === $.trim($f.text())) : $.trim($e.text());
 					})
 					.wrapInner('<span>');
 				/* Settings for form input */
