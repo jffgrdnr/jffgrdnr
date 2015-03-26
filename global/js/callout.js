@@ -608,6 +608,10 @@
 				calloutContent = $('#calloutContent');
 				calloutPointer = $('#calloutPointer');
 				calloutMinWidth = Math.max(240, parseInt(calloutWrap.css('min-width'), 10));
+				/* Add noTouch class for non-touch enabled devices */
+				if (($('html').hasClass('touch') || $('html').hasClass('noTouch')) && isTouchDevice !== true) {
+					calloutWrap.addClass('noTouch');
+				}
 				/* Check where callout content comes from */
 				if (settings.content) {
 					try {

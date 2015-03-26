@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Modals | Ancestry.com® Standards</title>
+    <!-- Head content from header section -->
+    <!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+    <!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+    <!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=" " />
+    <link rel="canonical" href="" />
+    <script>
+    var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+    document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');
+    </script>
+    <link href="http://c.mfcreativestage.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/template.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/callout.css">
+    <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+    <style>
+		.hList li { display:inline-block; }
+    </style>
+</head>
+<body>
+	<header class="pageHeader">
+		<h1 class="pageTitle">Adding noTouch Class</h1>
+	</header>
+	<div class="page pagePadded">
+		<section class="con">
+			<h2 class="conTitle">Callout Menus <small>(drop-down menus)</small></h2>
+			<div class="conBody">
+				<ul class="hList">
+					<li>
+						<button data-callout-classes="calloutMenu" data-callout="<ul><li><a href='#'>This is link 1!!</a></li><li><a href='#'>This is link 2  n <span>I'm a span</span></a></li><li><a href='#'>This is link 3</a></li><li><a href='#'>This is link 4</a></li></ul>" class="ancBtn calloutHidePointer calloutTrigger iconAfter iconArrowSmallDownAfter">No pointer</button>
+					</li>
+					<li>
+						<button id="sortingListTrigger" class="link calloutTrigger iconAfter iconArrowSmallDownAfter"><span>Sort</span></button>
+					</li>
+					<li>
+						<button id="sortingListTrigger2" class="link calloutStyleDark ancBtn silver calloutTrigger iconAfter iconArrowSmallDownAfter">Sort</button>
+					</li>
+					<li>
+						<button data-callout-classes="calloutMenu standardsSubMenu" data-callout="<ul><li><a href='#'>This is link 1</a></li><li><a href='#'>This is link 2</a></li><li><a href='#'>This is link 3</a></li><li><a href='#'>This is link 4</a></li></ul>" class="ancBtn silver calloutHidePointer calloutTrigger iconAfter iconArrowSmallDownAfter">Custom Styles</button>
+					</li>
+					<li>
+						<button data-callout-classes="calloutMenu" data-callout="<ul><li><a href='#'>This is link 1</a></li><li><a href='#'>This is link 2</a></li><li><a href='#'>This is link 3</a></li><li><a href='#'>This is link 4</a></li></ul>" class="link icon iconList calloutTriggerNoArrow calloutTrigger">No down arrow</button>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+<script src="http://c.mfcreativestage.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v2/carousel.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js&x/js/v3/modal.js"></script>
+<script src="js/callout.js"></script>
+<script>
+	$(function() {
+		"use strict";
+		$('#sortingListTrigger').callout({
+			'content': '#sortingList',
+			'onOpen': function() {
+				$('#sortingList')
+					.off('click.myNamespace')
+					.on('click.myNamespace', '.link', function() {
+						$(this).toggleClass('calloutMenuChecked calloutMenuUnchecked');
+						console.log('do something - ' + $(this).hasClass('calloutMenuChecked'));
+					})
+			}
+		});
+
+		$('#sortingListTrigger2').callout({
+			'content': '#sortingList2',
+			'onOpen': function() {
+				$('#sortingList2')
+					.off('click.myNamespace')
+					.on('click.myNamespace', '.link', function() {
+						$(this).toggleClass('calloutMenuChecked calloutMenuUnchecked');
+						console.log('do something - ' + $(this).hasClass('calloutMenuChecked'));
+					})
+			}
+		});
+	});
+	</script>
+</body>
+</html>
