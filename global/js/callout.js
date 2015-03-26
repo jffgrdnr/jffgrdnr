@@ -68,7 +68,6 @@
 				return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
 			}
 			function resetCalloutContent() {
-				//debugger;
 				calloutWrap
 					.add(calloutContent)
 					.add(calloutPointer)
@@ -592,6 +591,13 @@
 							hideCallout(true);
 						});
 				}
+				$trigger
+					.on('destroy.callout', function () {
+						destroyCallout();
+					})
+					.on('focusCallout.callout', function () {
+						focusOnCallout();
+					});
 			}
 			function initCallout() {
 				/* Add callout to page */
@@ -696,7 +702,7 @@
 			/* Check options or initialize */
 			switch (options) {
 				case 'destroy':
-					destroyCallout();
+					$trigger.trigger('destroy.callout');
 					break;
 				case 'open':
 					$trigger.trigger('open.callout');
@@ -705,7 +711,7 @@
 					$trigger.trigger('close.callout');
 					break;
 				case 'focus':
-					focusOnCallout();
+					$trigger.trigger('focusCallout.callout');
 					break;
 				default:
 					initCallout();
