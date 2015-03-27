@@ -6,8 +6,7 @@
 .table:first-child { margin-top:0; }
 .table tbody th { color:#706b63; font-size:14px; text-align:right; vertical-align:middle; }
 .table thead th { border-bottom:2px solid #9e9a91; color:inherit; font-size:inherit; font-weight:bold; text-align:left; }
-.table th.tableCellNumber,
-.table td.tableCellNumber { text-align:right; }
+.tableCellNumber.tableCellNumber { text-align:right; }
 .tableHorizontal > tbody > tr > th { width:38%; }
 .table td { vertical-align:top; word-break:break-word; }
 .table td,
@@ -31,8 +30,7 @@
 	.table480 > tbody > tr::after { clear:both; }
 	.table480 > thead,
 	.table480 > tfoot { display:none; }
-	.table480 th.tableCellNumber, 
-	.table480 td.tableCellNumber { text-align:left; }
+	.table480 .tableCellNumber.tableCellNumber { text-align:left; }
 	.table480 > tbody > tr > td[data-label] { float:left; padding-left:120px; text-align:left; text-indent:-116px; vertical-align:middle; }
 	.table480 > tbody > tr > td[data-label]::before { content:attr(data-label)":"; display:inline-block; font-weight:bold; padding-right:10px; text-indent:0; width:106px; }
 	.table480 .tableHorizontal > tbody > tr > th { padding-left:0; text-align:left; }
@@ -51,8 +49,7 @@
 	.table320 > tbody > tr::after { clear:both; }
 	.table320 > thead,
 	.table320 > tfoot { display:none; }
-	.table320 th.tableCellNumber, 
-	.table320 td.tableCellNumber { text-align:left; }
+	.table320 .tableCellNumber.tableCellNumber { text-align:left; }
 	.table320 > tbody > tr > td[data-label] { float:left; padding-left:120px; text-indent:-116px; vertical-align:middle; }
 	.table320 > tbody > tr > td[data-label]::before { content:attr(data-label)":"; display:inline-block; font-weight:bold; padding-right:10px; text-indent:0; width:106px; }
 	.table320 .tableHorizontal > tbody > tr > th { padding-left:0; text-align:left; }
