@@ -162,10 +162,12 @@
 		</nav>
 	</div>
 	<section id="mainContent">
-		<section class="center">
-			<!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner.png" alt="" class="center"> -->
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bryce.jpg" alt="" class="center">
-		</section>
+		<?php the_content() ?>
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			<h2><?php the_title(); ?></h2>
+			<?php the_content(); ?>
+			<?#php comments_template( '', true ); ?>
+		<?php endwhile; ?>
 	</section>
 </div>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>

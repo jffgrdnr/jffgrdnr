@@ -23,7 +23,8 @@
 	},
 	closeTimer,
 	showDelayTimer,
-	isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+	isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch),
+	$html = $('html');
 	$.fn.callout = function (options) {
 		return this.each(function () {
 			var $trigger = $(this),
@@ -38,8 +39,7 @@
 				modalScrollPos = 0,
 				windowPadding = 8, /* Space callouts leave on each side of window */
 				calloutTouches = {},
-				settings = $.extend({}, defaults, options),
-				htmlTag = $('html');
+				settings = $.extend({}, defaults, options);
 			/* visible, focusable, and tabbable functions for accessibility when opening a callout */
 			function visible(element) {
 				return $.expr.filters.visible(element) &&
@@ -604,13 +604,6 @@
 				calloutContent = $('#calloutContent');
 				calloutPointer = $('#calloutPointer');
 				calloutMinWidth = Math.max(240, parseInt(calloutWrap.css('min-width'), 10));
-				/* Check to see if touch/noTouch has been added to html. If not, add noTouch class for non-touch enabled devices */
-				if (!htmlTag.hasClass('touch') && isTouchDevice == true) {
-					htmlTag.addClass('touch');
-				}
-				if (!htmlTag.hasClass('noTouch') && isTouchDevice !== true) {
-					htmlTag.addClass('noTouch');
-				}
 				/* Check where callout content comes from */
 				if (settings.content) {
 					try {
@@ -737,6 +730,12 @@
 			$('#calloutContent').html(newContent);
 		}
 	};
+	/* Check to see if touch/noTouch has been added to html. If not, add noTouch class for non-touch enabled devices */
+	if (!$html.hasClass('touch') && isTouchDevice === true) {
+		$html.addClass('touch');
+	} else if (!$html.hasClass('noTouch') && isTouchDevice !== true) {
+		$html.addClass('noTouch');
+	}
 	/* Initialize the callout */
 	$(function () {
 		/* Actually initialize anything with the data-callout attr */
