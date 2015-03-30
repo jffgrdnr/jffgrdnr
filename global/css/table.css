@@ -31,7 +31,7 @@
 	.table480 > thead,
 	.table480 > tfoot { display:none; }
 	.table480 .tableCellNumber.tableCellNumber { text-align:left; }
-	.table480 > tbody > tr > td[data-label] { float:left; padding-left:120px; text-align:left; text-indent:-116px; vertical-align:middle; }
+	.table480 > tbody > tr > td[data-label] { float:left; padding-left:120px; text-indent:-116px; vertical-align:middle; }
 	.table480 > tbody > tr > td[data-label]::before { content:attr(data-label)":"; display:inline-block; font-weight:bold; padding-right:10px; text-indent:0; width:106px; }
 	.table480 .tableHorizontal > tbody > tr > th { padding-left:0; text-align:left; }
 }
