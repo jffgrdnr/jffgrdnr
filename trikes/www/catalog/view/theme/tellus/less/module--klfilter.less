@@ -1,0 +1,66 @@
+@import (reference) "_elements";
+
+/*--------------------------------------------------------------
+Kuler Filter
+--------------------------------------------------------------*/
+.kuler-filter {
+  .filter-group {
+    margin-bottom: 10px;
+    &__title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    [for*="kuler-filter-"] {
+      margin-left: 10px;
+    }
+  }
+  .ui-slider-horizontal {
+    border: none;
+    height: 8px;
+    .rounded(0);
+    .ui-slider-handle {
+      outline: 0;
+      cursor: pointer;
+      margin-left: 0;
+    }
+    .ui-slider-range {
+      border: none;
+      height: 10px;
+      .rounded(0);
+    }
+  }
+  .buttons {
+    margin: 30px 0 10px;
+    text-align: end;
+  }
+}
+
+/************** Skin *******************/
+.kuler-filter {
+  .filter-group {
+  }
+  .ui-slider-horizontal {
+    background: #dddddd;
+    .ui-slider-handle {
+      background: #ffffff;
+      border: 1px solid #dddddd;
+    }
+    .ui-slider-range {
+      background: #ff9326;
+    }
+  }
+  .buttons {
+    .btn {
+      color: #ffffff;
+      background-color: @color1;
+      border-color: @color1;
+      &:hover {
+        background-color: #111111;
+      }
+    }
+  }
+}

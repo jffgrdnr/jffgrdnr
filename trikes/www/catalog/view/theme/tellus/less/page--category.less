@@ -1,0 +1,111 @@
+@import (reference) "_elements";
+
+/*---------------------------------
+ CATEGORY PAGE
+ -----------------------------------*/
+.category-info {
+  margin-bottom: 20px;
+  &__title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  &__image {
+    text-align: center;
+  }
+  &__description {
+    font-size: 14px;
+  }
+}
+
+/* refine-search */
+.refine-search {
+  .row-heading {
+    padding: 10px 0;
+  }
+  &__name {
+    font-size: 13px;
+    padding: 5px 15px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__image {
+    padding: 0;
+  }
+  .owl-carousel {
+    padding: 15px 0;
+  }
+  .no-carousel {
+    font-size: 0;
+    margin-bottom: 50px;
+    div {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .refine-search__image {
+      display: block;
+    }
+  }
+}
+
+/* product filter */
+.product-filter {
+  padding: 10px 15px;
+
+  [class*="col-"] {
+    vertical-align: middle;
+  }
+  a, label {
+    font-size: 13px;
+    line-height: 2.5em;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+  select {
+    &:focus {
+      background-color: #ffffff;
+    }
+  }
+  .text-right {
+    text-align: start;
+  }
+}
+
+@media @md {
+  .category-info {
+    &__image {
+      text-align: start;
+    }
+  }
+}
+
+/************** SKIN *********************/
+.category-info {
+  &__title {
+    color: #535353;
+  }
+  &__description {
+    color: #858585;
+  }
+}
+
+.refine-search {
+  .row-heading {
+    border-bottom: 1px solid #dddddd;
+  }
+}
+
+.product-filter {
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+  a, label, button {
+    color: #878787;
+  }
+  .form-control {
+    background-color: rgba(239, 234, 220, 0.5);
+  }
+}

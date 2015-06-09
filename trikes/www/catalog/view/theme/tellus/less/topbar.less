@@ -1,0 +1,163 @@
+@import (reference) "_elements";
+
+/*--------------------------------------------------------------
+TOPBAR BLOCK
+--------------------------------------------------------------*/
+#top-bar {
+  text-align: center;
+  padding: 14px 0;
+  [class*="col"] {
+    vertical-align: middle;
+  }
+  .dropdown-menu {
+    text-transform: none;
+    font-size: 13px;
+  }
+}
+
+/* Extra */
+.extra {
+  margin-bottom: 15px;
+  [class*="extra__"] {
+    margin-right: 10px;
+  }
+  .btn-group {
+    vertical-align: top;
+  }
+  span {
+    display: inline-block;
+    .transi;
+    &:after {
+      .fafont;
+      content: '\f107';
+      font-size: 12px;
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+  strong, img {
+    display: none;
+  }
+  &__currency, &__language {
+    display: inline-block;
+  }
+  .dropdown-toggle {
+    overflow: hidden;
+    padding: 0;
+  }
+  .dropdown-menu {
+    text-align: start;
+  }
+  .currency-select {
+    text-align: start;
+    outline: none;
+    border: none !important;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .currency-select, .language-select {
+    text-transform: none;
+    padding: 5px 10px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .btn {
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+/* Topbar Links */
+.top-bar__links-list {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 -15px;
+}
+
+@media @md {
+
+  #top-bar {
+    text-align: start;
+  }
+  .extra {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+  }
+  .top-bar__links-list{
+    margin: 0;
+    text-align: end;
+    &__link {
+      &:before {
+        font-family: 'FontAwesome';
+        font-size: 12px;
+        display: inline-block;
+        margin: 0 5px;
+      }
+      &--wish-list {
+        &:before {
+          content: '\f004';
+        }
+      }
+      &--account {
+        position: relative;
+        cursor: pointer;
+        &:before {
+          content: '\f007';
+        }
+        &:after {
+          font-family: 'FontAwesome';
+          content: '\f107';
+          margin: 0 5px;
+        }
+      }
+      &--cart {
+        &:before {
+          content: '\f07a';
+        }
+      }
+      &--checkout {
+        &:before {
+          content: '\f064';
+        }
+      }
+    }
+  }
+}
+
+@media @lg {
+  .top-bar__links-list{
+    &__link {
+      &:before {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+/********************* COLOR *********************/
+.top-bar__links-list {
+ &__link {
+   &--account {
+     +.dropdown-menu {
+       a {
+         color: @color1_1 !important;
+         &:hover {
+           background: #e0e0e0 !important;
+           color: @color1 !important;
+         }
+       }
+     }
+   }
+ }
+}

@@ -1,0 +1,730 @@
+2015-03-17 4:53:57 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/kuler/common.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-03-18 11:22:27 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:24:37 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:25:29 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:25:35 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:26:49 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:32:29 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:36:22 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:37:50 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-18 11:44:47 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-20 5:25:00 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-20 5:25:30 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-20 5:40:35 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-03-20 12:06:24 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/kuler/common.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-03-21 16:35:37 - PHP Unknown:  Argument 2 passed to ModelModuleKbm::mapMerge() must be of the type array, null given, called in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 51 and defined in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 1252
+2015-03-21 16:35:37 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 102
+2015-03-21 16:35:37 - PHP Notice:  Error: Table 'tellus.oc_kbm_category' doesn't exist<br />Error No: 1146<br />SELECT category_id FROM oc_kbm_category WHERE status = 0 in C:\xampp\htdocs\octemp2011\system\library\db\mysqli.php on line 40
+2015-03-21 16:35:37 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 257
+2015-03-21 16:35:37 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 257
+2015-03-21 16:35:37 - PHP Notice:  Error: Table 'tellus.oc_kbm_article' doesn't exist<br />Error No: 1146<br />
+            SELECT COUNT(a.article_id) AS article_total
+            
+            FROM oc_kbm_article a
+            LEFT JOIN oc_kbm_article_description ad
+                ON (a.article_id = ad.article_id AND ad.language_id = 1)
+            INNER JOIN oc_kbm_author au
+                ON (a.author_id = au.author_id)
+            
+            INNER JOIN oc_kbm_article_to_store a2s
+                ON (a.article_id = a2s.article_id)
+        
+            WHERE a.status = 1 AND a2s.store_id = 0 AND a.date_published <= 1426952137
+         in C:\xampp\htdocs\octemp2011\system\library\db\mysqli.php on line 40
+2015-03-21 16:35:37 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 415
+2015-03-21 16:35:37 - PHP Notice:  Error: Table 'tellus.oc_kbm_article' doesn't exist<br />Error No: 1146<br />
+            SELECT a.article_id, a.featured_image, a.date_added, a.date_modified, a.date_published, ad.name, ad.description, ad.meta_keyword, ad.meta_description, au.name AS author_name, au.author_id
+            
+            FROM oc_kbm_article a
+            LEFT JOIN oc_kbm_article_description ad
+                ON (a.article_id = ad.article_id AND ad.language_id = 1)
+            INNER JOIN oc_kbm_author au
+                ON (a.author_id = au.author_id)
+            
+            INNER JOIN oc_kbm_article_to_store a2s
+                ON (a.article_id = a2s.article_id)
+        
+            WHERE a.status = 1 AND a2s.store_id = 0 AND a.date_published <= 1426952137
+            ORDER BY a.date_published DESC
+            LIMIT 0, 8
+         in C:\xampp\htdocs\octemp2011\system\library\db\mysqli.php on line 40
+2015-03-21 16:35:37 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 369
+2015-03-21 16:35:37 - PHP Unknown:  Argument 1 passed to ModelModuleKbm::prepareArticles() must be of the type array, null given, called in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\controller\module\kbm.php on line 89 and defined in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 443
+2015-03-21 16:35:37 - PHP Warning:  array_map(): Argument #2 should be an array in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\model\module\kbm.php on line 445
+2015-03-21 16:35:37 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\catalog\controller\module\kbm.php on line 91
+2015-03-23 13:03:31 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-03-23 13:03:31 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-03-23 13:03:31 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-02 10:59:30 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:10:12 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:15:43 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:15:50 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:16:04 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:16:22 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:16:55 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:17:09 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:17:16 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:26:55 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:30:10 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:30:54 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:32:05 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:34:01 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:34:28 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 11:35:01 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-02 12:02:12 - PHP Notice:  Undefined variable: kuler in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 23
+2015-04-02 12:02:12 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 23
+2015-04-02 12:02:23 - PHP Notice:  Undefined variable: kuler in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 23
+2015-04-02 12:02:23 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 23
+2015-04-02 12:03:39 - PHP Notice:  Undefined variable: kuler in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 23
+2015-04-02 12:03:39 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 23
+2015-04-02 12:06:20 - PHP Notice:  Undefined variable: kuler in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 1
+2015-04-02 12:06:20 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 1
+2015-04-02 12:07:32 - PHP Notice:  Undefined variable: kuler in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 1
+2015-04-02 12:07:32 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 1
+2015-04-02 12:07:34 - PHP Notice:  Undefined variable: kuler in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 1
+2015-04-02 12:07:34 - PHP Notice:  Trying to get property of non-object in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_mod_recent_article.tpl on line 1
+2015-04-03 17:33:11 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-03 17:58:10 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-03 17:59:19 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-03 18:00:03 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-03 19:02:12 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 5:16:57 - PHP Notice:  Undefined offset: 1 in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\model\module\kuler_filter.php on line 582
+2015-04-04 5:16:57 - PHP Notice:  Undefined offset: 1 in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\model\module\kuler_filter.php on line 582
+2015-04-04 5:16:57 - PHP Notice:  Undefined offset: 1 in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\model\module\kuler_filter.php on line 582
+2015-04-04 5:16:57 - PHP Notice:  Undefined offset: 1 in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\controller\module\kuler_filter.php on line 207
+2015-04-04 5:16:57 - PHP Notice:  Undefined variable: continue in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 144
+2015-04-04 5:17:23 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-04 5:17:23 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-04 5:17:23 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-04 5:17:24 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-04 5:17:24 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-04 5:17:24 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-04 5:26:03 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_category_form.tpl on line 151
+2015-04-04 5:27:23 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_category_form.tpl on line 151
+2015-04-04 5:30:40 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_category_form.tpl on line 151
+2015-04-04 5:31:44 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_category_form.tpl on line 151
+2015-04-04 5:35:53 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 11:17:01 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 11:17:19 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 11:20:08 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 11:20:39 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 11:20:55 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 11:38:10 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-04 12:09:30 - PHP Notice:  Error: Could not load template C:\xampp\htdocs\octemp2011/catalog/view/theme/default/template/module/kuler_advanced_html.tpl! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 45
+2015-04-04 12:11:23 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/module/kuler_menu.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 37
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 38
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 44
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 44
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 46
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 50
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 61
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 65
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 72
+2015-04-04 12:12:29 - PHP Notice:  Undefined variable: article in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_home.tpl on line 74
+2015-04-04 12:24:45 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/kuler/common.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-04-04 12:28:42 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/kuler/common.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-04-04 13:06:54 - PHP Notice:  Undefined variable: show_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_category.tpl on line 20
+2015-04-04 13:06:54 - PHP Notice:  Undefined variable: blog_description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_category.tpl on line 26
+2015-04-04 13:06:54 - PHP Notice:  Undefined variable: show_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_category.tpl on line 20
+2015-04-04 13:06:54 - PHP Notice:  Undefined variable: blog_description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_category.tpl on line 26
+2015-04-04 13:06:54 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/kuler/common.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-04-04 13:08:12 - PHP Notice:  Undefined variable: show_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_category.tpl on line 21
+2015-04-04 13:08:12 - PHP Notice:  Undefined variable: blog_description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kbm_category.tpl on line 27
+2015-04-04 13:17:15 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/kuler/common.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-04-04 13:23:42 - PHP Notice:  Error: Could not load model C:\xampp\htdocs\octemp2011/catalog/model/kuler/common.php! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 24
+2015-04-05 19:22:32 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:32 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:32 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:32 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:32 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:32 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:33 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:33 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:33 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:34 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:34 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:34 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:35 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:35 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:35 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:47 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:47 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:47 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:48 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:48 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:48 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:49 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:49 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:49 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:50 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:50 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:50 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:51 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:51 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:51 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:53 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:53 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:53 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:54 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:54 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:54 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:55 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:55 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:55 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:56 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:56 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:56 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:56 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:56 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:56 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:57 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:57 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:57 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:58 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:58 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:58 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:59 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:59 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:59 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:22:59 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:22:59 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:22:59 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:00 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:00 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:00 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:02 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:02 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:02 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:03 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:03 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:03 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:06 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:06 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:06 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:07 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:07 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:07 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:08 - PHP Notice:  Undefined variable: continue in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 144
+2015-04-05 19:23:09 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:09 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:09 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:10 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:10 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:10 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-05 19:23:11 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-05 19:23:11 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-05 19:23:11 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-06 5:13:00 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 5:13:28 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 5:25:56 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 5:27:58 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 5:46:02 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 5:47:00 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 5:47:31 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:14:30 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:15:21 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:23:53 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:24:31 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:26:51 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:27:12 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:28:27 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:29:11 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:40:28 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 6:41:05 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-06 13:09:58 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-07 6:27:02 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:27:02 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:27:02 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:34:47 - PHP Notice:  Undefined variable: compare in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:34:47 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:34:47 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\view\theme\default\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: data in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\controller\module\kuler_filter_result.php on line 257
+2015-04-07 6:36:07 - PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 33
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: header in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 1
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: breadcrumbs in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:07 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 8
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 9
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: content_top in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 16
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: heading_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 17
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: thumb in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 29
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 55
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: text_empty in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 142
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: button_continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: content_bottom in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 147
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 148
+2015-04-07 6:36:07 - PHP Notice:  Undefined variable: footer in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 150
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: data in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\controller\module\kuler_filter_result.php on line 257
+2015-04-07 6:36:09 - PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 33
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: header in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 1
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: breadcrumbs in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:09 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 8
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 9
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: content_top in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 16
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: heading_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 17
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: thumb in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 29
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 55
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: text_empty in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 142
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: button_continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: content_bottom in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 147
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 148
+2015-04-07 6:36:09 - PHP Notice:  Undefined variable: footer in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 150
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: data in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\controller\module\kuler_filter_result.php on line 257
+2015-04-07 6:36:16 - PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 33
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: header in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 1
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: breadcrumbs in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:16 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 8
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 9
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: content_top in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 16
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: heading_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 17
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: thumb in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 29
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 55
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: text_empty in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 142
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: button_continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: content_bottom in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 147
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 148
+2015-04-07 6:36:16 - PHP Notice:  Undefined variable: footer in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 150
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: data in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\controller\module\kuler_filter_result.php on line 257
+2015-04-07 6:36:45 - PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 33
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: header in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 1
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: breadcrumbs in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:45 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 8
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 9
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: content_top in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 16
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: heading_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 17
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: thumb in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 29
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 55
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: text_empty in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 142
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: button_continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: content_bottom in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 147
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 148
+2015-04-07 6:36:45 - PHP Notice:  Undefined variable: footer in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 150
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: data in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\controller\module\kuler_filter_result.php on line 257
+2015-04-07 6:36:46 - PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 33
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: header in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 1
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: breadcrumbs in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:46 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 8
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 9
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: content_top in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 16
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: heading_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 17
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: thumb in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 29
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 55
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: text_empty in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 142
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: button_continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: content_bottom in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 147
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 148
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: footer in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 150
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: data in E:\DCrepository\modules\v2-oc2011\src\kuler_filter\catalog\controller\module\kuler_filter_result.php on line 257
+2015-04-07 6:36:46 - PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 33
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: header in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 1
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: breadcrumbs in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:46 - PHP Warning:  Invalid argument supplied for foreach() in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 4
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 8
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 9
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_left in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 11
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: content_top in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 16
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: heading_title in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 17
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: thumb in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: description in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 18
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 29
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 55
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: categories in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: products in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 141
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: text_empty in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 142
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: button_continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: content_bottom in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 147
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: column_right in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 148
+2015-04-07 6:36:46 - PHP Notice:  Undefined variable: footer in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 150
+2015-04-07 6:38:06 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:38:06 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:38:06 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:40:02 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:40:02 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:40:02 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:41:49 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:41:49 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:41:49 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:43:51 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:43:51 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:43:51 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:48:55 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:48:55 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:48:55 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:48:55 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:48:55 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:48:55 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:48:56 - PHP Notice:  Undefined variable: continue in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 144
+2015-04-07 6:49:04 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:49:04 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:49:04 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:49:04 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:49:04 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:49:04 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 6:49:05 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 6:49:05 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 6:49:05 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 8:44:31 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 56
+2015-04-07 8:44:31 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 8:44:31 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 61
+2015-04-07 8:50:21 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:50:21 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:50:21 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:50:26 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:50:26 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:50:26 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:52:21 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:52:21 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:52:21 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:54:26 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:54:26 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:54:26 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:54:36 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:54:36 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:54:36 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:55:02 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:55:02 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:55:02 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:55:33 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:55:33 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:55:33 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:56:12 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:56:12 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:56:12 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:56:55 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:56:55 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:56:55 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:57:06 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:57:06 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:57:06 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:57:13 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:57:13 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:57:13 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:57:44 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:57:44 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:57:44 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:57:45 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:57:45 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:57:45 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:57:55 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:57:55 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:57:55 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:57:56 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:57:56 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:57:56 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:58:03 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:58:03 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:58:03 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:58:04 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:58:04 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:58:04 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:58:45 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:58:45 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:58:45 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:58:47 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:58:47 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:58:47 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:59:01 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:59:01 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:59:01 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:59:02 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:59:02 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:59:02 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:59:08 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:59:08 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:59:08 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:59:10 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:59:10 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:59:10 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 8:59:11 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 63
+2015-04-07 8:59:11 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 8:59:11 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 68
+2015-04-07 9:00:14 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 9:00:14 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:00:14 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 69
+2015-04-07 9:00:15 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 9:00:15 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:00:15 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 69
+2015-04-07 9:00:34 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 9:00:34 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:00:34 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 69
+2015-04-07 9:00:35 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 9:00:35 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:00:35 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 69
+2015-04-07 9:00:42 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 9:00:42 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:00:42 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 69
+2015-04-07 9:01:51 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 59
+2015-04-07 9:01:51 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 60
+2015-04-07 9:01:51 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 9:01:59 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 64
+2015-04-07 9:01:59 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:01:59 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 69
+2015-04-07 9:02:57 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:02:57 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:02:57 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:03:27 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:03:27 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:03:27 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:06:05 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:06:05 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:06:13 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:06:16 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:07:56 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:07:56 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:07:56 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:11:17 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:11:17 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:11:17 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:12:36 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:12:36 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:12:36 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:12:42 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:12:42 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:12:42 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:12:43 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:12:43 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:12:43 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:12:50 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:12:50 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:12:50 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:12:51 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:12:51 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:12:51 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:17:14 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:17:14 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:17:14 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:17:15 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:17:15 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:17:15 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:17:28 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:17:28 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:17:28 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:17:30 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:17:30 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:17:30 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:17:36 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:17:36 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:17:36 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:17:37 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-07 9:17:37 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-07 9:17:37 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-07 9:22:19 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-07 9:36:20 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-07 9:37:52 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-08 11:29:53 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-08 11:29:53 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-08 11:29:53 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-08 11:29:54 - PHP Notice:  Undefined variable: button_list in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 65
+2015-04-08 11:29:54 - PHP Notice:  Undefined variable: button_grid in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 66
+2015-04-08 11:29:54 - PHP Notice:  Undefined variable: compare in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_filter_result.tpl on line 70
+2015-04-08 12:21:05 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:05 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:06 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:06 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:07 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:07 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:08 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:08 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:09 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:10 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:11 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:21:11 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:00 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:01 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:02 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:02 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:03 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:03 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:04 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:04 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:05 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:05 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:06 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:22:06 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 125
+2015-04-08 12:27:52 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 2
+2015-04-08 12:27:52 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 2
+2015-04-08 12:27:52 - PHP Notice:  Undefined variable: setting in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 2
+2015-04-08 12:28:11 - PHP Notice:  Undefined index: css_class in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 2
+2015-04-08 12:28:12 - PHP Notice:  Undefined index: css_class in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 2
+2015-04-08 12:28:17 - PHP Notice:  Undefined index: css_class in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 2
+2015-04-08 12:28:17 - PHP Notice:  Undefined index: css_class in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 2
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 5
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 22
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 31
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 31
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 58
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 64
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 118
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 142
+2015-04-09 11:59:01 - PHP Notice:  Undefined index: type in E:\DCrepository\opencart-theme-tellus\v2\src\catalog\view\theme\tellus\template\module\kuler_showcase.tpl on line 171
+2015-04-14 9:08:15 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-14 9:46:35 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-14 9:46:55 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-14 9:47:45 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-14 9:48:02 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-16 9:59:21 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 9:59:37 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 10:04:01 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 10:04:08 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 10:09:53 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 10:45:27 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 11:03:02 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 11:33:44 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-16 11:46:55 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 4:45:33 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 4:45:56 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 4:50:00 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 4:55:48 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 4:56:30 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 5:15:02 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 5:32:21 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 5:32:29 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 5:37:23 - PHP Notice:  Undefined index: main_title in E:\DCrepository\modules\v2-oc2011\src\kuler_advanced_html\admin\view\template\module\kuler_advanced_html.tpl on line 81
+2015-04-17 10:25:10 - PHP Notice:  Error: Could not load template C:\xampp\htdocs\octemp2011/catalog/view/theme/default/template/common/_grid_product.tpl! in C:\xampp\htdocs\octemp2011\system\modification\system\engine\loader.php on line 45
+2015-04-17 11:36:17 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-17 11:36:45 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-17 11:37:19 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-17 11:37:58 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-17 11:38:38 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-04-17 11:39:12 - PHP Notice:  Undefined variable: placeholder in E:\DCrepository\modules\v2-oc2011\src\kuler_blog_manager\admin\view\template\module\kbm_article_form.tpl on line 169
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />UPDATE oc_currency SET value = '1.00000', date_modified = '2015-05-30 21:47:18' WHERE code = 'USD' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM `oc_language` in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 119
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 122
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_currency in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php:80) in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 45
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_weight_class wc LEFT JOIN oc_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_length_class mc LEFT JOIN oc_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_user WHERE user_id = '1' AND status = '1' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/user.php on line 15
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_extension WHERE `type` = 'openbay' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_event in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM `oc_language` in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 119
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 122
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_currency in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php:80) in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 45
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_weight_class wc LEFT JOIN oc_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_length_class mc LEFT JOIN oc_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_extension WHERE `type` = 'openbay' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_event in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM `oc_language` in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 119
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 122
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_currency in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php:80) in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 45
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_weight_class wc LEFT JOIN oc_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_length_class mc LEFT JOIN oc_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_extension WHERE `type` = 'openbay' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_event in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM `oc_language` in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 115
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 119
+2015-05-30 21:47:18 - PHP Notice:  Undefined index: en in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 122
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_currency in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 15
+2015-05-30 21:47:18 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php:80) in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/currency.php on line 45
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_weight_class wc LEFT JOIN oc_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/weight.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_length_class mc LEFT JOIN oc_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '0' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/length.php on line 11
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_extension WHERE `type` = 'openbay' in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/openbay.php on line 118
+2015-05-30 21:47:18 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_event in /Users/jegardner/github/jffgrdnr/trikes/www/system/library/db/mysqli.php on line 40
+2015-05-30 21:47:18 - PHP Notice:  Trying to get property of non-object in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 21:47:18 - PHP Warning:  Invalid argument supplied for foreach() in /Users/jegardner/github/jffgrdnr/trikes/www/admin/index.php on line 150
+2015-05-30 22:13:26 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:27:06 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:27:40 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:28:14 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:28:22 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:28:38 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:28:51 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:29:11 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-30 22:29:18 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-05-31 5:25:26 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-06-01 17:13:40 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81
+2015-06-01 17:13:51 - PHP Notice:  Undefined index: main_title in /Users/jegardner/github/jffgrdnr/trikes/www/admin/view/template/module/kuler_advanced_html.tpl on line 81

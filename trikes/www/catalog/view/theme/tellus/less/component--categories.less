@@ -1,0 +1,85 @@
+@import (reference) "_elements";
+
+/*--------------------------------------------
+BOX CATEGORY
+----------------------------------------------*/
+.box-category {
+  &__item {
+    position: relative;
+    ul {
+      display: none;
+      width: 100%;
+    }
+    > .toggle {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      float: right;
+      margin-right: 10px;
+      &:before {
+        content: '+';
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: bold;
+        display: inline-block;
+      }
+    }
+
+    &.active {
+      padding-bottom: 0 !important;
+      > a {
+        padding: 10px 0;
+      }
+      > .toggle {
+        &:before {
+          content: '-';
+          font-size: 20px;
+        }
+      }
+      ul {
+        display: block;
+      }
+    }
+  }
+}
+
+.box-category__sub {
+  margin-top: 10px;
+  &__item {
+    text-transform: none !important;
+    padding: 0 !important;
+    a {
+      display: inline-block;
+      padding: 7px 0;
+      &:before {
+        .fafont;
+        content: '\f061';
+        opacity: 0;
+        .transi;
+      }
+      &:hover:before {
+        opacity: 1;
+        margin: 0 13px;
+      }
+      &.active:hover:before {
+        opacity: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/*************** SKIN ****************/
+.box-category {
+  &__item {
+    &.active {
+      border-bottom: #dddddd !important;
+      > a {
+        color: @color1 !important;
+      }
+    }
+  }
+  &__sub {
+  }
+}

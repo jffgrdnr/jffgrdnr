@@ -1,0 +1,110 @@
+@import (reference) "_elements";
+/*--------------------------------
+ACCOUNT PAGE
+--------------------------------*/
+.account-already, .page-heading-description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin-top: 10px;
+}
+
+.login-description {
+  line-height: 2em;
+  margin-bottom: 30px;
+  &__new-customer {
+    margin-bottom: 40px;
+  }
+}
+
+.form-account {
+  .row {
+    padding-top: 15px;
+  }
+  &--login {
+    .row {
+      padding-top: 0;
+    }
+  }
+}
+
+.table-account {
+  margin: 40px 0;
+  td {
+    font-size: 13px;
+    vertical-align: middle !important;
+    border-top: none !important;
+    padding: 15px !important;
+  }
+  &__quantity {
+    .form-control {
+      width: 38px !important;
+      margin: 0 2px;
+    }
+    .btn {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &--info, &--danger, &--success {
+    &:after {
+      display: none;
+    }
+  }
+  .btn {
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    i:before {
+      line-height: 28px;
+    }
+  }
+  &__cart {
+    i:before {
+      content: '\e600';
+    }
+  }
+}
+
+/*********** COLOR ****************/
+.account-already {
+  color: #888888;
+}
+
+.forgotten-password {
+  color: @color1;
+}
+
+.form-account {
+  .row {
+    border-top: 1px solid #dddddd;
+    &:first-child {
+      border: none;
+    }
+  }
+  &--login {
+    .row {
+      border: none;
+    }
+  }
+}
+
+.table-account {
+  thead {
+    color: #222;
+    background-color: #f8f8f8;
+  }
+  td {
+    border-bottom: 1px solid #eee;
+  }
+  &__quantity {
+    .form-control {
+      background-color: #fff;
+      border-color: #ccc;
+      &:focus {
+        background-color: #fff;
+      }
+    }
+  }
+}

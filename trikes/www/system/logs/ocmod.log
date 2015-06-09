@@ -1,0 +1,320 @@
+2015-03-13 11:15:54 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------
+2015-05-30 18:55:59 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------
+2015-05-30 21:00:43 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------
+2015-05-30 21:11:59 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------
+2015-05-30 21:16:21 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------
+2015-05-30 22:34:28 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------
+2015-05-31 5:24:19 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------
+2015-06-01 18:55:01 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 58
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 37
+LINE: 54
+LINE: 65
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 21
+LINE: 27
+----------------------------------------------------------------
+MOD: KulerThemes CP
+FILE: system/library/response.php
+CODE: if ($this->output) {
+LINE: 58
+FILE: system/engine/front.php
+CODE: $this->registry = $registry;
+LINE: 7
+FILE: catalog/controller/module/kuler_cp.php
+CODE: $this->overrideResponse();
+LINE: 1975
+FILE: catalog/model/design/layout.php
+CODE: return $query->rows;
+LINE: 23
+FILE: admin/controller/design/layout.php
+CODE: $this->response->setOutput($this->load->view('design/layout_form.tpl', $data));
+LINE: 402
+FILE: admin/view/template/design/layout_form.tpl
+CODE: html += '    <option value="column_right"><?php echo $text_column_right; ?></option>';
+LINE: 185
+CODE: <option value="column_right"><?php echo $text_column_right; ?></option>
+LINE: 124
+----------------------------------------------------------------

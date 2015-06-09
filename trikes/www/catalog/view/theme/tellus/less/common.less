@@ -1,0 +1,412 @@
+@import (reference) "_elements";
+/*--------------------------------------------------------------
+Elements
+--------------------------------------------------------------*/
+body {
+  overflow :hidden;
+}
+
+a, a:focus, a:hover {
+  outline: none;
+  text-decoration: none;
+}
+
+[class*="col-"] {
+  font-size: 14px;
+  float: none;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 30px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  overflow: hidden;
+  .rounded(5px);
+  .transi;
+  &:hover {
+    background-color: transparent;
+  }
+  &:focus {
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+input[type="checkbox"] {
+  vertical-align: top;
+}
+
+.buttons {
+  padding-top: 30px;
+}
+
+.page-heading {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-bottom: 30px;
+}
+
+.box-heading {
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.row-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#content {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.main-content {
+  padding: 25px;
+  background-color: #fff;
+}
+
+.kl-main-content {
+  position: relative;
+  z-index: 0;
+  padding-top: 30px;
+}
+
+.kls-container {
+  z-index: 0;
+}
+
+.common-home {
+  #content {
+    margin-bottom: 0;
+  }
+}
+
+.navbar,
+.btn-group-lg > .btn,
+.dropdown-menu,
+.well,
+.list-group-item:first-child,
+.list-group-item:last-child,
+.breadcrumb,
+.panel-heading,
+.panel-group .panel,
+.alert {
+  .rounded(0);
+}
+
+.panel-group {
+  margin-top: 20px;
+}
+
+.dropdown-menu {
+  border: none;
+  top: 120%;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  .transi;
+}
+/* Fix conflict Dropdown with Bootstrap */
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  display: none;
+}
+
+.glyphicon {
+  .fafont;
+}
+.glyphicon-chevron-down:before {
+  content: '\f107';
+}
+.glyphicon-chevron-up:before {
+  content: '\f106';
+}
+
+.glyphicon-time:before {
+  content: '\f017';
+}
+
+.glyphicon-calendar:before {
+  content: '\f073';
+}
+
+
+.close {
+  .transi;
+}
+
+.open > .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  top: 100%;
+}
+
+/*** login popup ***/
+#login-popup {
+  position: relative;
+  max-width: 500px;
+  background: #ffffff;
+  font-size: 0;
+  margin: auto;
+  padding: 50px 15px 15px;
+  &.login-popup--2-cols {
+    max-width: 730px;
+    padding: 30px;
+  }
+}
+
+/*** breadcrumb ***/
+.breadcrumb {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 30px;
+  margin-bottom: 5px;
+  > li {
+    > a {
+      line-height: 15px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    + li:before {
+      .fafont;
+      content: "\f105";
+      font-size: 20px;
+      display: inline-block;
+      line-height: 20px;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
+  }
+}
+
+.form-horizontal .form-group {
+  font-size: 0;
+}
+
+legend {
+  &:extend(.row-heading all);
+}
+
+div.required .control-label:before {
+  content: '* ';
+  color: #F00;
+  font-weight: bold;
+}
+
+#notification {
+  font-size: 14px;
+}
+
+.alert {
+  padding: 20px;
+  position: relative;
+  button.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+}
+.common-home .alert-success {
+  margin: 0;
+  padding-right: 30px;
+  &:before {
+    display: inline-block;
+    .fafont;
+    content: '\f046';
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    margin-right: 10px;
+    float: left;
+  }
+  a {
+    border-bottom: 1px solid #111111;
+  }
+}
+
+// Collapse
+.panel-default {
+  >.panel-heading {
+    padding: 10px 15px;
+    font-weight: 600;
+  }
+  .panel-title {
+    font-size: 14px;
+  }
+  .panel-body {
+    padding: 30px 15px;
+  }
+}
+
+// Modal dialog
+.modal {
+  overflow: hidden;
+  background-color: rgba(11,11,11,0.6);
+  &-dialog {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    .translate(-50%, -50%) !important;
+  }
+  &-content {
+    border-radius: 0;
+    box-shadow: none;
+  }
+  &-header {
+    padding: 20px 15px 0;
+    border: none;
+  }
+  &-title {
+    &:extend(.page-heading);
+  }
+  &-body {
+    font-size: 13px;
+    padding: 20px 15px;
+  }
+  .close {
+    font-size: 40px;
+    margin-top: -15px;
+  }
+}
+
+// Site map
+.sitemap {
+  &__item {
+    &:extend(.row-heading all);
+  }
+  &-sub {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: normal;
+    &__item {
+      margin: 5px 20px;
+    }
+  }
+}
+
+// promotion
+.promotion {
+  padding: 50px 0;
+}
+
+// Search criteria
+.search-criteria {
+  [class*="col-"] {
+    vertical-align: middle;
+  }
+}
+
+/*************** COLOR ****************/
+.alert {
+  .box-shadow(0 1px 5px rgba(0, 0, 0, 0.46));
+}
+
+.box-heading{
+  color: #111111;
+  letter-spacing: 1px;
+}
+
+.row-heading {
+  color: @color1;
+}
+
+.page-heading {
+  color: @color1;
+  border-bottom: 5px solid rgba(239, 234, 220, 0.3);
+}
+
+.box-heading {
+
+}
+
+.breadcrumb {
+  background-color: #FFFFFF;
+  > li {
+    a {
+      color: #999999;
+    }
+    &:last-child {
+      > a {
+        color: @color1;
+      }
+    }
+    +li:before {
+      color: #999999;
+    }
+  }
+}
+
+.panel-default {
+  >.panel-heading {
+    color: #ffffff;
+    border-color: transparent;
+    background-color: @color1_2;
+  }
+}
+
+.error {
+  color: #f00;
+}
+
+.owl-carousel {
+  &.owl-theme {
+    .owl-dots {
+      .owl-dot {
+        span {
+          background-color: #ccc;
+        }
+        &.active, &:hover{
+          span {
+            background-color: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+.promotion {
+  background-color: @color1;
+}
+
+@media @lg {
+  .sep-double {
+    overflow: hidden;
+    text-align: center;
+    &:before,
+    &:after {
+      border-top: 1px solid #D7D7D0;
+      border-bottom: 1px solid #D7D7D0;
+      content: "";
+      display: inline-block;
+      height: 6px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+      margin-bottom: .15em;
+    }
+    &:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+    &:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+  }
+}

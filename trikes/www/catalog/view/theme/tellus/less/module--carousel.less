@@ -1,0 +1,114 @@
+@import (reference) "_elements";
+/*------------------------------------------------------
+CAROUSEL MODULE
+------------------------------------------------------*/
+.carousel-module {
+  margin: 0 -100%;
+  padding: 70px 100%;
+  position: relative;
+  border: 1px solid transparent;
+
+  .box-heading {
+    margin: 0 0 40px;
+    padding: 0;
+  }
+}
+
+#carousel0 .owl-controls {
+  margin-top: 40px;
+}
+.owl-carousel {
+  &.owl-theme {
+    .owl-controls {
+      .owl-nav {
+        [class*="owl-"] {
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          font-size: 0;
+          z-index: 1;
+          height: 28px;
+          width: 28px;
+          line-height: 24px;
+          background: transparent;
+          border: 2px solid transparent;
+          padding: 0;
+          margin: 0;
+          .transi;
+          .rounded(0);
+          .translate(0, -50%);
+          &:before {
+            font-family: 'FontAwesome';
+            font-size: 25px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+      .owl-prev {
+        left: 0;
+        &:before {
+          content: '\f104';
+        }
+      }
+      .owl-next {
+        right: 0;
+        &:before {
+          content: '\f105';
+        }
+      }
+    }
+  }
+}
+
+@media @xs-max {
+  .owl-nav {
+    display: none !important;
+  }
+}
+
+@media @lg {
+  .owl-carousel {
+      &.owl-theme {
+        &:hover {
+          .owl-controls {
+            .owl-nav {
+              [class*="owl-"] {
+                opacity: 1;
+                visibility: visible;
+              }
+              .owl-prev {
+                left: 5px;
+              }
+              .owl-next {
+                right: 5px;
+              }
+            }
+          }
+        }
+        .owl-controls {
+          .owl-nav {
+            [class*="owl-"] {
+              opacity: 0;
+              visibility: hidden;
+            }
+            .owl-prev {
+              left: -15px;
+            }
+            .owl-next {
+              right: -15px;
+            }
+          }
+        }
+      }
+    }
+
+  // Boxed layout
+  .boxed {
+    .carousel-module {
+      .owl-carousel {
+        max-width: 1200px;
+      }
+    }
+  }
+}

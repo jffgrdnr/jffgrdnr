@@ -1,0 +1,325 @@
+@import (reference) "_elements";
+
+/*-------------------------------------------------
+ADVANCED HTML
+-------------------------------------------------*/
+// Header Extra
+.header-extra {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 12px 25px;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  i {
+    margin-right: 10px;
+  }
+  h1 {
+    display: inline;
+    font-size: 19px;
+    color: #FFFFFF;
+  }
+  // Hover Contact Effect
+  @-webkit-keyframes spaceboots {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+  }
+  @keyframes spaceboots {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(2px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  &:hover i
+  {
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 0.8s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: spaceboots;
+    animation-duration: 0.8s;
+    transform-origin:50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  // End Hover Contact Effect
+}
+
+
+
+
+// Top banner
+.top-banner {
+  margin-bottom: 70px;
+  &__figure {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 320px;
+    &:before {
+      content: '';;
+      .absolute-center;
+      z-index: 1;
+    }
+    &:before {
+      background-color: rgba(17, 17, 17, .5);
+      .transi;
+    }
+  }
+  &__image {
+    .transi;
+    width: 100%;
+  }
+  &__figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    .translate(-50%, -50%);
+    width: 100%;
+    z-index: 9;
+  }
+
+  h2, p { color: #fff; }
+  h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 20px 25px;
+    letter-spacing: .2em;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #fff;
+    .transi;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+@media @sm {
+  .top-banner__figcaption__link {
+    font-size: 26px;
+  }
+}
+
+@media @md {
+  .top-banner__figcaption__link {
+    font-size: 36px;
+  }
+  .top-banner {
+    &__figure {
+      &:hover {
+        .top-banner__image {
+          .scale(1.15);
+        }
+        &:before {
+          background-color: rgba(17, 17, 17, .8);
+          -ms-transform: scale(1,0.5); /* IE 9 */
+          -webkit-transform: scale(1,0.5); /* Safari */
+          transform: scale(1,0.5); /* Standard syntax */
+        }
+        h2 {
+          background-color: #fff;
+          color: #111;
+        }
+      }
+    }
+    &:hover {
+      .top-banner__figure:not(:hover) {
+        &:before {
+          background-color: rgba(17, 17, 17, 0);
+        }
+        figcaption > * {display: none;}
+      }
+    }
+  }
+}
+
+// Middle banner
+.middle-banner {
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #EDEDE6;
+  > * {
+    position: relative;
+    z-index: 9;
+  }
+
+  &__title {
+    font-size: 28px;
+    color: #ffffff;
+    letter-spacing: 2px;
+  }
+
+  &__sep {
+    border: none;
+    width: 50px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, .4);
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, .8);
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    display: inline-block;
+    background-color: #fff;
+    padding: 15px;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  &:before {
+    content: '';
+    z-index: 1;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(118, 96, 81, .6);
+    .transi;
+    transition-duration: 1.2s;
+  }
+
+  &:hover {
+    &:before {
+      background-color: rgb(118, 98, 81);
+    }
+  }
+}
+
+// Bottom banner
+.bottom-banner {
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+  > * {
+    position: relative;
+    z-index: 9;
+  }
+
+  &__box {
+    padding: 3em 0;
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      border: 1px solid rgba(255, 255, 255, .3);
+      content: '';
+    }
+    &--blue {
+      background-color: #569AAF;
+    }
+    &--orange {
+      background-color: #CB6C32;
+    }
+    &--red {
+      background-color: #C54A42;
+    }
+
+    &:hover {
+      .bottom-banner__title {
+        letter-spacing: .1em;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 34px;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: .05em;
+    padding-top: 20px;;
+    margin-bottom: 5px;
+    .transi;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .5);
+    font-weight: 300;
+    letter-spacing: .1em;
+  }
+
+  &__button {
+    display: inline-block;
+    background-color: #fff;
+    padding: 15px;
+    font-size: 13px;
+    letter-spacing: .1em;
+  }
+}
+
+@media @md {
+  .bottom-banner__box {
+    margin-bottom: 0;
+  }
+}
+
+@media @lg {
+  .header-extra {
+    display: inline-block;
+    float: right;
+  }
+}
+
+
+// Call Us
+.callus {
+  text-align: start;
+  div[class*="callus__"] {
+    display: inline-block;
+    vertical-align: top;
+  }
+  &__icon {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    margin-right: 15px;
+    border: 2px solid #ffffff;
+    .rounded(5px);
+  }
+  &__text {
+    &__phone {
+      font-size: 22px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+    &__working-time {
+      color: #FFBFBF;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@import (reference) "_elements";
+/*--------------------------------
+CHECKOUT
+--------------------------------*/
+
+.table-cart-info {
+  margin: 40px 0;
+  thead {
+    td {
+      font-weight: 600;
+    }
+  }
+  td {
+    font-size: 14px;
+    font-weight: 600;
+    vertical-align: middle !important;
+    border-top: none !important;
+    padding: 20px 35px !important;
+  }
+  &__quantity {
+    .form-control {
+      width: 40px !important;
+      height: 40px !important;
+      text-align: center;
+      margin: 0 3px;
+      padding: 0;
+    }
+  }
+  .btn {
+    padding: 10px;
+  }
+}
+
+.cart-total {
+  text-align: end;
+  padding: 30px 0;
+  td {
+    text-align: end;
+    font-weight: 600;
+    border-top: none !important;
+  }
+}
+
+#input-voucher, #input-coupon {
+  padding: 14px 15px;
+}
+
+/// NORMAL PAGE CHECKOUT
+#normal-page-checkout {
+  .panel-body {
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  .form-buttons {
+    margin-top: 30px;
+  }
+}
+
+/// ONE PAGE CHECKOUT
+#one-page-checkout {
+  #login {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    &:before {
+      .fafont;
+      content: '\f071';
+      margin-right: 10px;
+      font-size: 18px;
+      color: #685A4B;
+    }
+  }
+
+  #order-total-content {
+    strong {
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  #coupon-container, #voucher-container {
+    font-size: 0;
+    margin-top: 15px;
+    label {
+      line-height: 2.5em;
+    }
+    input[type="text"] {
+      padding: 10px 15px;
+    }
+  }
+}
+
+#address-form-container, #payment-form {
+  position: relative;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 30px 15px 10px;
+  margin: auto;
+}
+
+/***************** SKIN *****************/
+.table-cart-info {
+  thead {
+    td {
+      border-top: 1px solid #eeeeee !important;
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+  td {
+    color: #777777;
+    border-bottom: 1px solid #eee;
+    &:first-child {
+      border-left: 1px solid #eeeeee;
+    }
+    &:last-child {
+      border-right: 1px solid #eeeeee;
+    }
+  }
+  &__name {
+    > a {
+      color: @color1 !important;
+    }
+  }
+  .btn {
+    background-color: transparent;
+    border: none;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.cart-total {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  td {
+    strong {
+      color: #777777;
+    }
+  }
+}
+
+#one-page-checkout {
+  #login {
+    color: @color1
+  }
+}

@@ -1,0 +1,60 @@
+@import (reference) "_elements";
+
+/*--------------------------------------------------------------
+Quickview block
+--------------------------------------------------------------*/
+.quickview {
+  overflow-y: hidden;
+  body {
+    background: #ffffff;
+  }
+  #content {
+    margin: 0;
+    height: 500px;
+    padding: 30px;
+    overflow: scroll;
+  }
+  .image-additional {
+    margin-top: 20px;
+  }
+  .product-info {
+    .product-price {
+      &--old {
+        display: inline-block;
+      }
+    }
+    .product-options {
+      margin: 30px 0 10px;
+    }
+    .product-review {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .product-description {
+    margin-top: 15px;
+  }
+}
+
+/******** Skin **************/
+.product-detail {
+  .btn {
+    color: #ffffff;
+    border-color: @color1;
+    background-color: @color1;
+    &:hover {
+      color: #ffffff;
+      border-color: @color1;
+      background-color: @color1;
+    }
+  }
+}
+
+.quickview {
+  .product-info {
+    .product-price {
+      color: @color1_2;
+    }
+  }
+}
