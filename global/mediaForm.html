@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Modals | Ancestry.com® Standards</title>
+    <!-- Head content from header section -->
+    <!--[if IE 7]><script>document.documentElement.className += " ie ie7";</script><![endif]-->
+    <!--[if IE 8]><script>document.documentElement.className += " ie ie8";</script><![endif]-->
+    <!--[if IE 9]><script>document.documentElement.className += " ie ie9";</script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=" " />
+    <link rel="canonical" href="" />
+    <script>
+    var isTouchDevice = 'ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch);
+    document.documentElement.className += (isTouchDevice ? ' touch' : ' noTouch');
+    </script>
+    <link href="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&x/css/v1/activity-indicator.css&x/css/v2/alert.css&x/css/v1/autocomplete.css&x/css/v1/button.css&x/css/v1/callout.css&x/css/v1/card.css&x/css/v2/carousel.css&x/css/v1/container.css&x/css/v1/form.css&x/css/v1/grid.css&x/css/v1/icon.css&x/css/v3/modal.css&x/css/v1/template.css" type="text/css" rel="stylesheet" />
+    <!--[if lte IE 9]><script src="http://c.mfcreative.com/js/html5shiv.js"></script><![endif]-->
+    <style>
+    .con { width:500px; margin:0 auto; }
+    </style>
+</head>
+<body>
+
+	<div class="con topSpacingBlock">
+		<form action="#" class="form" enctype="multipart/form-data" id="editMediaForm" method="post">
+	        <fieldset class="editMediaTitle">
+	        	<div class="ancGrid">
+	        		<div class="ancCol ancColRow w100">
+			            <legend data-mediatranslate="title">Title</legend>
+			            <div class="inputIcon labelIconOnly">
+			                <label class="icon iconImage" for="editMediaTitleInput"></label>
+			                <input id="editMediaTitleInput" name="editMediaTitleInput" placeholder="Title" data-callout="Please enter a title" class="calloutTrigger" type="text" data-ng-model="model.title">
+			            </div>
+			        </div>
+			    </div>
+	        </fieldset>
+	        <fieldset class="editMediaDetails topSpacing">
+	        	<div class="ancGrid">
+	        		<div class="ancCol ancColRow w100">
+			            <legend data-mediatranslate="details">Details</legend>
+			            <select class="editMediaMediaTypeSelect" id="editMediaMediaTypeSelect" name="editMediaMediaTypeSelect" data-ng-show="showImageTypeSelect" data-ng-model="model.mediaCategory">
+			                <option value="" disabled="">What kind of media is this?</option>
+			                <option value="portrait">Portrait</option>
+			                <option value="place">Place</option>
+			                <option value="headstone">Headstone</option>
+			                <option value="document">Document / Certificate</option>
+			                <option value="other">Other</option>
+			            </select>
+		            </div>
+	            </div>
+
+            	<div class="defaultEditFields ancGrid">
+            		<div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label class="icon iconCalendar" for="editMediaDateInput"></label>
+		                    <input class="editMediaDateInputs" id="editMediaDateInput" name="editMediaDataInput" placeholder="00 MON 0000" type="text" maxlength="50" data-ng-model="model.date">
+		                </div>
+		            </div>
+		            <div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label class="icon iconMap" for="editMediaPlaceInput"></label>
+		                    <input class="editMediaPlaceInput" id="editMediaPlaceInput" name="editMediaPlaceInput" placeholder="Place" type="text" maxlength="150" data-ng-model="model.location">
+		                </div>
+		            </div>
+                </div>
+
+	            <div class="optionalEditField headstoneEditFields ancGrid" data-ng-show="model.mediaCategory==='headstone'">
+            		<div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label for="editMediaCemeteryName" class="icon iconMap" maxlength="20"></label>
+		                    <input type="text" id="editMediaCemeteryName" name="editMediaCemeteryName" placeholder="Cemetery name" data-ng-model="model.metadata.cemetery">
+		                </div>
+	                </div>
+	                <div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label for="editMediaHeadstoneName" class="icon iconDeath"></label>
+		                    <input type="text" id="editMediaHeadstoneName" name="editMediaHeadstoneName" placeholder="Name on headstone" data-ng-model="model.metadata.headstone.pname" maxlength="150">
+		                </div>
+		            </div>
+		            <div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label for="editMediaBirthYear" class="icon iconCalendar"></label>
+		                    <input type="text" id="editMediaBirthYear" name="editMediaBirthYear" placeholder="Birth year" data-ng-model="model.metadata.headstone.bdate" maxlength="30">
+		                </div>
+		            </div>
+		            <div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label for="editMediaBirthPlace" class="icon iconMap"></label>
+		                    <input type="text" id="editMediaBirthPlace" name="editMediaBirthPlace" placeholder="Birth place" data-ng-model="model.metadata.headstone.bplace" maxlength="30">
+		                </div>
+		            </div>
+		            <div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label for="editMediaDeathYear" class="icon iconCalendar"></label>
+		                    <input type="text" id="editMediaDeathYear" name="editMediaDeathYear" placeholder="Death year" data-ng-model="model.metadata.headstone.ddate" maxlength="30">
+		                </div>
+		            </div>
+		            <div class="ancCol ancColRow w100">
+		                <div class="inputIcon labelIconOnly">
+		                    <label for="editMediaDeathPlace" class="icon iconMap"></label>
+		                    <input type="text" id="editMediaDeathPlace" name="editMediaDeathPlace" placeholder="Death place" data-ng-model="model.metadata.headstone.dplace" maxlength="100">
+		                </div>
+		            </div>
+	            </div>
+	        </fieldset>
+	        <input class="ancBtn orange" id="submitBtn" type="submit" value="Search">
+        </form>
+    </div>
+
+<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&x/js/v1/autocomplete.js&x/js/v1/callout.js&x/js/v2/carousel.js&x/js/v2/paging.js&x/js/v2/tab.js&x/js/standards/prism.js&x/js/v3/modal.js&x/js/v1/form.js"></script>
+<script>
+$(function() {
+	$("#editMediaForm").validator({
+		"fields": {
+			"editMediaTitleInput": { "required": true, "errorLocation": "callout" }
+		}
+	});
+});
+</script>
+</body>
+</html>
