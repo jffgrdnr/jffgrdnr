@@ -10,4 +10,9 @@
 				mobileMenu.addClass("active");	
 			}
 	})
+	$(".fa-chevron-down").click(function(){
+		$('html, body').animate({
+        	scrollTop: $("#whyGrove").offset().top
+    	}, 1000);
+	})
 })($);

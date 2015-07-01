@@ -64,12 +64,13 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 #homeAction #homeBanner h1 { margin-bottom:5px; text-shadow:1px 1px 1px #000; }
 #homeAction #homeBanner h3 { margin-bottom:15px; text-shadow:1px 1px 1px #555; }
 #homeAction #homeBanner a.btn { width:250px; }
+#homeAction #homeBanner .fa-chevron-down { bottom:-33%; color:#fff; cursor:pointer; font-size:55px; margin-left:-25px; position:absolute; text-align:center; text-shadow:1px 1px 1px #000; }
 
 #whyGrove .pageHeader { margin:-20px 0 35px 0; text-align:center; }
 #whyGrove .movie { margin:0 auto; width:800px; }
 #whyGrove .icons { margin:0 auto; width:80%; }
-#whyGrove .icons h3 { float:left; margin-bottom:20px; padding:0 10px; text-align:center; width:25%; }
-#whyGrove .icons h3 img { display:block; margin:0 auto; }
+#whyGrove .icons h4 { float:left; margin-bottom:20px; padding:0 10px; text-align:center; width:25%; }
+#whyGrove .icons h4 img { display:block; height:65px; margin:0 auto; }
 
 #savingPoints .point { margin:25px 0; width:100%; }
 #savingPoints .point h3 { color:#43b18e; }
@@ -97,6 +98,7 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 
 /* ------------  Testimonials Page  -----------------*/
 #testimonials .card { margin:15px 0; }
+#testimonials .card em { font-weight:bold; }
 #testimonials .card .author { color:#999; font-style:italic; text-align:right; }
 #testimonials .card .quotes { color:#F16522; font:600 32px/18px 'Sail'; left:-3px; position:relative; top:10px; }
 #testimonials .facility header { background:#db5c1f; border-radius:0 9px 9px 0; display:inline-block; color:#fff; margin-top:45px; padding:8px 25px; position:relative; }
@@ -164,14 +166,14 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 /*-- Extra Large Screens ----*/
 @media (min-width: 1441px) {
 	#homeAction { min-height:1400px; }
-	#homeAction #homeBanner  { bottom:45%; }
+	#homeAction #homeBanner { bottom:30%; }
 }
 
 /*-- Large Screens ----*/
 @media (min-width: 1280px) and (max-width: 1440px) {
 	#homeAction { min-height:800px; }
 	.homeSection { min-height:400px; }
-	#homeAction #homeBanner  { bottom:30%; }
+	#homeAction #homeBanner  { bottom:25%; }
 }
 
 /*-- Laptop Screens ----*/
@@ -182,6 +184,7 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 
 @media (max-width: 1024px) {
 	#homeAction #homeBanner  { bottom:25%; }
+	#homeAction { background-size:contain; }
 }
 
 @media (max-width: 960px) {
@@ -190,7 +193,7 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 	#menuHeader #logo img { max-width:100%; }
 	#menuHeader #logo .phone { text-align:center; }
 	#menuHeader #login { width:60%; }
-	#homeAction { background-position:0 150px; background-size:100%; }
+	#homeAction { background-position:0 150px; }
 	#homeAction #homeBanner  { bottom:45%; }
 	.contentSection { padding:55px 15px; }
 	#about .main, #about aside { width:100%; }
@@ -212,7 +215,6 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 	#mobileMenu.active .fa-times { display:inline; }
 	#mobileMenu li { width:85%; }
 	#mobileMenu li a { display:block; padding:10px 20px; }
-	#homeAction { background-size:contain; border:none; }
 	#homeAction #homeBanner  { bottom:30%; }
 	.blogCard { width:100%; }
 	#contact .slideWrapper { width:100%%; }
