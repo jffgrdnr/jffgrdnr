@@ -40,4 +40,16 @@ $(document).ready(function(){
 	$(".closeAdd").click(function(){
 		$.modal.close();
 	})
+
+
+	$(".father .saveBtn").on("click", function(){
+		var data = data;
+		$.ajax({
+		  type: "POST",
+		  url: url,
+		  data: data,
+		  success: success,
+		  dataType: json
+		});
+	})
 });

@@ -18,15 +18,15 @@
 /*------------ Add Parents / Add Grandparents -------------*/
 .generation { margin-bottom:40px; }
 .generation:first-child .ancCol { position:relative; }
-.generation:first-child .ancCol::before { bottom:-22px; height:2px; width:29%; }
+/*.generation:first-child .ancCol::before { bottom:-22px; height:2px; width:29%; }
 .generation:first-child .ancCol:first-child::before { left:53%; }
 .generation:first-child .ancCol:last-child::before { right:47%; }
-.generation:first-child .card:first-child::before { height:25px; left:107%; bottom:-28px; }
+.generation:first-child .card:first-child::before { height:25px; left:107%; bottom:-28px; }*/
 .generation .card { position:relative; }
-.generation .ancCol::before, .generation .card::before { background-color:#ccc; content:" "; position:absolute; }
+/*.generation .ancCol::before, .generation .card::before { background-color:#ccc; content:" "; position:absolute; }
 .generation .card::before { width:2px; }
 .generation ~ .generation .card::before { height:25px; left:50%; top:-25px; width:2px; }
-.generation ~ .generation ~ .generation .card::before { height:50px; left:50%; top:-50px; width:2px; }
+.generation ~ .generation ~ .generation .card::before { height:50px; left:50%; top:-50px; width:2px; }*/
 .card.cardGuide { padding:0; }
 .cardEmpty.cardGuide { border:2px dashed #bebbb3; }
 .cardEmpty.cardGuide .cardEmptyAction { margin:40px 0; }
