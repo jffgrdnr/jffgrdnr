@@ -19,7 +19,7 @@
 			<h1>How does Ancestry work?</h1>
 		</header>
 		<section class="cards ancGrid ancGridPadded">
-			<div class="ancCol w25 full480 half768 ancColRow768">
+			<div class="ancCol w25 full320 half768 ancColRow768">
 				<div class="card confirm">
 					<h1>Step 1</h1>
 					<h2>Make a tree.</h2>
@@ -29,7 +29,7 @@
 					<p>Go back to your<br/> grandparents if you can.</p>
 				</div>
 			</div>
-			<div class="ancCol w25 full480 half768">
+			<div class="ancCol w25 full320 half768">
 				<div class="card confirm">
 					<h1>Step 2</h1>
 					<h2>Get a hint.</h2>
@@ -39,7 +39,7 @@
 					<p>Look for a leaf&mdash;that's a<br/> hint for a record about your family.</p>
 				</div>
 			</div>
-			<div class="ancCol w25 full480 half768 ancColRow768">
+			<div class="ancCol w25 full320 half768 ancColRow768">
 				<div class="card confirm">
 					<h1>Step 3</h1>
 					<h2>View a record.</h2>
@@ -49,7 +49,7 @@
 					<p>Explore the record to get<br/> a fuller picture of your ancestor.</p>
 				</div>
 			</div>
-			<div class="ancCol w25 full480 half768">
+			<div class="ancCol w25 full320 half768">
 				<div class="card confirm">
 					<h1>Step 4</h1>
 					<h2>Save details.</h2>
@@ -61,10 +61,25 @@
 			</div>
 		</section>
 		<footer>
-			<p>Got it? Now let's start that tree.</h3>
-			<a href="" class="ancBtn green lrg">Begin</a>
+			<p>Got it? Now let's start that tree.</p>
+			<button id="beginTreeBuilder" type="button" class="ancBtn green lrg">Begin</button>
 		</footer>
 	</div>
+	<section id="switchModal" class="modal">
+		<h1>Help us make a better Ancestry</h1>
+		<p>We're testing a new feature to help you get started on Ancestry. Would you like to use this beta feature?</p>
+		<footer>
+			<div class="ancGrid">
+				<div class="ancCol w50">
+					<a href="" class="ancBtn green lrg">No, Thanks</a>
+				</div>
+				<div class="ancCol w50">
+					<a href="" class="ancBtn green lrg">Sure, I'll try it</a>
+				</div>
+			</div>
+		</footer>
+	</section>
 	<script src="http://canary.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&amp;x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v1/callout.js&amp;x/js/v2/carousel.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/paging.js&amp;x/js/v2/tab.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>

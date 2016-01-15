@@ -1,0 +1,211 @@
+.group
+{
+	float:right;
+}
+
+.table
+{
+	float:left;
+}
+
+.couch
+{
+	float:left;
+}
+
+p
+{
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	float:left;
+	display:inline-block!important;
+	width:700px!important;
+	padding-left:100px;
+	padding-right:200px;
+	text-align:left;
+}
+h1
+{
+	display:inline-block!important;
+	vertical-align:left!important;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+#header img
+{
+	width:750px;
+	padding-bottom:10px;
+}
+
+h1{
+	color:#af1d21;
+	float:left;
+	clear:right;
+	width:1200px!important;
+}
+
+nav
+{
+	font-family: 'Helvetica Neue', Helvetica, sans-serif,Arial;
+}
+
+nav ul
+{
+	background-color:#af1d21;
+	list-style-type: none;
+	text-align: center;
+	padding-left:0px;
+	font-weight: normal!important;
+
+}
+
+nav a:link, nav a:visited, nav a:hover, nav a:active
+{
+	color: #fff;
+}
+
+nav > ul > li{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+nav > ul > li
+{
+	text:#fff!important;
+	text-decoration: none;
+	height: 30px;
+}
+
+.headerDivider
+{
+	border-left:2px solid white;
+	height:50px!important;
+	padding:0px;
+	margin:0px;
+	width:2px;
+	position:relative;
+	display:inline-block;
+	width: 0px;
+	padding-bottom:0px;
+}
+
+nav > ul > li > a:hover
+{
+	background-color;#BA1E2B;
+	color: #fff;
+}
+
+nav > ul > li > a
+{
+	padding-left: 5px!important;
+	padding-right: 3px!important;
+	margin: auto auto;
+}
+
+body
+{
+	text-align: left;
+	background-color:#F2F2F2;
+	padding-bottom:200px;
+	width:1148px;
+	margin: auto auto;
+}
+
+#wrapper
+{
+	width:1048px;
+	margin:0 auto;
+}
+
+#content
+{
+	width: 100%;
+	float: left;
+}
+ul.nav
+{
+	height:50px;
+}
+
+#sidebar
+{
+	width: 23%;
+ 	float: right;
+}
+
+#delimiter
+{
+	clear: both;
+}
+#footer 
+{
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+ 	margin-top:30px;
+ 	border-top:	5px #af1d21 solid;
+ 	color:#af1d21;
+	font-weight: bold;
+	height:70px;
+}
+
+#body a
+{
+	color: #af1d21;
+	text-decoration: none;
+}
+
+#body h1,h2,h3,h4
+{
+	color: #af1d21;
+}
+
+#footer a
+{
+	color: #af1d21;
+	text-decoration: none;
+}
+
+#social
+{
+	padding-top:3px;
+	float:right;
+	display:inline;
+}
+
+#address > p
+{
+	float:left;
+	display:inline;
+	padding-left:0px!important;
+}
+
+.title
+{
+	font-size: 11pt; font-family: verdana; font-weight: bold;
+}
+a
+{
+	color:red;
+
+}
+ul
+{
+	display:inline-block;
+}
+
+ul.navigation > li
+{
+display:inline-block;
+float:left;
+padding-left:1px;
+
+}
+#header
+{
+text-align:center;
+}
+.carousel-content 
+{
+    color:black;
+    display:flex;
+    align-items:center;
+}

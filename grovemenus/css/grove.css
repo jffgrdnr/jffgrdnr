@@ -24,6 +24,7 @@ a.btn { border-radius:3px; color:#fff; display:inline-block; font:18px/24px 'Abe
 .btn.green:hover { background:#42b490; box-shadow:1px 5px 1px #4bcaa2; }
 .card { background:#fff; border-radius:4px; box-shadow:1px 4px 10px #ccc; padding:25px; }
 .pageHeader { margin:25px 0; padding:8px; }
+.pageHeader.center { text-align:center; }
 .pageHeader u { border-bottom:1px solid #F16522; display:inline-block; padding-bottom:8px; text-decoration:none; }
 .contentSection { border-top:1px solid #ddd; min-height:450px; padding:75px 15px; }
 .contentSection.white { background:#fff; }
@@ -68,7 +69,7 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 
 #whyGrove .pageHeader { margin:-20px 0 35px 0; text-align:center; }
 #whyGrove .movie { margin:0 auto; width:800px; }
-#whyGrove .icons { margin:0 auto; width:80%; }
+#whyGrove .icons { margin:0 auto; max-width:768px; width:100%; }
 #whyGrove .icons h4 { float:left; margin-bottom:20px; padding:0 10px; text-align:center; width:25%; }
 #whyGrove .icons h4 img { display:block; height:65px; margin:0 auto; }
 
@@ -78,11 +79,30 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 #savingPoints .point:nth-child(odd) .img { float:left; margin:0 15px 15px 0; }
 #savingPoints .point:nth-child(even) .img { float:right; margin:0 0px 15px 15px; }
 
+/* --------------- Landing Page -------------------*/
+
+#healthyHappy .img { position:relative; }
+#healthyHappy .message { background:rgba(39,168,125,0.6); border-bottom:1px solid #43b18e; border-left:5px solid rgba(39,168,125,0.6); border-top:1px solid #43b18e; bottom:40px; color:#fff; left:-5px; padding:35px; position:absolute; text-align:center; width:70%; }
+#healthyHappy .message h1 { margin-bottom:5px; text-shadow:1px 1px 1px #000; }
+#healthyHappy .message p { margin-bottom:15px; text-align:left; text-shadow:1px 1px 1px #333; }
+
+#groveDifference .img { float:left; width:40%; }
+#groveDifference .copy { background:rgba(39,168,125,0.6); border-bottom:1px solid #43b18e; border-top:1px solid #43b18e; bottom:40px; color:#fff; float:right; padding:36px 30px; width:55%; }
+#groveDifference .copy img { display:none; }
+#groveDifference .copy strong { color:#777; font-weight:500; }
+#groveDifference .list { margin-bottom:20px; }
+#groveDifference .list li { list-style-type:disc; }
+
+#nutritionConcerns .copy { width:50%; }
+#nutritionConcerns .message { background:rgba(241,101,34,0.8); border-bottom:1px solid #db5c1f; border-top:1px solid #db5c1f; bottom:40px; color:#fff; float:left; min-height:383px; padding:36px 30px; }
+#nutritionConcerns .message h2 { margin-bottom:25px; }
+#nutritionConcerns .chart { float:right; width:45%; }
+
 /* ------------  Products Page  -----------------*/
 #products .card { margin-bottom:20px; }
 #products .card img { display:block; margin:0 auto; }
-#products header { background:#43b18e; border-radius:0 9px 9px 0; display:inline-block; color:#fff; margin:25px 0; padding:8px 25px; position:relative; }
-#products header:before { border-left:25px solid transparent; border-right:25px solid transparent; border-bottom:44px solid #43b18e; content:" "; height:0; position:absolute; left:-26px; top:0; width:0; }
+#products header { background:#43b18e; border-left:1px solid #3a9a7b; border-radius:0 9px 9px 0; display:inline-block; color:#fff; margin:25px 0; padding:8px 25px; position:relative; }
+#products header:before { border-left:26px solid transparent; border-right:0px solid transparent; border-bottom:48px solid #43b18e; content:" "; height:0; position:absolute; left:-27px; top:0; width:0; }
 
 
 /* ----------------  Blog  -------------------*/
@@ -101,8 +121,8 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 #testimonials .card em { font-weight:bold; }
 #testimonials .card .author { color:#999; font-style:italic; text-align:right; }
 #testimonials .card .quotes { color:#F16522; font:600 32px/18px 'Sail'; left:-3px; position:relative; top:10px; }
-#testimonials .facility header { background:#db5c1f; border-radius:0 9px 9px 0; display:inline-block; color:#fff; margin-top:45px; padding:8px 25px; position:relative; }
-#testimonials .facility header:before { border-left:25px solid transparent; border-right:25px solid transparent; border-bottom:44px solid #db5c1f; content:" "; height:0; position:absolute; left:-26px; top:0; width:0; }
+#testimonials .facility header { background:#db5c1f; border-left:1px solid #c4531d; border-radius:0 9px 9px 0; display:inline-block; color:#fff; margin-top:45px; padding:8px 25px; position:relative; }
+#testimonials .facility header:before { border-left:26px solid transparent; border-right:0px solid transparent; border-bottom:48px solid #db5c1f; content:" "; height:0; position:absolute; left:-27px; top:0; width:0; }
 #testimonials .testimony .fa { color:#ddd; float:left; font-size:55px; margin-right:25px; }
 
 /* ------------  Contact Page  -----------------*/
@@ -176,6 +196,10 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 	#homeAction #homeBanner  { bottom:25%; }
 }
 
+@media (min-width:768px) {
+	#groveDifference .list ul { margin-left:20px; }
+}
+
 /*-- Laptop Screens ----*/
 @media (max-width: 1280px) {
 	.homeSection { background-size:cover; background-position:0 70px; }
@@ -217,7 +241,14 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 	#mobileMenu li a { display:block; padding:10px 20px; }
 	#homeAction #homeBanner  { bottom:30%; }
 	.blogCard { width:100%; }
-	#contact .slideWrapper { width:100%%; }
+	#contact .slideWrapper { width:100%; }
+	#signup .estimates .card { width:97%; }
+	#healthyHappy .message { bottom:100px; left:0; position:relative; width:100%; }
+	#groveDifference .img { display:none; }
+	#groveDifference .copy { width:100% }
+	#groveDifference .copy img { display:block; float:left; margin-right:20px; max-width:40%; }
+	#groveDifference .copy ul { float:left; width:55%; }
+	#groveDifference .copy .list li { margin-left:20px; }
 	.footerBump, #mainFooter { height:585px; }
 	#mainFooter .lists { width:100%; }
 	#mainFooter .lists .list { border:none; width:100%; }
@@ -230,6 +261,7 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 	#mainFooter #footerSocial { float:left; text-align:left; width:100%; }
 	#demo .demoForm { margin:30px auto; text-align:left; width:365px; }
 	#demo .demoForm input { padding:15px 5px; }
+	#whyGrove .icons h4 { width:50%; }
 	#whyGrove .icons h3 { width:100%; }
 }
 
@@ -243,6 +275,9 @@ a.btn.demo { display:block; margin:50px auto; width:350px; }
 	#homeAction #homeBanner { bottom:10%; padding:15px 0; }
 	#homeAction #homeBanner h1 { font-size:24px; line-height:30px; }
 	#homeAction #homeBanner h3 { font-size:18px; line-height:24px; }
+	#groveDifference .copy img { margin-right:30px; }
+	#groveDifference .copy ul { float:none; width:100%; }
+	#groveDifference .message { width:100%; }
 	.contentSection { padding:50px 15px; }
 	.pageHeader { margin:0; }
 	#loginSection { margin:15px auto 0; text-align:center; width:95%; }

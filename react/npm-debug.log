@@ -1,0 +1,75 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'ancestry-modal',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 warn package.json react@1.0.0 No repository field.
+5 warn package.json react@1.0.0 No README data
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'ancestry-modal', null ]
+8 verbose cache add name=undefined spec="ancestry-modal" args=["ancestry-modal",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'ancestry-modal',
+9 verbose parsed url   path: 'ancestry-modal',
+9 verbose parsed url   href: 'ancestry-modal' }
+10 silly lockFile c27764bd-ancestry-modal ancestry-modal
+11 verbose lock ancestry-modal /Users/jegardner/.npm/c27764bd-ancestry-modal.lock
+12 silly lockFile c27764bd-ancestry-modal ancestry-modal
+13 silly lockFile c27764bd-ancestry-modal ancestry-modal
+14 verbose addNamed [ 'ancestry-modal', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile 327e3c23-ancestry-modal ancestry-modal@
+17 verbose lock ancestry-modal@ /Users/jegardner/.npm/327e3c23-ancestry-modal.lock
+18 silly addNameRange { name: 'ancestry-modal', range: '*', hasData: false }
+19 verbose request where is /artifactory/api/npm/npm/ancestry-modal
+20 verbose request registry http://artifactory.mfsbe.com/
+21 verbose request id ecdac230f764562c
+22 verbose url raw /artifactory/api/npm/npm/ancestry-modal
+23 verbose url resolving [ 'http://artifactory.mfsbe.com/',
+23 verbose url resolving   './artifactory/api/npm/npm/ancestry-modal' ]
+24 verbose url resolved http://artifactory.mfsbe.com/artifactory/api/npm/npm/ancestry-modal
+25 verbose request where is http://artifactory.mfsbe.com/artifactory/api/npm/npm/ancestry-modal
+26 info trying registry request attempt 1 at 16:32:37
+27 http GET http://artifactory.mfsbe.com/artifactory/api/npm/npm/ancestry-modal
+28 http 404 http://artifactory.mfsbe.com/artifactory/api/npm/npm/ancestry-modal
+29 verbose headers { server: 'nginx/1.7.6',
+29 verbose headers   date: 'Mon, 04 Jan 2016 23:32:38 GMT',
+29 verbose headers   'content-type': 'application/json',
+29 verbose headers   'transfer-encoding': 'chunked',
+29 verbose headers   connection: 'keep-alive',
+29 verbose headers   'x-artifactory-id': '6a5f7db3868057bd:4c355b2f:14f25863a73:-8000' }
+30 silly registry.get cb [ 404,
+30 silly registry.get   { server: 'nginx/1.7.6',
+30 silly registry.get     date: 'Mon, 04 Jan 2016 23:32:38 GMT',
+30 silly registry.get     'content-type': 'application/json',
+30 silly registry.get     'transfer-encoding': 'chunked',
+30 silly registry.get     connection: 'keep-alive',
+30 silly registry.get     'x-artifactory-id': '6a5f7db3868057bd:4c355b2f:14f25863a73:-8000' } ]
+31 silly lockFile 327e3c23-ancestry-modal ancestry-modal@
+32 silly lockFile 327e3c23-ancestry-modal ancestry-modal@
+33 error 404 404 Not Found: artifactory
+33 error 404
+33 error 404 'artifactory' is not in the npm registry.
+33 error 404 You should bug the author to publish it
+33 error 404 It was specified as a dependency of 'react'
+33 error 404
+33 error 404 Note that you can also install from a
+33 error 404 tarball, folder, or http url, or git url.
+34 error System Darwin 14.5.0
+35 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "ancestry-modal" "--save"
+36 error cwd /Users/jegardner/github/jffgrdnr/react
+37 error node -v v0.10.33
+38 error npm -v 1.4.28
+39 error code E404
+40 verbose exit [ 1, true ]

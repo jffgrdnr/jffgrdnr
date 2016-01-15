@@ -38,18 +38,40 @@ echo '' . $pagename;?>">
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div class="wrapper">
+<div class="wrapper godaddy">
     <nav id="mobileNav">
         <i class="fa fa-reorder" id="mobileTrigger"> <span>Menu</span></i>
         <ul>
             <li data-id="about-us">
                 <a href="<?php get_site_url(); ?>/about-us/">About Us</a>
             </li>
-            <li data-id="areas-of-practice">
-                <a href="<?php get_site_url(); ?>/areas-of-practice/">Areas of Practice</a>
+            <li data-id="areas-of-practice" class="parent">
+                <a href="javascript:void(0);" class="parent">Areas of Practice</a>
+                <ul class="extend">
+                    <li>
+                        <a href="<?php get_site_url(); ?>/catastrophic-injury/">Catastrophic Injury</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/workers-compensation/">Workers Compensation</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/family-law/">Family Law / Divorce</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/wrongful-death/">Wrongful Death</a>
+                    </li>
+                </ul>
             </li>
-            <li data-id="attorneys">
-                <a href="<?php get_site_url(); ?>/attorneys/">Attorneys</a>
+            <li data-id="attorneys" class="parent">
+                <a href="javascript:void(0);" class="parent">Attorneys</a>
+                <ul class="extend">
+                    <li>
+                        <a href="<?php get_site_url(); ?>/justin-high/">Justin High</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/frank-younes/">Frank Younes</a>
+                    </li>
+                </ul>
             </li>
             <li data-id="why-we-win">
                 <a href="<?php get_site_url(); ?>/why-we-win/">Why We Win</a>
@@ -77,10 +99,32 @@ echo '' . $pagename;?>">
                 <a href="<?php get_site_url(); ?>/about-us/">About Us</a>
             </li>
             <li data-id="areas-of-practice">
-                <a href="<?php get_site_url(); ?>/areas-of-practice/">Areas of Practice</a>
+                <a href="<?php get_site_url(); ?>/areas-of-practice/" class="parent">Areas of Practice</a>
+                <ul class="extend">
+                    <li>
+                        <a href="<?php get_site_url(); ?>/catastrophic-injury/">Catastrophic Injury</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/workers-compensation/">Workers Compensation</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/family-law/">Family Law / Divorce</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/wrongful-death/">Wrongful Death</a>
+                    </li>
+                </ul>
             </li>
             <li data-id="attorneys">
-                <a href="<?php get_site_url(); ?>/attorneys/">Attorneys</a>
+                <a href="<?php get_site_url(); ?>/attorneys/" class="parent">Attorneys</a>
+                <ul class="extend">
+                    <li>
+                        <a href="<?php get_site_url(); ?>/justin-high/">Justin High</a>
+                    </li>
+                    <li>
+                        <a href="<?php get_site_url(); ?>/frank-younes/">Frank Younes</a>
+                    </li>
+                </ul>
             </li>
             <li data-id="why-we-win">
                 <a href="<?php get_site_url(); ?>/why-we-win/">Why We Win</a>

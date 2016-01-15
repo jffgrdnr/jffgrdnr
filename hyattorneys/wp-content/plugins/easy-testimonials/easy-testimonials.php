@@ -1162,7 +1162,7 @@ function outputTestimonialsCycle($atts){
 	<div class="cycle-slideshow" 
 		data-cycle-fx="<?php echo $transition; ?>" 
 		data-cycle-timeout="<?php echo $timer; ?>"
-		data-cycle-slides="> div.testimonial_slide"
+		data-cycle-slides="div.testimonial_slide"
 		<?php if($container): ?> data-cycle-auto-height="<?php echo $container; ?>" <?php endif; ?>
 		<?php if($random): ?> data-cycle-random="true" <?php endif; ?>
 		<?php if($pause_on_hover): ?> data-cycle-pause-on-hover="true" <?php endif; ?>

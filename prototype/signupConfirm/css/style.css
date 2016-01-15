@@ -1,9 +1,15 @@
+
 .wrapper { margin:0 auto; max-width:1000px; width:100%; }
 .confirm header h1 { color:#64afca; font-size:40px; font-weight:200; margin:35px 0 25px; text-align:center; }
 .confirm .card { min-height:400px; text-align:center; }
 .confirm .card h1 { color:#64afca; font-size:20px; font-weight:600; margin-top:25px; text-transform:uppercase; }
 .confirm .card h2 { color:#64afca; font-size:35px; font-weight:200; margin-bottom:20px; margin-top:0; }
 .confirm .card p { font-size:20px; font-weight:200; margin:0 auto 30px; max-width:409px; text-align:center; }
-.confirm footer {  margin:25px auto 20px; text-align:center; width:400px; }
+.confirm footer {  margin:25px auto 20px; text-align:center; }
 .confirm footer p { color:#64afca; font-size:20px; font-weight:600; text-transform:uppercase; }
 .confirm footer .ancBtn { margin-top:20px; width:245px; }
+
+#switchModal h1 { color:#64afca; font-size:40px; font-weight:200; margin:60px 0 20px; text-align:center; }
+#switchModal p { font-size:20px; font-weight:200; margin:0 auto 40px; max-width:409px; text-align:center; }
+#switchModal footer { margin:15px auto 50px; text-align:center; }
+#switchModal footer .ancBtn { width:100%; }

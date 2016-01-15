@@ -72,6 +72,11 @@
     <div class="content card">
         <p>At the law firm of High & Younes, LLC., attorneys Justin High & Frank Younes, along with their staff, take the time necessary to develop a real attorney - client relationship.  We believe it is important to listen to each client and relate to their needs so that we can best understand them and act in a manner that best represents each individual’s needs.  We are a general practice firm located in the heart of Omaha, Nebraska specializing in the areas of Workers’ Compensation, Personal Injury, and Family Law.  We pride ourselves in handling cases in an aggressive and ethical manner to provide our clients with the best result and experience possible in each circumstance. </p>
         <p>The attorneys at High & Younes, LLC., will go the extra mile for each client regardless of whether they are dealing with a work injury, car accident, slip and fall, divorce, family law, or child support matter.  For each client all of these situations are extremely important and potentially life change, and that is the way that we treat them.</p>
+        <div class="rotators clearfix">
+            <div class="card">test 1</div>
+            <div class="card">test 2</div>
+            <div class="card">test 3</div>
+        </div>
     </div>
 </section>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-footer') ); ?>
