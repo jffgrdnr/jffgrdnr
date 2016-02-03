@@ -5,6 +5,8 @@ $(function() {
 		'queryParameter': 'prefix'
 	});
 	$('#modalExample1').click(function(e) {
-		$('#modalExampleContents1').modal();
+		$('#modalExampleContents1').modal({
+			'width':300
+		});
 	});
 });

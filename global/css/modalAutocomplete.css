@@ -1,0 +1,245 @@
+/*---------- General Styles ----------*/
+.ancBtn.hidden{ display: none; }
+html { height:100%; min-height:100%; }
+body { background-image: -moz-linear-gradient(top, #54524f, #36322d); background-image: -ms-linear-gradient(top, #54524f, #36322d); background-image: -o-linear-gradient(top, #54524f, #36322d); background-image: -webkit-linear-gradient(top, #54524f, #36322d); background-image: linear-gradient(top, #54524f, #36322d); min-height:100%; position:relative; }
+
+
+/*---------- Main Navigation ----------*/
+body #HeaderRegion { background:#36322d; max-height:41px; position:fixed; width:100%; z-index:2006; display:none; }
+.callout { z-index:20000; }
+.guidanceBar.withHeader + #treeViewer {padding-top:20px}
+
+/*---------- Add Parents Guidance Modal ----------*/
+.guidanceModal { background:#000; color:#9CBE30; padding:80px 40px; text-align:center; transition: all .5s; }
+.guidanceModal.round { border-radius:10px; }
+.guidanceModal.trim { height:74px; padding:0; }
+.guidanceModal .guidanceIcon { left:15px; position:absolute; }
+
+/*---------- Add Parents Guidance bar ----------*/
+.guidanceBar { background-color:rgba(0,0,0,.8); border-bottom:1px rgba(0,0,0,.5); overflow:hidden; padding:25px 35px; position:fixed; text-align:center; top:-90px; transition:all .4s; width:100%; z-index:1006; }
+.guidanceBar.expanded { top:0px; }
+.guidanceBar.expanded.withHeader { top:40px; }
+.guidanceBar .guidanceWrapper, .guidanceModal .guidanceWrapper { margin-top:0; position:relative; transition:1s;  }
+.guidanceBar.expanded .guidanceWrapper { left:0; }
+.guidanceBar .guidanceBarTitle, .guidanceModal .guidanceBarTitle { color:#9CBE30; font-weight:600; font-size:18px; line-height:24px; margin:0; opacity: 1; position:relative; transition:all .5s; -webkit-transition-delay: 0.5s; transition-delay: 0.5s;}
+.guidanceBar .guidanceBarTitle.iconSearch::before { left:auto; position:absolute; right:-10px; top:15px; }
+.guidanceBar .loading_dots { border-radius:5px; font-size:1em; /* set size here */ line-height:1; padding:0.125em 0 0.175em 0.55em; position:absolute; right:12px; top:0; width:2.75em; }
+.loading_dots.active span { background:transparent; border-radius:50%; display:inline-block; height:0.4em; margin-right:2px; width:0.4em; -webkit-animation:loading_dots 1s linear infinite; -moz-animation:loading_dots 1s linear infinite; -ms-animation:loading_dots 1s linear infinite; animation:loading_dots 1s linear infinite; }
+.loading_dots.active span:nth-child(2) { -webkit-animation-delay:.2s; -moz-animation-delay:.2s; -ms-animation-delay:.2s; animation-delay:.2s; }
+.loading_dots.active span:nth-child(3) { -webkit-animation-delay:.4s; -moz-animation-delay:.4s; -ms-animation-delay:.4s; animation-delay:.4s; }
+    
+  @-webkit-keyframes loading_dots
+  { 
+  	0% {background: transparent;}
+    30% {background: #9CBE30;}
+    60% {background: transparent;}
+    100% {background: transparent;}
+  }
+  
+  @-moz-keyframes loading_dots
+  {
+  	0% {background: transparent;}
+    30% {background: #9CBE30;}
+    60% {background: transparent;}
+    100% {background: transparent;}
+  }
+  @-ms-keyframes loading_dots
+  {
+  	0% {background: transparent;}
+    30% {background: #9CBE30;}
+    60% {background: transparent;}
+    100% {background: transparent;}
+  }
+  @keyframes loading_dots
+  {
+  	0% {background: transparent;}
+    30% {background: #9CBE30;}
+    60% {background: transparent;}
+    100% {background: transparent;}
+  }
+
+.guidanceBar .guidanceBarTitle.faded, .guidanceModal .guidanceBarTitle.faded { opacity:0; -webkit-transition-delay: 0.5s; transition-delay: 0.5s;}
+.guidanceBar .guidanceWrapper p, .guidanceModal p { color:#949190; font-size:17px; line-height:22px; margin-top:0; }
+.guidanceBar .mobile { display:none; }
+
+.page.pageGuidance { margin-bottom:75px; margin-top:100px; max-width:475px; width:100%; }
+/*------------ Add Parents / Add Grandparents Generation styles -------------*/
+.generation { height:170px; margin-bottom:15px; padding-top:15px; }
+.generation .card:not(.active) { display:none; }
+.generation.grandParents { margin-bottom:65px; margin-top:-220px; padding-top:16px; transition:.8s; }
+.generation.grandParents.active { margin-bottom:15px; margin-top:0; }
+
+/*------------ General Modal styles -------------*/
+#modal { background-color:rgba(0, 0, 0, 0.5); transition: height .3s ease; z-index:1006; }
+.modalOpen #modal.savePersonModal { z-index:21474830001; /* holy crap */ }
+#modalContents { box-shadow:none; border-radius:4px; padding:30px; transition: all .5s; }
+.savePersonModal #modalContents { max-width:318px; }
+.savePersonModal .savePersonAdd { margin-top:20px; }
+#modalCenter { transition:margin .5s ease!important; }
+.modalCentered + #modalContents.moving { margin-top:0; transition:margin 1s ease!important; transition:width .3s ease!important; }
+#modal.hidden { background:rgba(0,0,0,0); padding:0!important; transition: all 1s ease; }
+#modal.hidden #modalContents { box-shadow:none; }
+#modal.hidden.trim { margin-top:-195px; }
+.add #modal #modalContents { padding:0; }
+#modal #modalClose { right:-12px; top:-13px; }
+
+.modal.modalGuide { text-align:center; }
+.modal.modalGuide #modalContents { padding:30px; }
+.modal.modalGuide h1 { color:#64afca; font-size:20px; font-weight:600; text-transform:uppercase; }
+.modal.modalGuide h2 { color:#64afca; font-size:40px; font-weight:200; margin-bottom:15px; margin-top:0; }
+.modal.modalGuide h3 { color:#64afca; font-size:14px; font-weight:600; margin-bottom:50px; text-transform:uppercase; }
+.modal.modalGuide .icon { border-radius:50%; background-color:#64afca; color:#fff; height:40px; font-size:15px; margin:0 auto 30px; padding:11px; width:40px; }
+.modal.modalGuide p { font-size:20px; font-weight:200; margin:0 auto 30px; max-width:409px; text-align:center; }
+.modal.modalGuide p strong { color:#64afca; font-weight:600; }
+.modal.modalGuide .ancBtn { margin-bottom:50px; width:220px; }
+
+.modal.modalSmall h1 { color:#9cbe30; font-size:28px; }
+.modal.modalSmall label.slide { margin-top:10px; }
+.modal.modalSmall .last { text-align:center; }
+.modal.modalSmall .ancBtn { margin-top:15px; width:100%; }
+
+.closeBtn.hidden { display:none; }
+
+/*------------ Hover card styles -------------*/
+.cardMedia .modal { display:block; }
+.cardMedia.cardGuide .hoverCard p { font:14px/16px "Source Sans Pro","Helvetica Neue", Arial, sans-serif; margin-top:2px; margin-bottom:0; }
+.cardMedia .hoverCard strong { color:#000; font-weight:bold; }
+.hoverCard h6 { color:#03678b; }
+.hoverCard footer { margin-top:25px; text-align:center; }
+
+/*------------ Card Empty styles -------------*/
+.cardEmptyAction.icon::before { font-size:30px; }
+.card[class*="cardSize"] .cardEmptyAction { font-size:14px; line-height:16px; text-transform:uppercase; }
+.cardEmpty.card.active { border:2px dashed #bebbb3; cursor:pointer; font-size:14px; min-height:145px; position:relative; width:88px; }
+.cardEmpty.card.active.pulse::after { background-color:rgba(156,190,48,.5); background-size:cover; background-repeat:no-repeat; border:none; box-shadow:0 0 0 0 rgba(156,190,48,1); border-radius:50%; content:" "; cursor:pointer; display:block; position:absolute; height:30px;
+ 	-webkit-animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	-moz-animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	-ms-animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	left:27px; position:absolute; top:45px; width:30px;
+  }
+.cardEmpty:hover .cardEmptyAction { color:#fff; }
+
+/*------------ Card Guide hover state -------------*/
+#modal #modalContents .cardGuide { margin:0; }
+.card.cardGuide { padding:0; }
+.cardMedia.cardGuide { cursor:pointer; }
+.cardGuide .ancCol ~ .ancColRow { margin-top:15px; }
+.cardMedia.cardGuide { cursor:pointer; height:145px; min-height:145px; position:relative; width:88px; }
+.cardMedia.cardGuide.active .personBirthDate, .cardMedia.cardGuide.active .personDeathDate { display:none; }
+.cardMedia.cardGuide.active .personBirthYear, .cardMedia.cardGuide.active .personDeathYear { display:inline; }
+.cardMedia .hoverCard { border-radius:5px; margin-top:0; max-width:400px; opacity:0; padding:25px; position:absolute; right:0; top:0; transition:.3s; width:375px; z-index:-1; }
+.cardGuide { border-radius:5px; margin:20px; }
+.cardGuide .photo { position:relative; }
+.cardGuide.cardSize1 .photoSquare.icon::before { font-size:80px; top:60%; }
+.cardGuide .cardFigure { height:100%; position:relative; }
+.cardGuide .cardFigure .iconLeafImage { cursor:pointer; display:none; position:absolute; right:-14px; top:-14px; transition:.4s; transform:scale(1.0); z-index:1; }
+.cardGuide .cardFigure .iconLeafImage::before { left:-5px; top:-10px; }
+.cardGuide .cardFigure .iconLeafImage.active { background-color:rgba(156,190,48,.9); background-size:cover; background-repeat:no-repeat; border:none; box-shadow:0 0 0 0 rgba(156,190,48,1); border-radius:50%; cursor: pointer; display:block; position:absolute; height:15px;
+ 	-webkit-animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	-moz-animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	-ms-animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	animation: pulse 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
+  	right:-4px;
+  	top:-3px;
+  	width:15px; 
+}
+.cardGuide .cardFigure .iconLeafImage.active:hover { -webkit-animation:none; -moz-animation:none; -ms-animation:none; animation:none; }
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(156,190,48,0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(156,190,48,0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(156,190,48,0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 20px rgba(156,190,48,0);}}
+.cardGuide .photo .cardSubtitle { bottom:12px; color:#fff; left:20px; position:absolute; }
+.cardGuide .photoSquare::after { padding-bottom:88%; }
+.modal .cardGuide .photoSquare::after { padding-bottom:75%; }
+.modal .cardGuide .photoSquare.icon::before { font-size:197px; opacity:.7; top:60%; }
+.cardGuide .cardFigure:first-child .photo { border-radius:5px 5px 0 0; margin:0; width:100%; }
+.cardGuide figcaption { padding:6px 8px; }
+.cardGuide .cardSubtitle { color:#64afca; font-size:28px; font-weight:200; line-height:36px;  }
+.cardGuide p { font-size:20px; font-weight:200; text-align:center; }
+.cardGuide p strong { color:#64afca; font-weight:600; }
+
+/*------------ Add Parents Modal -------------*/
+.modal .cardGuide figcaption { padding:18px 15px; }
+.modal .cardGuide .ancBtn { text-align:center; width:100%; }
+.modal .form { font-size:15px; }
+.modal .form .ancCol { position:relative; }
+.modal .form .ancCol.icon.iconCheck::before { background:#fff; bottom:7px; color:#9cbe30; height:15px; padding-top:7px; position:absolute; right:-8px; text-align:center; top:auto; transition:.4s; width:20px; }
+.modal .form input { border:none; border-bottom:1px solid #e8e5dd; border-radius:0; box-shadow:none; font-size:15px; padding:5px; }
+.modal .form .ancCol.iconCheck input { padding:5px 10px 5px 5px; }
+.modal .form input::-ms-clear { display:none; }
+.modal .form input.personFirstName, .modal .form input.personLastName { padding:5px 15px 5px 5px; }
+.form label.slide { color:#939a91; font-size:12px; letter-spacing:.5px; position:relative; text-transform:uppercase; top:15px; transition:.2s; visibility:hidden; }
+.form label.slide.show { top:-2px; visibility:visible; }
+.form .ancCol.showDead { display:none; }
+.cardGuide.cardSize1.added { display:none; }
+.cardGuide.cardSize1 .cardSubtitle { color:#443f39; font-size:14px; font-weight:600; line-height:16px; max-height:16px; min-height:16px; overflow:hidden; text-align:left; }
+.cardGuide.cardSize1 p { font-size:14px; margin-top:5px; overflow:hidden; text-align:left; }
+.cardGuide.cardSize1 p:not(.reg) { max-height:19px; }
+.cardGuide .calloutArea { height:145px; position:absolute; top:0; width:100%; }
+.cardGuide .hoverCard { cursor:default; }
+.userCardSize4 .userCardTitle { color:#36322d; cursor:default; }
+
+/*----------------------------------------*/
+/*------------ Media Queries -------------*/
+/*----------------------------------------*/
+@media (min-width:1025px) {
+	.cardMedia.hovered .hoverCard { background:#fff; opacity:1; width:385px; z-index:2; }
+	.generation.grandParents .ancCol:first-child .cardMedia .hoverCard, .generation.parents .cardMedia[data-title="Father"] .hoverCard { left:0; right:auto; }
+}
+@media (max-width:900px) {
+	.guidanceBar .guidanceBarTitle.iconSearch::before { right:47%; top:-8px; }
+	.guidanceBar .loading_dots { right:50%; top:-21px; }
+	.page.pageGuidance { margin-top:155px; }
+}
+@media (min-width:768px) {
+	.cardMedia.hovered .hoverCard { background:#fff; box-shadow:0 1px 3px 3px rgba(0,0,0,.16); opacity:1; width:450px; z-index:2; }
+	.generation.grandParents .ancCol:first-child .cardMedia .hoverCard, .generation.parents .cardMedia[data-title="Father"] .hoverCard { left:0; right:auto; }
+	.progressStep:not(.progressStepCurrent) { display:block; float:left; width:25%; }
+}
+@media (max-width:767px) {
+	.cardMedia.hovered .hoverCard { z-index:-1; }
+	.navSecondaryMenu { background:#36322d; }
+	#modal.hidden.trim { margin-top:-155px; }
+	.savePersonModal #modalContents { max-width:295px; }
+	.cardGuide .ancBtn { width:100%; }
+	.guidanceBar { top:-155px; }
+	.guidanceBar .guidanceBarTitle.iconSearch::before { right:43%; }
+	.ancGrid { margin-left:-5px; }
+	.guidanceBar.expanded { padding:25px 35px; }
+	.generation:not(.parents):not(.grandParents) { margin-bottom:155px; }
+	.generation .ancCol.full480 { margin-top:0; }
+	.generation .ancCol::before { display:none; }
+	.generation.grandParents { margin-top:-220px; }
+	.generation.grandParents .ancCol { height:0; }
+	.progressStep:not(.progressStepCurrent) { display:block; float:left; width:25%; }
+	.modal .form input { padding:5px 2px 5px 4px; }
+	.modal .cardGuide figcaption { padding:18px 10px; }
+	.modal.modalGuide p { margin-bottom:40px; }
+	.modal.modalGuide .ancBtn { margin-bottom:0px; width:220px; }
+}
+@media (max-width:475px) {
+	.generation.grandParents.active { max-width:475px; overflow-x:scroll; overflow-y:hidden; transition:.8s; }
+}
+@media (max-width:480px) {
+	#modal.hidden.trim { margin-top:-215px; }
+	.page.pageGuidance { margin-top:120px; }
+	.page.pageGuidance.hasHints { margin-top:160px; }
+	.page.pageGuidance.withHeader { margin-top:140px; }
+	.page.pageGuidance.withHeader.hasHints { margin-top:180px; }
+	.guidanceBar.expanded { min-height:60px; }
+	.guidanceBar .guidanceBarTitle { font-size:14px; line-height: 22px; }
+	.guidanceBar .guidanceBarText { display:none; }
+	.generation { height:175px; margin-bottom:15px; }
+	.generation.grandParents.active { margin-bottom:15px; }
+	.generation.grandParents .genWrap { position:relative; width:475px; }
+	.generation.grandParents.active .ancCol { height:auto; position:absolute; top:9px; width:215px; }
+	.generation.grandParents.active .ancCol.left { left:10px; }
+	.generation.grandParents.active .ancCol.right { right:10px; }
+	.progressStep:not(.progressStepCurrent) { display:block; float:left; width:25%; }
+	.generation.grandParents { margin-top:-235px; transition:.8s; }
+	.generation:first-child .ancCol::before { display:none; }
+	.generation:first-child .card:first-child::before { display:none; }
+	.generation ~ .generation .card::before { display:none; }
+	/*.generation ~ .generation ~ .generation .card::before { height:30px; top:-30px; }*/
+}

@@ -11,3 +11,8 @@ body { font:15px/19px "Abel"; }
 .panel .bar { background-color:rgba(0,0,0,.5); position:absolute; height:390px; width:2000px; }
 .panel:nth-child(odd) .bar { left:-365px; transform:rotate(-21deg); top:-75px; }
 .panel:nth-child(even) .bar { right:-365px; transform:rotate(21deg); top:-75px; }
+
+
+@media (max-width:767px) {
+	.panel .message h1 { font-size:30px; line-height:42px; }
+}
