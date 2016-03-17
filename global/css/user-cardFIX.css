@@ -49,7 +49,7 @@ button.userCardImg:hover { box-shadow:0 0 0 3px #706b63; }
 .userCardSize1 .userCardImg.iconFemale::before { font-size:102px; line-height:138px; }
 /* Size - 80x80 : Relates to .userCardContentSize4 below */
 .userCardSize4 { line-height:80px; min-height:80px; padding-left:92px; }
-.userCardSize4 .userCardTitle { font-size:28px; line-height:1; }
+.userCardSize4 .userCardTitle { font-size:28px; line-height:1.2; }
 .userCardSize4 .userCardSubTitle { font-size:20px; margin-top:0; }
 .userCardSize4 .userCardEvents { font-size:inherit; }
 .userCardSize4 .userCardInfo { font-size:16px; }
