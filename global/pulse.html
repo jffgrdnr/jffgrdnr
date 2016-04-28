@@ -7,7 +7,7 @@
 	<title>Ancestry pulse</title>
 	<meta name="description" content=" "/>
 	<link rel="canonical" href="" />
-	<link href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v2/alert.css&amp;x/css/v1/autocomplete.css&amp;x/css/v1/button.css&amp;x/css/v1/callout.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v1/icon.css&amp;x/css/v3/modal.css&amp;x/css/v1/pagination.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css" rel="stylesheet" />
+	<link href="http://c.mfcreative.com/lib/tgn/combo.ashx?x/css/v1/main.css&amp;x/css/v2/alert.css&amp;x/css/v1/autocomplete.css&amp;x/css/v1/button.css&amp;x/css/v1/callout.css&amp;x/css/v1/container.css&amp;x/css/v1/form.css&amp;x/css/v1/grid.css&amp;x/css/v1/icon.css&amp;x/css/v3/modal.css&amp;x/css/v1/pagination.css&amp;x/css/v2/tab.css&amp;x/css/v1/table.css&amp;x/css/v1/template.css&amp;x/css/v1/card.css" rel="stylesheet" />
 	<style>
 		/* basic pulse css */
 		.pulse::after { -webkit-animation: pulse 1.75s infinite cubic-bezier(.66, 0, 0, 1); animation: pulse 1.75s infinite cubic-bezier(.66, 0, 0, 1); background-color:rgba(156, 190, 48, .5); background-repeat:no-repeat; background-size:cover; border:none; border-radius:50%; box-shadow:0 0 0 0 rgba(156, 190, 48, 1); content:" "; cursor:pointer; display:block; height:28px; width:28px; }
@@ -15,8 +15,12 @@
 		@keyframes pulse {to { box-shadow:0 0 0 20px rgba(156, 190, 48, 0); }}
 
 		/* extra styles for pulse on top of something */
-		.pulse.absolute { position:absolute; top:3px; left:0; }
+		.pulse.absolute { position:absolute; }
 		.iconLeafImage { height:20px; position:relative; width:20px; }
+		.pulse.leaf { top:7px; left:5px; }
+		.pulse.leaf::after { height:20px; width:20px; }
+		.pulse.large { font-size:50px; top:3px; left:0;  }
+		.iconAdd::before { font-size:50px; }
 	</style>
 </head>
 <body>
@@ -35,13 +39,45 @@
 			<div class="ancCol w100 conSection">
 				<section class="con">
 					<div class="conBody">
-							<div class="icon iconLeafImage">
-								<div class="pulse absolute">
-								</div>
+						<div class="icon iconLeafImage">
+							<div class="pulse absolute leaf">
 							</div>
+						</div>
 					</div>
 				</section>
 			</div>
+			<!-- <div class="ancCol w100 conSection">
+				<section class="con">
+					<div class="conBody">
+						<div class="ancGrid">
+							<div class="ancCol w33">
+								<div aria-pressed="false" class="card cardEmpty textCenter" role="button" tabindex="0">
+									<div class="cardEmptyAction textCenter icon iconAdd">
+										<div class="pulse absolute large"></div>
+										Upload media
+									</div>
+								</div>
+							</div>
+							<div class="ancCol w33">
+								<div aria-pressed="false" class="card cardEmpty textCenter" role="button" tabindex="0">
+									<div class="cardEmptyAction textCenter icon iconAdd">
+										<div class="pulse absolute large"></div>
+										Upload media
+									</div>
+								</div>
+							</div>
+							<div class="ancCol w33">
+								<div aria-pressed="false" class="card cardEmpty textCenter" role="button" tabindex="0">
+									<div class="cardEmptyAction textCenter icon iconAdd">
+										<div class="pulse absolute large"></div>
+										Upload media
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div> -->
 		</div>
 	</div>
 <script src="http://c.mfcreative.com/lib/tgn/combo.ashx?x/lib/jquery/jquery-1.11.1.min.js&x/js/v2/alert.js&amp;x/js/v1/autocomplete.js&amp;x/js/v1/callout.js&amp;x/js/v1/form.js&amp;x/js/v3/modal.js&amp;x/js/v2/tab.js"></script>
