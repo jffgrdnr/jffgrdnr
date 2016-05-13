@@ -1,0 +1,3 @@
+
+
+.override a:focus, .override button:focus, .override .ancBtn:focus, .override [tabindex="0"]:focus { outline:none; }
