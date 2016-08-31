@@ -1,0 +1,128 @@
+@import 'reset';
+
+$blue : #489be0; 
+$zero : 0;
+$five : 5px; 
+$ten : 10px; 
+$twenty : 20px; 
+$twenty_five : 25px; 
+$fifty : 50px;
+$white : #fff;
+$light_gray : #ddd;
+$medium_gray : #ccc;
+$dark_gray : #555;
+$tablet : 768px; 
+$phone : 640px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.clear { clear:both; }
+.clearfix::after { 
+	clear:both; 
+	content:""; 
+	display:table; 
+}
+.relative { position:relative; }
+.fixed { position:fixed; }
+.absolute { position:absolute; }
+.f_left { float:left; }
+.f_right { float:right; }
+
+.column { 
+	box-sizing:border-box; 
+	padding:$ten; 
+}
+.one_third { 
+	width:33%; 
+
+	@media screen and (max-width: $tablet) {
+    	width:50%;
+  	}
+
+	@media screen and (max-width: $phone) {
+		width:100%;
+	}
+}
+.two_thirds { width:50%; }
+.full_width { width:100%; }
+
+/* cards */
+.card { 
+	background-color:$white; 
+	box-sizing:border-box; 
+	@include border-radius(2px); 
+	padding:$twenty;
+
+	header {
+		background-color:$light_gray;
+		color:$dark_gray;
+		font-size:2em;
+		margin-bottom:$ten;
+		padding:$twenty;
+	}
+}
+
+/* general */
+body { 
+	background-color:$light_gray; 
+	font:1.5em/1.5em "Abel"; 
+	height:100%; 
+	min-height:100%;
+} 
+header.main { 
+	background:$blue; 
+	box-shadow:1px 1px 1px #999; 
+	padding:$twenty; 
+	top:0; 
+	width:100%; 
+	z-index:2; 
+
+	i.menu { 
+		color:$white; 
+		cursor:pointer; 
+		font-size:2em; 
+	}
+}
+article {
+	padding:$twenty_five;
+	margin-top:100px;
+}
+section {
+	margin-top:$twenty_five;
+
+	&.flat { margin-top:$zero; }
+}
+.drawer { 
+	background-color:$medium_gray; 
+	box-shadow:0 1px 1px #ccc; 
+	min-height:100%; 
+	height:inherit; 
+	padding:$ten; 
+	right:-200px; 
+	top:65px; 
+	transition:all .5s; 
+	width:200px; 
+	z-index:1; 
+
+	&.open {
+		right:0;
+	}
+
+	li { 
+		background-color:$white;
+		cursor:pointer;
+		margin:$ten 0;
+		padding:$ten;
+
+	}
+}
+p {
+	margin-bottom:15px;
+
+	&:first-of-type { margin-top:15px; };
+}

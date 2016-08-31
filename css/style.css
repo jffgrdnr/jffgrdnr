@@ -1,18 +1,166 @@
-body { font:15px/19px "Abel"; } 
-.panel { background-position:center; background-attachment:fixed; background-size:cover; border-bottom:10px solid #fff; height:800px; overflow:hidden; position:relative; }
-#panel1 { background-image:url("../img/mountain1.jpg"); }
-#panel2 { background-image:url("../img/ray.jpg"); }
-#panel3 { background-image:url("../img/mountain3.jpg"); }
-.panel .message { margin:0 auto; padding:100px 60px; position:absolute; width:100%; z-index:2; }
-.panel:nth-child(odd) .message { text-align:left; }
-.panel:nth-child(even) .message { text-align:right; }
-.panel .message h1 { color:#fff; font-size:56px; line-height:68px; margin-bottom:25px; text-shadow:1px 1px 1px #000; }
-.panel .message h2 { color:#fff; font-size:32px; line-height:42px; text-shadow:1px 1px 1px #000; }
-.panel .bar { background-color:rgba(0,0,0,.5); position:absolute; height:390px; width:2000px; }
-.panel:nth-child(odd) .bar { left:-365px; transform:rotate(-21deg); top:-75px; }
-.panel:nth-child(even) .bar { right:-365px; transform:rotate(21deg); top:-75px; }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box; }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-@media (max-width:767px) {
-	.panel .message h1 { font-size:30px; line-height:42px; }
-}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  font-size: 1em;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a:visited {
+  color: inherit; }
+
+/*# sourceMappingURL=reset.css.map */
+.clear {
+  clear: both; }
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.relative {
+  position: relative; }
+
+.fixed {
+  position: fixed; }
+
+.absolute {
+  position: absolute; }
+
+.f_left {
+  float: left; }
+
+.f_right {
+  float: right; }
+
+.column {
+  box-sizing: border-box;
+  padding: 10px; }
+
+.one_third {
+  width: 33%; }
+  @media screen and (max-width: 768px) {
+    .one_third {
+      width: 50%; } }
+  @media screen and (max-width: 640px) {
+    .one_third {
+      width: 100%; } }
+
+.two_thirds {
+  width: 50%; }
+
+.full_width {
+  width: 100%; }
+
+/* cards */
+.card {
+  background-color: #fff;
+  box-sizing: border-box;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  padding: 20px; }
+  .card header {
+    background-color: #ddd;
+    color: #555;
+    font-size: 2em;
+    margin-bottom: 10px;
+    padding: 20px; }
+
+/* general */
+body {
+  background-color: #ddd;
+  font: 1.5em/1.5em "Abel";
+  height: 100%;
+  min-height: 100%; }
+
+header.main {
+  background: #489be0;
+  box-shadow: 1px 1px 1px #999;
+  padding: 20px;
+  top: 0;
+  width: 100%;
+  z-index: 2; }
+  header.main i.menu {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2em; }
+
+article {
+  padding: 25px;
+  margin-top: 100px; }
+
+section {
+  margin-top: 25px; }
+  section.flat {
+    margin-top: 0; }
+
+.drawer {
+  background-color: #ccc;
+  box-shadow: 0 1px 1px #ccc;
+  min-height: 100%;
+  height: inherit;
+  padding: 10px;
+  right: -200px;
+  top: 65px;
+  transition: all .5s;
+  width: 200px;
+  z-index: 1; }
+  .drawer.open {
+    right: 0; }
+  .drawer li {
+    background-color: #fff;
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 10px; }
+
+p {
+  margin-bottom: 15px; }
+  p:first-of-type {
+    margin-top: 15px; }
+
+/*# sourceMappingURL=style.css.map */
